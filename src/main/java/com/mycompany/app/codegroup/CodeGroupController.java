@@ -23,7 +23,7 @@ public class CodeGroupController {
 		model.addAttribute("list", list);
 		
 		
-						1
+						
 		return "codeGroupList";
 	}
 	

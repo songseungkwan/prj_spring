@@ -6,5 +6,5 @@ public interface CodeGroupService {
 
 	public List<CodeGroup> selectList();
 
-	1
+	
 }

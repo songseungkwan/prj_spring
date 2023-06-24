@@ -21,4 +21,4 @@ codeGroupList.jsp
 			<c:out value="${list.cgName}"></c:out><br>
 		</c:forEach>
 	</c:otherwise>
-</c:choose>	
+</c:choose>	1

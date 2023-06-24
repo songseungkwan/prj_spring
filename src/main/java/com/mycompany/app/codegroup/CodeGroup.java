@@ -23,7 +23,7 @@ public class CodeGroup {
 	public void setCgName(String cgName) {
 		this.cgName = cgName;
 	}
-	
+	1
 	
 	
 	

@@ -29,4 +29,4 @@
 	<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/>
 </bean>
 <!-- mysql e 2022.02.25 -->		
-</beans>
+</beans>1

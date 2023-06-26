@@ -8,9 +8,9 @@
 
 
 
-<input type="text" class="form-control" id="seq" placeholder="seq" required readonly value="<c:out value="${item.cgSeq}"/>">
+<input type="text" class="form-control" id="seq" placeholder="seq" required readonly value="<c:out value="${item.seq}"/>">
 
-<input type="text" class="form-control" id="name" placeholder="name" required value="<c:out value="${item.cgName}"/>">
+<input type="text" class="form-control" id="name" placeholder="name" required value="<c:out value="${item.name}"/>">
 
 
 

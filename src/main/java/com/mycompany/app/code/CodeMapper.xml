@@ -17,7 +17,7 @@
     <resultMap id="resultMapObj" type="com.mycompany.app.code.Code"></resultMap>
     <select id="selectList" resultMap="resultMapObj">
     	SELECT 
-    	cdSeq, cdName, codegroup_cgSeq
+    	seq, name, codegroup_seq
     	FROM
     		code
     

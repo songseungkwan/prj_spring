@@ -2,16 +2,17 @@ package com.mycompany.app.codegroup;
 
 import java.util.List;
 
+
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public class CodeGroupDao {
+	@Repository
+	public class CodeGroupDao {
 
-//	@는 annotation , 여기는 유일한 자바 어노테이션 구간
+
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession; // 변수명 선언
@@ -20,7 +21,9 @@ public class CodeGroupDao {
 	
 	public List<CodeGroup> selectList(CodeGroupVo vo) {
 		
-		return sqlSession.selectList(namespace + ".selectList", vo ); }
+		return sqlSession.selectList(namespace + ".selectList", vo ); 
+		
+		}
 	
 	public CodeGroup selectOne(CodeGroupVo vo) { 
 		CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo); 

@@ -38,9 +38,11 @@ public class HomeController {
 		
 		
 		
-		// 중복되면 안됨.		
-		  @RequestMapping(value="/adminHome") public String adminHome() { return
-		  "app/home/adminHome"; }
+//		// 중복되면 안됨.		
+//		  @RequestMapping(value="/adminHome") 
+//		  public String adminHome() { 
+//			  return "admin/adminHome"; 
+//	    }
 		 
 //		
 //		@RequestMapping(value="/home4")

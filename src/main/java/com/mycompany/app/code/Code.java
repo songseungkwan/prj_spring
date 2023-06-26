@@ -8,27 +8,27 @@ public class Code {
 	// seq는 편의상 디비에는 int지만 자바에서는 String으로 쓴다.
 	// 주로 테이블의 컬럼명과 일치
 	
-	private String cdSeq;					
-	private String cdName;
-	private String codegroup_cgSeq;
+	private String seq;					
+	private String name;
+	private String codegroup_seq;
 // -----
-	public String getCdSeq() {
-		return cdSeq;
+	public String getSeq() {
+		return seq;
 	}
-	public void setCdSeq(String cdSeq) {
-		this.cdSeq = cdSeq;
+	public void setSeq(String seq) {
+		this.seq = seq;
 	}
-	public String getCdName() {
-		return cdName;
+	public String getName() {
+		return name;
 	}
-	public void setCdName(String cdName) {
-		this.cdName = cdName;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getCodegroup_cgSeq() {
-		return codegroup_cgSeq;
+	public String getCodegroup_seq() {
+		return codegroup_seq;
 	}
-	public void setCodegroup_cgSeq(String codegroup_cgSeq) {
-		this.codegroup_cgSeq = codegroup_cgSeq;
+	public void codegroup_seq(String codegroup_seq) {
+		this.codegroup_seq = codegroup_seq;
 	}
 	
 	

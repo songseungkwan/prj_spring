@@ -550,14 +550,20 @@
                   </tr>
                 </thead>
                 <tbody>
-                  	<c:choose>
+					<c:choose>
 						<c:when test="${fn:length(list) eq 0}">
+							<tr>
+								<td class="text-cneter" colspan="9">There is no data</td>
+							</tr>
 						</c:when>
 						<c:otherwise>
-							<c:forEach items="${list}" var="list" varStatus="status">
-							<tr>
-								<td><c:out value="${list.cgSeq}"></c:out></td>
-								<td><a href=""><c:out value="${list.cgName}"></c:out></a></td>
+							<c:forEach items="${list}" var="list" >
+								<tr>
+									<td scope="col">
+										<input type="checkbox" name="checked" value="">
+									</td>
+									<td><c:out value="${list.seq}"></c:out></td>
+									<td><a href="admin?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></td>
 								</tr>
 							</c:forEach>
 						</c:otherwise>

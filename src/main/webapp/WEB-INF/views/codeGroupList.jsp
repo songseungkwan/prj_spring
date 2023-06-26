@@ -21,25 +21,25 @@ codeGroupList.jsp
 	</select>
 	
     <input type="text" name="shKeyword" >
-    <button type="submit" id="btn">검색</button>
+    <button type="submit" id="btnSearch">검색</button>
 </form>
 
 <br>
 <br>
 
-<c:choose>
-	<c:when test="${fn:length(list) eq 0}">
-		<tr>
-			<td class="text-center" colspan="9">There is no data</td>
-		</tr>
-	</c:when>
-	<c:otherwise>
-		<c:forEach items="${list}" var="list" varStatus="status">
-			<c:out value="${list.cgSeq}"></c:out>
-			<a href="formPage?cgSeq=<c:out value="${list.cgSeq}"/>"><c:out value="${list.cgName}"/></a>
-		</c:forEach>
-	</c:otherwise>
-</c:choose>	
+		<c:choose>
+			<c:when test="${fn:length(list) eq 0}">
+				<tr>
+					<td class="text-center" colspan="9">There is no data</td>
+				</tr>
+			</c:when>
+			<c:otherwise>
+				<c:forEach items="${list}" var="list" varStatus="status">
+					<c:out value="${list.seq}"></c:out>
+					<a href="admin?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a>
+				</c:forEach>
+			</c:otherwise>
+		</c:choose>	
 
 
 
@@ -47,19 +47,16 @@ codeGroupList.jsp
 
 
 
-		 $("#btn").on("click", function() {
-		/*  	자기 자신을 다시 한번 호출해준다.
-		 	1. 링크 방식을 통해 파일을 설정
-		 	2. 액션을 통해 자기 자신을 호출 */
+		 $("#btnSearch").on("click", function() {
 		 	
-		 	$("form[name='formList']").attr("method", "post"); 
-		 	$("form[name='formList']").attr("action", "/formPage");
-		 	
+		 	$("form[name=formList]").attr("method", "post"); 
+		 	$("form[name=formList]").attr("action", "/formPage").submit();
+		 });
 
 		 	
 		 	
-		/* 	alert ("dsadasd"");
-			}); */
+
+			
 	
  </script>
  

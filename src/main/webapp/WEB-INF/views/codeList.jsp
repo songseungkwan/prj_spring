@@ -17,8 +17,8 @@ codeList.jsp
 	</c:when>
 	<c:otherwise>
 		<c:forEach items="${list}" var="list" varStatus="status">
-			<c:out value="${list.cdSeq}"></c:out>
-			<c:out value="${list.cdName}"></c:out><br>
+			<c:out value="${list.seq}"></c:out>
+			<c:out value="${list.name}"></c:out><br>
 		</c:forEach>
 	</c:otherwise>
 </c:choose>	

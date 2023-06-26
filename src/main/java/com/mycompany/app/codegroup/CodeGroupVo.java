@@ -4,17 +4,8 @@ public class CodeGroupVo {
 
 	private Integer shOption;
 	private String shKeyword;
-	private String cgSeq;
-	
-	
-	
-	public String getSeq() {
-		return cgSeq;
-	}
-	public void setSeq(String seq) {
-		this.cgSeq = seq;
-	}
-	//	-----
+	private String seq;
+//	-----
 	public Integer getShOption() {
 		return shOption;
 	}
@@ -27,5 +18,11 @@ public class CodeGroupVo {
 	public void setShKeyword(String shKeyword) {
 		this.shKeyword = shKeyword;
 	}
-
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+	
 }

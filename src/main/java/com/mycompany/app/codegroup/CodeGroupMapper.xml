@@ -17,12 +17,25 @@
     <resultMap id="resultMapObj" type="com.mycompany.app.codegroup.CodeGroup"></resultMap>
     <select id="selectList" resultMap="resultMapObj">
     	SELECT 
-    	*
+    	cgSeq, cgName
     	FROM
     		codeGroup
+    	WHERE
     
+    	cgName LIKE CONCAT('%',#{shKeyword},'%')
     
     </select>
+    
+    	<select id="selectOne" resultMap="resultMapObj">
+		SELECT *
+
+		FROM 
+			codeGroup
+		WHERE
+			cgSeq = #{cgSeq}
+	</select>
+    
+    
     
 
 </mapper>    

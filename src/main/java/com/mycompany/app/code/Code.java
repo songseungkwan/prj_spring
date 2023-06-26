@@ -32,6 +32,9 @@ public class Code {
 	}
 	
 	
+	// 주 클래스에서는 해당 테이블의 컬럼명을 변수 선언 후 getter/setter 메서드를 작성한다.
+	// getter : 조회 / setter : 상태 변경
+	
 	
 	
 }

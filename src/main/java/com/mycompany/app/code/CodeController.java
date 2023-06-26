@@ -28,3 +28,14 @@ public class CodeController {
 	}
 	
 }
+
+
+
+
+
+
+// Controller에서 쓰인 어노테이션
+// 1. @Controller - 클라이언트의 요청을 처리하고, 필요한 비즈니스 로직이나 서비스 계층을 호출하여 데이터를 가져와 뷰(View)에 전달하거나, 
+// 		다른 작업을 수행. 이후 클라이언트에게 응답을 생성하여 전달.
+// 2. @AutoWired
+// 3. @RequestMapping

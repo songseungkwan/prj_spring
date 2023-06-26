@@ -7,14 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CodeGroupServiceImpl implements CodeGroupService {
-
 	
 	@Autowired
 	CodeGroupDao dao;
-	
-	@Override
-	public List<CodeGroup> selectList() { return dao.selectList();
-		
-	}
 
+	@Override
+	public List<CodeGroup> selectList(CodeGroupVo vo) { return dao.selectList(vo); }
+	
+	public CodeGroup selectOne(CodeGroupVo vo) { return dao.selectOne(vo); }
 }

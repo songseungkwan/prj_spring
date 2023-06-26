@@ -35,10 +35,13 @@ public class HomeController {
 			return "app/home/register";		
 		}
 		
-		@RequestMapping(value="/adminHome")
-		public String adminHome() {
-			return "app/home/adminHome";		
-		}
+		
+		
+		
+		// 중복되면 안됨.		
+		  @RequestMapping(value="/adminHome") public String adminHome() { return
+		  "app/home/adminHome"; }
+		 
 //		
 //		@RequestMapping(value="/home4")
 //		public String home4() {

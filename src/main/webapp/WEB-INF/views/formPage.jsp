@@ -5,23 +5,21 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-codeList.jsp
 
-<br>
 
-<c:choose>
-	<c:when test="${fn:length(list) eq 0}">
-		<tr>
-			<td class="text-center" colspan="9">There is no data</td>
-		</tr>
-	</c:when>
-	<c:otherwise>
-		<c:forEach items="${list}" var="list" varStatus="status">
-			<c:out value="${list.cdSeq}"></c:out>
-			<c:out value="${list.cdName}"></c:out><br>
-		</c:forEach>
-	</c:otherwise>
-</c:choose>	
+
+<input type="text" class="form-control" id="seq" placeholder="seq" required readonly value="<c:out value="${item.cgSeq}"/>">
+
+<input type="text" class="form-control" id="name" placeholder="name" required value="<c:out value="${item.cgName}"/>">
+
+
+
+
+
+
+
+
+
 
 
 

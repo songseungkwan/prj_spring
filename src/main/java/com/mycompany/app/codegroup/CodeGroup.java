@@ -10,8 +10,10 @@ public class CodeGroup {
 	
 	private String seq;					
 	private String name;
+	private Integer  delNy;
 	
-// -----
+
+	// -----
 	public String getSeq() {
 			return seq;
 		}
@@ -23,6 +25,12 @@ public class CodeGroup {
 		}
 		public void setName(String name) {
 			this.name = name;
+		}
+		public Integer getDelNy() {
+			return delNy;
+		}
+		public void setDelNy(Integer delNy) {
+			this.delNy = delNy;
 		}
 
 

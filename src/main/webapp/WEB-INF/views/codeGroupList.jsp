@@ -22,6 +22,7 @@ codeGroupList.jsp
 	
     <input type="text" name="shKeyword" >
     <button type="submit" id="btnSearch">검색</button>
+	<a href="adminForm"><button type=button>추가</button></a>
 </form>
 
 <br>
@@ -36,24 +37,32 @@ codeGroupList.jsp
 			<c:otherwise>
 				<c:forEach items="${list}" var="list" varStatus="status">
 					<c:out value="${list.seq}"></c:out>
-					<a href="admin?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a>
-				</c:forEach>
+					<a href="adminForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a>
+						<c:out value="${list.delNy}"></c:out>
+					</c:forEach>
 			</c:otherwise>
 		</c:choose>	
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
 <script type="text/javascript">
 
 
 
 		 $("#btnSearch").on("click", function() {
-		 	
-		 	$("form[name=formList]").attr("method", "post"); 
-		 	$("form[name=formList]").attr("action", "/formPage").submit();
-		 });
+		        alert("submit");
+
+		 	$("form[name=formList]").attr("action", "/adminHome").submit(); 
+		 	 
 
 		 	
+		 });
+
+/* 		    $("#submitBtn").on("click", function(){
+		        alert("submit");
+		        //	$("form[name=formList]").attr("method","get");
+		        $("form[name=form]").attr("action","/adminUpdt").submit();
+		      }); */
 		 	
 
 			

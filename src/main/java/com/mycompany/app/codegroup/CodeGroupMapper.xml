@@ -16,13 +16,13 @@
 								<!-- select 결과를 받을 객체 -->
     <resultMap id="resultMapObj" type="com.mycompany.app.codegroup.CodeGroup"></resultMap>
     <select id="selectList" resultMap="resultMapObj">
-    	SELECT 
-	    	seq, 
-	    	name
+    	SELECT * 
+	
     	FROM
     		codeGroup
     	WHERE
     		Name LIKE CONCAT('%',#{shKeyword},'%')
+
     </select>
     
    	<select id="selectOne" resultMap="resultMapObj">
@@ -32,5 +32,55 @@
 		WHERE
 			seq = #{seq}
 	</select>
+	
+	
+   <update id="update">
+        UPDATE 
+        	codeGroup
+        SET 
+        	name = #{name}
+        WHERE 
+        	seq = #{seq}
+    </update>
+	
+   <delete id="delete">
+        DELETE 
+        FROM 
+        	codeGroup
+        WHERE 
+        	seq = #{seq}
+    </delete>
+    
+       <insert id="insert">
+        INSERT INTO 
+        	codeGroup
+       		(name)
+       		
+        VALUES 
+   
+        (#{name})
+        	
+   		</insert>
+   		
+   		
+		  <update id="uelete">
+		        UPDATE 
+		        	codeGroup
+		        SET 
+					delNy = #{delNy}
+		        WHERE 
+		        	seq = #{seq}
+		      
+		    </update>
+
+
+
+
+
+   		
+   		
+	
+	
+	
 
 </mapper>    

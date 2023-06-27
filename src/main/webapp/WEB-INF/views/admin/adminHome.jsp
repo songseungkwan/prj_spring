@@ -544,16 +544,34 @@
               <table class="table datatable">
                 <thead>
                   <tr>
+                    <th scope="col"></th>
                     <th scope="col">Title</th>
                     <th scope="col">Name</th>
-
+                    <th scope="col">delNy</th>
                   </tr>
                 </thead>
                 <tbody>
+	                <form action="" method="post" name="formList">
+	
+						<select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example" style="width: 15%; display:inline-block;">
+						  <option selected value="" >Open this select menu</option> 
+						  <option value="1">One</option>
+						  <option value="2">Two</option>
+						  <option value="3">Three</option>
+						</select>
+						
+					    검색어 : <input type="text" name="shKeyword" >
+					    <button type="submit" id="btnSearch">검색</button>
+					    
+
+					    <button type="submit" >저장</button>
+					</form>
+                
+
 					<c:choose>
 						<c:when test="${fn:length(list) eq 0}">
 							<tr>
-								<td class="text-cneter" colspan="9">There is no data</td>
+								<td class="text-center" colspan="9">There is no data</td>
 							</tr>
 						</c:when>
 						<c:otherwise>
@@ -563,7 +581,8 @@
 										<input type="checkbox" name="checked" value="">
 									</td>
 									<td><c:out value="${list.seq}"></c:out></td>
-									<td><a href="admin?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></td>
+									<td><a href="adminForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></td>
+									<td><c:out value="${list.delNy}"></c:out></td>
 								</tr>
 							</c:forEach>
 						</c:otherwise>
@@ -594,6 +613,8 @@
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
   </footer><!-- End Footer -->
+  
+  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -603,12 +624,40 @@
   <script src="/resources/adminAssets/vendor/chart.js/chart.umd.js"></script>
   <script src="/resources/adminAssets/vendor/echarts/echarts.min.js"></script>
   <script src="/resources/adminAssets/vendor/quill/quill.min.js"></script>
-  <script src="/resources/adminAssets/vendor/simple-datatables/simple-datatables.js"></script>
+<!--   <script src="/resources/adminAssets/vendor/simple-datatables/simple-datatables.js"></script> -->
   <script src="/resources/adminAssets/vendor/tinymce/tinymce.min.js"></script>
   <script src="/resources/adminAssets/vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
   <script src="/resources/adminAssets/js/main.js"></script>
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+
+
+
+		 $("#btnSearch").on("click", function() {
+		 	
+
+		 	$("form[name=formList]").attr("action", "/adminHome").submit();
+		 });
+
+/* 		 $("#btnSave").on("click", function() {
+			 	
+
+			 	$("form[name=form]").attr("action", "/codeGroupUpdt").submit();
+			 });
+		 	 */
+
+			
+	
+ </script>
+  
+  
+  
+  
+  
 
 </body>
 

@@ -28,14 +28,19 @@ import org.springframework.stereotype.Repository;
 	public CodeGroup selectOne(CodeGroupVo vo) { 
 		CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo); 
 		return codeGroup;
-	
-//	public List<CodeGroup> selectList(){ 
-//		return sqlSession.selectList(namespace + ".selectList", ""); 
-//	}
-
-
 	}
-  
+	
+	public int update(CodeGroup dto) { return sqlSession.update(namespace + ".update", dto); }
+	
+	public int delete(CodeGroup dto) { return sqlSession.delete(namespace + ".delete", dto); }
+
+	public int insert(CodeGroup dto) { return sqlSession.insert(namespace + ".insert", dto); }
+
+	public int uelete(CodeGroup dto) { return sqlSession.update(namespace + ".uelete", dto); }
+
+
+
+
 	
 
      

@@ -22,7 +22,7 @@ codeGroupList.jsp
 	
     <input type="text" name="shKeyword" >
     <button type="submit" id="btnSearch">검색</button>
-	<a href="adminForm"><button type=button>추가</button></a>
+	<button type=button >추가</button>
 </form>
 
 <br>

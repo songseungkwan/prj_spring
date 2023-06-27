@@ -16,8 +16,8 @@
 			
 
 
-    		<button id="btnSave" type="submit">save</button>
-    		<button id="btnAdd" type="submit">insert</button>
+    		<button id="btnUpdt" type="submit">update</button>
+			<button class="btnAdd" type="button" >insert</button>
     		<button id="btnDel" type="submit">delete</button>    	
     		<button id="btnUel" type="submit">uelete</button>   
 </form>
@@ -55,19 +55,19 @@
 		</c:choose>	 --%>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script>
-$("#btnSave").on("click", function(){
+$("#btnUpdt").on("click", function(){
 	
 	$("form[name=form]").attr("action","/codeGroupUpdt").submit();
 	
 });
 
 $("#btnDel").on("click", function(){
-	alert()
+	alert("삭제되었습니다.")
 	$("form[name=form]").attr("action","/codeGroupDel").submit();
 	
 });
 
-$("#btnAdd").on("click", function(){
+$(".btnAdd").on("click", function(){
 	
 	$("form[name=form]").attr("action","/codeGroupAdd").submit();
 	

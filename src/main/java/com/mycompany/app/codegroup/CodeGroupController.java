@@ -71,7 +71,7 @@ public class CodeGroupController {
 		
 
 
-		return "redirect:/codeGroupList";
+		return "redirect:/adminHome";
 	}
 	
 	@RequestMapping("/codeGroupDel")
@@ -79,9 +79,7 @@ public class CodeGroupController {
 
 		service.delete(dto);
 		
-
-
-		return "redirect:/codeGroupList";
+		return "redirect:/adminHome";
 	}
 	
 	@RequestMapping("/codeGroupAdd")
@@ -89,9 +87,7 @@ public class CodeGroupController {
 
 		service.insert(dto);
 		
-
-
-		return "redirect:/codeGroupList";
+		return "redirect:/adminHome";
 	}
 	
 	@RequestMapping("/codeGroupUel")
@@ -99,8 +95,6 @@ public class CodeGroupController {
 
 		service.uelete(dto);
 		
-
-
 		return "redirect:/adminHome";
 	}
 	

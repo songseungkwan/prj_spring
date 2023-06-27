@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -115,8 +121,8 @@
           <div class="col-lg-3 col-md-2 portfolio-item filter-Personal">
             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/king-petition.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="loginForm">Admin Page</a>
+              <a href="kp">User Page</a>
+              <a href="xdmLoginForm">Admin Page</a>
               <a href="/resources/assets/img/portfolio/king-petition.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Personal 2"><i class="bx bx-plus"></i></a>
 
             </div>

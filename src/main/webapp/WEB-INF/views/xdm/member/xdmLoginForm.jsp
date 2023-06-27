@@ -1,4 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -58,7 +64,7 @@
                     					
                     					</div>
                     					<div class="col-12">
-                      						<p class="small mb-0">아이디가 없으신가요? <a href="register">회원가입</a></p>
+                      						<p class="small mb-0">아이디가 없으신가요? <a href="xdmRegister">회원가입</a></p>
                     					</div>
                   					</form>
                 				</div>

@@ -55,7 +55,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="adminHome" class="logo d-flex align-items-center">
         <img src="/resources/adminAssets/img/logo.png" alt="">
         <span class="d-none d-lg-block">NiceAdmin</span>
       </a>
@@ -551,8 +551,8 @@
                   </tr>
                 </thead>
                 <tbody>
+                
 	                <form action="" method="post" name="formList">
-	
 						<select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example" style="width: 15%; display:inline-block;">
 						  <option selected value="" >Open this select menu</option> 
 						  <option value="1">One</option>
@@ -560,11 +560,9 @@
 						  <option value="3">Three</option>
 						</select>
 						
-					    검색어 : <input type="text" name="shKeyword" >
+					    검색어 : <input type="text" name="shKeyword">
 					    <button type="submit" id="btnSearch">검색</button>
-					    
-
-					    <button type="submit" >저장</button>
+					   <!--  <button type="submit" class="btnAdd">추가</button> -->
 					</form>
                 
 
@@ -634,24 +632,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   
   <script type="text/javascript">
-
-
-
+  		/* 검색버튼 */
 		 $("#btnSearch").on("click", function() {
-		 	
-
 		 	$("form[name=formList]").attr("action", "/adminHome").submit();
 		 });
-
-/* 		 $("#btnSave").on("click", function() {
-			 	
-
-			 	$("form[name=form]").attr("action", "/codeGroupUpdt").submit();
-			 });
-		 	 */
-
-			
-	
+		 /* 추가버튼 */
+	  /* $(".btnAdd").on("click", function() {
+		    $("form[name=form]").attr("action", "/adminForm").submit();
+		 });		  */
+				
  </script>
   
   

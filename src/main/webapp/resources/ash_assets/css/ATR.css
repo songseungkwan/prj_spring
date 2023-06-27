@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+#mainSection {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .1);
+
+}
+
+
+#recordWrap {
+    width: 90%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .1);
+    margin: auto;
+    position: relative;
+}
+
+
+#recordTitle {
+    position: absolute;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+#h2Black {
+    display: block;
+    color:#000;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

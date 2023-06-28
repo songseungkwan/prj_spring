@@ -7,17 +7,19 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
-
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<!-- mysql s 2022.02.15 -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver" />
-		<property name="url"
-			value="jdbc:mysql://songchodatabase-1.c6qbzjxwyfqn.ap-northeast-2.rds.amazonaws.com:33063/lemon" />
-
+<!-- 		
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://songchodatabase-1.c6qbzjxwyfqn.ap-northeast-2.rds.amazonaws.com:33063/lemon" />
+ -->
+ <!-- 23.06.28 log4j2 입력 -->
+		<property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy" />
+		<property name="url" value="jdbc:log4jdbc:mysql://songchodatabase-1.c6qbzjxwyfqn.ap-northeast-2.rds.amazonaws.com:33063/lemon" />
+		
 		<property name="username" value="Songseungkwan" />
 		<property name="password" value="tmdrhks.00" />
 	</bean>
@@ -30,7 +32,7 @@
 		<!-- <property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml" 
 			/> -->	<!-- 기본설정 : 패키지 변경으로 아래와 같이 수정 -->
 		<property name="mapperLocations"
-			value="classpath:com/mycompany/app/**/*Mapper.xml" />
+			value="classpath:com/mycompany/app/**/**/*Mapper.xml" />
 	</bean>
 
 	<bean id="sqlSession"

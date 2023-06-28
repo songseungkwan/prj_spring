@@ -525,7 +525,7 @@
       <h1>Data Tables</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="indexXdmView">Home</a></li>
           <li class="breadcrumb-item">Tables</li>
           <li class="breadcrumb-item active">Data</li>
         </ol>
@@ -539,12 +539,11 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-              <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" 
-              target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable</p>
+              
 
               <!-- Table with stripped rows -->
               <form action="" method="post" name="formList">
-	              <table class="table datatable">
+	              <table class="table datatable table-striped table-hover">
 	                <thead>
 	                  <tr>
 	                    <th scope="col"></th>
@@ -554,16 +553,25 @@
 	                  </tr>
 	                </thead>
 	                
-					<select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example" style="width: 15%; display:inline-block;">
-					  <option selected value="" >Open this select menu</option> 
-					  <option value="1">One</option>
-					  <option value="2">Two</option>
-					  <option value="3">Three</option>
-					</select>
+	                <div class="row">
+		                <div class="col-4">
+							<select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example" >
+							  <option selected value="" >Open this select menu</option> 
+							  <option value="1">One</option>
+							  <option value="2">Two</option>
+							  <option value="3">Three</option>
+							</select>
+						</div>
 					
-				    검색어 : <input type="text" name="shKeyword">
-				    <button type="submit" id="btnSearch">검색</button>
-				    추가하기 :<a href="/codeGroupForm"><button type="button" class="addBtn">추가</button></a>
+	 					<div class="col-4">
+						    <input type="text" name="shKeyword" class="form-control form-control-sm"  >		
+					        
+					    </div>
+					    <div class="col-4">
+					   		 <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
+					    	 <a href="/codeGroupForm"><button class="btn btn-danger addBtn" type="button" >추가</button></a>
+					    </div>
+				    </div>
 			
 					
                    <tbody>

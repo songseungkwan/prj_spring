@@ -52,21 +52,21 @@
       </nav>
     </div><!-- End Page Title -->
     
-    <form name="form" method="post">
+   <%--  <form name="form" method="post">
     <div class="row">
 	 	<div class="col-3">
-	 	<label for="seq" class="form-label">seq</label>
-	    <input type="text" class="form-control form-control" id="seq" name="seq" readonly value="<c:out value="${item.seq}"/>" ${empty item.seq ? 'disabled' : ''}>
+	 		<label for="seq" class="form-label">seq</label>
+	    	<input type="text" class="form-control form-control" id="seq" name="seq" readonly value="<c:out value="${item.seq}"/>" ${empty item.seq ? 'disabled' : ''} >
 	    </div>
 	    
 	    <div class="col-3">                			
-	    <label for="name" class="form-label">name</label>
-	    <input type="text" class="form-control form-control" id="name" name="name" value="<c:out value="${item.name}"/>" 	    >
+	   	 	<label for="name" class="form-label">name</label>
+	   	 	<input type="text" class="form-control form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >
 	    </div>
 	    
 	    <div class="col-3">   
-	    <label for="delNy" class="form-label">delNy</label>
-	    <input type="text" class="form-control form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>" 	    >
+	    	<label for="delNy" class="form-label">delNy</label>
+	    	<input type="text" class="form-control form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
 	    </div>
     		  
 
@@ -81,7 +81,43 @@
             </c:otherwise>
         </c:choose>
 	</div>    		
-</form>
+</form> --%>
+
+<!-- Horizontal Form -->
+              <form name="form" method="post">
+                <div class="row mb-3">
+                  <label for="seq" class="col-sm-2 col-form-label">seq</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="seq" name="seq" readonly value="<c:out value="${item.seq}"/>" ${empty item.seq ? 'disabled' : ''} >
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="name" class="col-sm-2 col-form-label">name</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <label for="delNy" class="col-sm-2 col-form-label">delNy</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
+                  </div>
+                </div>
+                
+
+                <div class="text-center">
+			   		<c:choose>
+			            <c:when test="${empty item.seq}">
+			                <button class="btnAdd btn btn-success" type="button" style="width:10%;">insert</button>
+			            </c:when>
+			            <c:otherwise>
+			            	<button class="btn btn-success" id="btnUpdt" type="button" style="width:5%;">update</button>
+			   				<button class="btn btn-danger" id="btnDel" type="button" style="width:5%;">delete</button>    	
+			   				<button class="btn btn-warning" id="btnUel" type="button" style="width:5%;">uelete</button> 
+			            </c:otherwise>
+			        </c:choose>
+                </div>
+              </form><!-- End Horizontal Form -->
 
 </main>
 

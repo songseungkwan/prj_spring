@@ -76,69 +76,66 @@
               
 
               <!-- Table with stripped rows -->
-                <form action="" method="post" name="formList">
-	              <table class="table datatable table-striped table-hover">
-	                <thead>
-	                  <tr>
-	                    <th scope="col"></th>
-	                    <th scope="col">Title</th>
-	                    <th scope="col">Name</th>
-	                    <th scope="col">delNy</th>
-	                  </tr>
-	                </thead>
+            <form action="" method="post" name="formList">
+              <div class="row">
+                <div class="col-4">
+                  <select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example">
+                    <option selected value="">Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
 
-	                <div class="row">
-		                <div class="col-4">
-							<select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example" >
-							  <option selected value="" >Open this select menu</option> 
-							  <option value="1">One</option>
-							  <option value="2">Two</option>
-							  <option value="3">Three</option>
-							</select>
-						</div>
-					
-	 					<div class="col-4">
-						    <input type="text" name="shKeyword" class="form-control form-control-sm"  >		
-					        
-					    </div>
-					    <div class="col-4">
-					   		 <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
-					    	 <a href="/codeGroupForm"><button class="btn btn-danger addBtn" type="button" >추가</button></a>
-					    </div>
-				    </div>
-			
-					
-                   <tbody>
+                <div class="col-4">
+                  <input type="text" name="shKeyword" class="form-control form-control-sm">
+                </div>
+                <div class="col-4">
+                  <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
+                  <a href="/codeGroupForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
+                </div>
+              </div>
 
-					<c:choose>
-						<c:when test="${fn:length(list) eq 0}">
-							<tr>
-								<td class="text-center" colspan="9">There is no data</td>
-							</tr>
-						</c:when>
-						<c:otherwise><%-- ${list} 자바에서 넘겨준 객체 이름 --%>
-							<c:forEach items="${list}" var="list" >
-								<tr>
-									<td scope="col">
-										<input type="checkbox" name="checked" value="">
-									</td>
-									<td><c:out value="${list.seq}"></c:out></td>
-									<td><a href="codeGroupForm?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></td>
-									<td><c:out value="${list.delNy}"></c:out></td>
-								</tr>
-							</c:forEach>
-						</c:otherwise>
-					</c:choose>	
-					
-					
-					
+              <table class="table datatable table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">delNy</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                  <c:choose>
+                    <c:when test="${fn:length(list) eq 0}">
+                      <tr>
+                        <td class="text-center" colspan="4">There is no data</td>
+                      </tr>
+                    </c:when>
+                    <c:otherwise>
+                      <c:forEach items="${list}" var="item">
+                        <tr>
+                          <td scope="col">
+                            <input type="checkbox" name="checked" value="">
+                          </td>
+                          <td><c:out value="${item.seq}" /></td>
+                          <td><a href="codeGroupForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
+                          <td><c:out value="${item.delNy}" /></td>
+                        </tr>
+                      </c:forEach>
+                    </c:otherwise>
+                  </c:choose>
+
                 </tbody>
               </table>
-             </form>
+              
+            </form>
              
              
              
-              <!-- End Table with stripped rows -->
+
 
             </div>
           </div>
@@ -146,6 +143,12 @@
         </div>
       </div>
     </section>
+
+
+
+
+
+
 
   </main><!-- End #main -->
 

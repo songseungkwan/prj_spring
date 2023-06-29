@@ -8,8 +8,6 @@
      해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
      그리고 dao에서 namespace와 일치하여야 한다. -->
     
-  
-    
 <mapper namespace="com.mycompany.app.infra.codegroup.CodeGroupMapper">		
 
 
@@ -25,20 +23,22 @@
     
     <select id="selectList" resultMap="resultMapObj">
     	SELECT 
-	<include refid="abc" />
+			<include refid="abc" />
     	FROM
     		codeGroup
     	WHERE 1=1
-    		<if test="shKeyword != null and !shKeyword.equals('')"> and Name LIKE CONCAT('%',#{shKeyword},'%')</if>
-    </select>
+			<if test="shKeyword != null and !shKeyword.equals('')">AND NAME LIKE CONCAT('%',#{shKeyword},'%')</if>		
+   	</select>
+
     
    	<select id="selectOne" resultMap="resultMapObj">
-		SELECT 
-		FROM 
-			codeGroup
-		WHERE
-			seq = #{seq}
-	</select>
+   		SELECT 
+   			<include refid="abc" />
+   		FROM
+   			codeGroup
+		WHERE 1=1
+			AND seq = #{seq}	
+   	</select>   
 	
 	
    <update id="update">
@@ -52,22 +52,21 @@
 	
    <delete id="delete">
         DELETE 
-        FROM 
-        	codeGroup
-        WHERE 
+        FROM	
+        	codeGroup 
+        WHERE	
         	seq = #{seq}
-    </delete>
+   </delete>
     
-       <insert id="insert">
-        INSERT INTO codeGroup(
-        	name
-        	,delNy
-        ) VALUES (
-        	#{name}
-        	,0
-        )
-        	
-   		</insert>
+      <insert id="insert">
+       INSERT INTO codeGroup(
+       	name
+       	,delNy
+       ) VALUES (
+       	#{name}
+       	,0
+       )
+  		</insert>
    		
 <!-- 	  <update id="uelete">
 	        UPDATE 

@@ -33,7 +33,7 @@
     </select>
     
    	<select id="selectOne" resultMap="resultMapObj">
-		SELECT *
+		SELECT 
 		FROM 
 			codeGroup
 		WHERE
@@ -61,8 +61,10 @@
        <insert id="insert">
         INSERT INTO codeGroup(
         	name
+        	,delNy
         ) VALUES (
         	#{name}
+        	,0
         )
         	
    		</insert>
@@ -79,11 +81,11 @@
 
     <update id="uelete">
         UPDATE 
-            codeGroup
-         SET
-         	delNy = "1"
-         WHERE            
-          	seq = #{seq}
+        	codeGroup
+        SET
+        	delNy = "1"
+       WHERE            
+        	seq = #{seq}
     </update>
 
 

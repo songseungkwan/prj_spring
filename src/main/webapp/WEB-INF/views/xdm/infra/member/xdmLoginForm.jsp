@@ -58,10 +58,8 @@
                       						</div>
                     					</div>
                    						<div class="col-12 d-flex">
-                   							
-                      							<button class="btn btn-outline-secondary w-50" id="submitForm" type="text" onclick="location.href='indexXdmView'">로그인</button>
-                      							<button class="btn btn-outline-secondary btnCancel w-50" type="button">뒤로</button>
-                    					
+                   							<button class="btn btn-outline-secondary w-50" id="submitForm" type="text" onclick="location.href='indexXdmView'">로그인</button>
+                   							<button class="btn btn-outline-secondary btnCancel w-50" type="button">뒤로</button>                    					
                     					</div>
                     					<div class="col-12">
                       						<p class="small mb-0">아이디가 없으신가요? <a href="xdmRegister">회원가입</a></p>

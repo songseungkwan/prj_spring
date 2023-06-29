@@ -39,7 +39,7 @@ function openLoginModal(){
 function openRegisterModal(){
     showRegisterForm();
     setTimeout(function(){
-        $('#loginModal').modal('show');    
+        $('#registerModal').modal('show');    
     }, 230);
     
 }

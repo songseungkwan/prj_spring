@@ -94,11 +94,16 @@ public class IndexController {
 			return "usr/infra/subpage/allTimeRecord";		
 		}
 		
-		//----------usr login form		
+		//----------usr login & register form	
 		
 		@RequestMapping(value="/usrLoginForm")
 		public String usrLoginForm() {
 			return "usr/infra/member/usrLoginForm";		
+		}
+		
+		@RequestMapping(value="/usrRegisterForm")
+		public String usrRegisterForm() {
+			return "usr/infra/member/usrRegisterForm";		
 		}
 		
 		//----------indexXdmView

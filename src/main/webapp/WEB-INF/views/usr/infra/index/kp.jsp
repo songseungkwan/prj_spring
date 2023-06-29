@@ -152,12 +152,12 @@
       </li>
 
       <li class="nav-item">
-      <a href="" target="_blank" class="nav-link"> 회원가입</a>
+      	<a href="usrRegisterForm" target="_blank" class="nav-link"> 회원가입</a>
       </li>
 
       <li class="nav-item">
-        <a href="usrLoginForm" target="_blank" class="nav-link"> 로그인</a>
-        </li>
+        <a href="usrLoginForm" target="_blank" class="nav-link"> 로그아웃</a>
+      </li>
 
       </ul>
       </div>
@@ -252,7 +252,7 @@
           <div class="col-lg-4 col-md-6 col-12 mb-50">
             <div class="demo-item">
               <a href="#" class="image" target="blank">
-                <img src="resources/ash_assets/img/bodyweightExercise.jpg" alt="" />
+                <img src="" alt="" />
                 <i class="fa fa-long-arrow-right"></i>
               </a>
               <h4 class="title">
@@ -267,7 +267,7 @@
                 class="image"
                 target="blank"
               >
-                <img src="resources/ash_assets/img/freeWeight.png" alt="" />
+                <img src="" alt="" />
                 <i class="fa fa-long-arrow-right"></i>
               </a>
               <h4 class="title">
@@ -280,7 +280,7 @@
           <div class="col-lg-4 col-md-6 col-12 mb-50">
             <div class="demo-item">
               <a href="#" class="image" target="_blank">
-                <img src="resources/ash_assets/img/aerobicExercise02.png" alt="" />
+                <img src="" alt="" />
                 <i class="fa fa-long-arrow-right"></i>
               </a>
               <h4 class="title">

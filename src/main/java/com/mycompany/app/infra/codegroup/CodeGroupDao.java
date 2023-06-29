@@ -22,14 +22,17 @@ import org.springframework.stereotype.Repository;
 	public List<CodeGroup> selectList(CodeGroupVo vo) {
 		
 		return sqlSession.selectList(namespace + ".selectList", vo ); 
-		
+		// selectList : 반환값 list
 		}
 	
 	public CodeGroup selectOne(CodeGroupVo vo) { 
 		CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo); 
 		return codeGroup;
+		// selectOne -> 반환값 : 해당 dto
 	}
 	
+	
+	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(CodeGroup dto) { return sqlSession.update(namespace + ".update", dto); }
 	
 	public int delete(CodeGroup dto) { return sqlSession.delete(namespace + ".delete", dto); }
@@ -38,7 +41,8 @@ import org.springframework.stereotype.Repository;
 
 	public int uelete(CodeGroup dto) { return sqlSession.update(namespace + ".uelete", dto); }
 
-
+// sqlSession 객체를 쓴다 => mybatis 를 쓰겠다는 뜻
+	// delete , insert , update , select - 반환값 int
 
 
 	

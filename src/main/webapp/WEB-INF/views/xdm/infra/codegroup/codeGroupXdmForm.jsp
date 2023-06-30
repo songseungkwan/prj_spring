@@ -31,7 +31,6 @@
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <%@include file = "../include/includeHeader.jsp"%>
   <!-- End Header -->
@@ -50,40 +49,13 @@
           <li class="breadcrumb-item active">Form</li>
         </ol>
       </nav>
-    </div><!-- End Page Title -->
-    
-   <%--  <form name="form" method="post">
-    <div class="row">
-	 	<div class="col-3">
-	 		<label for="seq" class="form-label">seq</label>
-	    	<input type="text" class="form-control form-control" id="seq" name="seq" readonly value="<c:out value="${item.seq}"/>" ${empty item.seq ? 'disabled' : ''} >
-	    </div>
-	    
-	    <div class="col-3">                			
-	   	 	<label for="name" class="form-label">name</label>
-	   	 	<input type="text" class="form-control form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >
-	    </div>
-	    
-	    <div class="col-3">   
-	    	<label for="delNy" class="form-label">delNy</label>
-	    	<input type="text" class="form-control form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
-	    </div>
-    		  
+    </div>
+    <!-- End Page Title -->
 
-   		<c:choose>
-            <c:when test="${empty item.seq}">
-                <button class="btnAdd btn btn-success" type="button" style="width:10%;">insert</button>
-            </c:when>
-            <c:otherwise>
-            	<button class="btn btn-success" id="btnUpdt" type="button" style="width:5%;">update</button>
-   				<button class="btn btn-danger" id="btnDel" type="button" style="width:5%;">delete</button>    	
-   				<button class="btn btn-warning" id="btnUel" type="button" style="width:5%;">uelete</button> 
-            </c:otherwise>
-        </c:choose>
-	</div>    		
-</form> --%>
-
-<!-- Horizontal Form -->
+	        <div class="card">
+           	  <div class="card-body">
+              <h5 class="card-title">Datatables</h5>
+				<!-- Horizontal Form -->
               <form name="form" method="post">
                 <div class="row mb-3">
                   <label for="seq" class="col-sm-2 col-form-label">seq</label>
@@ -103,55 +75,23 @@
                     <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
                   </div>
                 </div>
-                
 
                 <div class="text-center">
 			   		<c:choose>
 			            <c:when test="${empty item.seq}">
-			                <button class="btnAdd btn btn-success" type="button" style="width:10%;">insert</button>
+			                <button class="btnAdd btn btn-success" type="button">insert</button>
 			            </c:when>
 			            <c:otherwise>
-			            	<button class="btn btn-success" id="btnUpdt" type="button" style="width:5%;">update</button>
-			   				<button class="btn btn-danger" id="btnDel" type="button" style="width:5%;">delete</button>    	
-			   				<button class="btn btn-warning" id="btnUel" type="button" style="width:5%;">uelete</button> 
+			            	<button class="btn btn-success" id="btnUpdt" type="button" >update</button>
+			   				<button class="btn btn-danger" id="btnDel" type="button" >delete</button>    	
+			   				<button class="btn btn-warning" id="btnUel" type="button" >uelete</button> 
 			            </c:otherwise>
 			        </c:choose>
                 </div>
               </form><!-- End Horizontal Form -->
-
-</main>
-
-<%-- <form action="" method="post" name="formList">
-
-	<select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example" style="width: 15%; display:inline-block;">
-	  <option selected value="" >Open this select menu</option> 
-	  <option value="1">One</option>
-	  <option value="2">Two</option>
-	  <option value="3">Three</option>
-	</select>
-	
-    <input type="text" name="shKeyword" >
-    <button type="submit" id="btnSearch">검색</button>
-</form>
-
-<br>
-<br>
-
-		<c:choose>
-			<c:when test="${fn:length(list) eq 0}">
-				<tr>
-					<td class="text-center" colspan="9">There is no data</td>
-				</tr>
-			</c:when>
-			<c:otherwise>
-				<c:forEach items="${list}" var="list" varStatus="status">
-					<c:out value="${list.seq}"></c:out>
-					<a href="admin?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a>
-				</c:forEach>
-			</c:otherwise>
-		</c:choose>	 --%>
-    
-
+			</div>
+		</div>
+	</main>
 
   <!-- ======= Footer ======= -->
   <%@include file = "../include/includeFooter.jsp"%>

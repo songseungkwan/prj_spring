@@ -55,19 +55,19 @@
         DELETE
         FROM
         	code
-        WHERE
+        WHERE 
         	seq = #{seq}
     </delete>
 
     <insert id="insert">
         INSERT INTO code (
         	name,
-        	delNy,
-        	codeGroup_seq
+        	delNy
+      
         ) VALUES (
         	#{name},
-        	0,
-        	#{codeGroup_seq}
+        	0
+  
         )
     </insert>
     
@@ -76,7 +76,7 @@
         	code
         SET
         	delNy = "1"
-        WHERE
+        WHERE 1=1
         	seq = #{seq}
     </update>
 

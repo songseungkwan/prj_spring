@@ -29,14 +29,6 @@ public class CodeGroupController {
 
 		return "xdm/infra/codegroup/codeGroupXdmList";
 	}
-	
-	
-	
-
-
-	
-	
-	
 
 	@RequestMapping("/codeGroupXdmForm")
 	public String codeGroupXdmForm(CodeGroupVo vo, Model model) {

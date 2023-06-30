@@ -92,7 +92,7 @@
                 </div>
                 <div class="col-4">
                   <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
-                  <a href="/codeList"><button class="btn btn-danger addBtn" type="button">추가</button></a>
+                  <a href="codeXdmForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
                 </div>
               </div>
 
@@ -103,6 +103,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Name</th>
                     <th scope="col">delNy</th>
+                  <!--   <th scope="col">codeGroup_seq</th> -->
                   </tr>
                 </thead>
 
@@ -121,8 +122,9 @@
                             <input type="checkbox" name="checked" value="">
                           </td>
                           <td><c:out value="${item.seq}" /></td>
-                          <td><a href="codeList?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
-                          <td><c:out value="${item.codeGroup_seq}" /></td>
+                          <td><a href="codeXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
+                          <td><c:out value="${item.delNy}" /></td>
+                      <%--     <td><c:out value="${item.codeGroup_seq}" /></td> --%>
                         </tr>
                       </c:forEach>
                     </c:otherwise>
@@ -169,7 +171,7 @@
   <script type="text/javascript">
   		/* 검색버튼 */
 		 $("#btnSearch").on("click", function() {
-		 	$("form[name=formList]").attr("action", "/codeHome").submit();
+		 	$("form[name=formList]").attr("action", "/codeXdmList").submit();
 		 });
 		 /* 추가버튼 */
 	  /* $(".btnAdd").on("click", function() {

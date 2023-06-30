@@ -131,13 +131,13 @@
         </a>
         <ul id="tables-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
           <li>
-            <a href="tables-general.html">
-              <i class="bi bi-circle"></i><span>General Tables</span>
+            <a href="codeXdmList">
+              <i class="bi bi-circle"></i><span>Code Tables</span>
             </a>
           </li>
           <li>
             <a href="codeGroupXdmList" class="active">
-              <i class="bi bi-circle"></i><span>Data Tables</span>
+              <i class="bi bi-circle"></i><span>CodeGroup Tables</span>
             </a>
           </li>
         </ul>

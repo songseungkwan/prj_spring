@@ -7,32 +7,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.app.infra.codegroup.CodeGroup;
+import com.mycompany.app.infra.codegroup.CodeGroupVo;
+
 @Controller
 public class CodeController {
 
 	@Autowired
 	CodeServiceImpl service;
 	
-	@RequestMapping("/codeList")
-	public String codeList(CodeVo vo , Model model) {
-		
+	@RequestMapping("/codeXdmList")
+	public String codeXdmList(CodeVo vo, Model model) {
 
-		
-		
-//		왼쪽의 list는 jsp에서 사용할 변수명
-		model.addAttribute("list", service.selectList(vo));
-		
-		
-						
-		return "xdm/infra/code/codeList";
-	}
-	
-	
-
-	@RequestMapping("/codeHome")
-	public String codeHome(CodeVo vo, Model model) {
-
-
+		List<Code> list = service.selectList(vo);
 
 		/*
 		 * System.out.println("vo.getShOption():" + vo.getShOption());
@@ -42,7 +29,17 @@ public class CodeController {
 //		왼쪽의 list는 jsp에서 사용할 변수명
 		model.addAttribute("list", service.selectList(vo));
 
-		return "xdm/infra/code/codeHome";
+		return "xdm/infra/code/codeXdmList";
+	}
+
+	@RequestMapping("/codeXdmForm")
+	public String codeXdmForm(CodeVo vo, Model model) {
+
+		Code code = service.selectOne(vo);
+
+		model.addAttribute("item", code);
+
+		return "xdm/infra/code/codeXdmForm";
 	}
 	
 	@RequestMapping("/codeUpdt")
@@ -52,7 +49,7 @@ public class CodeController {
 		
 
 
-		return "redirect: /codeHome";
+		return "redirect: /codeXdmList";
 	}
 	
 	@RequestMapping("/codeDel")
@@ -60,7 +57,7 @@ public class CodeController {
 
 		service.delete(dto);
 		
-		return "redirect: /codeHome";
+		return "redirect: /codeXdmList";
 	}
 	
 	@RequestMapping("/codeAdd")
@@ -68,7 +65,7 @@ public class CodeController {
 
 		service.insert(dto);
 		
-		return "redirect: /codeHome";
+		return "redirect: /codeXdmList";
 	}
 	
 	@RequestMapping("/codeUel")
@@ -76,7 +73,7 @@ public class CodeController {
 
 		service.uelete(dto);
 		
-		return "redirect: /codeHome";
+		return "redirect: /codeXdmList";
 	}
 	
 	

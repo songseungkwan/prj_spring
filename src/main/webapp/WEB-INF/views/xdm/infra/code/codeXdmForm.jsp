@@ -31,7 +31,6 @@
 </head>
 
 <body>
-
   <!-- ======= Header ======= -->
   <%@include file = "../include/includeHeader.jsp"%>
   <!-- End Header -->
@@ -54,10 +53,11 @@
     
 
 
-<!-- Horizontal Form -->
+
  		<div class="card">
             <div class="card-body">
-              <h5 class="card-title">Horizontal Form</h5>
+            <h5 class="card-title">Horizontal Form</h5>
+            <!-- Horizontal Form -->
               <form name="form" method="post">
                 <div class="row mb-3">
                   <label for="seq" class="col-sm-2 col-form-label">seq</label>
@@ -77,18 +77,18 @@
                     <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
                   </div>
                 </div>
-                <div class="row mb-3">
+<%--                 <div class="row mb-3">
                   <label for="codeGroup_seq" class="col-sm-2 col-form-label">codeGroup_seq</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="codeGroup_seq" name="codeGroup_seq"  value="<c:out value="${item.codeGroup_seq}"/>">
                   </div>
-                </div>
+                </div> --%>
                 
 
                 <div class="text-center">
 			   		<c:choose>
 			            <c:when test="${empty item.seq}">
-			                <button class="btnAdd btn btn-success" type="button" ">insert</button>
+			                <button class="btnAdd btn btn-success" type="button">insert</button>
 			            </c:when>
 			            <c:otherwise>
 			            	<button class="btn btn-success" id="btnUpdt" type="button" >update</button>
@@ -98,10 +98,9 @@
 			        </c:choose>
                 </div>
               </form><!-- End Horizontal Form -->
-              </div>
+             </div>
           </div>
-
-</main>
+		</main>
 
 
     

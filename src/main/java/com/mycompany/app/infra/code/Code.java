@@ -28,7 +28,7 @@ public class Code {
 	public String getCodeGroup_seq() {
 		return codeGroup_seq;
 	}
-	public void codegroup_seq(String codeGroup_seq) {
+	public void codeGroup_seq(String codeGroup_seq) {
 		this.codeGroup_seq = codeGroup_seq;
 	}
 	public Integer getDelNy() {

@@ -10,7 +10,8 @@ public class Code {
 	
 	private String seq;					
 	private String name;
-	private String codegroup_seq;
+	private String codeGroup_seq;
+	private Integer delNy;
 // -----
 	public String getSeq() {
 		return seq;
@@ -24,11 +25,17 @@ public class Code {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getCodegroup_seq() {
-		return codegroup_seq;
+	public String getCodeGroup_seq() {
+		return codeGroup_seq;
 	}
-	public void codegroup_seq(String codegroup_seq) {
-		this.codegroup_seq = codegroup_seq;
+	public void codegroup_seq(String codeGroup_seq) {
+		this.codeGroup_seq = codeGroup_seq;
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
 	}
 	
 	

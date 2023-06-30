@@ -1882,14 +1882,14 @@
                             rowRender: !1,
                             tableRender: !1,
                             labels: {
-                                placeholder: "Search...",
+                                placeholder: "검색",
                                 searchTitle: "Search within table",
-                                perPage: "entries per page",
+                                perPage: "페이지당 항목 수",
                                 noRows: "No entries found",
                                 noResults: "No results match your search query",
-                                info: "Showing {start} to {end} of {rows} entries"
+                                info: "전체 {rows}개 중 {start}부터 {end}까지 표시"
                             },
-                            template: (t, e) => `<div class='${t.classes.top}'>\n    ${t.paging&&t.perPageSelect?`<div class='${t.classes.dropdown}'>\n            <label>\n                <select class='${t.classes.selector}'></select> ${t.labels.perPage}\n            </label>\n        </div>`:""}\n    ${t.searchable?`<div class='${t.classes.search}'>\n            <input class='${t.classes.input}' placeholder='${t.labels.placeholder}' type='search' title='${t.labels.searchTitle}'${e.id?` aria-controls="${e.id}"`:""}>\n        </div>`:""}\n</div>\n<div class='${t.classes.container}'${t.scrollY.length?` style='height: ${t.scrollY}; overflow-Y: auto;'`:""}></div>\n<div class='${t.classes.bottom}'>\n    ${t.paging?`<div class='${t.classes.info}'></div>`:""}\n    <nav class='${t.classes.pagination}'></nav>\n</div>`,
+                            template: (t, e) => `<div class='${t.classes.top}'>\n   ${t.paging?`<div class='${t.classes.info}'></div>`:""}\n ${t.paging&&t.perPageSelect?`<div class='${t.classes.dropdown}'>\n            <label>\n                <select class='${t.classes.selector}'></select> ${t.labels.perPage}\n            </label>\n        </div>`:""}\n    <div class='${t.classes.container}'${t.scrollY.length?` style='height: ${t.scrollY}; overflow-Y: auto;'`:""}></div>\n<div class='${t.classes.bottom}'>\n        <nav class='${t.classes.pagination}'></nav>\n</div>`,
                             classes: {
                                 active: "datatable-active",
                                 ascending: "datatable-ascending",
@@ -1912,6 +1912,7 @@
                                 paginationList: "datatable-pagination-list",
                                 paginationListItem: "datatable-pagination-list-item",
                                 paginationListItemLink: "datatable-pagination-list-item-link",
+                                search: "datatable-search",
                                 selector: "datatable-selector",
                                 sorter: "datatable-sorter",
                                 table: "datatable-table",
@@ -2593,7 +2594,7 @@
                             this.multiSearch([{
                                 term: t,
                                 columns: e || void 0
-                            }]), this.emit( this._searchData)
+                            }]), this.emit("datatable.search", t, this._searchData)
                         }
                         multiSearch(t) {
                             if (!this.hasRows) return !1;
@@ -2716,7 +2717,10 @@
                             removeDoubleQuotes: !1,
                             ...e
                         };
-                        if (i.data.length) {
+                        if (i.data.leng
+                           
+                           
+                           ) {
                             s = {
                                 data: []
                             };

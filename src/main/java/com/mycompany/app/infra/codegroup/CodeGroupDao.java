@@ -2,7 +2,6 @@ package com.mycompany.app.infra.codegroup;
 
 import java.util.List;
 
-
 import javax.annotation.Resource;
 import javax.inject.Inject;
 
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Repository;
 	@Repository
 	public class CodeGroupDao {
 
-
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession; // 변수명 선언
@@ -20,7 +18,6 @@ import org.springframework.stereotype.Repository;
 	private static String namespace = "com.mycompany.app.infra.codegroup.CodeGroupMapper";
 	
 	public List<CodeGroup> selectList(CodeGroupVo vo) {
-		
 		return sqlSession.selectList(namespace + ".selectList", vo ); 
 		// selectList : 반환값 list
 		}
@@ -30,7 +27,6 @@ import org.springframework.stereotype.Repository;
 		return codeGroup;
 		// selectOne -> 반환값 : 해당 dto
 	}
-	
 	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(CodeGroup dto) { return sqlSession.update(namespace + ".update", dto); }

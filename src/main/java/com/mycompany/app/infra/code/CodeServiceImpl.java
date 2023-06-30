@@ -5,17 +5,43 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
-public class CodeServiceImpl implements CodeService {
+import com.mycompany.app.infra.codegroup.CodeGroup;
+import com.mycompany.app.infra.codegroup.CodeGroupVo;
 
-	
+	@Service
+	public class CodeServiceImpl implements CodeService {
+
 	@Autowired
 	CodeDao dao;
 	
 	@Override
-	public List<Code> selectList() { return dao.selectList();
-		
+	public List<Code> selectList(CodeVo vo) { return dao.selectList(vo);	}
+
+	@Override
+	public Code selectOne(CodeVo vo) { return dao.selectOne(vo); }
+
+	@Override
+	public int update(Code dto) {
+		return dao.update(dto);	
 	}
+	
+	@Override
+	public int delete(Code dto) {
+		
+		return dao.delete(dto);	
+	}
+	
+	@Override
+	public int insert(Code dto) {
+		return dao.insert(dto);	
+	}
+	
+	@Override
+	public int uelete(Code dto) {
+		return dao.uelete(dto);	
+	}
+
+
 
 }
 

@@ -9,6 +9,10 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+/* .datatable-input{
+	display:none !important;
+} */
+
 :root {
   scroll-behavior: smooth;
 }
@@ -1232,3 +1236,10 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
+
+.datatable-dropdown {
+	float: right;
+}
+
+
+

@@ -92,15 +92,15 @@
                 </div>
                 <div class="col-4">
                   <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
-                  <a href="/codeGroupForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
+                  <a href="/codeGroupXdmForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
                 </div>
               </div>
 
               <table class="table datatable table-striped table-hover">
                 <thead>
                   <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Title</th>
+                    <th scope="col"><input type="checkbox" name="checked" value=""></th>
+					<th scope="col">Seq</th>
                     <th scope="col">Name</th>
                     <th scope="col">delNy</th>
                   </tr>
@@ -121,8 +121,8 @@
                             <input type="checkbox" name="checked" value="">
                           </td>
                           <td><c:out value="${item.seq}" /></td>
-                          <td><a href="codeGroupForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
-                          <td><c:out value="${item.delNy}" /></td>
+                          <td><a href="codeGroupXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
+						  <td><c:out value="${item.delNy}" /></td>
                         </tr>
                       </c:forEach>
                     </c:otherwise>
@@ -169,7 +169,7 @@
   <script type="text/javascript">
   		/* 검색버튼 */
 		 $("#btnSearch").on("click", function() {
-		 	$("form[name=formList]").attr("action", "/codeGroupHome").submit();
+		 	$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
 		 });
 		 /* 추가버튼 */
 	  /* $(".btnAdd").on("click", function() {

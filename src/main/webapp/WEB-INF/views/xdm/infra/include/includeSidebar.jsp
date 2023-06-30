@@ -136,7 +136,7 @@
             </a>
           </li>
           <li>
-            <a href="codeGroupHome" class="active">
+            <a href="codeGroupXdmList" class="active">
               <i class="bi bi-circle"></i><span>Data Tables</span>
             </a>
           </li>

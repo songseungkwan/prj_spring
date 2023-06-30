@@ -14,18 +14,79 @@ public class CodeController {
 	CodeServiceImpl service;
 	
 	@RequestMapping("/codeList")
-	public String codeList(Model model) {
+	public String codeList(CodeVo vo , Model model) {
 		
-		List<Code> list = service.selectList();
+
 		
 		
 //		왼쪽의 list는 jsp에서 사용할 변수명
-		model.addAttribute("list", list);
+		model.addAttribute("list", service.selectList(vo));
 		
 		
 						
-		return "codeList";
+		return "xdm/infra/code/codeList";
 	}
+	
+	
+
+	@RequestMapping("/codeHome")
+	public String codeHome(CodeVo vo, Model model) {
+
+
+
+		/*
+		 * System.out.println("vo.getShOption():" + vo.getShOption());
+		 * System.out.println("vo.getShKeyword():" + vo.getShKeyword());
+		 */
+
+//		왼쪽의 list는 jsp에서 사용할 변수명
+		model.addAttribute("list", service.selectList(vo));
+
+		return "xdm/infra/code/codeHome";
+	}
+	
+	@RequestMapping("/codeUpdt")
+	public String codeUpdt(Code dto) {
+
+		service.update(dto);
+		
+
+
+		return "redirect: /codeHome";
+	}
+	
+	@RequestMapping("/codeDel")
+	public String codeDel(Code dto) {
+
+		service.delete(dto);
+		
+		return "redirect: /codeHome";
+	}
+	
+	@RequestMapping("/codeAdd")
+	public String codeAdd(Code dto) {
+
+		service.insert(dto);
+		
+		return "redirect: /codeHome";
+	}
+	
+	@RequestMapping("/codeUel")
+	public String codeUel(Code dto) { 	
+
+		service.uelete(dto);
+		
+		return "redirect: /codeHome";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
 

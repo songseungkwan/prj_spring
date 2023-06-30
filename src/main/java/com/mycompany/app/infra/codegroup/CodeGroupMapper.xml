@@ -68,15 +68,7 @@
        )
   		</insert>
    		
-<!-- 	  <update id="uelete">
-	        UPDATE 
-	        	codeGroup
-	        SET 
-				delNy = #{delNy}
-	        WHERE 
-	        	seq = #{seq}
-	      
-	    </update> -->
+
 
     <update id="uelete">
         UPDATE 

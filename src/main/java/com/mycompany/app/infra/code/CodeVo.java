@@ -2,6 +2,7 @@ package com.mycompany.app.infra.code;
 
 public class CodeVo {
 	
+	private String code;
 	private Integer shOption;
 	private String shKeyword;
 	private String seq;
@@ -30,16 +31,23 @@ public class CodeVo {
 		this.seq = seq;
 	}
 
-	public String getCodeGroup_seq() {
-		return codeGroup_seq;
-	}
-	public void setCodeGroup_seq(String codeGroup_seq) {
-		this.codeGroup_seq = codeGroup_seq;
-	}
+	/*
+	 * public String getCodeGroup_seq() { return codeGroup_seq; } public void
+	 * setCodeGroup_seq(String codeGroup_seq) { this.codeGroup_seq = codeGroup_seq;
+	 * }
+	 */
 	public Integer getDelNy() {
 		return delNy;
 	}
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
+	}
+	
+	
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
 	}
 }

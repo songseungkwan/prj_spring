@@ -16,13 +16,10 @@ public class CodeGroupController {
 	/* @RequestMapping("/codeGroupHome") */
 	@RequestMapping("/codeGroupXdmList")
 	public String codeGroupXdmList(CodeGroupVo vo, Model model) {
-
+		
+		// service 호출
 		List<CodeGroup> list = service.selectList(vo);
 
-		/*
-		 * System.out.println("vo.getShOption():" + vo.getShOption());
-		 * System.out.println("vo.getShKeyword():" + vo.getShKeyword());
-		 */
 
 //		왼쪽의 list는 jsp에서 사용할 변수명
 		model.addAttribute("list", service.selectList(vo));
@@ -33,6 +30,7 @@ public class CodeGroupController {
 	@RequestMapping("/codeGroupXdmForm")
 	public String codeGroupXdmForm(CodeGroupVo vo, Model model) {
 
+		// service 호출
 		CodeGroup codeGroup = service.selectOne(vo);
 
 		model.addAttribute("item", codeGroup);
@@ -45,7 +43,8 @@ public class CodeGroupController {
 
 	@RequestMapping("/codeGroupUpdt")
 	public String codeGroupUpdt(CodeGroup dto) {
-
+		
+		// service 호출
 		service.update(dto);
 		
 
@@ -56,6 +55,7 @@ public class CodeGroupController {
 	@RequestMapping("/codeGroupDel")
 	public String codeGroupDel(CodeGroup dto) {
 
+		// service 호출
 		service.delete(dto);
 		
 		return "redirect: /codeGroupXdmList";
@@ -64,6 +64,7 @@ public class CodeGroupController {
 	@RequestMapping("/codeGroupAdd")
 	public String codeGroupAdd(CodeGroup dto) {
 
+		// service 호출
 		service.insert(dto);
 		
 		return "redirect: /codeGroupXdmList";
@@ -72,6 +73,7 @@ public class CodeGroupController {
 	@RequestMapping("/codeGroupUel")
 	public String codeGroupUel(CodeGroup dto) { 	
 
+		// service 호출
 		service.uelete(dto);
 		
 		return "redirect: /codeGroupXdmList";

@@ -45,7 +45,7 @@
       <h1>Form</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="codeGroupHome">Home</a></li>
+          <li class="breadcrumb-item"><a href="codeXdmList">Home</a></li>
           <li class="breadcrumb-item active">Form</li>
         </ol>
       </nav>
@@ -65,24 +65,27 @@
                     <input type="text" class="form-control" id="seq" name="seq" readonly value="<c:out value="${item.seq}"/>" ${empty item.seq ? 'disabled' : ''} >
                   </div>
                 </div>
+                
                 <div class="row mb-3">
-                  <label for="name" class="col-sm-2 col-form-label">name</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >
-                  </div>
-                </div>
+				  <label for="name" class="col-sm-2 col-form-label">name</label>
+				  <div class="col-sm-5">
+				  
+				    <input type="text" class="form-control" id="name" name="name" value="${item.name}" >
+				  </div>
+				</div>
+                
                 <div class="row mb-3">
                   <label for="delNy" class="col-sm-2 col-form-label">delNy</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
                   </div>
                 </div>
-<%--                 <div class="row mb-3">
+                <div class="row mb-3">
                   <label for="codeGroup_seq" class="col-sm-2 col-form-label">codeGroup_seq</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="codeGroup_seq" name="codeGroup_seq"  value="<c:out value="${item.codeGroup_seq}"/>">
                   </div>
-                </div> --%>
+                </div>
                 
 
                 <div class="text-center">

@@ -61,15 +61,18 @@
 
     <insert id="insert">
         INSERT INTO code (
-        	name,
-        	delNy
+        	name
+        	,delNy
+        	,codeGroup_seq
       
         ) VALUES (
-        	#{name},
-        	0
-  
+        	#{name}
+        	,0
+        	#{codeGroup_seq}
         )
     </insert>
+    
+
     
         <update id="uelete">
         UPDATE

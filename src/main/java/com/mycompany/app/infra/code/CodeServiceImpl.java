@@ -27,7 +27,6 @@ import com.mycompany.app.infra.codegroup.CodeGroupVo;
 	
 	@Override
 	public int delete(Code dto) {
-		
 		return dao.delete(dto);	
 	}
 	

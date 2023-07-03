@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
@@ -56,17 +57,17 @@
 
  		<div class="card">
             <div class="card-body">
-            <h5 class="card-title">Horizontal Form</h5>
+            <h5 class="card-title">Code</h5>
             <!-- Horizontal Form -->
               <form name="form" method="post">
-                <div class="row mb-3">
+                <div class="row mb-3 text-center">
                   <label for="seq" class="col-sm-2 col-form-label">seq</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="seq" name="seq" readonly value="<c:out value="${item.seq}"/>" ${empty item.seq ? 'disabled' : ''} >
                   </div>
                 </div>
                 
-                <div class="row mb-3">
+                <div class="row mb-3 text-center">
 				  <label for="name" class="col-sm-2 col-form-label">name</label>
 				  <div class="col-sm-5">
 				  
@@ -74,31 +75,34 @@
 				  </div>
 				</div>
                 
-                <div class="row mb-3">
-                  <label for="delNy" class="col-sm-2 col-form-label">delNy</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
-                  </div>
-                </div>
-                <div class="row mb-3">
+                <div class="row mb-3 text-center">
                   <label for="codeGroup_seq" class="col-sm-2 col-form-label">codeGroup_seq</label>
                   <div class="col-sm-5">
                     <input type="text" class="form-control" id="codeGroup_seq" name="codeGroup_seq"  value="<c:out value="${item.codeGroup_seq}"/>">
                   </div>
                 </div>
                 
-
-                <div class="text-center">
-			   		<c:choose>
-			            <c:when test="${empty item.seq}">
-			                <button class="btnAdd btn btn-success" type="button">insert</button>
-			            </c:when>
-			            <c:otherwise>
-			            	<button class="btn btn-success" id="btnUpdt" type="button" >update</button>
-			   				<button class="btn btn-danger" id="btnDel" type="button" >delete</button>    	
-			   				<button class="btn btn-warning" id="btnUel" type="button" >uelete</button> 
-			            </c:otherwise>
-			        </c:choose>
+                
+                <div class="row mb-3 text-center">
+                  <label for="delNy" class="col-sm-2 col-form-label">delNy</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
+                  </div>
+                </div>
+				<div class="text-center">
+			        
+			        <c:choose>
+					    <c:when test="${empty item.seq}">
+					        <button class="btnAdd btn btn-success" type="submit">insert</button>
+					    </c:when>
+					    <c:otherwise>
+					        <button class="btn btn-success" id="btnUpdt" type="submit">update</button>
+					        <button class="btn btn-danger" id="btnDel" type="submit">delete</button>
+					        <button class="btn btn-warning" id="btnUel" type="submit">uelete</button>
+					    </c:otherwise>
+					</c:choose>
+			        
+			        
                 </div>
               </form><!-- End Horizontal Form -->
              </div>

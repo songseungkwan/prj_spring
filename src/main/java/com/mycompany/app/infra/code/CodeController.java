@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.mycompany.app.infra.codegroup.CodeGroup;
@@ -17,31 +18,20 @@ public class CodeController {
 	CodeServiceImpl service;
 	
 	@RequestMapping("/codeXdmList")
-	public String codeXdmList(CodeVo vo, Model model) {
+	public String codeXdmList(@ModelAttribute("vo") CodeVo vo , Model model) {
 
+		vo.setShKeyword(vo.getShKeyword()== null ? "" : vo.getShKeyword());
+		// 삼항연산자
+		
 		List<Code> list = service.selectList(vo);
 
 
 //		왼쪽의 list는 jsp에서 사용할 변수명
-		model.addAttribute("list", service.selectList(vo));
+		model.addAttribute("list", list);
+//		model.addAttribute("vo", vo); 
 
 		return "xdm/infra/code/codeXdmList";
 	}
-	
-//	@RequestMapping("/codeXdmList")
-//	public String codeXdmList(CodeVo vo, Model model) {
-//	    try {
-//	        List<Code> list = service.selectList(vo);
-//	        model.addAttribute("list", list);
-//	    } catch (Exception e) {
-//	        // 예외 처리
-//	        e.printStackTrace();
-//	        model.addAttribute("error", "데이터베이스 조회 중 오류가 발생했습니다.");
-//	    }
-//
-//	    return "xdm/infra/code/codeXdmList";
-//	}
-
 
 	@RequestMapping("/codeXdmForm")
 	public String codeXdmForm(CodeVo vo, Model model) {

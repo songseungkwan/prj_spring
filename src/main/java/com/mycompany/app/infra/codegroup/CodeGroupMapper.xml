@@ -76,7 +76,7 @@
         SET
         	delNy = "1"
        WHERE            
-        	seq = #{seq}
+       AND	seq = #{seq}
     </update>
 
 

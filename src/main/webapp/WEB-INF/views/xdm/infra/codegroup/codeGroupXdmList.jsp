@@ -64,70 +64,65 @@
               
 
               <!-- Table with stripped rows -->
-            <form action="" method="post" name="formList">
-              <div class="row">
-                <div class="col-4">
-                  <select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example">
-                    <option selected value="">Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
-
-                <div class="col-4">
-                  <input type="text" name="shKeyword" class="form-control form-control-sm">
-                </div>
-                <div class="col-4">
-                  <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
-                  <a href="/codeGroupXdmForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
-                </div>
-              </div>
-
-              <table class="table datatable table-striped table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col"><input type="checkbox" name="checked" value=""></th>
-					<th scope="col">Seq</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">delNy</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-
-                  <c:choose>
-                    <c:when test="${fn:length(list) eq 0}">
-                      <tr>
-                        <td class="text-center" colspan="4">There is no data</td>
-                      </tr>
-                    </c:when>
-                    <c:otherwise>
-                      <c:forEach items="${list}" var="item">
-                        <tr>
-                          <td scope="col">
-                            <input type="checkbox" name="checked" value="">
-                          </td>
-                          <td><c:out value="${item.seq}" /></td>
-                          <td><a href="codeGroupXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
-						  <td><c:out value="${item.delNy}" /></td>
-                        </tr>
-                      </c:forEach>
-                    </c:otherwise>
-                  </c:choose>
-
-                </tbody>
-              </table>
-              
-            </form>
-             
-             
-             
-
-
+	            <form action="" method="post" name="formList">
+	              <div class="row">
+	                <div class="col-4">
+	                  <select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example">
+	                    <option selected value="">Open this select menu</option>
+	                    <option value="1">One</option>
+	                    <option value="2">Two</option>
+	                    <option value="3">Three</option>
+	                  </select>
+	                </div>
+	
+	                <div class="col-4">														<!-- 검색창에 입력하면 내용값 그대로 검색창에 띄우기 -->
+	                  <input type="text" name="shKeyword" class="form-control form-control-sm" value="<c:out value="${vo.shKeyword}"/>" >
+	                </div>
+	                <div class="col-4">
+	                  <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
+	                  <a href="/codeGroupXdmForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
+	                  
+	                  <a href="/codeGroupXdmList"><button class="btn btn-warning btnInit " type="button">Init</button></a>
+	                  
+	                </div>
+	              </div>
+	
+	              <table class="table datatable table-striped table-hover">
+	                <thead>
+	                  <tr>
+	                    <th scope="col"><input type="checkbox" name="checked" value=""></th>
+						<th scope="col">Seq</th>
+	                    <th scope="col">Name</th>
+	                    <th scope="col">delNy</th>
+	                  </tr>
+	                </thead>
+	
+	                <tbody>
+	
+	                  <c:choose>
+	                    <c:when test="${fn:length(list) eq 0}">
+	                      <tr>
+	                        <td class="text-center" colspan="4">There is no data</td>
+	                      </tr>
+	                    </c:when>
+	                    <c:otherwise>
+	                      <c:forEach items="${list}" var="item">
+	                        <tr>
+	                          <td scope="col">
+	                            <input type="checkbox" name="checked" value="">
+	                          </td>
+	                          <td><c:out value="${item.seq}" /></td>
+	                          <td><a href="codeGroupXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
+							  <td><c:out value="${item.delNy}" /></td>
+	                        </tr>
+	                      </c:forEach>
+	                    </c:otherwise>
+	                  </c:choose>
+	                </tbody>
+	              </table>
+	            </form>
             </div>
           </div>
-
         </div>
       </div>
     </section>

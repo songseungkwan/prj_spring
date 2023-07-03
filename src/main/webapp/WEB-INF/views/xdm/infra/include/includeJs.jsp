@@ -13,7 +13,7 @@
   <script src="resources/adminAssets/vendor/chart.js/chart.umd.js"></script>
   <script src="resources/adminAssets/vendor/echarts/echarts.min.js"></script>
   <script src="resources/adminAssets/vendor/quill/quill.min.js"></script>
-  <script src="resources/adminAssets/vendor/simple-datatables/simple-datatables.js"></script>
+<!--   <script src="resources/adminAssets/vendor/simple-datatables/simple-datatables.js"></script> -->
   <script src="resources/adminAssets/vendor/tinymce/tinymce.min.js"></script>
   <script src="resources/adminAssets/vendor/php-email-form/validate.js"></script>
 

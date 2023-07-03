@@ -8,7 +8,7 @@ public class Code {
 	// seq는 편의상 디비에는 int지만 자바에서는 String으로 쓴다.
 	// 주로 테이블의 컬럼명과 일치
 	
-	private String code;
+
 	private String seq;					
 	private String name;
 	private String codeGroup_seq;
@@ -27,11 +27,11 @@ public class Code {
 		this.name = name;
 	}
 
-	/*
-	 * public String getCodeGroup_seq() { return codeGroup_seq; } public void
-	 * setCodeGroup_seq(String codeGroup_seq) { this.codeGroup_seq = codeGroup_seq;
-	 * }
-	 */
+	
+	  public String getCodeGroup_seq() { return codeGroup_seq; } public void
+	  setCodeGroup_seq(String codeGroup_seq) { this.codeGroup_seq = codeGroup_seq;
+	  }
+	 
 	public Integer getDelNy() {
 		return delNy;
 	}
@@ -39,12 +39,8 @@ public class Code {
 		this.delNy = delNy;
 	}
 	
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code = code;
-	}
+
+
 	
 	
 	// 주 클래스에서는 해당 테이블의 컬럼명을 변수 선언 후 getter/setter 메서드를 작성한다.

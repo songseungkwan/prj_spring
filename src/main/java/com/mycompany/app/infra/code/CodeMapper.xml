@@ -18,10 +18,9 @@
     
     <sql id="abc">
     	seq
-    	,name
-    	,codeGroup_seq
-    	,delNy
-    	
+    	, name
+    	, delNy
+    	, codeGroup_seq
     </sql>
     
     <select id="selectList" resultMap="resultMapObj">
@@ -62,25 +61,23 @@
     <insert id="insert">
         INSERT INTO code (
         	name
-        	,delNy
         	,codeGroup_seq
-      
+        	,delNy
         ) VALUES (
         	#{name}
+        	,#{codeGroup_seq}        	
         	,0
-        	#{codeGroup_seq}
         )
     </insert>
-    
-
-    
-        <update id="uelete">
-        UPDATE
-        	code
-        SET
-        	delNy = "1"
-        WHERE 1=1
-        	seq = #{seq}
+ 
+    <update id="uelete">
+    UPDATE
+    	code	
+    SET
+    	delNy = 1
+    WHERE 1=1
+    AND 
+    	seq = #{seq}
     </update>
 
     

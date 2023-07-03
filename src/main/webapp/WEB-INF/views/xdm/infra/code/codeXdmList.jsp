@@ -88,11 +88,13 @@
                 </div>
 
                 <div class="col-4">
-                  <input type="text" name="shKeyword" class="form-control form-control-sm">
+                  <input type="text" name="shKeyword" class="form-control form-control-sm" value="<c:out value="${vo.shKeyword}"/>">
                 </div>
                 <div class="col-4">
-                  <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
+                  <button class="btn btn-dark" type="submit" id="btnSearch" >검색</button>
                   <a href="codeXdmForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
+
+                  <a href="/codeXdmList"><button class="btn btn-warning btnInit " type="button">Init</button></a>
                 </div>
               </div>
 
@@ -100,10 +102,11 @@
                 <thead>
                   <tr>
                     <th scope="col"><input type="checkbox" name="checked" value=""></th>
-                    <th scope="col">Title</th>
+                    <th scope="col">Seq</th>
                     <th scope="col">Name</th>
                     <th scope="col">delNy</th>
-                  <!--   <th scope="col">codeGroup_seq</th> -->
+                    <th scope="col">codeGroup_seq</th>
+
                   </tr>
                 </thead>
 
@@ -112,7 +115,7 @@
                   <c:choose>
                     <c:when test="${fn:length(list) eq 0}">
                       <tr>
-                        <td class="text-center" colspan="4">There is no data</td>
+                        <td class="text-center" colspan="5">There is no data</td>
                       </tr>
                     </c:when>
                     <c:otherwise>
@@ -124,7 +127,7 @@
                           <td><c:out value="${item.seq}" /></td>
                           <td><a href="codeXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
                           <td><c:out value="${item.delNy}" /></td>
-                      <%--     <td><c:out value="${item.codeGroup_seq}" /></td> --%>
+                          <td><c:out value="${item.codeGroup_seq}" /></td>
                         </tr>
                       </c:forEach>
                     </c:otherwise>

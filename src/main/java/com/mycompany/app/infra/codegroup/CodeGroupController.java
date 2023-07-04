@@ -17,24 +17,36 @@ public class CodeGroupController {
 
 	@RequestMapping("/codeGroupXdmList")
 	public String codeGroupXdmList( @ModelAttribute("vo") CodeGroupVo vo, Model model) {
-										// 2번
+
 		
-		// 처음에 해당 단어 고정하기
+		vo.setShKeyword(vo.getShKeyword() == null ? "" : vo.getShKeyword());
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		if(vo.getTotalRows() > 0) {
+			List<CodeGroup> list = service.selectList(vo);
+			model.addAttribute("list", list);
+//			model.addAttribute("vo", vo);
+		} else {
+//			by pass
+		}
+
+		
 //		vo.setShKeyword("회원");
 		
-		vo.setShKeyword(vo.getShKeyword()== null ? "" : vo.getShKeyword());
+//		vo.setShKeyword(vo.getShKeyword()== null ? "" : vo.getShKeyword());
 		// 고정 초기화하기(삼항연산자)
 		// vo.setShKeyword : 설정하는 값
 		// vo.getShKeyword : 입력받는 값
 		
 //		service 호출
-		List<CodeGroup> list = service.selectList(vo);
+//		List<CodeGroup> list = service.selectList(vo);
 
 //		왼쪽의 list는 jsp에서 사용할 변수명
-		model.addAttribute("list", list);
+//		model.addAttribute("list", list);
 		
 // 검색창에 입력하면 내용값 그대로 검색창에 띄우기 1번
-	//	 model.addAttribute("vo", vo); 
+//	 	model.addAttribute("vo", vo); 
 
 		return "xdm/infra/codegroup/codeGroupXdmList";
 	}

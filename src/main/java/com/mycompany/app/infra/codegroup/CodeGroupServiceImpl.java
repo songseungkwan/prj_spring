@@ -12,6 +12,12 @@ import org.springframework.stereotype.Service;
 	CodeGroupDao dao;
 
 	@Override
+	public int selectOneCount(CodeGroupVo vo) {
+		// TODO 
+		return dao.selectOneCount(vo);
+	}
+	
+	@Override
 	public List<CodeGroup> selectList(CodeGroupVo vo) { return dao.selectList(vo); }
 	
 	@Override
@@ -36,5 +42,7 @@ import org.springframework.stereotype.Service;
 	public int uelete(CodeGroup dto) {
 		return dao.uelete(dto);	
 	}
+
+
 	
 }

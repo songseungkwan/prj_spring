@@ -17,17 +17,13 @@ import org.springframework.stereotype.Repository;
 	
 	private static String namespace = "com.mycompany.app.infra.codegroup.CodeGroupMapper";
 	
-	public List<CodeGroup> selectList(CodeGroupVo vo) {
-		return sqlSession.selectList(namespace + ".selectList", vo ); 
+	public int selectOneCount(CodeGroupVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
+	
+	public List<CodeGroup> selectList(CodeGroupVo vo) {return sqlSession.selectList(namespace + ".selectList", vo ); }
 		// selectList : 반환값 list
-		}
-	
-	public CodeGroup selectOne(CodeGroupVo vo) { 
-		CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo); 
-		return codeGroup;
+	public CodeGroup selectOne(CodeGroupVo vo) {CodeGroup codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo); return codeGroup;	}
 		// selectOne -> 반환값 : 해당 dto
-	}
-	
+
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(CodeGroup dto) { return sqlSession.update(namespace + ".update", dto); }
 	

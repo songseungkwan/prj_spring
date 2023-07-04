@@ -96,8 +96,8 @@
         UPDATE 
         	codeGroup
         SET
-        	delNy = 1
-       WHERE            
+        	delNy = "1"
+       WHERE  1=1          
        AND	seq = #{seq}
     </update>
 

@@ -16,6 +16,8 @@
   <meta content="" name="description">
   <meta content="" name="keywords">
 
+
+
   <!-- Favicons -->
   <link href="/resources/adminAssets/img/favicon.png" rel="icon">
   <link href="/resources/adminAssets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -28,6 +30,8 @@
   <%@include file = "../include/includeCss.jsp"%>
   <!-- Template Main CSS File -->
 
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/f676149ecf.js" crossorigin="anonymous"></script> 
 </head>
 
 <body>
@@ -144,9 +148,8 @@
 						</c:choose>
 					</c:forEach>                
 					<c:if test="${vo.endPage ne vo.totalPages}">                
-					                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li>
-					</c:if>
-					                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+					                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li></c:if> 
+					       			<!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
 					            </ul>
 					        </div>
 					    </div>
@@ -169,8 +172,6 @@
   <!-- ======= Footer ======= -->
 	 <%@include file = "../include/includeFooter.jsp"%>
   <!-- End Footer -->
-  
-  
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

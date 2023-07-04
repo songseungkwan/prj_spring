@@ -5,14 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.app.infra.codegroup.CodeGroup;
-import com.mycompany.app.infra.codegroup.CodeGroupVo;
-
 	@Service
 	public class CodeServiceImpl implements CodeService {
 
 	@Autowired
 	CodeDao dao;
+	
+//	paging
+	@Override
+	public int selectOneCount(CodeVo vo) {
+		// TODO 
+		return dao.selectOneCount(vo);
+	}
 	
 	@Override
 	public List<Code> selectList(CodeVo vo) { return dao.selectList(vo);	}

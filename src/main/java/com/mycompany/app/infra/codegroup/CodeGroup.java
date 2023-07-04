@@ -12,7 +12,6 @@ public class CodeGroup {
 	private String name;
 	private Integer  delNy;
 	
-
 	// -----
 	public String getSeq() {
 			return seq;

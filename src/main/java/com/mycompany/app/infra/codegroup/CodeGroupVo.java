@@ -25,6 +25,7 @@ public class CodeGroupVo {
 	private int startRnumForMysql = 0;							// 쿼리 시작 row
 	
 
+//	----
 	public int getThisPage() {
 		return thisPage;
 	}
@@ -119,6 +120,7 @@ public class CodeGroupVo {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
+	
 	public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);

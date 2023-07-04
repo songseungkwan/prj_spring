@@ -8,6 +8,8 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.app.infra.codegroup.CodeGroupVo;
+
 	@Repository
 	public class CodeDao {
 
@@ -16,6 +18,9 @@ import org.springframework.stereotype.Repository;
 	private SqlSession sqlSession; // 변수명 선언
 	
 	private static String namespace = "com.mycompany.app.infra.code.CodeMapper";
+	
+//	paging
+	public int selectOneCount(CodeVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
 	
 	public List<Code> selectList(CodeVo vo){ 
 		return sqlSession.selectList(namespace + ".selectList", vo); 

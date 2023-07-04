@@ -20,6 +20,22 @@ public class CodeController {
 	@RequestMapping("/codeXdmList")
 	public String codeXdmList(@ModelAttribute("vo") CodeVo vo , Model model) {
 
+		
+vo.setShKeyword(vo.getShKeyword() == null ? "" : vo.getShKeyword());
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		if(vo.getTotalRows() > 0) {
+			List<Code> list = service.selectList(vo);
+			model.addAttribute("list", list);
+//			model.addAttribute("vo", vo);
+		} else {
+//			by pass
+		}
+		
+
+		
+		
 		vo.setShKeyword(vo.getShKeyword()== null ? "" : vo.getShKeyword());
 		// 삼항연산자
 		

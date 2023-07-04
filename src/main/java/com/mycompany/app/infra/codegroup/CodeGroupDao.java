@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
 	
 	private static String namespace = "com.mycompany.app.infra.codegroup.CodeGroupMapper";
 	
+//	paging
 	public int selectOneCount(CodeGroupVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
 	
 	public List<CodeGroup> selectList(CodeGroupVo vo) {return sqlSession.selectList(namespace + ".selectList", vo ); }

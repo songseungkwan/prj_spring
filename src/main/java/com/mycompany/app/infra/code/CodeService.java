@@ -4,6 +4,9 @@ import java.util.List;
 
 public interface CodeService {
 
+//	paging
+	public int selectOneCount(CodeVo vo);
+	
 	public List<Code> selectList(CodeVo vo);
 	public Code selectOne(CodeVo vo);
 

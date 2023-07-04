@@ -41,9 +41,7 @@
 		) aa
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
    	</select>
-    
-    
-    
+
    	<select id="selectOne" resultMap="resultMapObj">
    		SELECT 
    			<include refid="abc" />
@@ -52,8 +50,8 @@
 		WHERE 1=1
 			AND seq = #{seq}	
    	</select>   
-   	<!--  -->
-
+   	
+   	<!-- ===================================== -->
 
 <!-- 	 <select id="selectList" resultMap="resultMapObj">
     	SELECT 

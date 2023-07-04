@@ -33,13 +33,9 @@
   <!-- Template Main CSS File -->
 
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: May 30 2023 with Bootstrap v5.3.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
+  <!-- font awesome -->
+<script src="https://kit.fontawesome.com/f676149ecf.js" crossorigin="anonymous"></script> 
 </head>
 
 <body>
@@ -77,6 +73,10 @@
 
               <!-- Table with stripped rows -->
             <form action="" method="post" name="formList">
+            
+   	            	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+					<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+            
               <div class="row">
                 <div class="col-4">
                   <select name="shOption" class="form-select form-select-sm" aria-label="form-select-sm example">
@@ -132,28 +132,41 @@
                       </c:forEach>
                     </c:otherwise>
                   </c:choose>
-
                 </tbody>
               </table>
-              
-            </form>
-             
-             
-             
-
-
+              		<div class="container-fluid px-0 mt-2">
+					    <div class="row">
+					        <div class="col">
+					            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+					            <ul class="pagination justify-content-center mb-0">
+					                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+					<c:if test="${vo.startPage gt vo.pageNumToShow}">
+					                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+					</c:if>
+					<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+						<c:choose>
+							<c:when test="${i.index eq vo.thisPage}">
+					                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+							</c:when>
+							<c:otherwise>             
+					                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>                
+					<c:if test="${vo.endPage ne vo.totalPages}">                
+					                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li></c:if>
+					                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+					            </ul>
+					        </div>
+					    </div>
+					</div>
+            	</form>
             </div>
           </div>
 
         </div>
       </div>
     </section>
-
-
-
-
-
-
 
   </main><!-- End #main -->
 
@@ -180,6 +193,14 @@
 	  /* $(".btnAdd").on("click", function() {
 		    $("form[name=form]").attr("action", "/codeGroupForm").submit();
 		 });		  */
+		 
+		 
+		 goList = function(thisPage) {
+				$("input:hidden[name=thisPage]").val(thisPage);
+				$("form[name=formList]").attr("action", "codeXdmList").submit();
+			}
+		 
+		 
 				
  </script>
   

@@ -1,4 +1,4 @@
-package com.mycompany.app.infra.code;
+package com.mycompany.app.infra.modules.code;
 
 public class CodeVo {
 	
@@ -8,6 +8,7 @@ public class CodeVo {
 	private String seq;
 	private String codeGroup_seq;
 	private Integer delNy;
+	
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //	private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수

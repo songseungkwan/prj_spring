@@ -8,13 +8,11 @@
      해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
      그리고 dao에서 namespace와 일치하여야 한다. -->
     
-  
-    
-<mapper namespace="com.mycompany.app.infra.code.CodeMapper">		
+<mapper namespace="com.mycompany.app.infra.modules.code.CodeMapper">		
 
 
 								<!-- select 결과를 받을 객체 -->
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.code.Code"></resultMap>
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.modules.code.Code"></resultMap>
     
     <sql id="abc">
     	seq
@@ -53,12 +51,6 @@
 			AND seq = #{seq}	
    	</select>   
    	
-
-    
-    
-
-    
-    
 <!--     <select id="selectList" resultMap="resultMapObj">
         SELECT
         	<include refid="abc" />
@@ -108,9 +100,5 @@
     AND 
     	seq = #{seq}
     </update>
-
-    
-    
-    
 
 </mapper>    

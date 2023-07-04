@@ -1,4 +1,4 @@
-package com.mycompany.app.infra.code;
+package com.mycompany.app.infra.modules.code;
 
 public class Code {
 
@@ -8,7 +8,6 @@ public class Code {
 	// seq는 편의상 디비에는 int지만 자바에서는 String으로 쓴다.
 	// 주로 테이블의 컬럼명과 일치
 	
-
 	private String seq;					
 	private String name;
 	private String codeGroup_seq;
@@ -20,6 +19,7 @@ public class Code {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -27,10 +27,8 @@ public class Code {
 		this.name = name;
 	}
 
-	
-	  public String getCodeGroup_seq() { return codeGroup_seq; } public void
-	  setCodeGroup_seq(String codeGroup_seq) { this.codeGroup_seq = codeGroup_seq;
-	  }
+    public String getCodeGroup_seq() { return codeGroup_seq; } 
+    public void setCodeGroup_seq(String codeGroup_seq) { this.codeGroup_seq = codeGroup_seq; }
 	 
 	public Integer getDelNy() {
 		return delNy;

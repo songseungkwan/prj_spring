@@ -1,4 +1,4 @@
-package com.mycompany.app.infra.code;
+package com.mycompany.app.infra.modules.code;
 
 import java.util.List;
 

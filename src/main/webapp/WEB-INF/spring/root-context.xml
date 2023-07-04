@@ -32,7 +32,7 @@
 		<!-- <property name="mapperLocations" value="classpath:/mappers/**/*Mapper.xml" 
 			/> -->	<!-- 기본설정 : 패키지 변경으로 아래와 같이 수정 -->
 		<property name="mapperLocations"
-			value="classpath:com/mycompany/app/**/**/*Mapper.xml" />
+			value="classpath:com/mycompany/app/**/**/**/*Mapper.xml" />
 	</bean>
 
 	<bean id="sqlSession"

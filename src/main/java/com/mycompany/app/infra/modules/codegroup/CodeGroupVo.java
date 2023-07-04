@@ -1,4 +1,4 @@
-package com.mycompany.app.infra.codegroup;
+package com.mycompany.app.infra.modules.codegroup;
 
 public class CodeGroupVo {
 
@@ -6,7 +6,8 @@ public class CodeGroupVo {
 	private String shKeyword;
 	private String seq;
 	private Integer delNy;
-//	paging
+	
+	
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //	private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수
@@ -23,9 +24,9 @@ public class CodeGroupVo {
 	private Integer RNUM;
 
 	private int startRnumForMysql = 0;							// 쿼리 시작 row
-	
 
-//	----
+
+//	---------------------------- 
 	public int getThisPage() {
 		return thisPage;
 	}
@@ -121,7 +122,7 @@ public class CodeGroupVo {
 		this.delNy = delNy;
 	}
 	
-	public void setParamsPaging(int totalRows) {
+public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);
 

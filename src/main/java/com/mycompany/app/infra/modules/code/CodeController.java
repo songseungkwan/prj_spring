@@ -1,6 +1,7 @@
-package com.mycompany.app.infra.code;
+package com.mycompany.app.infra.modules.code;
 
 import java.util.List;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.app.infra.codegroup.CodeGroup;
-import com.mycompany.app.infra.codegroup.CodeGroupVo;
+import com.mycompany.app.infra.modules.code.Code;
+import com.mycompany.app.infra.modules.code.CodeVo;
 
 @Controller
 public class CodeController {
@@ -19,9 +20,8 @@ public class CodeController {
 	
 	@RequestMapping("/codeXdmList")
 	public String codeXdmList(@ModelAttribute("vo") CodeVo vo , Model model) {
-
-		
-vo.setShKeyword(vo.getShKeyword() == null ? "" : vo.getShKeyword());
+	
+		vo.setShKeyword(vo.getShKeyword() == null ? "" : vo.getShKeyword());
 		
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
@@ -33,20 +33,17 @@ vo.setShKeyword(vo.getShKeyword() == null ? "" : vo.getShKeyword());
 //			by pass
 		}
 		
+//		vo.setShKeyword(vo.getShKeyword()== null ? "" : vo.getShKeyword());
+//		// 삼항연산자
+//		
+//		List<Code> list = service.selectList(vo);
+//
+//
+////		왼쪽의 list는 jsp에서 사용할 변수명
+//		model.addAttribute("list", list);
+////		model.addAttribute("vo", vo); 
 
-		
-		
-		vo.setShKeyword(vo.getShKeyword()== null ? "" : vo.getShKeyword());
-		// 삼항연산자
-		
-		List<Code> list = service.selectList(vo);
-
-
-//		왼쪽의 list는 jsp에서 사용할 변수명
-		model.addAttribute("list", list);
-//		model.addAttribute("vo", vo); 
-
-		return "xdm/infra/code/codeXdmList";
+		return "/xdm/infra/code/codeXdmList";
 	}
 
 	@RequestMapping("/codeXdmForm")

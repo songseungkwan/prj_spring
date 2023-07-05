@@ -97,7 +97,7 @@
 	                    <th scope="col"><input type="checkbox" name="checked" value=""></th>
 						<th scope="col">Seq</th>
 	                    <th scope="col">Name</th>
-	                    <th scope="col">delNy</th>
+	                    <th scope="col">delNy</th>	
 	                  </tr>
 	                </thead>
 	

@@ -136,8 +136,13 @@
             </a>
           </li>
           <li>
-            <a href="codeGroupXdmList" class="active">
+            <a href="codeGroupXdmList" >
               <i class="bi bi-circle"></i><span>CodeGroup Tables</span>
+            </a>
+          </li>
+                    <li>
+            <a href="memberXdmList" >
+              <i class="bi bi-circle"></i><span>Member Tables</span>
             </a>
           </li>
         </ul>

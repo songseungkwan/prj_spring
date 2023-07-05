@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.app.infra.modules.member.member;
-import com.mycompany.app.infra.modules.member.memberVo;
+import com.mycompany.app.infra.modules.member.Member;
+import com.mycompany.app.infra.modules.member.MemberVo;
 
 @Controller
 public class MemberController {

@@ -96,33 +96,15 @@
 	                  <tr>
 	                    <th scope="col"><input type="checkbox" name="checked" value=""></th>
 						<th scope="col">Seq</th>
-	                    <th scope="col">NameFull</th>
-	                    <th scope="col">nameLast</th>
-	                    <th scope="col">nameFirst</th>	 
-	                    <th scope="col">Id</th>	 
+	                    <th scope="col">Name</th>
+	                    <th scope="col">Id</th> 
 	                    <th scope="col">Nickname</th>	 
-	                    <th scope="col">Password</th>	 
-	                    <th scope="col">Occupation</th>	 
-	                    <th scope="col">Dob</th>	 
-	                    <th scope="col">Level</th>	 
-	                    <th scope="col">Height</th>	 
-	                    <th scope="col">Weight</th>	 
-	                    <th scope="col">RegDate</th>	 
-	                    <th scope="col">Account</th>	 
-	                    <th scope="col">AccountBank</th>	 
-	                    <th scope="col">AddressZipcode</th>	 
-	                    <th scope="col">AddressType</th>	 
-	                    <th scope="col">AddressDetail</th>	 
-	                    <th scope="col">EmailFull</th>	 
-	                    <th scope="col">EmailAccount</th>	 
-	                    <th scope="col">EmailDomain</th>	 
-	                    <th scope="col">EmailType</th>	 
-	                    <th scope="col">WorkoutMain</th>	 
-	                    <th scope="col">WorkoutSub</th>	 
-	                    <th scope="col">DefaultNy_Tel</th>		                    
-	                    <th scope="col">TelInput</th>	 
-	                    <th scope="col">TelType</th>	 
-	                    <th scope="col">Member_seq</th>
+	                    <th scope="col">Password</th>
+   	                    <th scope="col">Email</th>
+	                    <th scope="col">Address</th>
+	                    <th scope="col">Phone</th>	      
+	                    <th scope="col">DelNy</th>	   	                                  	                    	 
+
                  	                    		                    
 	                                       
 
@@ -137,7 +119,7 @@
 	                  <c:choose>
 	                    <c:when test="${fn:length(list) eq 0}">
 	                      <tr>
-	                        <td class="text-center" colspan="4">There is no data</td>
+	                        <td class="text-center" colspan="10">There is no data</td>
 	                      </tr>
 	                    </c:when>
 	                    <c:otherwise>
@@ -148,34 +130,15 @@
 	                          </td>
 	                          <td><c:out value="${item.seq}" /></td>
 <%-- 	                          <td><a href="memberXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td> --%>
-							  <td><a href="memberXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.nameFull}" /></a></td>
+							  <td><a href="memberXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
 	                          <%-- <td><c:out value="${item.nameFull}}" /></td>	 --%>						  
-	                          <td><c:out value="${item.nameLast}}" /></td>		
-	                          <td><c:out value="${item.nameFirst}}" /></td>
-   	                          <td><c:out value="${item.id}}" /></td>							  
-	                          <td><c:out value="${item.nickname}}" /></td>		
-	                          <td><c:out value="${item.password}}" /></td>
-	                          <td><c:out value="${item.occupation}}" /></td>							  
-	                          <td><c:out value="${item.dob}}" /></td>		
-	                          <td><c:out value="${item.level}}" /></td>
-	                          <td><c:out value="${item.height}}" /></td>							  
-	                          <td><c:out value="${item.weight}}" /></td>		
-	                          <td><c:out value="${item.regDate}}" /></td>
-	                          <td><c:out value="${item.account}}" /></td>							  
-	                          <td><c:out value="${item.accountBank}}" /></td>		
-	                          <td><c:out value="${item.addressZipcode}}" /></td>
-	                          <td><c:out value="${item.addressType}}" /></td>							  
-	                          <td><c:out value="${item.addressDetail}}" /></td>		
-	                          <td><c:out value="${item.emailFull}}" /></td>
-	                          <td><c:out value="${item.emailAccount}}" /></td>							  
-	                          <td><c:out value="${item.emailDomain}}" /></td>		
-	                          <td><c:out value="${item.workoutMain}}" /></td>
-	                          <td><c:out value="${item.workoutSub}}" /></td>							  
-	                          <td><c:out value="${item.defaultNy}}" /></td>		
-	                          <td><c:out value="${item.telInput}}" /></td>
-	                          <td><c:out value="${item.telType}}" /></td>							  
-	                          <td><c:out value="${item.member_seq}}" /></td>		
-
+	                          <td><c:out value="${item.id}" /></td>		
+	                          <td><c:out value="${item.nickname}" /></td>	
+	                          <td><c:out value="${item.password}" /></td>
+	                          <td><c:out value="${item.email}" /></td>							  
+	                          <td><c:out value="${item.address}" /></td>		
+	                          <td><c:out value="${item.phone}" /></td>
+	                          <td><c:out value="${item.delNy}" /></td>
 	                        </tr>
 	                      </c:forEach>
 	                    </c:otherwise>

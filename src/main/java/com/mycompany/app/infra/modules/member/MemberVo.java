@@ -33,6 +33,77 @@ public class MemberVo {
 	
 	
 	
+	public int getThisPage() {
+		return thisPage;
+	}
+	public void setThisPage(int thisPage) {
+		this.thisPage = thisPage;
+	}
+	public int getRowNumToShow() {
+		return rowNumToShow;
+	}
+	public void setRowNumToShow(int rowNumToShow) {
+		this.rowNumToShow = rowNumToShow;
+	}
+	public int getPageNumToShow() {
+		return pageNumToShow;
+	}
+	public void setPageNumToShow(int pageNumToShow) {
+		this.pageNumToShow = pageNumToShow;
+	}
+	public int getTotalRows() {
+		return totalRows;
+	}
+	public void setTotalRows(int totalRows) {
+		this.totalRows = totalRows;
+	}
+	public int getTotalPages() {
+		return totalPages;
+	}
+	public void setTotalPages(int totalPages) {
+		this.totalPages = totalPages;
+	}
+	public int getStartPage() {
+		return startPage;
+	}
+	public void setStartPage(int startPage) {
+		this.startPage = startPage;
+	}
+	public int getEndPage() {
+		return endPage;
+	}
+	public void setEndPage(int endPage) {
+		this.endPage = endPage;
+	}
+	public int getStartRnumForOracle() {
+		return startRnumForOracle;
+	}
+	public void setStartRnumForOracle(int startRnumForOracle) {
+		this.startRnumForOracle = startRnumForOracle;
+	}
+	public int getEndRnumForOracle() {
+		return endRnumForOracle;
+	}
+	public void setEndRnumForOracle(int endRnumForOracle) {
+		this.endRnumForOracle = endRnumForOracle;
+	}
+	public Integer getRNUM() {
+		return RNUM;
+	}
+	public void setRNUM(Integer rNUM) {
+		RNUM = rNUM;
+	}
+	public int getStartRnumForMysql() {
+		return startRnumForMysql;
+	}
+	public void setStartRnumForMysql(int startRnumForMysql) {
+		this.startRnumForMysql = startRnumForMysql;
+	}
+	// =================================================
+	
+	
+	
+	
 	public Integer getShOption() {
 		return shOption;
 	}

@@ -2,23 +2,14 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-<!-- 	 전체 매퍼중에서 유일한 값을 사용하여야 한다.
-
-     해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
-
-     그리고 dao에서 namespace와 일치하여야 한다. -->
-
-
-	<mapper namespace="com.mycompany.app.infra.modules.member.MemberMapper">		
-
-
-
-							<!-- 	select 결과를 받을 객체 -->
-
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.modules.member.Member"></resultMap>
-
     
+<!-- 	 전체 매퍼중에서 유일한 값을 사용하여야 한다.
+     해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
+     그리고 dao에서 namespace와 일치하여야 한다. -->
+	<mapper namespace="com.mycompany.app.infra.modules.member.MemberMapper">		
+							
+										<!-- 	select 결과를 받을 객체 -->
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.modules.member.Member"></resultMap>
 
     <sql id="abc">
 
@@ -28,37 +19,37 @@
     	, nickname
     	, password
     	, email
-    	, address
-    	, account    	
+    	, address 	
     	, phone
     	, delNy
-    	, account
-    	, accountBank
-
-
-
     </sql>
     
-        <sql id ="selectCommon">
+    <sql id ="selectCommon">
    		FROM    
 	    	member
-	    	, account
 
 		WHERE 1=1
-			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
+			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')
+																   OR id LIKE CONCAT('%', #{shKeyword}, '%')
+																   OR nickname LIKE CONCAT('%', #{shKeyword}, '%')
+																   OR password LIKE CONCAT('%', #{shKeyword}, '%')
+			           											   OR email LIKE CONCAT('%', #{shKeyword}, '%')
+			           											   OR address LIKE CONCAT('%', #{shKeyword}, '%')
+            													   OR phone LIKE CONCAT('%', #{shKeyword}, '%')									   
+			</if>
     </sql>
 
-       	<select id="selectOneCount" resultType="Integer">
+   	<select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
 		<include refid="selectCommon" />
 	</select>
 	
    	<select id="selectList" resultMap="resultMapObj">
-		SELECT aa.* FROM (   	
+		SELECT bb.* FROM (   	
 	   		SELECT
 				<include refid="abc" />
 	   			<include refid="selectCommon" />
-		) aa
+		) bb
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
    	</select>
 
@@ -78,7 +69,7 @@
         FROM
         	member
         WHERE 1=1
-        AND seq = #{seq}
+        	AND seq = #{seq}
     </select>
 
 <!-- =============================================================== -->
@@ -91,12 +82,10 @@
 	    	, nickname
 	    	, password
 	    	, email
-	    	, address
-	    	, account    	
+	    	, address	
 	    	, phone
    	    	, delNy
-	    	, account
-	    	, accountBank
+
         WHERE
         	seq = #{seq}
     </update>
@@ -111,17 +100,15 @@
 
     <insert id="insert">
         INSERT INTO member (
-			name
+			  name
 	    	, id
 	    	, nickname
 	    	, password
 	    	, email
 	    	, address
-	    	, account    	
 	    	, phone
    	    	, delNy
-	    	, account
-	    	, accountBank
+
 	    	
         ) VALUES (
         	#{name}
@@ -130,11 +117,9 @@
         	,#{password} 
         	,#{email} 
         	,#{address} 
-        	,#{account} 
         	,#{phone} 
         	,0
-        	,#{account} 
-        	,#{accountBank}         	
+       	
 
         )
         		<selectKey resultType="String" keyProperty="seq" order="AFTER">

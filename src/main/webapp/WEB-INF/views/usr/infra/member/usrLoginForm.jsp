@@ -5,134 +5,195 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
-<!doctype html>
-<html lang="ko">
-<head>
-    <title>Login/Register Modal by Creative Tim</title>
+<!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> 로그인 & 회원가입 </title>
 
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="resources/usrLoginSignupFormAssets/css/style.css">
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                        
+    </head>
+    <body>
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>로그인</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="text" placeholder="아이디" class="input">
+                        </div>
 
-	<style>body{padding-top: 60px;}</style>
+                        <div class="field input-field">
+                            <input type="password" placeholder="비밀번호" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
 
-    <link href="resources/usr_login_assets/css/bootstrap.css" rel="stylesheet" />
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">비밀번호가 기억나지 않으신가요??</a>
+                        </div>
 
-	<link href="resources/usr_login_assets/css/login-register.css" rel="stylesheet" />
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-    <!-- common css -->
-    <link rel="stylesheet" href="resources/usr_login_assets/css/common.css">
-    <!-- login.css -->
-    <link rel="stylesheet" href="resources/usr_login_assets/css/login.css">
+                        <div class="field button-field">
+                            <button>로그인</button>
+                        </div>
+                    </form>
 
-
-	<script src="resources/usr_login_assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-	<script src="resources/usr_login_assets/js/bootstrap.js" type="text/javascript"></script>
-	<script src="resources/usr_login_assets/js/login-register.js" type="text/javascript"></script>
-
-
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
-                 <a class="btn big-login" data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">로그인</a>
-                 <a class="btn big-register" data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">회원가입</a></div>
-            <div class="col-sm-4"></div>
-        </div>
-
-
-		 <div class="modal fade login" id="loginModal">
-		      <div class="modal-dialog  login animated">
-    		      <div class="modal-content">
-    		         <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Login with</h4>
+                    <div class="form-link">
+                        <span>계정이 없으신가요? <a href="#" class="link signup-link">회원가입</a></span>
                     </div>
-                    <div class="modal-body ">
-                        <div class="box">
-                             <div class="content">
-                                <div class="social">
-                                    <div class="login-button login-button--static login-social" id="login-social" style="">
-                    
-                                        <a href="javascript:void(0)" class="login-button__item login-button__item--kakao" id="login-with-kakao">
-                                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="login-button__item__logo">
-                                                <title>kakao 로고</title>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M15 7C10.029 7 6 10.129 6 13.989C6 16.389 7.559 18.505 9.932 19.764L8.933 23.431C8.845 23.754 9.213 24.013 9.497 23.826L13.874 20.921C14.243 20.958 14.618 20.978 15 20.978C19.971 20.978 24 17.849 24 13.989C24 10.129 19.971 7 15 7Z" fill="black"></path>
-                                            </svg>
-                                            카카오 로그인
-                                        </a>
-                                    
-                                    
-                                        <a href="javascript:void(0)" id="login-with-apple" class="login-button__item login-button__item--apple">
-                                            <svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg" class="login-button__item__logo">
-                                                <title>apple 로고</title>
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6734 6.53179C17.0545 7.30483 16.0153 7.88462 15.1863 7.88462C15.0929 7.88462 14.9995 7.87254 14.9411 7.86046C14.9294 7.81214 14.9061 7.6672 14.9061 7.52225C14.9061 6.53179 15.3848 5.56548 15.9102 4.94946C16.5758 4.14018 17.685 3.53624 18.6074 3.5C18.6308 3.60871 18.6425 3.74158 18.6425 3.87444C18.6425 4.85283 18.2338 5.83121 17.6734 6.53179ZM13.6127 22.1399C13.1966 22.3248 12.8023 22.5 12.2673 22.5C11.123 22.5 10.329 21.4129 9.41827 20.0842C8.35574 18.514 7.4917 16.0861 7.4917 13.7912C7.4917 10.095 9.81526 8.13827 12.1038 8.13827C12.7718 8.13827 13.3821 8.39164 13.9248 8.61693C14.3592 8.79728 14.7503 8.95963 15.0929 8.95963C15.3901 8.95963 15.7604 8.80823 16.1921 8.63177C16.795 8.38531 17.5175 8.08996 18.3272 8.08996C18.841 8.08996 20.7208 8.13827 21.9585 9.97425C21.9514 9.97996 21.9363 9.99029 21.9142 10.0053C21.6097 10.2133 19.9852 11.3227 19.9852 13.5979C19.9852 16.4123 22.3555 17.4148 22.4372 17.439C22.4351 17.4444 22.4303 17.4599 22.4226 17.4845C22.3447 17.7339 21.9733 18.9232 21.1762 20.1325C20.3939 21.2921 19.5649 22.4758 18.3272 22.4758C17.7172 22.4758 17.3285 22.2978 16.9272 22.1139C16.4989 21.9177 16.0562 21.7149 15.3148 21.7149C14.5693 21.7149 14.0774 21.9334 13.6127 22.1399Z" fill="black"></path>
-                                            </svg>
-                                            Apple 로그인
-                                        </a>
-                                    
-                                </div>
+                </div>
 
-                                    <a class="circle github" href="#">
-                                        <i class="fa fa-github fa-fw"></i>
-                                    </a>
-                                    <a id="google_login" class="circle google" href="#">
-                                        <i class="fa fa-google-plus fa-fw"></i>
-                                    </a>
-                                    <a id="facebook_login" class="circle facebook" href="#">
-                                        <i class="fa fa-facebook fa-fw"></i>
-                                    </a>
-                                </div>
-                                <div class="division">
-                                    <div class="line l"></div>
-                                      <span>or</span>
-                                    <div class="line r"></div>
-                                </div>
-                                <div class="error"></div>
-                                <div class="form loginBox">
-                                    <form method="" action="" accept-charset="UTF-8">
-                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="location.href='kp'">
-                                    </form>
-                                </div>
-                             </div>
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>페이스북 계정으로 로그인</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="resources/usrLoginSignupFormAssets/images/google.png" alt="" class="google-img">
+                        <span>구글 계정으로 로그인</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Signup Form -->
+
+            <div class="form signup">
+                <div class="form-content">
+                    <header>회원가입</header>
+                    <form name="form" method="post">
+                        <div class="field input-field">
+                            <label for="name" class="col-sm-2 col-form-label">이름</label>
+		                    <div class="col-sm-5">
+		                      <input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >
+		                    </div>
                         </div>
-                        <div class="box">
-                            <div class="content registerBox" style="display:none;" >
-                             <div class="form">
-                                <form method="" html="{:multipart=>true}" data-remote="true" action="" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <input class="btn btn-default btn-register" type="button" value="Create account" name="commit">
-                                </form>
-                                </div>
-                            </div>
+                        
+                        <div class="field input-field">
+                            <label for="id" class="col-sm-2 col-form-label">아이디</label>
+		                    <div class="col-sm-5">
+		                      <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" >
+		                    </div>
                         </div>
+                        
+                        <div class="field input-field">
+                            <label for="nickname" class="col-sm-2 col-form-label">별명</label>
+		                    <div class="col-sm-5">
+		                      <input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" >
+		                    </div>
+                        </div>
+                        
+                        <div class="field input-field">
+                            <label for="password" class="col-sm-2 col-form-label">비밀번호</label>
+		                    <div class="col-sm-5">
+		                      <input type="text" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" >
+		                    </div>
+                        </div>
+                        
+                        <div class="field input-field">
+                            <label for="email" class="col-sm-2 col-form-label">email</label>
+		                    <div class="col-sm-5">
+		                      <input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" >
+		                    </div>
+                        </div>
+                        
+                        <div class="field input-field">
+                            <label for="address" class="col-sm-2 col-form-label">주소</label>
+		                    <div class="col-sm-5">
+		                      <input type="text" class="form-control" id="address" name="address" value="<c:out value="${item.address}"/>" >
+		                    </div>
+                        </div>
+                        
+                        <div class="field input-field">
+                            <label for="phone" class="col-sm-2 col-form-label">연락처</label>
+		                    <div class="col-sm-5">
+		                      <input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>" >
+		                    </div>
+                        </div>
+                        
+
+
+                        
+
+                        <!-- <div class="field input-field">
+                            <input type="password" placeholder="비밀번호 확인" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div> -->
+
+                        <div class="field button-field ">
+                            <button class="btnAdd btn btn-success" type="button">가입하기</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>이미 계정이 있으신가요? <a href="#" class="link login-link">로그인</a></span>
                     </div>
-                    <div class="modal-footer">
-                        <div class="forgot login-footer">
-                            <span>계정을 만들고 싶으신가요?
-                                 <a href="javascript: showRegisterForm();"> 회원 가입</a>
-                            </span>
-                        </div>
-                        <div class="forgot register-footer" style="display:none">
-                             <span>이미 계정이 있으신가요?</span>
-                             <a href="javascript: showLoginForm();"> 로그인 </a>
-                        </div>
-                    </div>
-    		      </div>
-		      </div>
-		  </div>
-    </div>
-<script type="text/javascript">
-    $(document).ready(function(){
-        openLoginModal();
-    });
-</script>
+                </div>
 
+                <!-- <div class="line"></div>
 
-</body>
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>페이스북 계정으로 로그인</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="resources/usrLoginSignupFormAssets/images/google.png" alt="" class="google-img">
+                        <span>구글 계정으로 로그인</span>
+                    </a>
+                </div> -->
+
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <script src="resources/usrLoginSignupFormAssets/js/script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+	<script>
+	
+	$(".btnAdd").on("click", function(){
+		
+		$("form[name=form]").attr("action","/memberAdd").submit();
+		
+	});
+	
+/* 	$("#btnUpdt").on("click", function(){
+		
+		$("form[name=form]").attr("action","/codeGroupUpdt").submit();
+		
+	});
+	
+	$("#btnDel").on("click", function(){
+
+		$("form[name=form]").attr("action","/codeGroupDel").submit();
+		
+	});
+	
+	$("#btnUel").on("click", function(){
+		
+		$("form[name=form]").attr("action","/codeGroupUel").submit();
+		
+	}); */
+	
+	</script>
+        
+        
+        
+        
+    </body>
 </html>

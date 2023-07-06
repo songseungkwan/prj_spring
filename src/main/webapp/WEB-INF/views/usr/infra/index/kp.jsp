@@ -152,12 +152,12 @@
       </li>
 
       <li class="nav-item">
-      	<a href="usrRegisterForm" target="_blank" class="nav-link"> 회원가입</a>
+      	<a href="usrLoginForm" target="_blank" class="nav-link"> 회원가입 & 로그인</a>
       </li>
 
-      <li class="nav-item">
+<!--       <li class="nav-item">
         <a href="usrLoginForm" target="_blank" class="nav-link"> 로그아웃</a>
-      </li>
+      </li> -->
 
       </ul>
       </div>

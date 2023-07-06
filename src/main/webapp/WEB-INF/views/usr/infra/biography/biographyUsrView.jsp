@@ -121,7 +121,7 @@
           <div class="col-lg-3 col-md-2 portfolio-item filter-Personal">
             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/king-petition.png" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
-              <a href="kp">User Page</a>
+              <a href="indexUsrView">User Page</a>
               <a href="xdmLoginForm">Admin Page</a>
               <a href="/resources/assets/img/portfolio/king-petition.png" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Personal 2"><i class="bx bx-plus"></i></a>
 

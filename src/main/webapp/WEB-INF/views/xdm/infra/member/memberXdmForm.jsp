@@ -51,9 +51,6 @@
         </ol>
       </nav>
     </div><!-- End Page Title -->
-    
-
-
 
  		<div class="card">
             <div class="card-body">
@@ -124,23 +121,6 @@
 				    <input type="text" class="form-control" id="phone" name="phone" value="${item.phone}" >
 				  </div>
 				</div>																								
-				
-				
-				
-				
-                
-<%--                 <div class="row mb-3 text-center">
-                  <label for="codeGroup_seq" class="col-sm-2 col-form-label">codeGroup_seq</label>
-                  <div class="col-sm-5">
-                    <input type="text" class="form-control" id="codeGroup_seq" name="codeGroup_seq"  value="<c:out value="${item.codeGroup_seq}"/>">
-                  </div>
-                </div> --%>
-                
-
-
-				
-				
-				
 			        
 			        <c:choose>
 					    <c:when test="${empty item.seq}">
@@ -151,18 +131,13 @@
 					        <button class="btn btn-danger" id="btnDel" type="submit">delete</button>
 					        <button class="btn btn-warning" id="btnUel" type="submit">uelete</button>
 					    </c:otherwise>
-					</c:choose>
-			        
+					</c:choose>   
 			        
                 </div>
               </form><!-- End Horizontal Form -->
              </div>
           </div>
 		</main>
-
-
-    
-
 
   <!-- ======= Footer ======= -->
   <%@include file = "../include/includeFooter.jsp"%>
@@ -203,19 +178,6 @@
 	
 	</script>
 
-
 </body>
 
 </html>
-
-<!--  -->
-
-
-
-
-
-
-
-
-
-

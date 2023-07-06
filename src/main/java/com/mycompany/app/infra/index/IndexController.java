@@ -25,14 +25,19 @@ public class IndexController {
 			return "xdm/infra/member/xdmRegister";		
 		}
 		
-		@RequestMapping(value="/kp")
-		public String kp() {
-			return "usr/infra/index/kp";		
+		@RequestMapping(value="/indexUsrView")
+		public String indexUsrView() {
+			return "usr/infra/index/indexUsrView";		
 		}
 		@RequestMapping(value="/workout")
 		public String workout() {
 			return "usr/infra/subpage/workout";		
 		}
+		@RequestMapping(value="/allTimeRecord")
+		public String allTimeRecord() {
+			return "usr/infra/subpage/allTimeRecord";		
+		}
+		
 		
 //		----------sub page
 		@RequestMapping(value="/pullups")
@@ -87,11 +92,6 @@ public class IndexController {
 		@RequestMapping(value="/swimming")
 		public String swimming() {
 			return "usr/infra/subpage/swimming";		
-		}
-		
-		@RequestMapping(value="/allTimeRecord")
-		public String allTimeRecord() {
-			return "usr/infra/subpage/allTimeRecord";		
 		}
 		
 		//----------usr login & register form	

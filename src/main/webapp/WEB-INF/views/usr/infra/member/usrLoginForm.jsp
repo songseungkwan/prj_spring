@@ -26,7 +26,7 @@
             <div class="form login">
                 <div class="form-content">
                     <header>로그인</header>
-                    <form action="#">
+                    <form >
                         <div class="field input-field">
                             <input type="text" placeholder="아이디" class="input">
                         </div>
@@ -36,11 +36,11 @@
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
-                        <div class="form-link">
+<!--                         <div class="form-link">
                             <a href="#" class="forgot-pass">비밀번호가 기억나지 않으신가요??</a>
-                        </div>
+                        </div> -->
 
-                        <div class="field button-field">
+                        <div class="field button-field" >
                             <button>로그인</button>
                         </div>
                     </form>
@@ -133,12 +133,12 @@
                         </div> -->
 
                         <div class="field button-field ">
-                            <button class="btnAdd btn btn-success" type="button">가입하기</button>
+                            <button class="btn btnAdd btn-success"  type="button">가입하기</button>
                         </div>
                     </form>
 
                     <div class="form-link">
-                        <span>이미 계정이 있으신가요? <a href="#" class="link login-link">로그인</a></span>
+                        <span>이미 계정이 있으신가요? <a href="" class="link login-link">로그인</a></span>
                     </div>
                 </div>
 
@@ -171,6 +171,8 @@
 		$("form[name=form]").attr("action","/memberAdd").submit();
 		
 	});
+	
+
 	
 /* 	$("#btnUpdt").on("click", function(){
 		

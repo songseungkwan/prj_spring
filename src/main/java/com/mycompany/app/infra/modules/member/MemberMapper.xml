@@ -77,14 +77,14 @@
         UPDATE
         	member
         SET
-			name
-	    	, id
-	    	, nickname
-	    	, password
-	    	, email
-	    	, address	
-	    	, phone
-   	    	, delNy
+			  name = #{name}
+	    	, id = #{id}
+	    	, nickname = #{nickname}
+	    	, password = #{password}
+	    	, email = #{email}
+	    	, address =	#{address}
+	    	, phone = #{phone}
+
 
         WHERE
         	seq = #{seq}

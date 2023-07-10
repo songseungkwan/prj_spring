@@ -140,7 +140,12 @@
 	
 	$(".btnAdd").on("click", function(){
 		
-		$("form[name=form]").attr("action","/codeAdd").submit();
+		if($.trim($("#name").val()) ==  "" || $.trim($("#name").val()) == null) {
+			alert("데이터를 입력해주십쌉싸리와용");
+			$("#name").focus();
+		} else {
+			$("form[name=form]").attr("action","/codeAdd").submit();
+		}
 		
 	});
 	

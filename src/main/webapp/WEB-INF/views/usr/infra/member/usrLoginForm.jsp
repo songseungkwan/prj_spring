@@ -157,16 +157,21 @@
                         <span>구글 계정으로 로그인</span>
                     </a>
                 </div> -->
-
-            </div>
+cc
         </section>
 
         <!-- JavaScript -->
         <script src="resources/usrLoginSignupFormAssets/js/script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+            <script src="resources/usrLoginSignupFormAssets/js/validation.js"></script>
 	<script>
 	
 	$(".btnAdd").on("click", function(){
+		
+		
+		
+		
+		
 		
 		$("form[name=form]").attr("action","/memberAdd").submit();
 		

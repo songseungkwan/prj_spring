@@ -106,11 +106,52 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 	<script>
+	
+	validationInst = function() {
+		if(validationUpdt() == false) return false;
+	}
+	
+	validationUpdt = function() {
+/* 		// 실제 체킹하는 소스가 들어가는 부분
+		if($.trim($("#name").val()) ==  "" || $.trim($("#name").val()) == null) {
+			alert("데이터를 입력해주세용");
+			$("#name").focus();
+			return false;
+		} else {	
+			
+		} */
+		
+		// 정규표현식 선언
+		// 공백없는 숫자와 대소문자(한글 제외)
+		myRe = /^[a-z0-9_-]{2,10}$/;
+		
+		
+		if( myRe.test( $.trim( $("#name").val())) == false) {
+			alert("공백없는 숫자와 대문자만 (한글 제외) 입력 가능합니다.")
+			$("#name").focus();
+			return false;
+		} else {
+// 			by pass 
+		}
+		
+		
+	
+	}
+	
 	$("#btnUpdt").on("click", function(){
 		
+		if(validationUpdt() == false) return false;							/* **** */
 		$("form[name=form]").attr("action","/codeGroupUpdt").submit();
 		
 	});
+	
+	$(".btnAdd").on("click", function(){
+		
+		if(validationInst() == false) return false;							/* **** */
+		$("form[name=form]").attr("action","/codeGroupAdd").submit();
+		
+	});
+	
 	
 	$("#btnDel").on("click", function(){
 
@@ -118,11 +159,6 @@
 		
 	});
 	
-	$(".btnAdd").on("click", function(){
-		
-		$("form[name=form]").attr("action","/codeGroupAdd").submit();
-		
-	});
 	
 	$("#btnUel").on("click", function(){
 		

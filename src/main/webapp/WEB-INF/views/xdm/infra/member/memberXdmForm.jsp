@@ -155,112 +155,27 @@
 
 	<script>
 	
-	validationInst = function() {
-		if(validationUpdt() == false) return false;
-	}
-	
-	validationUpdt = function() {
-
-		
-		// 정규표현식 선언
-		// 공백없는 숫자와 대소문자(한글 제외)
-		myRe = /^[a-z0-9_-]{2,10}$/;
-		/* 8. 영문자 대소문자, 숫자로만 구성 */
-		myLe = /[a-zA-Z0-9]/;
-		/* 최소 8자리 이상 숫자, 특수문자가 각각 1개 이상 (패스워드 체크시 활용) */
-		myPe = /^(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
-		/* 일반 이메일 주소 체크 */
-		myEe = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-		/* 한글포함 특수문자와 공백 */
-		myAe = [^?a-zA-Z0-9/]/;
-		/* 휴대폰 번호 */
-		myCe == /^\d{3}-\d{3,4}-\d{4}$/;
-		
-		
-		
-		
-		
-		
-		
-		if( myRe.test( $.trim( $("#name").val())) == false) {
-			alert("공백없는 숫자와 대문자만 (한글 제외) 입력 가능합니다.")
-			$("#name").focus();
-			return false;
-		} else {
-// 			by pass 
-		}
-		
-		
-		if( myLe.test( $.trim( $("#nickname").val())) == false) {
-			alert("영문자 대소문자, 숫자로만 입력 가능합니다.")
-			$("#nickname").focus();
-			return false;
-		} else {
-// 			by pass 
-		}
-		
-		if( myPe.test( $.trim( $("#password").val())) == false) {
-			alert("최소 8자리 이상 숫자, 특수문자가 각각 1개 이상 입력 가능합니다.")
-			$("#password").focus();
-			return false;
-		} else {
-// 			by pass 
-		}
-		
-		if( myEe.test( $.trim( $("#email").val())) == false) {
-			alert(" 일반 이메일 주소 입력 가능합니다.")
-			$("#email").focus();
-			return false;
-		} else {
-// 			by pass 
-		}
-		
-		if( myAe.test( $.trim( $("#address").val())) == false) {
-			alert("한글포함 특수문자와 공백 입력 가능합니다.")
-			$("#address").focus();
-			return false;
-		} else {
-// 			by pass 
-		}
-		
-		if( myCe.test( $.trim( $("#phone").val())) == false) {
-			alert("휴대폰 번호 입력 가능합니다.")
-			$("#phone").focus();
-			return false;
-		} else {
-// 			by pass 
-		}
-		
-		
-		
-	
-	}
-	
 	$("#btnUpdt").on("click", function(){
 		
-		if(validationUpdt() == false) return false;							/* **** */
-		$("form[name=form]").attr("action","/codeGroupUpdt").submit();
+		$("form[name=form]").attr("action","/memberUpdt").submit();
 		
 	});
 	
 	$(".btnAdd").on("click", function(){
 		
-		if(validationInst() == false) return false;							/* **** */
-		$("form[name=form]").attr("action","/codeGroupAdd").submit();
+		$("form[name=form]").attr("action","/memberAdd").submit();
 		
 	});
-	
 	
 	$("#btnDel").on("click", function(){
 
-		$("form[name=form]").attr("action","/codeGroupDel").submit();
+		$("form[name=form]").attr("action","/memberDel").submit();
 		
 	});
 	
-	
 	$("#btnUel").on("click", function(){
 		
-		$("form[name=form]").attr("action","/codeGroupUel").submit();
+		$("form[name=form]").attr("action","/memberUel").submit();
 		
 	});
 	

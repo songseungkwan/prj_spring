@@ -23,16 +23,16 @@
     </head>
     <body>
         <section class="container forms">
-            <div class="form login">
+            <div class="form login" >
                 <div class="form-content">
                     <header>로그인</header>
-                    <form >
+                    <form method="post">
                         <div class="field input-field">
-                            <input type="text" placeholder="아이디" class="input">
+                            <input type="text" placeholder="아이디" class="input" name="name">
                         </div>
 
                         <div class="field input-field">
-                            <input type="password" placeholder="비밀번호" class="password">
+                            <input type="password" placeholder="비밀번호" class="password" name="password">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
@@ -40,7 +40,7 @@
                             <a href="#" class="forgot-pass">비밀번호가 기억나지 않으신가요??</a>
                         </div> -->
 
-                        <div class="field button-field" >
+                        <div class="field button-field btnLogin" >
                             <button>로그인</button>
                         </div>
                     </form>
@@ -98,7 +98,7 @@
                         <div class="field input-field">
                             <label for="password" class="col-sm-2 col-form-label">비밀번호</label>
 		                    <div class="col-sm-5">
-		                      <input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" >
+		                      <input type="text" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" >
 		                    </div>
                         </div>
                         
@@ -141,7 +141,6 @@
                         <span>이미 계정이 있으신가요? <a href="" class="link login-link">로그인</a></span>
                     </div>
                 </div>
-              </div>
 
                 <!-- <div class="line"></div>
 
@@ -158,6 +157,7 @@
                         <span>구글 계정으로 로그인</span>
                     </a>
                 </div> -->
+
         </section>
 
         <!-- JavaScript -->
@@ -166,12 +166,11 @@
             <script src="resources/usrLoginSignupFormAssets/js/validation.js"></script>
 	<script>
 	
-	
 	var objName = $("#name");
 	var objId = $("#id");
 	var objNickname = $("#nickname");
 	var objPassword = $("#password");
-	var objEmail = $("#email");
+	var obj}Email = $("#email");
 	var objAddress = $("#address");
 	var objPhone = $("#phone");
 	
@@ -180,17 +179,19 @@
 	}
 	
 	validationUpdt = function() {
-		if(checkName(objName) == false) return false;
-		if(checkId(objId) == false) return false;
-		if(checkNickname(objNickname) == false) return false;
-		if(checkPassword(objPassword) == false) return false;
-		if(checkEmail(objEmail) == false) return false;
-		if(checkAddress(objAddress) == false) return false;
-		if(checkPhone(objPhone) == false) return false;
 
+		if(check(objName) == false) return false;
+		
+	
 	}
 	
-
+	
+	
+	
+	$("#btnLogin").om("click" , function(){	
+		$("form[name=form]").attr("action","/member").submit();
+	})
+	
 	
 	$(".btnAdd").on("click", function(){
 		

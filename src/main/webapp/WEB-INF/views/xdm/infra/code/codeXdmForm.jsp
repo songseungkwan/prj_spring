@@ -125,9 +125,48 @@
   <!-- Template Main JS File -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="resources/adminAssets/js/validation.js"></script>
 	<script>
+	
+	
+	var objName = $("#name");
+	
+	validationInst = function() {
+		if(validationUpdt() == false) return false;
+	}
+	
+	validationUpdt = function() {
+/* 		// 실제 체킹하는 소스가 들어가는 부분
+		if($.trim($("#name").val()) ==  "" || $.trim($("#name").val()) == null) {
+			alert("데이터를 입력해주세용");
+			$("#name").focus();
+			return false;
+		} else {	
+			
+		} */
+		
+		// 정규표현식 선언
+		// 공백없는 숫자와 대소문자& _ - (한글 제외)
+/* 		myRe = /^[a-zA-Z0-9_-]{2,10}$/;
+		
+		
+		if( myRe.test( $.trim( $("#name").val())) == false) {
+			alert("공백없는 숫자와 대소문자만 (영문) 입력 가능합니다.")
+			$("#name").focus();
+			return false;
+		} else {
+// 			by pass 
+		} */
+		if(check(objName) == false) return false;
+		
+	
+	}
+	
+	
+	
 	$("#btnUpdt").on("click", function(){
 		
+		if(validationUpdt() == false) return false;	
 		$("form[name=form]").attr("action","/codeUpdt").submit();
 		
 	});
@@ -140,12 +179,9 @@
 	
 	$(".btnAdd").on("click", function(){
 		
-		if($.trim($("#name").val()) ==  "" || $.trim($("#name").val()) == null) {
-			alert("데이터를 입력해주십쌉싸리와용");
-			$("#name").focus();
-		} else {
-			$("form[name=form]").attr("action","/codeAdd").submit();
-		}
+		if(validationInst() == false) return false;		
+		$("form[name=form]").attr("action","/codeAdd").submit();
+		
 		
 	});
 	

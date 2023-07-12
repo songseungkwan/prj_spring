@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -110,12 +112,16 @@ public class MemberController {
 	 
 	@ResponseBody
 	@RequestMapping("/loginProc")
-	public Map<String, Object> loginProc(MemberVo vo) {
+	public Map<String, Object> loginProc(MemberVo vo , HttpSession session) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		Member rtMember = service.selectOne(vo);
 		
 		if(rtMember != null) {
+			
+			 // 로그인 성공 시 세션에 사용자 정보 저장
+	        session.setAttribute("id", rtMember.getId());
+	        
 			returnMap.put("rtMember", rtMember);
 			returnMap.put("rt", "success");
 		} else {
@@ -123,6 +129,14 @@ public class MemberController {
 		}
 		
 		return returnMap;
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+	    // 세션에서 사용자 정보를 제거하여 로그아웃 처리
+	    session.removeAttribute("id");
+
+	    return "redirect:indexUsrView"; // 로그아웃 후에 메인 페이지로 리다이렉트
 	}
 		
 //	관리자 로그인

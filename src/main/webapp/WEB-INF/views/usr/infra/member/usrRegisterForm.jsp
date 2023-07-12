@@ -1,176 +1,114 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="rb" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
-<!-- Coding by CodingLab | www.codinglabweb.com-->
-    <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> 로그인 & 회원가입 </title>
+<html lang="ko">
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="resources/usrLoginSignupFormAssets/css/style.css">
-                
-        <!-- Boxicons CSS -->
-        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-                        
-    </head>
-    <body>
-        <section class="container forms">
-            <div class="form login" >
-                <div class="form-content">
-                    <header>로그인</header>
-                    <form method="post">
-                        <div class="field input-field">
-                            <input type="text" placeholder="아이디" class="input" name="name">
-                        </div>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
 
-                        <div class="field input-field">
-                            <input type="password" placeholder="비밀번호" class="password" name="password">
-                            <i class='bx bx-hide eye-icon'></i>
-                        </div>
+<link rel="stylesheet" href="resources/logRegAssets/css/style.css">
 
-<!--                         <div class="form-link">
-                            <a href="#" class="forgot-pass">비밀번호가 기억나지 않으신가요??</a>
-                        </div> -->
+<!-- Font Awesome -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+	rel="stylesheet" />
+<!-- Google Fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+	rel="stylesheet" />
+<!-- MDB -->
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css"
+	rel="stylesheet" />
+</head>
 
-                        <div class="field button-field btnLogin" >
-                            <button>로그인</button>
-                        </div>
-                    </form>
+<body>
+	<section class="vh-100 bg-image" style="background-color : black;" >
+		<div class="mask d-flex align-items-center h-100 gradient-custom-3">
+			<div class="container h-100">
+				<div
+					class="row d-flex justify-content-center align-items-center h-100">
+					<div class="col-12 col-md-9 col-lg-7 col-xl-6">
+						<div class="card" style="border-radius: 15px;">
+							<div class="card-body p-5">
+								<h2 class="text-uppercase text-center mb-5">계정 만들기</h2>
 
-                    <div class="form-link">
-                        <span>계정이 없으신가요? <a href="#" class="link signup-link">회원가입</a></span>
-                    </div>
-                </div>
+								<form name="form" method="post">
 
-                <div class="line"></div>
+									<div class="form-outline mb-4">
+										<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" > 
+										<label class="form-label" for="name">Your Name</label>
+									</div>
+									
+									<div class="form-outline mb-4">
+									    <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" >
+										<label class="form-label" for="id">Your Id</label>
+									</div>
+									
+									<div class="form-outline mb-4">
+										<input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" >
+										<label class="form-label" for="nickname">Your Nickname</label>
+									</div>
+									
+									<div class="form-outline mb-4">
+										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" > 
+										<label class="form-label" for="password">Password</label>
+									</div>
 
-                <div class="media-options">
-                    <a href="#" class="field facebook">
-                        <i class='bx bxl-facebook facebook-icon'></i>
-                        <span>페이스북 계정으로 로그인</span>
-                    </a>
-                </div>
+									<div class="form-outline mb-4">
+										<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" > 
+										<label class="form-label" for="email">Your Email</label>
+									</div>
+									
+									<div class="form-outline mb-4">
+										<input type="text" class="form-control" id="address" name="address" value="<c:out value="${item.address}"/>" > 
+										<label class="form-label" for="address">Your Address</label>
+									</div>
+									
+									<div class="form-outline mb-4">
+										<input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>" > 
+										<label class="form-label" for="phone">Your Phone</label>
+									</div>
 
-                <div class="media-options">
-                    <a href="#" class="field google">
-                        <img src="resources/usrLoginSignupFormAssets/images/google.png" alt="" class="google-img">
-                        <span>구글 계정으로 로그인</span>
-                    </a>
-                </div>
+									<div class="d-flex justify-content-center">
+										<button type="button"
+											class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button>
+									</div>
 
-            </div>
+									<p class="text-center text-muted mt-5 mb-0">
+										이미 가입하셨나요? <a href="usrLoginForm"
+											class="fw-bold text-body"><u>Login here</u></a>
+									</p>
 
-            <!-- Signup Form -->
+								</form>
 
-            <div class="form signup">
-                <div class="form-content">
-                    <header>회원가입</header>
-                    <form name="form" method="post">
-                        <div class="field input-field">
-                            <label for="name" class="col-sm-2 col-form-label">이름</label>
-		                    <div class="col-sm-5">
-		                      <input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >
-		                    </div>
-                        </div>
-                        
-                        <div class="field input-field">
-                            <label for="id" class="col-sm-2 col-form-label">아이디</label>
-		                    <div class="col-sm-5">
-		                      <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" >
-		                    </div>
-                        </div>
-                        
-                        <div class="field input-field">
-                            <label for="nickname" class="col-sm-2 col-form-label">별명</label>
-		                    <div class="col-sm-5">
-		                      <input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" >
-		                    </div>
-                        </div>
-                        
-                        <div class="field input-field">
-                            <label for="password" class="col-sm-2 col-form-label">비밀번호</label>
-		                    <div class="col-sm-5">
-		                      <input type="text" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" >
-		                    </div>
-                        </div>
-                        
-                        <div class="field input-field">
-                            <label for="email" class="col-sm-2 col-form-label">email</label>
-		                    <div class="col-sm-5">
-		                      <input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" >
-		                    </div>
-                        </div>
-                        
-                        <div class="field input-field">
-                            <label for="address" class="col-sm-2 col-form-label">주소</label>
-		                    <div class="col-sm-5">
-		                      <input type="text" class="form-control" id="address" name="address" value="<c:out value="${item.address}"/>" >
-		                    </div>
-                        </div>
-                        
-                        <div class="field input-field">
-                            <label for="phone" class="col-sm-2 col-form-label">연락처</label>
-		                    <div class="col-sm-5">
-		                      <input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>" >
-		                    </div>
-                        </div>
-                        
-
-
-                        
-
-                        <!-- <div class="field input-field">
-                            <input type="password" placeholder="비밀번호 확인" class="password">
-                            <i class='bx bx-hide eye-icon'></i>
-                        </div> -->
-
-                        <div class="field button-field ">
-                            <button class="btn btnAdd btn-success"  type="button">가입하기</button>
-                        </div>
-                    </form>
-
-                    <div class="form-link">
-                        <span>이미 계정이 있으신가요? <a href="" class="link login-link">로그인</a></span>
-                    </div>
-                </div>
-
-                <!-- <div class="line"></div>
-
-                <div class="media-options">
-                    <a href="#" class="field facebook">
-                        <i class='bx bxl-facebook facebook-icon'></i>
-                        <span>페이스북 계정으로 로그인</span>
-                    </a>
-                </div>
-
-                <div class="media-options">
-                    <a href="#" class="field google">
-                        <img src="resources/usrLoginSignupFormAssets/images/google.png" alt="" class="google-img">
-                        <span>구글 계정으로 로그인</span>
-                    </a>
-                </div> -->
-
-        </section>
-
-        <!-- JavaScript -->
-        <script src="resources/usrLoginSignupFormAssets/js/script.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-            <script src="resources/usrLoginSignupFormAssets/js/validation.js"></script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- MDB -->
+	<script type="text/javascript"
+		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>		
+    <script src="resources/logRegAssets/js/validation.js"></script>
 	<script>
+	
 	
 	var objName = $("#name");
 	var objId = $("#id");
 	var objNickname = $("#nickname");
 	var objPassword = $("#password");
-	var obj}Email = $("#email");
+	var objEmail = $("#email");
 	var objAddress = $("#address");
 	var objPhone = $("#phone");
 	
@@ -179,19 +117,17 @@
 	}
 	
 	validationUpdt = function() {
+		if(checkName(objName) == false) return false;
+		if(checkId(objId) == false) return false;
+		if(checkNickname(objNickname) == false) return false;
+		if(checkPassword(objPassword) == false) return false;
+		if(checkEmail(objEmail) == false) return false;
+		if(checkAddress(objAddress) == false) return false;
+		if(checkPhone(objPhone) == false) return false;
 
-		if(check(objName) == false) return false;
-		
-	
 	}
 	
-	
-	
-	
-	$("#btnLogin").om("click" , function(){	
-		$("form[name=form]").attr("action","/member").submit();
-	})
-	
+
 	
 	$(".btnAdd").on("click", function(){
 		
@@ -221,9 +157,7 @@
 	}); */
 	
 	</script>
-        
-        
-        
-        
-    </body>
+		
+</body>
+
 </html>

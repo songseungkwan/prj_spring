@@ -43,12 +43,12 @@
                   					<form class="row g-3 needs-validation" novalidate>
                    						<div class="col-12">
                       						<label for="yourUsername" class="form-label">아이디</label>
-                      						<input type="text" name="username" class="form-control" id="yourUsername" required>
+                      						<input type="text" name="id" class="form-control" id="id" required>
                        						<div class="invalid-feedback">아이디를 입력해 주세요.</div>
                    						</div>
                     					<div class="col-12">
                       						<label for="yourPassword" class="form-label">비밀번호</label>
-                      						<input type="password" name="password" class="form-control" id="yourPassword" required>
+                      						<input type="password" name="password" class="form-control" id="password" required>
                       						<div class="invalid-feedback">비밀번호를 입력해 주세요.</div>
                     					</div>
                     					<div class="col-12">
@@ -58,7 +58,9 @@
                       						</div>
                     					</div>
                    						<div class="col-12 d-flex">
-                   							<button class="btn btn-outline-secondary w-50" id="submitForm" type="text" onclick="location.href='indexXdmView'">로그인</button>
+                   							<button class="btn btnLogin btn-outline-secondary w-50"  type="button" >로그인</button>
+										<!-- onclick="location.href='indexXdmView'" -->
+                   							
                    							<button class="btn btn-outline-secondary btnCancel w-50" type="button">뒤로</button>                    					
                     					</div>
                     					<div class="col-12">
@@ -67,7 +69,7 @@
                   					</form>
                 				</div>
               				</div>
-              					</form>
+          				   </form>
             			</div>
           			</div>
         		</div>
@@ -75,6 +77,7 @@
    		</div>
 	</main>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 	<script src="resources/assets/js/main.js"></script>
 	<script type="text/javascript">
 	
@@ -83,6 +86,46 @@
 	  		window.history.back();
 		});
 	
+		$(".btnLogin").on("click", function(){
+			
+			if(validation() == false) return false;
+			
+			$.ajax({
+				async: true 
+				,cache: false
+				,type: "post"
+				/* ,dataType:"json" */
+				,url: "/loginProc"
+				/* ,data : $("#formLogin").serialize() */
+				,data : { "id" : $("#id").val(),
+					"password" : $("#password").val()}
+				,success: function(response) {
+					if(response.rt == "success") {
+						
+						alert(response.rtMember.name);
+						location.href = "/indexXdmView";
+					} else {
+						alert("그런 회원 없습니다.");
+						$("#password").val("");
+						$("#password").focus();
+						
+					}
+				}
+				,error : function(jqXHR, textStatus, errorThrown){
+					alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+				}
+			});
+		});
+
+
+		validation = function() {
+			// if(!checkNull($("#ifmmId"), $.trim($("#ifmmId").val()), "아이디를 입력해 주세요!")) return false;
+			// if(!checkNull($("#ifmmPassword"), $.trim($("#ifmmPassword").val()), "비밀번호를 입력해 주세요!")) return false;
+		}
+		
+		
+		
+		
 	</script>
 </body>
 </html>

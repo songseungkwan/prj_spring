@@ -1,16 +1,15 @@
 package com.mycompany.app.infra.modules.member;
 
+import java.util.HashMap;
 import java.util.List;
-
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.mycompany.app.infra.modules.member.Member;
-import com.mycompany.app.infra.modules.member.MemberVo;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MemberController {
@@ -102,6 +101,38 @@ public class MemberController {
 		
 		return "redirect: /memberXdmList";
 	}
+	
+	
+//	유저 로그인
+    @RequestMapping("/usrLoginForm") 
+    public String usrLoginForm() {
+	   return "usr/infra/member/usrLoginForm"; }
+	 
+	@ResponseBody
+	@RequestMapping("/loginProc")
+	public Map<String, Object> loginProc(MemberVo vo) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		Member rtMember = service.selectOne(vo);
+		
+		if(rtMember != null) {
+			returnMap.put("rtMember", rtMember);
+			returnMap.put("rt", "success");
+		} else {
+			returnMap.put("rt","fail");
+		}
+		
+		return returnMap;
+	}
+		
+//	관리자 로그인
+	@RequestMapping("/xdmLoginForm")
+	public String xdmLoginForm() {
+		return "xdm/infra/member/xdmLoginForm";		
+	}
+	
+	
+	
 	
 	
 	

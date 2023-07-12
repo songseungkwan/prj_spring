@@ -15,10 +15,10 @@ public class IndexController {
 	   }
 
 		
-		@RequestMapping(value="/xdmLoginForm")
-		public String xdmLoginForm() {
-			return "xdm/infra/member/xdmLoginForm";		
-		}
+//		@RequestMapping(value="/xdmLoginForm")
+//		public String xdmLoginForm() {
+//			return "xdm/infra/member/xdmLoginForm";		
+//		}
 		
 		@RequestMapping(value="/xdmRegister")
 		public String xdmRegister() {
@@ -95,12 +95,7 @@ public class IndexController {
 		}
 		
 		//----------usr login & register form	
-		
-		@RequestMapping(value="/usrLoginForm")
-		public String usrLoginForm() {
-			return "usr/infra/member/usrLoginForm";		
-		}
-		
+				
 		@RequestMapping(value="/usrRegisterForm")
 		public String usrRegisterForm() {
 			return "usr/infra/member/usrRegisterForm";		

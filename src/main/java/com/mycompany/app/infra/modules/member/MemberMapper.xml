@@ -65,12 +65,19 @@
 
     <select id="selectOne" resultMap="resultMapObj">
         SELECT
-        	<include refid="abc" />
+        	seq
+        	, name
+        	, id
         FROM
         	member
         WHERE 1=1
-        	AND seq = #{seq}
+        	AND id = #{id}
+        	AND password = #{password}
+        	
     </select>
+    
+    
+    
 
 <!-- =============================================================== -->
     <update id="update">

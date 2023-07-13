@@ -44,4 +44,11 @@ public class MemberDao {
 // sqlSession 객체를 쓴다 => mybatis 를 쓰겠다는 뜻
 	// delete , insert , update , select - 반환값 int
 	
+	// 중복체크 
+	public int selectOneCheckId(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOneCheckId", vo);}
+	
+	
+	
+	
+	
 }

@@ -19,5 +19,9 @@ public interface MemberService {
 	public int uelete(Member dto);
 
 
+
+
+
+
 	
 }

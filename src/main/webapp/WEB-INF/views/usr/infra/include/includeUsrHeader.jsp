@@ -66,9 +66,24 @@ String id = (String) request.getSession().getAttribute("id");
 							</ul></li>
 						<li><a href="#">Drop Down 2</a></li>
 						<li><a href="#">Drop Down 3</a></li>
-						<li><a href="#">Drop Down 4</a></li>
+						<li><a href="#">Drop Down 4</a></li>	
 					</ul></li>
+					
+					<li>
 				<!--           <li class="nav-item"><a href="usrLoginForm" class="nav-link">로그인</a></li> -->
+				<c:choose>
+					<c:when test="${not empty sessionId }">
+						 <c:out value="${sessionId }"/>
+						<button type="button" class="btn btnLogout" id="btnLogout" style="color: #fff;">로그아웃</button>
+					</c:when>
+					<c:otherwise>
+						<a href="usrLoginForm">로그인</a>
+						<li class="nav-item"><a href="usrRegisterForm" class="nav-link">회원가입</a></li>
+					</c:otherwise>
+				</c:choose>
+<%-- 				
+				
+				
 				<li>
 					<%
 					if (id != null) { // 로그인 상태인 경우
@@ -86,13 +101,13 @@ String id = (String) request.getSession().getAttribute("id");
 										if (id != null) { // 로그인 상태인 경우
 										%> <a href="logout">로그아웃</a> <%
 					 } else { // 로그인 상태가 아닌 경우
-					 %> <a href="usrRegisterForm"> 회원가입 </a> <%
+
 					 }
-					 %>
+					 %> --%>
 				</li>
 
 
-				<!--           <li class="nav-item"><a href="usrRegisterForm" class="nav-link">회원가입</a></li> -->
+				<!--            -->
 
 
 			</ul>
@@ -106,6 +121,45 @@ String id = (String) request.getSession().getAttribute("id");
 </header>
 <!-- End Header -->
 <!-- End Header -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+
+	$("#btnLogout").on("click", function(){
+		
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/logoutProc"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { }
+			,success: function(response) {
+					
+					location.href = "/indexUsrView";
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " +  jqXHR.errorThrown);
+			}
+		});
+	});
+	
+	
+
+
+
+validation = function() {
+	// if(!checkNull($("#ifmmId"), $.trim($("#ifmmId").val()), "아이디를 입력해 주세요!")) return false;
+	// if(!checkNull($("#ifmmPassword"), $.trim($("#ifmmPassword").val()), "비밀번호를 입력해 주세요!")) return false;
+}
+
+
+
+
+</script>
+
+
+
 
 
 

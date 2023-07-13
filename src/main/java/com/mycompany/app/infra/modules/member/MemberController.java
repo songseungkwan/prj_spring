@@ -18,6 +18,7 @@ public class MemberController {
 
 	@Autowired
 	MemberServiceImpl service;
+	private HttpSession httpSession;
 
 	@RequestMapping("/memberXdmList")
 	public String memberXdmList( @ModelAttribute("vo") MemberVo vo, Model model) {
@@ -120,7 +121,7 @@ public class MemberController {
 		if(rtMember != null) {
 			
 			 // 로그인 성공 시 세션에 사용자 정보 저장
-	        session.setAttribute("id", rtMember.getId());
+	        session.setAttribute("sessionId", vo.getId());
 	        
 			returnMap.put("rtMember", rtMember);
 			returnMap.put("rt", "success");
@@ -131,19 +132,64 @@ public class MemberController {
 		return returnMap;
 	}
 	
-	@RequestMapping("/logout")
-	public String logout(HttpSession session) {
-	    // 세션에서 사용자 정보를 제거하여 로그아웃 처리
-	    session.removeAttribute("id");
 
-	    return "redirect:indexUsrView"; // 로그아웃 후에 메인 페이지로 리다이렉트
+	
+	/*
+	 * @ResponseBody
+	 * 
+	 * @RequestMapping("/logout") public String logout(HttpSession session) { //
+	 * 세션에서 사용자 정보를 제거하여 로그아웃 처리 session.removeAttribute("id");
+	 * 
+	 * return "redirect:indexUsrView"; // 로그아웃 후에 메인 페이지로 리다이렉트 }
+	 */
+	
+	
+	@ResponseBody
+	@RequestMapping("/logoutProc")
+	public Map<String, Object> logoutProc(HttpSession httpSession) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+
+		System.out.println(httpSession.getAttribute("sessionId"));
+		httpSession.invalidate();
+		
+		returnMap.put("rt", "success");
+	    return returnMap; // 로그아웃 후에 메인 페이지로 리다이렉트
 	}
+
+	
+	
+	
+	
+	
+	
+	
 		
 //	관리자 로그인
 	@RequestMapping("/xdmLoginForm")
 	public String xdmLoginForm() {
 		return "xdm/infra/member/xdmLoginForm";		
 	}
+	
+	// id 중복체크
+
+	
+	@ResponseBody
+	@RequestMapping("/checkIdProc")
+	public Map<String, Object> checkIdProc(MemberVo vo , HttpSession session) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		int rtNum = service.selectOneCheckId(vo);
+		
+		if(rtNum == 0) {
+			returnMap.put("rt", "available");
+	        
+		} else {
+			returnMap.put("rt","unavailablel");
+		}
+		
+		return returnMap;
+	}
+	
 	
 	
 	

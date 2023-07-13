@@ -77,6 +77,18 @@
     </select>
     
     
+     <select id="selectOneCheckId" resultType="Integer">
+        SELECT
+			COUNT(seq)
+        FROM
+        	member
+        WHERE 1=1
+        	AND id = #{id}
+
+        	
+    </select>
+    
+    
     
 
 <!-- =============================================================== -->

@@ -84,7 +84,7 @@
 
 									<p class="text-center text-muted mt-5 mb-0">
 										이미 가입하셨나요? <a href="usrLoginForm"
-											class="fw-bold text-body"><u>Login here</u></a>
+											class="fw-bold text-body">Login here</a>
 									</p>
 
 								</form>
@@ -127,8 +127,6 @@
 
 	}
 	
-
-	
 	$(".btnAdd").on("click", function(){
 		
 		if(validationInst() == false) return false;	
@@ -137,24 +135,65 @@
 	});
 	
 
-	
-/* 	$("#btnUpdt").on("click", function(){
-		
-		$("form[name=form]").attr("action","/codeGroupUpdt").submit();
-		
+/* 	$('#id').on("blur",function() {
+	    var id = $(this).val();
+	    checkDuplicateId(id);
 	});
-	
-	$("#btnDel").on("click", function(){
 
-		$("form[name=form]").attr("action","/codeGroupDel").submit();
+	function checkDuplicateId(id) {
+	    $.ajax({
+	        async: true,
+	        cache: false,
+	        type: "post",
+	        url: "/checkDuplicateId", // 중복 체크를 수행하는 서버의 URL로 변경
+	        data: {
+	            "id": id
+	        },
+	        success: function(response) {
+	            if (response.isDuplicate) {
+	                $('#idCheckMessage').text('이미 사용 중인 아이디입니다.');
+	            } else {
+	                $('#idCheckMessage').text('사용 가능한 아이디입니다.');
+	            }
+	        },
+	        error: function(jqXHR, textStatus, errorThrown) {
+	            $('#idCheckMessage').text('중복 체크에 실패했습니다.');
+	        }
+	    });
+	} */
+		 
+	$("#id").on("blur", function(){
+
 		
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/checkIdProc"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { "id" : $("#id").val()				}
+			,success: function(response) {
+				if($("#id").val()== null || $("#id").val()==""){
+    				alert("아이디를 입력하세요");
+				}	${"#id"}.focus();l
+    			}
+    			else if(response.rt == "available") {
+    				alert("사용가능")
+    			} else {
+    				alert("중복");
+    			}
+    		}
+
+			// 고정문구
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + jqXHR.errorThrown);
+			}
+		});
 	});
+
+	 
 	
-	$("#btnUel").on("click", function(){
-		
-		$("form[name=form]").attr("action","/codeGroupUel").submit();
-		
-	}); */
 	
 	</script>
 		

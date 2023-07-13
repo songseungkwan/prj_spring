@@ -44,5 +44,11 @@ import org.springframework.stereotype.Service;
 		return dao.uelete(dto);	
 	}
 
+	public int selectOneCheckId(MemberVo vo) {
+
+		return dao.selectOneCheckId(vo);
+	}
+
+
 
 }

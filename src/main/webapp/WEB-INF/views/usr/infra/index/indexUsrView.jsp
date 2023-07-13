@@ -859,17 +859,48 @@
   <script src="resources/realProjectAssets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="resources/realProjectAssets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="resources/realProjectAssets/vendor/php-email-form/validate.js"></script>
-
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <!-- Template Main JS File -->
   <script src="resources/realProjectAssets/js/main.js"></script>
   <script>
-    function checkLogin() {
+  
+<%--     function checkLogin() {
         <% if (id == null) { %>
             alert("로그인 후에 이용 가능합니다");
         <% } else { %>
             // 버튼을 클릭한 후 실행할 동작
         <% } %>
+    } --%>
+    
+    function checkLogin() {
+        <c:choose>
+            <c:when test="${sessionId == null}">
+                alert("<c:out value='로그인 후에 이용 가능합니다'/>");
+            </c:when>
+            <c:otherwise>
+                // 버튼을 클릭한 후 실행할 동작
+            </c:otherwise>
+        </c:choose>
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 </script>
   
 

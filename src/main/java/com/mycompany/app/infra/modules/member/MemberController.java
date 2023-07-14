@@ -174,7 +174,7 @@ public class MemberController {
 
 	
 	@ResponseBody
-	@RequestMapping("/checkIdProc")
+	@RequestMapping("/checkIdProc" )
 	public Map<String, Object> checkIdProc(MemberVo vo , HttpSession session) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
@@ -184,7 +184,7 @@ public class MemberController {
 			returnMap.put("rt", "available");
 	        
 		} else {
-			returnMap.put("rt","unavailablel");
+			returnMap.put("rt","unavailable");
 		}
 		
 		return returnMap;

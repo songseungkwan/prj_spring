@@ -14,8 +14,8 @@
     <sql id="abc">
 
     	seq
-    	, name
     	, id
+    	, name
     	, nickname
     	, password
     	, email
@@ -29,8 +29,8 @@
 	    	member
 
 		WHERE 1=1
-			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')
-																   OR id LIKE CONCAT('%', #{shKeyword}, '%')
+			<if test="shKeyword != null and !shKeyword.equals('')">AND id LIKE CONCAT('%',#{shKeyword},'%')
+																   OR name LIKE CONCAT('%', #{shKeyword}, '%')
 																   OR nickname LIKE CONCAT('%', #{shKeyword}, '%')
 																   OR password LIKE CONCAT('%', #{shKeyword}, '%')
 			           											   OR email LIKE CONCAT('%', #{shKeyword}, '%')
@@ -66,8 +66,8 @@
     <select id="selectOne" resultMap="resultMapObj">
         SELECT
         	seq
-        	, name
         	, id
+        	, name
         FROM
         	member
         WHERE 1=1
@@ -96,10 +96,12 @@
         UPDATE
         	member
         SET
-			  name = #{name}
-	    	, id = #{id}
+        	  id = #{id}
+	    	, password = #{password}        	  
+			, name = #{name}
+
 	    	, nickname = #{nickname}
-	    	, password = #{password}
+
 	    	, email = #{email}
 	    	, address =	#{address}
 	    	, phone = #{phone}
@@ -119,10 +121,10 @@
 
     <insert id="insert">
         INSERT INTO member (
-			  name
-	    	, id
-	    	, nickname
+			  id
+	    	, name
 	    	, password
+	    	, nickname
 	    	, email
 	    	, address
 	    	, phone
@@ -130,10 +132,10 @@
 
 	    	
         ) VALUES (
-        	#{name}
-        	,#{id}        	
-        	,#{nickname}  
-        	,#{password} 
+        	#{id}
+        	,#{name}        	
+        	,#{password}  
+        	,#{nickname} 
         	,#{email} 
         	,#{address} 
         	,#{phone} 

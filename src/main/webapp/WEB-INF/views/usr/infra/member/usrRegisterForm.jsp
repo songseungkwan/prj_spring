@@ -43,24 +43,27 @@
 								<form name="form" method="post">
 
 									<div class="form-outline mb-4">
+									    <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" >
+										<label class="form-label" for="id">Your Id</label>
+									</div>
+									
+									<div class="form-outline mb-4">
+										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" > 
+										<label class="form-label" for="password">Password</label>
+									</div>									
+
+									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" > 
 										<label class="form-label" for="name">Your Name</label>
 									</div>
 									
-									<div class="form-outline mb-4">
-									    <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" >
-										<label class="form-label" for="id">Your Id</label>
-									</div>
 									
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" >
 										<label class="form-label" for="nickname">Your Nickname</label>
 									</div>
 									
-									<div class="form-outline mb-4">
-										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" > 
-										<label class="form-label" for="password">Password</label>
-									</div>
+
 
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" > 
@@ -103,24 +106,31 @@
     <script src="resources/logRegAssets/js/validation.js"></script>
 	<script>
 	
-	
-	var objName = $("#name");
 	var objId = $("#id");
-	var objNickname = $("#nickname");
 	var objPassword = $("#password");
+	var objName = $("#name");
+
+	var objNickname = $("#nickname");
+
 	var objEmail = $("#email");
 	var objAddress = $("#address");
 	var objPhone = $("#phone");
+	
+	
+	
+	var idSuccess = 0;
 	
 	validationInst = function() {
 		if(validationUpdt() == false) return false;
 	}
 	
 	validationUpdt = function() {
-		if(checkName(objName) == false) return false;
 		if(checkId(objId) == false) return false;
-		if(checkNickname(objNickname) == false) return false;
 		if(checkPassword(objPassword) == false) return false;
+		if(checkName(objName) == false) return false;
+
+		if(checkNickname(objNickname) == false) return false;
+
 		if(checkEmail(objEmail) == false) return false;
 		if(checkAddress(objAddress) == false) return false;
 		if(checkPhone(objPhone) == false) return false;
@@ -129,8 +139,21 @@
 	
 	$(".btnAdd").on("click", function(){
 		
+		
+		if(idSuccess == 1) {
+			$("form[name=form]").attr("action","/memberAdd").submit();
+		} else {
+			alert("333")
+		}
+		
+		
+		
 		if(validationInst() == false) return false;	
-		$("form[name=form]").attr("action","/memberAdd").submit();
+
+		
+
+		
+
 		
 	});
 	
@@ -146,8 +169,7 @@
 	        cache: false,
 	        type: "post",
 	        url: "/checkDuplicateId", // 중복 체크를 수행하는 서버의 URL로 변경
-	        data: {
-	            "id": id
+	        data: { "id": id
 	        },
 	        success: function(response) {
 	            if (response.isDuplicate) {
@@ -162,34 +184,74 @@
 	    });
 	} */
 		 
-	$("#id").on("blur", function(){
+// /* 	$("#id").on("blur", function(){
 
 		
-		$.ajax({
-			async: true 
-			,cache: false
-			,type: "post"
-			/* ,dataType:"json" */
-			,url: "/checkIdProc"
-			/* ,data : $("#formLogin").serialize() */
-			,data : { "id" : $("#id").val()				}
-			,success: function(response) {
-				if($("#id").val()== null || $("#id").val()==""){
-    				alert("아이디를 입력하세요");
-				}	${"#id"}.focus();l
-    			}
-    			else if(response.rt == "available") {
-    				alert("사용가능")
-    			} else {
-    				alert("중복");
-    			}
-    		}
+// 		$.ajax({
+// 			async: true 
+// 			,cache: false
+// 			,type: "post"
+// 			/* ,dataType:"json" */
+// 			,url: "/checkIdProc"
+// 			/* ,data : $("#formLogin").serialize() */
+// 			,data : { "id" : $("#id").val()				}
+// 			,success: function(response) {
+// 				if($("#id").val()== null || $("#id").val()==""){
+//     				alert("아이디를 입력하세요");
+// 				}	${"#id"}.focus();l
+//     			}
+//     			else if(response.rt == "available") {
+//     				alert("사용가능")
+//     			} else {
+//     				alert("중복");
+//     			}
+//     		}
 
-			// 고정문구
-			,error : function(jqXHR, textStatus, errorThrown){
-				alert("ajaxUpdate " + jqXHR.textStatus + jqXHR.errorThrown);
-			}
-		});
+// 			// 고정문구
+// 			,error : function(jqXHR, textStatus, errorThrown){
+// 				alert("ajaxUpdate " + jqXHR.textStatus + jqXHR.errorThrown);
+// 			}
+// 		});
+// 	}); */
+	
+	
+	$("#id").on("blur", function() {
+	    var obj = $(this);
+
+	    if (checkId(objId) == false) {
+	        return false;
+	    }
+	    
+	    // AJAX 요청 수행
+	    $.ajax({
+	        async: true,
+	        cache: false,
+	        type: "post",
+	        url: "/checkIdProc",
+	        data: { "id": obj.val() },
+	        success: function(response) {
+	            if (response.rt === "available") {
+	            	
+//  		    		alert("123")
+	                obj.removeClass("is-invalid");
+	                obj.addClass("is-valid");
+	                obj.siblings(".validation").remove();
+	                obj.parent().append("<div class='p-2 text-success validation'>사용 가능한 아이디입니다.</div>");
+	                idSuccess = 1;
+	            } else {
+// 	            	alert("456")
+	                obj.removeClass("is-valid");
+	                obj.addClass("is-invalid");
+	                obj.focus();
+	                obj.siblings(".validation").remove();
+	                obj.parent().append("<div class='p-2 text-danger validation'>사용 불가능한 아이디입니다.</div>");
+	                idSuccess = 0;
+	            }
+	        },
+	        error: function(jqXHR, textStatus, errorThrown) {
+	            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+	        }
+	    });
 	});
 
 	 

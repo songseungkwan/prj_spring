@@ -19,6 +19,32 @@
 	}*/
 	
 	/* register */
+	checkId = function(obj) {
+	
+		valId = /^[A-Za-z0-9-_\.]{4,15}$/;		// 		영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능
+			if(valId.test($.trim(obj.val())) == false) {
+			alert("아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능합니다.");
+//			obj.focus();
+			return false;
+		} else {
+// 			by pass
+		} 
+	
+}	
+		checkPassword = function(obj) {
+	
+		valPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/; 	// 비밀번호 체크 (특수문자 포함) 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합
+			if(valId.test($.trim(obj.val())) == false) {
+			alert("영어소문자, 숫자로 2~10자리 이내로 입력해주세요. ");
+			obj.focus();
+			return false;
+		} else {
+// 			by pass
+		} 
+	
+}
+	
+	
 	checkName = function(obj) {
 		valName = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;			// 		한글, 영문							
 
@@ -32,21 +58,11 @@
 
 	}
 	
-	checkId = function(obj) {
-	
-		valId = /^[a-z0-9]{2,10}$/;		// 		영문자, 소문자, 숫자 로만 구성된 길이 2~10자리 사이의 문자열
-			if(valId.test($.trim(obj.val())) == false) {
-			alert("영어소문자, 숫자로 2~10자리 이내로 입력해주세요. ");
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		} 
-	
-}
+
+
 
 	checkNickname = function(obj) {
-	
+		
 		valNickname = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;			// 		한글, 영문
 		if(valNickname.test($.trim(obj.val())) == false) {
 			alert("한글 혹은 영문만 입력해주세요..");
@@ -58,18 +74,7 @@
 	
 }
 
-	checkPassword = function(obj) {
-	
-		valPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/; 	// 비밀번호 체크 (특수문자 포함) 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합
-			if(valId.test($.trim(obj.val())) == false) {
-			alert("영어소문자, 숫자로 2~10자리 이내로 입력해주세요. ");
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		} 
-	
-}
+
 
 	checkEmail = function(obj) {
 	

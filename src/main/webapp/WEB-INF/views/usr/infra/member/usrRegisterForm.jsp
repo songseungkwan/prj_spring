@@ -218,7 +218,7 @@
 	$("#id").on("blur", function() {
 	    var obj = $(this);
 
-	    if (checkId(objId) == false) {return false; }
+	    if (!checkId(objId) == false) {return false; }
 	    
 	    // AJAX 요청 수행
 		$.ajax({
@@ -229,9 +229,9 @@
 		    data: { "id": obj.val() },
 		    success: function(response) {
         	if ($.trim(obj.val()) == null || $.trim(obj.val()) == "" ) {
-		        obj.removeClass("is-valid");
+// 		        obj.removeClass("is-valid");
 		        obj.addClass("is-invalid");
-		        obj.siblings(".validation").remove();
+// 		        obj.siblings(".validation").remove();
 		        obj.parent().append("<div class='p-2 text-danger validation'>공백을 제거해주세요.</div>");
 		        obj.focus();
 		    } else if (response.rt === "available") {

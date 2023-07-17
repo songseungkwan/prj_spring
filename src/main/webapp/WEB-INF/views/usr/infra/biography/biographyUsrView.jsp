@@ -90,7 +90,7 @@
   <main id="main">
 
     <!-- ======= My Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio" style="background-color:#ccc;">
       <div class="container">
 
         <div class="section-title">
@@ -128,75 +128,68 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Personal">
-            <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="#none">Admin Page</a>
-              <a href="/resources/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+<!--           <div class="col-lg-4 col-md-6 portfolio-item filter-Personal"> -->
+<!--             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div> -->
+<!--             <div class="portfolio-info"> -->
+<!--               <a href="#none">User Page</a> -->
+<!--               <a href="#none">Admin Page</a> -->
+<!--               <a href="/resources/assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a> -->
+<!--             </div> -->
+<!--           </div> -->
 
-            </div>
-          </div>
+<!--           <div class="col-lg-4 col-md-6 portfolio-item filter-Personal"> -->
+<!--             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div> -->
+<!--             <div class="portfolio-info"> -->
+<!--               <a href="#none">User Page</a> -->
+<!--               <a href="#none">Admin Page</a> -->
+<!--               <a href="/resources/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a> -->
+<!--             </div> -->
+<!--           </div> -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Personal">
-            <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="#none">Admin Page</a>
-              <a href="/resources/assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+<!--           <div class="col-lg-4 col-md-6 portfolio-item filter-Team"> -->
+<!--             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div> -->
+<!--             <div class="portfolio-info"> -->
+<!--               <a href="#none">User Page</a> -->
+<!--               <a href="#none">Admin Page</a> -->
+<!--               <a href="/resources/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a> -->
+<!--             </div> -->
+<!--           </div> -->
 
-            </div>
-          </div>
+<!--           <div class="col-lg-4 col-md-6 portfolio-item filter-Team"> -->
+<!--             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div> -->
+<!--             <div class="portfolio-info"> -->
+<!--               <a href="#none">User Page</a> -->
+<!--               <a href="#none">Admin Page</a> -->
+<!--               <a href="/resources/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a> -->
+<!--             </div> -->
+<!--           </div> -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Team">
-            <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="#none">Admin Page</a>
-              <a href="/resources/assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+<!--           <div class="col-lg-4 col-md-6 portfolio-item filter-Team"> -->
+<!--             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div> -->
+<!--             <div class="portfolio-info"> -->
+<!--               <a href="#none">User Page</a> -->
+<!--               <a href="#none">Admin Page</a> -->
+<!--               <a href="/resources/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a> -->
+<!--             </div> -->
+<!--           </div> -->
 
-            </div>
-          </div>
+<!--           <div class="col-lg-4 col-md-6 portfolio-item filter-Team"> -->
+<!--             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div> -->
+<!--             <div class="portfolio-info"> -->
+<!--               <a href="#none">User Page</a> -->
+<!--               <a href="#none">Admin Page</a> -->
+<!--               <a href="/resources/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a> -->
+<!--             </div> -->
+<!--           </div> -->
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Team">
-            <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="#none">Admin Page</a>
-              <a href="/resources/assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Team">
-            <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="#none">Admin Page</a>
-              <a href="/resources/assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Team">
-            <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="#none">Admin Page</a>
-              <a href="/resources/assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-Team">
-            <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <a href="#none">User Page</a>
-              <a href="#none">Admin Page</a>
-              <a href="/resources/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-
-            </div>
-          </div>
+<!--           <div class="col-lg-4 col-md-6 portfolio-item filter-Team"> -->
+<!--             <div class="portfolio-img"><img src="/resources/assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div> -->
+<!--             <div class="portfolio-info"> -->
+<!--               <a href="#none">User Page</a> -->
+<!--               <a href="#none">Admin Page</a> -->
+<!--               <a href="/resources/assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a> -->
+<!--             </div> -->
+<!--           </div> -->
 
         </div>
 

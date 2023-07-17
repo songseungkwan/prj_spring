@@ -125,20 +125,20 @@
 	}
 	
 	validationUpdt = function() {
-		if(checkId(objId) == false) return false;
-		if(checkPassword(objPassword) == false) return false;
-		if(checkName(objName) == false) return false;
+		if(checkId(objId) === false) return false;
+		if(checkPassword(objPassword) === false) return false;
+		if(checkName(objName) === false) return false;
 
-		if(checkNickname(objNickname) == false) return false;
+		if(checkNickname(objNickname) === false) return false;
 
-		if(checkEmail(objEmail) == false) return false;
-		if(checkAddress(objAddress) == false) return false;
-		if(checkPhone(objPhone) == false) return false;
+		if(checkEmail(objEmail) === false) return false;
+		if(checkAddress(objAddress) === false) return false;
+		if(checkPhone(objPhone) === false) return false;
 
 	}
 	
 	$(".btnAdd").on("click", function(){
-		if(validationInst() == false) return false;	
+		if(validationInst() === false) return false;	
 
 // 		if(idSuccess == 0) {
 			$("form[name=form]").attr("action","/memberAdd").submit();
@@ -161,24 +161,58 @@
 
     
     // AJAX 요청 수행
+//     $.ajax({
+//         async: true,
+//         cache: false,
+//         type: "post",
+//         url: "/checkIdProc",
+//         data: { "id": obj.val().trim() },
+//         success: function(response) {
+//             if (response.rt === "available") {
+
+//                 $("#id").removeClass("border-danger");
+//                 $("#id").siblings(".validation").remove();
+//                 $("#id").parent().append("<div class='p-2 text-success validation'>사용 가능한 아이디입니다.</div>");
+// //                 idajaxck = 0;
+//             } else {
+
+//                 $("#id").addClass("border-danger");
+//                 $("#id").siblings(".validation").remove();
+//                 $("#id").parent().append("<div class='p-2 text-danger validation'>사용 불가능한 아이디입니다.</div>");
+//                 $("#id").focus();
+// //                 idajaxck = 1;
+//             }
+//         },
+//         error: function(jqXHR, textStatus, errorThrown) {
+//             alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+//         }
+//     });
+// });
+
+	
     $.ajax({
         async: true,
         cache: false,
         type: "post",
         url: "/checkIdProc",
-        data: { "id": obj.val().trim() },
+        data: { "id": obj.val() },
         success: function(response) {
             if (response.rt === "available") {
-
-                $("#id").removeClass("border-danger");
+            	if (!checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능합니다.")) {
+ 		        	return false;
+ 		    	} else {
+				alert("성공")
+                $("#id").removeClass("is-invalid");
+                $("#id").addClass("is-valid");
                 $("#id").siblings(".validation").remove();
-                $("#id").parent().append("<div class='p-2 text-success validation'>사용 가능한 아이디입니다.</div>");
+                $("#id").parent().append("<div class='p-2 text-success is-valid'>사용 가능한 아이디입니다.</div>");
 //                 idajaxck = 0;
+ 		    	}
             } else {
 
-                $("#id").addClass("border-danger");
+                $("#id").addClass("is-invalid");
                 $("#id").siblings(".validation").remove();
-                $("#id").parent().append("<div class='p-2 text-danger validation'>사용 불가능한 아이디입니다.</div>");
+                $("#id").parent().append("<div class='p-2 text-danger is-invalid'>사용 불가능한 아이디입니다.</div>");
                 $("#id").focus();
 //                 idajaxck = 1;
             }
@@ -188,7 +222,6 @@
         }
     });
 });
-
 
 
 

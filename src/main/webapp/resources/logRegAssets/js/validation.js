@@ -18,13 +18,9 @@
 
 	}*/
 	
-	/* register */
+	/* register */	
 	checkId = function(obj) {
-	
-	
 		valId = /^[A-Za-z0-9-_\.]{4,15}$/;		// 		영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능
-
-		
 			if(valId.test($.trim(obj.val())) == false) {
 
 //			alert("아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능합니다.(공백 제외)");
@@ -40,14 +36,17 @@
 		}  else {
 // 			by pass
 		} 
-	
 }	
 
+$("#id").on("keydown", function(event) {
+    if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
+        event.preventDefault();
+    }
+});
 
 
 
-
-
+// password
 		checkPassword = function(obj) {
 	
 		valPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/; 	// 비밀번호 체크 (특수문자 포함) 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합
@@ -60,8 +59,13 @@
 		} 
 	
 }
+$("#password").on("keydown", function(event) {
+    if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
+        event.preventDefault();
+    }
+});
 	
-	
+//	 name
 	checkName = function(obj) {
 		valName = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;			// 		한글, 영문							
 
@@ -74,10 +78,14 @@
 		}
 
 	}
-	
+	$("#name").on("keydown", function(event) {
+    if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
+        event.preventDefault();
+    }
+});
 
 
-
+// nickname
 	checkNickname = function(obj) {
 		
 		valNickname = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;			// 		한글, 영문
@@ -90,9 +98,14 @@
 		}
 	
 }
+$("#nickname").on("keydown", function(event) {
+    if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
+        event.preventDefault();
+    }
+});
 
 
-
+// email
 	checkEmail = function(obj) {
 	
 		valEmail =  /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;	// 이메일 체크 정규식
@@ -105,7 +118,13 @@
 		}
 	
 }
+$("#email").on("keydown", function(event) {
+    if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
+        event.preventDefault();
+    }
+});
 
+// address
 	checkAddress = function(obj) {
 	
 		valAddress = /[^?a-zA-Z0-9/]/;						// 한글포함 특수문자와 공백
@@ -116,9 +135,15 @@
 		} else {
 // 			by pass
 		}
-	
 }
 
+	$("#address").on("keydown", function(event) {
+    if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
+        event.preventDefault();
+    }
+});
+
+// phone
 	checkPhone = function(obj) {
 	
 		valPhone = /^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/;			//  핸드폰 번호 체크
@@ -131,6 +156,11 @@
 		}
 	
 }
+$("#phone").on("keydown", function(event) {
+    if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
+        event.preventDefault();
+    }
+});
 
 
 

@@ -43,12 +43,12 @@
                   					<form class="row g-3 needs-validation" novalidate>
                    						<div class="col-12">
                       						<label for="yourUsername" class="form-label">아이디</label>
-                      						<input type="text" name="id" class="form-control" id="id" required>
+                      						<input type="text" name="id" class="form-control" id="id" value="adminking" required>
                        						<div class="invalid-feedback">아이디를 입력해 주세요.</div>
                    						</div>
                     					<div class="col-12">
                       						<label for="yourPassword" class="form-label">비밀번호</label>
-                      						<input type="password" name="password" class="form-control" id="password" required>
+                      						<input type="password" name="password" class="form-control" id="password" value="abc123" required>
                       						<div class="invalid-feedback">비밀번호를 입력해 주세요.</div>
                     					</div>
                     					<div class="col-12">

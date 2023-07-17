@@ -21,7 +21,10 @@
 	/* register */
 	checkId = function(obj) {
 	
+	
 		valId = /^[A-Za-z0-9-_\.]{4,15}$/;		// 		영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능
+
+		
 			if(valId.test($.trim(obj.val())) == false) {
 
 //			alert("아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능합니다.(공백 제외)");
@@ -32,10 +35,9 @@
             obj.parent().append("<div class='p-2 text-danger validation'>아이디는 영대소문자, 숫자, 특수문자(-혹은_혹은.)를 포함한 4~15자리만 입력 가능합니다(공백 제외).</div>");
 			obj.focus();
 			obj.alertShown = true; // 추가된 코드: alert가 이미 표시되었음을 표시
-
-
 				return false;
-		} else {
+				
+		}  else {
 // 			by pass
 		} 
 	

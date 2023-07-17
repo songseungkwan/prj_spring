@@ -118,7 +118,7 @@
 	
 	
 	
-	var idSuccess = 0;
+// 	var idSuccess = 0;
 	
 	validationInst = function() {
 		if(validationUpdt() == false) return false;
@@ -138,124 +138,57 @@
 	}
 	
 	$(".btnAdd").on("click", function(){
-		
-		
-		if(idSuccess == 1) {
-			$("form[name=form]").attr("action","/memberAdd").submit();
-		} else {
-			alert("중복 혹은 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리 이내가 아닙니다.")
-		}
-		
-		
-		
 		if(validationInst() == false) return false;	
 
-		
+// 		if(idSuccess == 0) {
+			$("form[name=form]").attr("action","/memberAdd").submit();
+// 		} else {
+// 			alert("중복 혹은 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리 이내가 아닙니다.")
+// 		}
 
-		
-
-		
 	});
 	
 
-/* 	$('#id').on("blur",function() {
-	    var id = $(this).val();
-	    checkDuplicateId(id);
-	});
 
-	function checkDuplicateId(id) {
-	    $.ajax({
-	        async: true,
-	        cache: false,
-	        type: "post",
-	        url: "/checkDuplicateId", // 중복 체크를 수행하는 서버의 URL로 변경
-	        data: { "id": id
-	        },
-	        success: function(response) {
-	            if (response.isDuplicate) {
-	                $('#idCheckMessage').text('이미 사용 중인 아이디입니다.');
-	            } else {
-	                $('#idCheckMessage').text('사용 가능한 아이디입니다.');
-	            }
-	        },
-	        error: function(jqXHR, textStatus, errorThrown) {
-	            $('#idCheckMessage').text('중복 체크에 실패했습니다.');
-	        }
-	    });
-	} */
-		 
-// /* 	$("#id").on("blur", function(){
-
-		
-// 		$.ajax({
-// 			async: true 
-// 			,cache: false
-// 			,type: "post"
-// 			/* ,dataType:"json" */
-// 			,url: "/checkIdProc"
-// 			/* ,data : $("#formLogin").serialize() */
-// 			,data : { "id" : $("#id").val()				}
-// 			,success: function(response) {
-// 				if($("#id").val()== null || $("#id").val()==""){
-//     				alert("아이디를 입력하세요");
-// 				}	${"#id"}.focus();l
-//     			
-//     			else if(response.rt == "available") {
-//     				alert("사용가능")
-//     			} else {
-//     				alert("중복");
-//     			}
-//     		
-
-// 			// 고정문구
-// 			},error : function(jqXHR, textStatus, errorThrown){
-// 				alert("ajaxUpdate " + jqXHR.textStatus + jqXHR.errorThrown);
-// 			}
-// 		});
-// 	}); */
 	
 	
 	$("#id").on("blur", function() {
-	    var obj = $(this);
+    var obj = $(this);
 
-	    if (!checkId(objId) == false) {return false; }
-	    
-	    // AJAX 요청 수행
-		$.ajax({
-		    async: true,
-		    cache: false,
-		    type: "post",
-		    url: "/checkIdProc",
-		    data: { "id": obj.val() },
-		    success: function(response) {
-        	if ($.trim(obj.val()) == null || $.trim(obj.val()) == "" ) {
-// 		        obj.removeClass("is-valid");
-		        obj.addClass("is-invalid");
-// 		        obj.siblings(".validation").remove();
-		        obj.parent().append("<div class='p-2 text-danger validation'>공백을 제거해주세요.</div>");
-		        obj.focus();
-		    } else if (response.rt === "available") {
+//     if (!checkId(objId)) {
+//         return false;
+//     }
 
-		        obj.removeClass("is-invalid");
-		        obj.addClass("is-valid");
-		        obj.siblings(".validation").remove();
-		        obj.parent().append("<div class='p-2 text-success validation'>사용 가능한 아이디입니다.</div>");
-		        idSuccess = 0;
-		    } else {
+    
+    // AJAX 요청 수행
+    $.ajax({
+        async: true,
+        cache: false,
+        type: "post",
+        url: "/checkIdProc",
+        data: { "id": obj.val().trim() },
+        success: function(response) {
+            if (response.rt === "available") {
 
-		        obj.removeClass("is-valid");
-		        obj.addClass("is-invalid");
-		        obj.focus();
-		        obj.siblings(".validation").remove();
-		        obj.parent().append("<div class='p-2 text-danger validation'>사용 불가능한 아이디입니다.(사유:중복)</div>");
-		        idSuccess = 1;
-		    }
-		},
-		error: function(jqXHR, textStatus, errorThrown) {
-		    alert("ajaxUpdate " + textStatus + " : " + errorThrown);
-		}
-		});
-	});
+                $("#id").removeClass("border-danger");
+                $("#id").siblings(".validation").remove();
+                $("#id").parent().append("<div class='p-2 text-success validation'>사용 가능한 아이디입니다.</div>");
+//                 idajaxck = 0;
+            } else {
+
+                $("#id").addClass("border-danger");
+                $("#id").siblings(".validation").remove();
+                $("#id").parent().append("<div class='p-2 text-danger validation'>사용 불가능한 아이디입니다.</div>");
+                $("#id").focus();
+//                 idajaxck = 1;
+            }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+        }
+    });
+});
+
 
 
 

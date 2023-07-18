@@ -102,8 +102,9 @@
 	                    <th scope="col">Password</th>
    	                    <th scope="col">Email</th>
 	                    <th scope="col">Address</th>
-	                    <th scope="col">Phone</th>	      
-	                    <th scope="col">DelNy</th>	   	                                  	                    	 
+	                    <th scope="col">Phone</th>	         	    
+	                    <th scope="col">Type</th>	   	  
+	                    <th scope="col">DelNy</th>		                    	                                                  	                    	 
 
                  	                    		                    
 	                                       
@@ -138,6 +139,7 @@
 	                          <td><c:out value="${item.email}" /></td>							  
 	                          <td><c:out value="${item.address}" /></td>		
 	                          <td><c:out value="${item.phone}" /></td>
+	                          <td><c:out value="${item.type}" /></td>
 	                          <td><c:out value="${item.delNy}" /></td>
 	                        </tr>
 	                      </c:forEach>

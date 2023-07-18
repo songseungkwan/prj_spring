@@ -70,68 +70,76 @@
                     <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
                   </div>
                 </div>
-				<div class="text-center">
                 
-                <div class="row mb-3 text-center">
-				  <label for="name" class="col-sm-2 col-form-label">name</label>
-				  <div class="col-sm-5">
-				    <input type="text" class="form-control" id="name" name="name" value="${item.name}" >
-				  </div>
-				</div>
-				
-                <div class="row mb-3 text-center">
-				  <label for="id" class="col-sm-2 col-form-label">id</label>
-				  <div class="col-sm-5">
-				    <input type="text" class="form-control" id="id" name="id" value="${item.id}" >
-				  </div>
-				</div>
-				
-                <div class="row mb-3 text-center">
-				  <label for="nickname" class="col-sm-2 col-form-label">nickname</label>
-				  <div class="col-sm-5">
-				    <input type="text" class="form-control" id="nickname" name="nickname" value="${item.nickname}" >
-				  </div>
-				</div>
-				
-                <div class="row mb-3 text-center">
-				  <label for="password" class="col-sm-2 col-form-label">password</label>
-				  <div class="col-sm-5">
-				    <input type="text" class="form-control" id="password" name="password" value="${item.password}" >
-				  </div>
-				</div>
-				
-                <div class="row mb-3 text-center">
-				  <label for="email" class="col-sm-2 col-form-label">email</label>
-				  <div class="col-sm-5">
-				    <input type="text" class="form-control" id="email" name="email" value="${item.email}" >
-				  </div>
-				</div>
-				
-                <div class="row mb-3 text-center">
-				  <label for="address" class="col-sm-2 col-form-label">address</label>
-				  <div class="col-sm-5">
-				  
-				    <input type="text" class="form-control" id="address" name="address" value="${item.address}" >
-				  </div>
-				</div>
-				
-                <div class="row mb-3 text-center">
-				  <label for="phone" class="col-sm-2 col-form-label">phone</label>
-				  <div class="col-sm-5">
-				    <input type="text" class="form-control" id="phone" name="phone" value="${item.phone}" >
-				  </div>
-				</div>																								
-			        
-			        <c:choose>
-					    <c:when test="${empty item.seq}">
-					        <button class="btnAdd btn btn-success" type="submit">insert</button>
-					    </c:when>
-					    <c:otherwise>
-					        <button class="btn btn-success" id="btnUpdt" type="submit">update</button>
-					        <button class="btn btn-danger" id="btnDel" type="submit">delete</button>
-					        <button class="btn btn-warning" id="btnUel" type="submit">uelete</button>
-					    </c:otherwise>
-					</c:choose>   
+                
+				<div class="text-center">
+	                <div class="row mb-3 text-center">
+					  <label for="name" class="col-sm-2 col-form-label">name</label>
+					  <div class="col-sm-5">
+					    <input type="text" class="form-control" id="name" name="name" value="${item.name}" >
+					  </div>
+					</div>
+					
+					<div class="row mb-3 text-center">
+					  <label for="type" class="col-sm-2 col-form-label">type</label>
+					  <div class="col-sm-5">
+					    <input type="text" class="form-control" id="type" name="type" value="${item.type}" >
+					  </div>
+					</div>
+					
+	                <div class="row mb-3 text-center">
+					  <label for="id" class="col-sm-2 col-form-label">id</label>
+					  <div class="col-sm-5">
+					    <input type="text" class="form-control" id="id" name="id" value="${item.id}" >
+					  </div>
+					</div>
+					
+	                <div class="row mb-3 text-center">
+					  <label for="nickname" class="col-sm-2 col-form-label">nickname</label>
+					  <div class="col-sm-5">
+					    <input type="text" class="form-control" id="nickname" name="nickname" value="${item.nickname}" >
+					  </div>
+					</div>
+					
+	                <div class="row mb-3 text-center">
+					  <label for="password" class="col-sm-2 col-form-label">password</label>
+					  <div class="col-sm-5">
+					    <input type="text" class="form-control" id="password" name="password" value="${item.password}" >
+					  </div>
+					</div>
+					
+	                <div class="row mb-3 text-center">
+					  <label for="email" class="col-sm-2 col-form-label">email</label>
+					  <div class="col-sm-5">
+					    <input type="text" class="form-control" id="email" name="email" value="${item.email}" >
+					  </div>
+					</div>
+					
+	                <div class="row mb-3 text-center">
+					  <label for="address" class="col-sm-2 col-form-label">address</label>
+					  <div class="col-sm-5">
+					  
+					    <input type="text" class="form-control" id="address" name="address" value="${item.address}" >
+					  </div>
+					</div>
+					
+	                <div class="row mb-3 text-center">
+					  <label for="phone" class="col-sm-2 col-form-label">phone</label>
+					  <div class="col-sm-5">
+					    <input type="text" class="form-control" id="phone" name="phone" value="${item.phone}" >
+					  </div>
+					</div>																								
+				        
+				        <c:choose>
+						    <c:when test="${empty item.seq}">
+						        <button class="btnAdd btn btn-success" type="submit">insert</button>
+						    </c:when>
+						    <c:otherwise>
+						        <button class="btn btn-success" id="btnUpdt" type="submit">update</button>
+						        <button class="btn btn-danger" id="btnDel" type="submit">delete</button>
+						        <button class="btn btn-warning" id="btnUel" type="submit">uelete</button>
+						    </c:otherwise>
+						</c:choose>   
 			        
                 </div>
               </form><!-- End Horizontal Form -->

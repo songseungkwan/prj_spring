@@ -12,6 +12,7 @@ public class MemberVo {
 	private String email;
 	private String address;
 	private String phone;
+	private String type;
 	
 	// paging
 	private int thisPage = 1;									// 현재 페이지
@@ -164,6 +165,12 @@ public class MemberVo {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	
 public void setParamsPaging(int totalRows) {
@@ -215,6 +222,7 @@ public void setParamsPaging(int totalRows) {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+
 	
 
 

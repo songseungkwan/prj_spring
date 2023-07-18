@@ -50,21 +50,23 @@
 									<div class="form-outline mb-4">
 										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" > 
 										<label class="form-label" for="password">Password</label>
-									</div>									
+									</div>				
+									
+									<div class="form-outline mb-4">
+										<input type="password" class="form-control" id="passwordCheck" name="passwordCheck" > 
+										<label class="form-label" for="passwordCheck">Password Check</label>
+									</div>							
 
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" > 
 										<label class="form-label" for="name">Your Name</label>
 									</div>
 									
-									
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" >
 										<label class="form-label" for="nickname">Your Nickname</label>
 									</div>
 									
-
-
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" > 
 										<label class="form-label" for="email">Your Email</label>
@@ -108,6 +110,8 @@
 	
 	var objId = $("#id");
 	var objPassword = $("#password");
+	var objPasswordCheck = $("#passwordCheck");
+	
 	var objName = $("#name");
 
 	var objNickname = $("#nickname");
@@ -137,16 +141,7 @@
 
 	}
 	
-	$(".btnAdd").on("click", function(){
-		if(validationInst() === false) return false;	
 
-// 		if(idSuccess == 0) {
-			$("form[name=form]").attr("action","/memberAdd").submit();
-// 		} else {
-// 			alert("중복 혹은 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리 이내가 아닙니다.")
-// 		}
-
-	});
 	
 
 
@@ -224,6 +219,34 @@
 });
 
 
+function test() {
+    var p1 = objPassword.value;
+    var p2 = objPasswordCheck.value;
+    
+    if(p1.length < 6) {
+            alert('입력한 글자가 6글자 이상이어야 합니다.');
+            return false;
+        }
+        
+        if( p1 != p2 ) {
+          alert("비밀번호불일치");
+          return false;
+        } else{
+          alert("비밀번호가 일치합니다");
+          return true;
+        }
+  }
+
+$(".btnAdd").on("click", function(){
+	if(validationInst() === false) return false;	
+
+//		if(idSuccess == 0) {
+		$("form[name=form]").attr("action","/memberAdd").submit();
+//		} else {
+//			alert("중복 혹은 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리 이내가 아닙니다.")
+//		}
+
+});
 
 	 
 	

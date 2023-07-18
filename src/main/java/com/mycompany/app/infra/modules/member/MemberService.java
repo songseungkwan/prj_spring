@@ -13,6 +13,8 @@ public interface MemberService {
 	
 	public Member selectOne(MemberVo vo);
 	
+	public Member selectTwo(MemberVo vo);
+	
 	public int update(Member dto);
 	public int delete(Member dto);
 	public int insert(Member dto);	

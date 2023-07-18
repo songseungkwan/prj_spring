@@ -111,9 +111,13 @@ public class MemberController {
     public String usrLoginForm() {
 	   return "usr/infra/member/usrLoginForm"; }
 	 
+    @RequestMapping("/usrRegsiterForm") 
+    public String usrRegsiterForm() {
+	   return "usr/infra/member/usrRegsiterForm"; }
+    
 	@ResponseBody
-	@RequestMapping("/loginProc")
-	public Map<String, Object> loginProc(MemberVo vo , HttpSession session) {
+	@RequestMapping("/loginXdmProc")
+	public Map<String, Object> loginXdmProc(MemberVo vo , HttpSession session) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		Member rtMember = service.selectOne(vo);
@@ -131,6 +135,29 @@ public class MemberController {
 		
 		return returnMap;
 	}
+	
+	@ResponseBody
+	@RequestMapping("/loginUsrProc")
+	public Map<String, Object> loginUsrProc(MemberVo vo , HttpSession session) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		
+		Member rtMember = service.selectTwo(vo);
+		
+		if(rtMember != null) {
+			
+			 // 로그인 성공 시 세션에 사용자 정보 저장
+	        session.setAttribute("sessionId", vo.getId());
+	        
+			returnMap.put("rtMember", rtMember);
+			returnMap.put("rt", "success");
+		} else {
+			returnMap.put("rt","fail");
+		}
+		
+		return returnMap;
+	}
+	
+	
 	
 
 	
@@ -173,6 +200,11 @@ public class MemberController {
 	// id 중복체크
 
 	
+	/**		alt + shift + j  (함수 간 주석 처리, 각각에 대한 메모가능)
+	 * @param vo
+	 * @param session
+	 * @return
+	 */
 	@ResponseBody
 	@RequestMapping("/checkIdProc" )
 	public Map<String, Object> checkIdProc(MemberVo vo , HttpSession session) {

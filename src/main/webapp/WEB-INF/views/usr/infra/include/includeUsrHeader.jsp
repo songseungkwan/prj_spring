@@ -69,8 +69,8 @@ String id = (String) request.getSession().getAttribute("id");
 						<li><a href="#">Drop Down 4</a></li>	
 					</ul></li>
 					
-					<li>
-				<!--           <li class="nav-item"><a href="usrLoginForm" class="nav-link">로그인</a></li> -->
+					<li id="LoginSessionId">
+
 				<c:choose>
 					<c:when test="${not empty sessionId }">
 						 <c:out value="${sessionId }"/>
@@ -81,6 +81,7 @@ String id = (String) request.getSession().getAttribute("id");
 						<li class="nav-item"><a href="usrRegisterForm" class="nav-link">회원가입</a></li>
 					</c:otherwise>
 				</c:choose>
+				</li>
 <%-- 				
 				
 				

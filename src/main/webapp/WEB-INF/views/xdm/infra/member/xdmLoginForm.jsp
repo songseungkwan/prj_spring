@@ -33,14 +33,14 @@
                   					<span class="d-none d-lg-block">King-Petition</span>
                 				</a>
               				</div>
-              				<form method="post">
+              				<form method="post" class="row g-3 needs-validation" novalidate>
               				<div class="card mb-3">
                 				<div class="card-body">
                   					<div class="pt-4 pb-2">
                     					<h5 class="card-title text-center pb-0 fs-4">관리자 로그인</h5>
                     					<p class="text-center small">아이디와 비밀번호를 입력 후 로그인해 주세요.</p>
                   					</div>
-                  					<form class="row g-3 needs-validation" novalidate>
+                  				
                    						<div class="col-12">
                       						<label for="yourUsername" class="form-label">아이디</label>
                       						<input type="text" name="id" class="form-control" id="id" value="adminking" required>
@@ -66,7 +66,7 @@
                     					<div class="col-12">
                       						<p class="small mb-0">아이디가 없으신가요? <a href="xdmRegister">회원가입</a></p>
                     					</div>
-                  					</form>
+                  					
                 				</div>
               				</div>
           				   </form>
@@ -95,7 +95,7 @@
 				,cache: false
 				,type: "post"
 				/* ,dataType:"json" */
-				,url: "/loginProc"
+				,url: "/loginXdmProc"
 				/* ,data : $("#formLogin").serialize() */
 				,data : { "id" : $("#id").val(),
 					"password" : $("#password").val()}

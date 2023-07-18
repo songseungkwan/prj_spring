@@ -11,6 +11,7 @@ public class Member {
 	private String seq;				
 	private String name;
 	private Integer delNy;
+	private String type;
 	private String id;
 	private String nickname;
 	private String password;
@@ -74,6 +75,12 @@ public class Member {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	

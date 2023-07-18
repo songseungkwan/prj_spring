@@ -23,6 +23,9 @@ import org.springframework.stereotype.Service;
 	
 	@Override
 	public Member selectOne(MemberVo vo) { return dao.selectOne(vo); }
+	
+	@Override
+	public Member selectTwo(MemberVo vo) { return dao.selectTwo(vo); }
 
 	@Override
 	public int update(Member dto) {

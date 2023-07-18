@@ -21,7 +21,9 @@
     	, email
     	, address 	
     	, phone
+    	, type
     	, delNy
+
     </sql>
     
     <sql id ="selectCommon">
@@ -35,7 +37,8 @@
 																   OR password LIKE CONCAT('%', #{shKeyword}, '%')
 			           											   OR email LIKE CONCAT('%', #{shKeyword}, '%')
 			           											   OR address LIKE CONCAT('%', #{shKeyword}, '%')
-            													   OR phone LIKE CONCAT('%', #{shKeyword}, '%')									   
+            													   OR phone LIKE CONCAT('%', #{shKeyword}, '%')	
+            													   OR type LIKE CONCAT('%', #{shKeyword}, '%')								   
 			</if>
     </sql>
 
@@ -73,6 +76,21 @@
         WHERE 1=1
         	AND id = #{id}
         	AND password = #{password}
+        	AND type = 0
+        	
+    </select>
+    
+        <select id="selectTwo" resultMap="resultMapObj">
+        SELECT
+        	seq
+        	, id
+        	, name
+        FROM
+        	member
+        WHERE 1=1
+        	AND id = #{id}
+        	AND password = #{password}
+        	AND type = 1
         	
     </select>
     
@@ -105,6 +123,7 @@
 	    	, email = #{email}
 	    	, address =	#{address}
 	    	, phone = #{phone}
+	    	
 
 
         WHERE
@@ -128,6 +147,7 @@
 	    	, email
 	    	, address
 	    	, phone
+	    	, type
    	    	, delNy
 
 	    	
@@ -139,6 +159,7 @@
         	,#{email} 
         	,#{address} 
         	,#{phone} 
+        	,#{type}         	
         	,0
        	
 

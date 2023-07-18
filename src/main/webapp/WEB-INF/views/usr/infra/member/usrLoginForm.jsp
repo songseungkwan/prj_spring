@@ -123,7 +123,7 @@
 			,cache: false
 			,type: "post"
 			/* ,dataType:"json" */
-			,url: "/loginProc"
+			,url: "/loginUsrProc"
 			/* ,data : $("#formLogin").serialize() */
 			,data : { "id" : $("#id").val(),
 				"password" : $("#password").val()}

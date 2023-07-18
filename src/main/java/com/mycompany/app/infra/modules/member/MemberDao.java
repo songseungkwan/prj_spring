@@ -32,6 +32,12 @@ public class MemberDao {
 		// selectOne -> 반환값 : 해당 dto, dto= 가변 가능성 높음.
 	}
 	
+	public Member selectTwo(MemberVo vo) { 
+		Member member = sqlSession.selectOne(namespace + ".selectTwo", vo); 
+		return member;
+		// selectOne -> 반환값 : 해당 dto, dto= 가변 가능성 높음.
+	}
+	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(Member dto) { return sqlSession.update(namespace + ".update", dto); }
 	

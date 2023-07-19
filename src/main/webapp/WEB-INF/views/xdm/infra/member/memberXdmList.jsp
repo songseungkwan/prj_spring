@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<jsp:useBean id="CodeServiceImpl" class="com.mycompany.app.infra.modules.code.CodeServiceImpl"/>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -116,12 +117,25 @@
 	                </thead>
 	
 	                <tbody>
+		                <c:set var="listCodeType" value="${CodeServiceImpl.selectListCachedCode('70')}"/>
+		                
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
 	
 	                  <c:choose>
 	                    <c:when test="${fn:length(list) eq 0}">
 	                      <tr>
 	                        <td class="text-center" colspan="10">There is no data</td>
 	                      </tr>
+	                      
 	                    </c:when>
 	                    <c:otherwise>
 	                      <c:forEach items="${list}" var="item">
@@ -139,13 +153,21 @@
 	                          <td><c:out value="${item.email}" /></td>							  
 	                          <td><c:out value="${item.address}" /></td>		
 	                          <td><c:out value="${item.phone}" /></td>
-	                          <td><c:out value="${item.type}" /></td>
+	                          <!-- 0719 -->
+	                          <td><c:forEach items="${listCodeType }" var="listType" varStatus="statusType">
+									<c:if test="${item.type eq listType.codeNum }"> <c:out value="${listType.name}"/></c:if>
+								</c:forEach></td>
 	                          <td><c:out value="${item.delNy}" /></td>
 	                        </tr>
 	                      </c:forEach>
 	                    </c:otherwise>
 	                  </c:choose>
 	                </tbody>
+	                
+	                
+	                
+	                
+	                
 	              </table>
 		              	<div class="container-fluid px-0 mt-2">
 						    <div class="row">

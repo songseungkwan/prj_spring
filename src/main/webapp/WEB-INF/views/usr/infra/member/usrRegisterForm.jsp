@@ -44,42 +44,50 @@
 
 									<div class="form-outline mb-4">
 									    <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" >
-										<label class="form-label" for="id">Your Id</label>
+										<label class="form-label" for="id">아이디</label>
 									</div>
+					                 <div class="valid-feedback">
+					                    사용 가능한 아이디입니다.
+					                  </div>
+					                 <div class="invalid-feedback">
+					                    사용할 수 없는 아이디입니다.
+					                </div>
 									
 									<div class="form-outline mb-4">
 										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" > 
-										<label class="form-label" for="password">Password</label>
+										<label class="form-label" for="password">비밀번호</label>
 									</div>				
 									
 									<div class="form-outline mb-4">
-										<input type="password" class="form-control" id="passwordCheck" name="passwordCheck" > 
-										<label class="form-label" for="passwordCheck">Password Check</label>
+										<input type="password" class="form-control" id="rePassword" name="rePassword" > 
+										<label class="form-label" for="rePassword">비밀번호 확인</label>										
 									</div>							
+									<div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div>
+									<div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
 
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" > 
-										<label class="form-label" for="name">Your Name</label>
+										<label class="form-label" for="name">이름</label>
 									</div>
 									
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" >
-										<label class="form-label" for="nickname">Your Nickname</label>
+										<label class="form-label" for="nickname">닉네임</label>
 									</div>
 									
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" > 
-										<label class="form-label" for="email">Your Email</label>
+										<label class="form-label" for="email">이메일</label>
 									</div>
 									
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="address" name="address" value="<c:out value="${item.address}"/>" > 
-										<label class="form-label" for="address">Your Address</label>
+										<label class="form-label" for="address">주소</label>
 									</div>
 									
 									<div class="form-outline mb-4">
 										<input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>" > 
-										<label class="form-label" for="phone">Your Phone</label>
+										<label class="form-label" for="phone">연락처</label>
 									</div>
 
 									<div class="d-flex justify-content-center">
@@ -104,18 +112,15 @@
 	<!-- MDB -->
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>		
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>		
     <script src="resources/logRegAssets/js/validation.js"></script>
 	<script>
 	
 	var objId = $("#id");
 	var objPassword = $("#password");
-	var objPasswordCheck = $("#passwordCheck");
-	
+	var objPasswordValue = $("#passwordValue");
 	var objName = $("#name");
-
 	var objNickname = $("#nickname");
-
 	var objEmail = $("#email");
 	var objAddress = $("#address");
 	var objPhone = $("#phone");
@@ -132,9 +137,7 @@
 		if(checkId(objId) === false) return false;
 		if(checkPassword(objPassword) === false) return false;
 		if(checkName(objName) === false) return false;
-
 		if(checkNickname(objNickname) === false) return false;
-
 		if(checkEmail(objEmail) === false) return false;
 		if(checkAddress(objAddress) === false) return false;
 		if(checkPhone(objPhone) === false) return false;
@@ -147,8 +150,7 @@
 
 	
 	
-	$("#id").on("blur", function() {
-    var obj = $(this);
+
 
 //     if (!checkId(objId)) {
 //         return false;
@@ -183,7 +185,8 @@
 //         }
 //     });
 // });
-
+	$("#id").on("blur", function() {
+    	var obj = $(this).val();
 	
     $.ajax({
         async: true,
@@ -193,22 +196,17 @@
         data: { "id": obj.val() },
         success: function(response) {
             if (response.rt === "available") {
-            	if (!checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능합니다.")) {
+            	if (!checkId(obj.val())) {
  		        	return false;
  		    	} else {
-				alert("성공")
-                $("#id").removeClass("is-invalid");
-                $("#id").addClass("is-valid");
-                $("#id").siblings(".validation").remove();
-                $("#id").parent().append("<div class='p-2 text-success is-valid'>사용 가능한 아이디입니다.</div>");
+                    $("#valid").show();
+                    $("#invalid").hide();
 //                 idajaxck = 0;
  		    	}
             } else {
+                $("#invalid").show();
+                $("#valid").hide();
 
-                $("#id").addClass("is-invalid");
-                $("#id").siblings(".validation").remove();
-                $("#id").parent().append("<div class='p-2 text-danger is-invalid'>사용 불가능한 아이디입니다.</div>");
-                $("#id").focus();
 //                 idajaxck = 1;
             }
         },
@@ -219,23 +217,72 @@
 });
 
 
-function test() {
-    var p1 = objPassword.value;
-    var p2 = objPasswordCheck.value;
+// function test() {
+//     var p1 = $("#password").val();
+//     var p2 = $("#passwordCheck").val();
     
-    if(p1.length < 6) {
-            alert('입력한 글자가 6글자 이상이어야 합니다.');
-            return false;
-        }
+//     if(p1.length < 6) {
+//             alert('입력한 글자가 8~16자 내여야 합니다.');
+//             return false;
+//         }
         
-        if( p1 != p2 ) {
-          alert("비밀번호불일치");
-          return false;
-        } else{
-          alert("비밀번호가 일치합니다");
-          return true;
-        }
-  }
+//         if( p1 != p2 ) {
+//           alert("비밀번호불일치");
+//           return false;
+//         } else{
+//           alert("비밀번호가 일치합니다");
+// ;
+//         }
+//   }
+  
+  
+// function test() {
+//     var p1 = $("#password").val();
+//     var p2 = $("#passwordCheck").val();
+    
+//     if (p1.length < 8 || p1.length > 16) {
+//         alert('입력한 글자가 8~16자 내여야 합니다.'); // 글자 수 조건에 맞지 않을 때 알림 표시
+//         return false;
+//     }
+        
+//     if (p1 != p2) {
+//         alert("비밀번호 불일치"); // 비밀번호 불일치 시 알림 표시
+//         return false;
+//     } else {
+//         alert("비밀번호가 일치합니다"); // 비밀번호 일치 시 알림 표시
+//     }
+// }
+
+  
+  
+  
+  $("#password").on("blur", function(){
+        $("#alert-success").hide();
+        $("#alert-danger").hide();
+        
+            var pwd1=$("#password").val();
+            var pwd2=$("#rePassword").val();
+            if(pwd1 != "" || pwd2 != "") {
+                if(pwd1 == pwd2){
+                    $("#alert-success").show();
+                    $("#alert-danger").hide();
+
+                } else {
+                    $("#alert-success").hide();
+                    $("#alert-danger").show();
+
+                }    
+            }
+
+    });
+  
+  
+  
+  
+  
+  
+  
+  
 
 $(".btnAdd").on("click", function(){
 	if(validationInst() === false) return false;	

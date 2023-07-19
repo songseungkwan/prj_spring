@@ -52,6 +52,10 @@ import org.springframework.stereotype.Repository;
 	// delete , insert , update , select - 반환값 int
 
 
+	// for cache
+	public List<Code> selectListCachedCodeArrayList() {
+		return sqlSession.selectList(namespace + ".selectListCachedCodeArrayList", null);
+	}
 
 
   

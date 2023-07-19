@@ -33,9 +33,9 @@ public class IndexController {
 		public String workout() {
 			return "usr/infra/subpage/workout";		
 		}
-		@RequestMapping(value="/allTimeRecord")
-		public String allTimeRecord() {
-			return "usr/infra/subpage/allTimeRecord";		
+		@RequestMapping(value="/realTimeRecord")
+		public String realTimeRecord() {
+			return "usr/infra/subpage/realTimeRecord";		
 		}
 		
 		

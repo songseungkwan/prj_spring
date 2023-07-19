@@ -51,6 +51,22 @@
 			AND seq = #{seq}	
    	</select>   
    	
+   	
+   	 <select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
+   		SELECT 
+   			seq
+   			, name
+   			, codeNum
+   			, codeGroup_seq
+   		FROM
+   			code
+		WHERE 1=1
+			AND delNy = 0
+<!-- 			AND useNy = 1 -->
+   	</select>   
+   	
+   	
+   	
 <!--     <select id="selectList" resultMap="resultMapObj">
         SELECT
         	<include refid="abc" />

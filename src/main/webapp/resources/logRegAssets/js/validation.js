@@ -74,8 +74,13 @@ $("#id").on("keydown", function(event) {
 		checkPassword = function(obj) {
 	
 		valPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/; 	// 비밀번호 체크 (특수문자 포함) 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합
+
+		
+		
 			if(valId.test($.trim(obj.val())) == false) {
-			alert("영어소문자, 숫자로 2~10자리 이내로 입력해주세요. ");
+			alert("영어소문자, 숫자로 자리 이내로 입력해주세요. ");
+			
+			
 			obj.focus();
 			return false;
 		} else {
@@ -88,6 +93,29 @@ $("#password").on("keydown", function(event) {
         event.preventDefault();
     }
 });
+	
+// 비밀번호 확인
+		checkPasswordValue = function(obj) {
+		    var valPassword = $("#password");
+		    var valPasswordValue = objPassword.val().trim();
+		
+		    if (obj.val().trim() === objPasswordValue) {
+		        alert("비밀번호가 일치합니다.");
+		    } else {
+		        obj.focus();
+		        alert("비밀번호가 일치하지 않습니다");
+		        return false;
+		    }
+		}
+		
+
+		
+	
+	
+	
+	
+	
+	
 	
 //	 name
 	checkName = function(obj) {

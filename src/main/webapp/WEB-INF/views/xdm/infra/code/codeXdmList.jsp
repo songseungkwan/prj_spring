@@ -4,6 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+<jsp:useBean id="CodeServiceImpl" class="com.mycompany.app.infra.modules.code.CodeServiceImpl"/>
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -32,6 +33,7 @@
 
 <body>
 
+
   <!-- ======= Header ======= -->
   <%@include file = "../include/includeHeader.jsp"%>
   <!-- End Header -->
@@ -42,6 +44,8 @@
 
 
   <main id="main" class="main">
+
+
 
     <div class="pagetitle">
       <h1>Data Tables</h1>
@@ -91,6 +95,7 @@
 	                </div>
 	              </div>
 
+
 	              <table class="table datatable table-striped table-hover">
 	                <thead>
 	                  <tr>
@@ -103,6 +108,17 @@
 	                </thead>
 	
 	                <tbody>
+		                <c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
+					<c:forEach items="${listCodeGender }" var="list" varStatus="status">
+						<c:out value="${list.name}"/>
+					</c:forEach>
+					
+					<%-- <c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
+						<c:if test="${list.genderCd eq listGender.seq }"> <c:out value="${listGender.name}"/></c:if>
+					</c:forEach> --%>
+					
+					
+					
 	
 	                  <c:choose>
 	                    <c:when test="${fn:length(list) eq 0}">

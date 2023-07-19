@@ -50,25 +50,17 @@
 			<mapping path="/**"/>		
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/" />
-			<exclude-mapping path="/indexXdmView" />		
-											
+			<exclude-mapping path="/indexXdmView" />			
 			<exclude-mapping path="/xdmLoginForm" />	
-			<exclude-mapping path="/xdmRegisterForm" />	
-											
+			<exclude-mapping path="/xdmRegisterForm" />					
 			<exclude-mapping path="/loginXdmProc" />				
 			<exclude-mapping path="/biographyUsrView" />
 			<exclude-mapping path="/indexUsrView" />		
-			
 			<exclude-mapping path="/usrLoginForm" />
-			<exclude-mapping path="/usrRegisterForm" />		
-							
+			<exclude-mapping path="/usrRegisterForm" />					
 			<exclude-mapping path="/loginUsrProc" />
-			
 			<exclude-mapping path="/logoutProc" />
-			
 			<exclude-mapping path="/checkIdProc" />	
-
-	
 			<beans:bean id="checkXdmLoginSessionInterception" class="com.mycompany.app.common.interceptor.CheckXdmLoginSessionInterception"/>
 		</interceptor>
 		

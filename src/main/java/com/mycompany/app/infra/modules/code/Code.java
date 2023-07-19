@@ -1,5 +1,8 @@
 package com.mycompany.app.infra.modules.code;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Code {
 
 	// DTO 작성법. (컬럼명과 동일해야한다.)
@@ -12,7 +15,14 @@ public class Code {
 	private String name;
 	private String codeGroup_seq;
 	private Integer delNy;
+	private Integer gender;
+	private Integer codeNum;
 // -----
+	
+	// for cache
+	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
+	
+	
 	public String getSeq() {
 		return seq;
 	}
@@ -35,6 +45,18 @@ public class Code {
 	}
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
+	}
+	public Integer getGender() {
+		return gender;
+	}
+	public void setGender(Integer gender) {
+		this.gender = gender;
+	}
+	public Integer getCodeNum() {
+		return codeNum;
+	}
+	public void setCodeNum(Integer codeNum) {
+		this.codeNum = codeNum;
 	}
 	
 

@@ -8,9 +8,9 @@
 
 
 
-<%
+<%-- <%
 String id = (String) request.getSession().getAttribute("id");
-%>
+%> --%>
 
 
 <!-- ======= Header ======= -->

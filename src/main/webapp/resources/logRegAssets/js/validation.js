@@ -40,26 +40,18 @@
 //		} 
 //}	
 
-	checkId = function(obj) {
-		valId = /^(?=.*[a-zA-Z])[-a-zA-Z0-9_.]{4,15}$/;
-			if(valId.test($.trim(obj.val())) == false) {
+    checkId = function(obj, message) {
+        var regExp = /^[A-Za-z0-9,_-]{4,15}$/;
 
-
-
-			obj.removeClass("validation");
-	        obj.removeClass("is-valid");
-	        obj.addClass("is-invalid");
-            obj.parent().append("<div class='p-2 text-danger validation'>아이디는 영대소문자, 숫자, 특수문자(-혹은_혹은.)를 포함한 4~15자리까지 입력해주세요.(공백 제외).</div>");
-			obj.focus();
-			obj.alertShown = true; 
-				return false;
-				
-		}  else {
-
-	        obj.addClass("is-valid");
-	        obj.removeClass("is-invalid");
-		} 
-}	
+        if (regExp.test($.trim(obj.val())) == false) {
+            obj.addClass("is-invalid");
+            obj.focus();
+            $(".invalid-feedback").text(message);
+            return false;
+        } else {
+            obj.removeClass("is-invalid");
+        }
+    }
 
 
 $("#id").on("keydown", function(event) {
@@ -71,23 +63,20 @@ $("#id").on("keydown", function(event) {
 
 
 // password
-		checkPassword = function(obj) {
-	
-		valPassword = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/; 	// 비밀번호 체크 (특수문자 포함) 8 ~ 16자 영문, 숫자, 특수문자를 최소 한가지씩 조합
+    checkPw = function(obj, message) {
+        var regExp = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*]).{8,20}$/;
 
-		
-		
-			if(valId.test($.trim(obj.val())) == false) {
-			alert("영어소문자, 숫자로 자리 이내로 입력해주세요. ");
-			
-			
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		} 
-	
-}
+        if (regExp.test($.trim(obj.val())) == false) {
+            obj.addClass("is-invalid");
+            obj.focus();
+            $(".invalid-feedback").text(message);
+            return false;
+        } else {
+            obj.removeClass("is-invalid");
+        }
+    }
+
+
 $("#password").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
         event.preventDefault();
@@ -95,41 +84,37 @@ $("#password").on("keydown", function(event) {
 });
 	
 // 비밀번호 확인
-		checkPasswordValue = function(obj) {
-		    var valPassword = $("#password");
-		    var valPasswordValue = objPassword.val().trim();
-		
-		    if (obj.val().trim() === objPasswordValue) {
-		        alert("비밀번호가 일치합니다.");
-		    } else {
-		        obj.focus();
-		        alert("비밀번호가 일치하지 않습니다");
-		        return false;
-		    }
-		}
-		
-
-		
+	checkPasswordVerify = function(obj, message) {
+	    var objPassword = $("#password");
+	    var objPasswordVerify = objPassword.val().trim();
 	
-	
-	
-	
-	
-	
+	    if (obj.val().trim() === objPasswordVerify) {
+	        obj.removeClass("is-invalid");
+	        return true;
+	    } else {
+	        obj.addClass("is-invalid");
+	        obj.focus();
+	        $(".invalid-feedback").text(message);
+	        return false;
+	    }
+	}
 	
 //	 name
-	checkName = function(obj) {
-		valName = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;			// 		한글, 영문							
+	    checkName = function(obj, message) {
+        var regExp = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;
 
-		if(valName.test($.trim(obj.val())) == false) {
-			alert("한글 혹은 영문만 입력해주세요.");
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		}
-
-	}
+        if (regExp.test($.trim(obj.val())) == false) {
+            obj.addClass("is-invalid");
+            obj.focus();
+            $(".invalid-feedback").text(message);
+            return false;
+        } else {
+            obj.removeClass("is-invalid");
+            
+        }
+    }
+	
+	
 	$("#name").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
         event.preventDefault();
@@ -138,18 +123,22 @@ $("#password").on("keydown", function(event) {
 
 
 // nickname
-	checkNickname = function(obj) {
-		
-		valNickname = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;			// 		한글, 영문
-		if(valNickname.test($.trim(obj.val())) == false) {
-			alert("한글 혹은 영문만 입력해주세요..");
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		}
-	
-}
+	    checkNickname = function(obj, message) {
+        var regExp = /^[a-zA-Zㄱ-힣][a-zA-Zㄱ-힣 ]*$/;
+
+        if (regExp.test($.trim(obj.val())) == false) {
+            obj.addClass("is-invalid");
+            obj.focus();
+            $(".invalid-feedback").text(message);
+            return false;
+        } else {
+            obj.removeClass("is-invalid");
+            
+        }
+    }
+
+
+
 $("#nickname").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
         event.preventDefault();
@@ -158,18 +147,20 @@ $("#nickname").on("keydown", function(event) {
 
 
 // email
-	checkEmail = function(obj) {
-	
-		valEmail =  /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;	// 이메일 체크 정규식
-		if(valEmail.test($.trim(obj.val())) == false) {
-			alert("이메일 형식에 맞게 입력하세요.");
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		}
-	
-}
+    checkEmail = function(obj, message) {
+        var regExp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+
+        if (regExp.test($.trim(obj.val())) == false) {
+            obj.addClass("is-invalid");
+            obj.focus();
+            $(".invalid-feedback").text(message);
+            return false;
+        } else {
+            obj.removeClass("is-invalid");
+        }
+    }
+
+
 $("#email").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
         event.preventDefault();
@@ -177,17 +168,21 @@ $("#email").on("keydown", function(event) {
 });
 
 // address
-	checkAddress = function(obj) {
-	
-		valAddress = /[^?a-zA-Z0-9/]/;						// 한글포함 특수문자와 공백
-		if(valAddress.test($.trim(obj.val())) == false) {
-			alert("형식에 맞게 입력하세요.");
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		}
-}
+   checkAddress = function(obj, message) {
+        var regExp = /[^?a-zA-Z0-9/]/;		
+
+        if (regExp.test($.trim(obj.val())) == false) {
+            obj.addClass("is-invalid");
+            obj.focus();
+            $(".invalid-feedback").text(message);
+            return false;
+        } else {
+            obj.removeClass("is-invalid");
+            
+        }
+    }
+
+
 
 	$("#address").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
@@ -196,23 +191,37 @@ $("#email").on("keydown", function(event) {
 });
 
 // phone
-	checkPhone = function(obj) {
-	
-		valPhone = /^01(?:0|1|[6-9])(?:\d{3}|\d{4})\d{4}$/;			//  핸드폰 번호 체크
-		if(valPhone.test($.trim(obj.val())) == false) {
-			alert("형식에 맞게 입력하세요.");
-			obj.focus();
-			return false;
-		} else {
-// 			by pass
-		}
-	
-}
+   checkPhone = function(obj, message) {
+        var regExp = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;;
+
+        if (regExp.test($.trim(obj.val())) == false) {
+            obj.addClass("is-invalid");
+            obj.focus();
+            $(".invalid-feedback").text(message);
+            return false;
+        } else {
+            obj.removeClass("is-invalid");
+        }
+    }
+
+
+
 $("#phone").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
         event.preventDefault();
     }
 });
+
+    checkNull = function(obj, message) {
+	    if ($.trim(obj.val()) === '') { // 공백 체크
+	        obj.addClass("is-invalid");
+	        obj.focus();
+	        $(".invalid-feedback").text(message); // 공백 메시지
+	        return false;
+	    } else {
+	        obj.removeClass("is-invalid");
+	    }
+	}
 
 
 

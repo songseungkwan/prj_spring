@@ -15,6 +15,8 @@
 
 <link rel="stylesheet" href="resources/logRegAssets/css/style.css">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
 <!-- Font Awesome -->
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -40,259 +42,224 @@
 							<div class="card-body p-5">
 								<h2 class="text-uppercase text-center mb-5">계정 만들기</h2>
 
-								<form name="form" method="post">
+<!-- 								<form name="form" method="post"> -->
 
-									<div class="form-outline mb-4">
-									    <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" >
-										<label class="form-label" for="id">아이디</label>
-									</div>
-					                 <div class="valid-feedback">
-					                    사용 가능한 아이디입니다.
-					                  </div>
-					                 <div class="invalid-feedback">
-					                    사용할 수 없는 아이디입니다.
-					                </div>
+<!-- 									<div class="form-outline mb-4"> -->
+<%-- 									    <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" > --%>
+<!-- 										<label class="form-label" for="id">아이디</label> -->
+<!-- 									</div> -->
+<!-- 					                 <div class="valid-feedback"> -->
+<!-- 					                    사용 가능한 아이디입니다. -->
+<!-- 					                  </div> -->
+<!-- 					                 <div class="invalid-feedback"> -->
+<!-- 					                    사용할 수 없는 아이디입니다. -->
+<!-- 					                </div> -->
 									
-									<div class="form-outline mb-4">
-										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" > 
-										<label class="form-label" for="password">비밀번호</label>
-									</div>				
+<!-- 									<div class="form-outline mb-4"> -->
+<%-- 										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" >  --%>
+<!-- 										<label class="form-label" for="password">비밀번호</label> -->
+<!-- 									</div>				 -->
 									
-									<div class="form-outline mb-4">
-										<input type="password" class="form-control" id="rePassword" name="rePassword" > 
-										<label class="form-label" for="rePassword">비밀번호 확인</label>										
-									</div>							
-									<div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div>
-									<div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div>
+<!-- 									<div class="form-outline mb-4"> -->
+<!-- 										<input type="password" class="form-control" id="rePassword" name="rePassword" >  -->
+<!-- 										<label class="form-label" for="rePassword">비밀번호 확인</label>										 -->
+<!-- 									</div>							 -->
+<!-- 									<div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div> -->
+<!-- 									<div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div> -->
 
-									<div class="form-outline mb-4">
-										<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" > 
-										<label class="form-label" for="name">이름</label>
-									</div>
+<!-- 									<div class="form-outline mb-4"> -->
+<%-- 										<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >  --%>
+<!-- 										<label class="form-label" for="name">이름</label> -->
+<!-- 									</div> -->
 									
-									<div class="form-outline mb-4">
-										<input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" >
-										<label class="form-label" for="nickname">닉네임</label>
-									</div>
+<!-- 									<div class="form-outline mb-4"> -->
+<%-- 										<input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" > --%>
+<!-- 										<label class="form-label" for="nickname">닉네임</label> -->
+<!-- 									</div> -->
 									
-									<div class="form-outline mb-4">
-										<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" > 
-										<label class="form-label" for="email">이메일</label>
-									</div>
+<!-- 									<div class="form-outline mb-4"> -->
+<%-- 										<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" >  --%>
+<!-- 										<label class="form-label" for="email">이메일</label> -->
+<!-- 									</div> -->
 									
-									<div class="form-outline mb-4">
-										<input type="text" class="form-control" id="address" name="address" value="<c:out value="${item.address}"/>" > 
-										<label class="form-label" for="address">주소</label>
-									</div>
+<!-- 									<div class="form-outline mb-4"> -->
+<%-- 										<input type="text" class="form-control" id="address" name="address" value="<c:out value="${item.address}"/>" >  --%>
+<!-- 										<label class="form-label" for="address">주소</label> -->
+<!-- 									</div> -->
 									
-									<div class="form-outline mb-4">
-										<input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>" > 
-										<label class="form-label" for="phone">연락처</label>
-									</div>
+<!-- 									<div class="form-outline mb-4"> -->
+<%-- 										<input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>" >  --%>
+<!-- 										<label class="form-label" for="phone">연락처</label> -->
+<!-- 									</div> -->
 
-									<div class="d-flex justify-content-center">
-										<button type="button"
-											class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button>
-									</div>
+<!-- 									<div class="d-flex justify-content-center"> -->
+<!-- 										<button type="button" -->
+<!-- 											class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button> -->
+<!-- 									</div> -->
 
-									<p class="text-center text-muted mt-5 mb-0">
-										이미 가입하셨나요? <a href="usrLoginForm"
-											class="fw-bold text-body">Login here</a>
-									</p>
+<!-- 									<p class="text-center text-muted mt-5 mb-0"> -->
+<!-- 										이미 가입하셨나요? <a href="usrLoginForm" -->
+<!-- 											class="fw-bold text-body">Login here</a> -->
+<!-- 									</p> -->
 
-								</form>
+<!-- 								</form> -->
+
+				<form class="needs-validation" name="form" method="post" novalidate>
+			  		<div class="form-group">
+			  			<label class="form-label" for="id"></label>
+		   				<div class="position-relative has-icon-right">
+			  				<input type="text" id="id" name="id" class="form-control input-shadow" placeholder="아이디" required>
+			  				<div class="form-control-position"><i class="icon-user"></i></div>
+			  				<div class="invalid-feedback"></div>
+		   				</div>
+		  			</div>
+			  		<div class="form-group">
+			  			<label class="form-label" for="password"></label>
+			   			<div class="position-relative has-icon-right">
+					  		<input type="password" id="password" name="password" class="form-control input-shadow" placeholder="비밀번호" required>
+					  		<div class="form-control-position"><i class="icon-lock"></i></div>
+					  		<div class="invalid-feedback"></div>
+			   			</div>
+			  		</div>
+			  		<div class="form-group">
+			   			<label class="form-label" for="passwordVerify"></label>
+			   			<div class="position-relative has-icon-right">
+				  			<input type="password" id="passwordVerify" name="passwordVerify" class="form-control input-shadow" placeholder="비밀번호 확인" required>
+				  			<div class="form-control-position"><i class="icon-lock"></i></div>
+				  			<div class="invalid-feedback"></div>
+			   			</div>
+			  		</div>
+  			  		<div class="form-group">
+			   			<label class="form-label" for="name"></label>
+		   				<div class="position-relative has-icon-right">
+				  			<input type="text" id="name" name="name" class="form-control input-shadow" placeholder="이름" required>
+				  			<div class="form-control-position"><i class="icon-user"></i></div>
+				  			<div class="invalid-feedback"></div>
+			   			</div>
+			  		</div>
+  			  		<div class="form-group">
+			   			<label class="form-label" for="nickname"></label>
+		   				<div class="position-relative has-icon-right">
+				  			<input type="text" id="nickname" name="nickname" class="form-control input-shadow" placeholder="별명" required>
+				  			<div class="form-control-position"><i class="icon-user"></i></div>
+				  			<div class="invalid-feedback"></div>
+			   			</div>
+			  		</div>
+		  			<div class="form-group">
+			   			<label class="form-label" for="email""></label>
+			   			<div class="position-relative has-icon-right">
+				  			<input type="text" id="email" name="email" class="form-control input-shadow" placeholder="이메일" required>
+				  			<div class="form-control-position"><i class="icon-envelope-open"></i></div>
+				  			<div class="invalid-feedback"></div>
+			   			</div>
+			  		</div>
+			  		<div class="form-group">
+			   			<label class="form-label" for="address"></label>
+			   			<div class="position-relative has-icon-right">
+				  			<input type="text" id="address" name="address" class="form-control input-shadow" placeholder="주소" required>
+				  			<div class="form-control-position"><i class="icon-envelope-open"></i></div>
+				  			<div class="invalid-feedback"></div>
+			   			</div>
+			  		</div>
+  			  		<div class="form-group">
+			   			<label class="form-label" for="phone"></label>
+		   				<div class="position-relative has-icon-right">
+				  			<input type="text" id="phone" name="phone" class="form-control input-shadow" placeholder="전화번호" required>
+				  			<div class="form-control-position"><i class="icon-phone"></i></div>
+				  			<div class="invalid-feedback"></div>
+			   			</div>
+			  		</div>
+			   		<div class="form-group">
+			     		<div class="icheck-material-white">
+                   			<input type="checkbox" id="user-checkbox" checked="" />
+                   			<label for="user-checkbox">.</label>
+			     		</div>
+		    		</div>
+			 		<button type="button" id="submitForm" class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button>
+
+
+				</form>
 
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			</div>	
 		</div>
 	</section>
 	<!-- MDB -->
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>		
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="resources/logRegAssets/js/validation.js"></script>
 	<script>
 	
-	var objId = $("#id");
-	var objPassword = $("#password");
-	var objPasswordValue = $("#passwordValue");
-	var objName = $("#name");
-	var objNickname = $("#nickname");
-	var objEmail = $("#email");
-	var objAddress = $("#address");
-	var objPhone = $("#phone");
-	
-	
-	
-// 	var idSuccess = 0;
-	
 	validationInst = function() {
-		if(validationUpdt() == false) return false;
+	
+			var objId = $("#id");
+			var objPassword = $("#password");
+			var objPasswordVerify = $("#passwordVerify");
+			var objName = $("#name");
+			var objNickname = $("#nickname");
+			var objEmail = $("#email");
+			var objAddress = $("#address");
+			var objPhone = $("#phone");
+		
+	    if (checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능합니다.") === false) return false;
+	    if (checkPw(objPw, "영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) return false;
+	    if (checkPasswordVerify(objPasswordVerify, "비밀번호가 일치하지 않습니다.") === false) return false;
+	    if (checkName(objName, "이름은 한글만 입력 가능합니다.") === false) return false;
+	    if (checkEmail(objEmail, "유효한 이메일 주소를 입력해주세요.") === false) return false;
+	    if (checkPhone(objPhone, "전화번호는 숫자만 입력해주세요.") === false) return false;
 	}
 	
-	validationUpdt = function() {
-		if(checkId(objId) === false) return false;
-		if(checkPassword(objPassword) === false) return false;
-		if(checkName(objName) === false) return false;
-		if(checkNickname(objNickname) === false) return false;
-		if(checkEmail(objEmail) === false) return false;
-		if(checkAddress(objAddress) === false) return false;
-		if(checkPhone(objPhone) === false) return false;
-
-	}
-	
-
-	
-
-
-	
-	
-
-
-//     if (!checkId(objId)) {
-//         return false;
-//     }
-
-    
-    // AJAX 요청 수행
-//     $.ajax({
-//         async: true,
-//         cache: false,
-//         type: "post",
-//         url: "/checkIdProc",
-//         data: { "id": obj.val().trim() },
-//         success: function(response) {
-//             if (response.rt === "available") {
-
-//                 $("#id").removeClass("border-danger");
-//                 $("#id").siblings(".validation").remove();
-//                 $("#id").parent().append("<div class='p-2 text-success validation'>사용 가능한 아이디입니다.</div>");
-// //                 idajaxck = 0;
-//             } else {
-
-//                 $("#id").addClass("border-danger");
-//                 $("#id").siblings(".validation").remove();
-//                 $("#id").parent().append("<div class='p-2 text-danger validation'>사용 불가능한 아이디입니다.</div>");
-//                 $("#id").focus();
-// //                 idajaxck = 1;
-//             }
-//         },
-//         error: function(jqXHR, textStatus, errorThrown) {
-//             alert("ajaxUpdate " + textStatus + " : " + errorThrown);
-//         }
-//     });
-// });
+// 회원가입시 아이디 중복체크
 	$("#id").on("blur", function() {
-    	var obj = $(this).val();
-	
-    $.ajax({
-        async: true,
-        cache: false,
-        type: "post",
-        url: "/checkIdProc",
-        data: { "id": obj.val() },
-        success: function(response) {
-            if (response.rt === "available") {
-            	if (!checkId(obj.val())) {
- 		        	return false;
- 		    	} else {
-                    $("#valid").show();
-                    $("#invalid").hide();
-//                 idajaxck = 0;
- 		    	}
-            } else {
-                $("#invalid").show();
-                $("#valid").hide();
-
-//                 idajaxck = 1;
-            }
-        },
-        error: function(jqXHR, textStatus, errorThrown) {
-            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
-        }
-    });
-});
-
-
-// function test() {
-//     var p1 = $("#password").val();
-//     var p2 = $("#passwordCheck").val();
-    
-//     if(p1.length < 6) {
-//             alert('입력한 글자가 8~16자 내여야 합니다.');
-//             return false;
-//         }
-        
-//         if( p1 != p2 ) {
-//           alert("비밀번호불일치");
-//           return false;
-//         } else{
-//           alert("비밀번호가 일치합니다");
-// ;
-//         }
-//   }
-  
-  
-// function test() {
-//     var p1 = $("#password").val();
-//     var p2 = $("#passwordCheck").val();
-    
-//     if (p1.length < 8 || p1.length > 16) {
-//         alert('입력한 글자가 8~16자 내여야 합니다.'); // 글자 수 조건에 맞지 않을 때 알림 표시
-//         return false;
-//     }
-        
-//     if (p1 != p2) {
-//         alert("비밀번호 불일치"); // 비밀번호 불일치 시 알림 표시
-//         return false;
-//     } else {
-//         alert("비밀번호가 일치합니다"); // 비밀번호 일치 시 알림 표시
-//     }
-// }
+	    var obj = $(this);
+	    
+	    if (checkId(obj, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 해주세요.") === false) {
+			return false;
+	    } else {
+		    // AJAX 요청 수행
+		    $.ajax({
+		        async: true,
+		        cache: false,
+		        type: "post",
+		        url: "/checkIdProc",
+		        data: { "id": obj.val().trim() },
+		        success: function(response) {
+		            if (response.rt === "available") {
+			            obj.removeClass("is-invalid");
+			            obj.addClass("is-valid");
+	            		obj.siblings(".invalid-feedback").text("사용 가능합니다.");
+		            } else {
+		                obj.removeClass("is-valid");
+		                obj.addClass("is-invalid");
+		                obj.focus();
+		                obj.siblings(".invalid-feedback").text("사용 불가능합니다.");
+		            }
+		        },
+		        error: function(jqXHR, textStatus, errorThrown) {
+		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+		        }
+		    });
+    	}
+	});
 
   
   
   
-  $("#password").on("blur", function(){
-        $("#alert-success").hide();
-        $("#alert-danger").hide();
-        
-            var pwd1=$("#password").val();
-            var pwd2=$("#rePassword").val();
-            if(pwd1 != "" || pwd2 != "") {
-                if(pwd1 == pwd2){
-                    $("#alert-success").show();
-                    $("#alert-danger").hide();
-
-                } else {
-                    $("#alert-success").hide();
-                    $("#alert-danger").show();
-
-                }    
-            }
-
-    });
   
   
   
   
   
   
-  
-  
-
+	// 회원가입 버튼 클릭 이벤트
 $(".btnAdd").on("click", function(){
 	if(validationInst() === false) return false;	
-
-//		if(idSuccess == 0) {
 		$("form[name=form]").attr("action","/memberAdd").submit();
-//		} else {
-//			alert("중복 혹은 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리 이내가 아닙니다.")
-//		}
-
 });
 
 	 

@@ -207,7 +207,7 @@ public class MemberController {
 	 */
 	@ResponseBody
 	@RequestMapping("/checkIdProc" )
-	public Map<String, Object> checkIdProc(MemberVo vo , HttpSession session) {
+	public Map<String, Object> checkIdProc(MemberVo vo) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
 		int rtNum = service.selectOneCheckId(vo);

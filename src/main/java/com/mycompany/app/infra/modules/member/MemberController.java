@@ -72,8 +72,6 @@ public class MemberController {
 		
 		// service 호출
 		service.update(dto);
-		
-
 
 		return "redirect: /memberXdmList";
 	}
@@ -104,7 +102,6 @@ public class MemberController {
 		
 		return "redirect: /memberXdmList";
 	}
-	
 	
 //	유저 로그인
     @RequestMapping("/usrLoginForm") 
@@ -157,10 +154,6 @@ public class MemberController {
 		return returnMap;
 	}
 	
-	
-	
-
-	
 	/*
 	 * @ResponseBody
 	 * 
@@ -182,14 +175,6 @@ public class MemberController {
 		returnMap.put("rt", "success");
 	    return returnMap; // 로그아웃 후에 메인 페이지로 리다이렉트
 	}
-
-	
-	
-	
-	
-	
-	
-	
 		
 //	관리자 로그인
 	@RequestMapping("/xdmLoginForm")
@@ -221,12 +206,5 @@ public class MemberController {
 		
 		return returnMap;
 	}
-	
-	
-	
-	
-	
-	
-	
 
 }

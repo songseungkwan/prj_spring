@@ -175,7 +175,9 @@
                    			<label for="user-checkbox">.</label>
 			     		</div>
 		    		</div>
-			 		<button type="button" id="submitForm" class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button>
+			 		<div class="d-flex justify-content-center">
+						<button type="button" class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button>
+					</div>
 
 
 				</form>
@@ -191,7 +193,7 @@
 	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>		
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <script src="resources/logRegAssets/js/validation.js"></script>
 	<script>
 	
@@ -246,14 +248,6 @@
 		    });
     	}
 	});
-
-  
-  
-  
-  
-  
-  
-  
   
   
 	// 회원가입 버튼 클릭 이벤트

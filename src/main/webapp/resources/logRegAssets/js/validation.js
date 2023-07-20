@@ -50,6 +50,7 @@
             return false;
         } else {
             obj.removeClass("is-invalid");
+            obj.addClass("is-valid");
         }
     }
 

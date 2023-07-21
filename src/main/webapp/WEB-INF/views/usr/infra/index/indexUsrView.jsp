@@ -40,28 +40,28 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-easel"></i></div>
-              <h4 class="title"><a href="/realTimeRecord" class="stretched-link " onclick="checkLogin()">실시간 랭킹</a></h4>
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link " onclick="checkLogin('realTimeRecord')">실시간 기록 & 영상</a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-gem"></i></div>
-              <h4 class="title"><a href="" class="stretched-link" onclick="checkLogin()">역대 기록</a></h4>
+              <div class="icon"><i class="bi bi-gem"></i></div>									<!-- page name 작성  -->
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()">역대 기록</a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-geo-alt"></i></div>
-              <h4 class="title"><a href="" class="stretched-link" onclick="checkLogin()"></a></h4>
+              <div class="icon"><i class="bi bi-geo-alt"></i></div>								<!-- page name 작성  -->
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()">영상 등록하기</a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-command"></i></div>
-              <h4 class="title"><a href="" class="stretched-link" onclick="checkLogin()"></a></h4>
+              <div class="icon"><i class="bi bi-command"></i></div>								<!-- page name 작성  -->
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()"></a></h4>
             </div>
           </div><!--End Icon Box -->
 
@@ -69,7 +69,7 @@
       </div>
     </div>
 
-    </div>
+
   </section>
   <!-- End Hero Section -->
 
@@ -754,13 +754,15 @@
         <% } %>
     } --%>
     
-    function checkLogin() {
+    function checkLogin(pageName) {
         <c:choose>
             <c:when test="${sessionId == null}">
                 alert("<c:out value='로그인 후에 이용 가능합니다'/>");
+                window.location.href = "/usrLoginForm";
             </c:when>
             <c:otherwise>
-                // 버튼을 클릭한 후 실행할 동작
+            window.location.href = pageName;
+	
             </c:otherwise>
         </c:choose>
     }

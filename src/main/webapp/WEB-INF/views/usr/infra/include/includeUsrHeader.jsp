@@ -37,7 +37,7 @@ String id = (String) request.getSession().getAttribute("id");
 
 	<div
 		class="container-fluid container-xl d-flex align-items-center justify-content-between">
-		<a href="index.html" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo -->
+		<a href="/indexUsrView" class="logo d-flex align-items-center"> <!-- Uncomment the line below if you also wish to use an image logo -->
 			<!-- <img src="assets/img/logo.png" alt=""> -->
 			<h1>
 				King-petetion<span>.</span>
@@ -105,7 +105,6 @@ String id = (String) request.getSession().getAttribute("id");
 
 					 }
 					 %> --%>
-				</li>
 
 
 				<!--            -->

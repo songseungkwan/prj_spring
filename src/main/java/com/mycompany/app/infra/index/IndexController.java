@@ -94,8 +94,7 @@ public class IndexController {
 			return "usr/infra/subpage/swimming";		
 		}
 		
-		//----------usr login & register form	
-				
+		//----------usr login & register form
 		@RequestMapping(value="/usrRegisterForm")
 		public String usrRegisterForm() {
 			return "usr/infra/member/usrRegisterForm";		

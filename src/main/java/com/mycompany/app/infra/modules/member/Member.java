@@ -11,13 +11,14 @@ public class Member {
 	private String seq;				
 	private String name;
 	private Integer delNy;
-	private String type;
+
 	private String id;
 	private String nickname;
 	private String password;
 	private String email;
 	private String address;
 	private String phone;
+	private String type;
 
 
 	

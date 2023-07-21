@@ -169,12 +169,16 @@
 				  			<div class="invalid-feedback"></div>
 			   			</div>
 			  		</div>
-			   		<div class="form-group">
-			     		<div class="icheck-material-white">
-                   			<input type="checkbox" id="user-checkbox" checked="" />
-                   			<label for="user-checkbox">.</label>
-			     		</div>
-		    		</div>
+			  		
+  			  		<div class="form-group">
+			   			<label class="form-label" for="phone"></label>
+		   				<div class="position-relative has-icon-right">
+				  			<input type="text" id="type" name="type" class="form-control input-shadow" placeholder="" disabled>
+				  			<div class="form-control-position"><i class="icon-phone"></i></div>
+			   			</div>
+			  		</div>
+<br><br>
+
 			 		<div class="d-flex justify-content-center">
 						<button type="button" class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button>
 					</div>
@@ -198,6 +202,10 @@
 	<script>
 	
 	validationInst = function() {
+		if(validationUpdt() == false) return false;
+	}
+	
+	validationUpdt = function() {
 	
 			var objId = $("#id");
 			var objPassword = $("#password");
@@ -208,8 +216,8 @@
 			var objAddress = $("#address");
 			var objPhone = $("#phone");
 		
-	    if (checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 가능합니다.") === false) return false;
-	    if (checkPw(objPw, "영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) return false;
+	    if (checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력해주세요.") === false) return false;
+	    if (checkPassword(objPassword, "비밀번호는 영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) return false;
 	    if (checkPasswordVerify(objPasswordVerify, "비밀번호가 일치하지 않습니다.") === false) return false;
 	    if (checkName(objName, "이름은 한글만 입력 가능합니다.") === false) return false;
 	    if (checkEmail(objEmail, "유효한 이메일 주소를 입력해주세요.") === false) return false;
@@ -220,7 +228,7 @@
 	$("#id").on("blur", function() {
 	    var obj = $(this);
 	    
-	    if (checkId(obj, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력 해주세요.") === false) {
+	    if (checkId(obj, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력해주세요.") === false) {
 			return false;
 	    } else {
 		    // AJAX 요청 수행
@@ -250,12 +258,45 @@
 	});
   
   
+	$("#password").on("blur", function() {
+	    var obj = $(this);
+	    
+	    if (checkId(obj, "비밀번호는 영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) {
+			return false;
+	    } else {
+		    // AJAX 요청 수행
+		    $.ajax({
+		        async: true,
+		        cache: false,
+		        type: "post",
+		        url: "/checkIdProc",
+		        data: { "id": obj.val().trim() },
+		        success: function(response) {
+		            if (response.rt === "available") {
+			            obj.removeClass("is-invalid");
+			            obj.addClass("is-valid");
+	            		obj.siblings(".invalid-feedback").text("사용 가능합니다.");
+		            } else {
+		                obj.removeClass("is-valid");
+		                obj.addClass("is-invalid");
+		                obj.focus();
+		                obj.siblings(".invalid-feedback").text("사용 불가능합니다.");
+		            }
+		        },
+		        error: function(jqXHR, textStatus, errorThrown) {
+		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+		        }
+		    });
+    	}
+	});
+  
+
 	// 회원가입 버튼 클릭 이벤트
 $(".btnAdd").on("click", function(){
 	if(validationInst() === false) return false;	
 		$("form[name=form]").attr("action","/memberAdd").submit();
-});
 
+});
 	 
 	
 	

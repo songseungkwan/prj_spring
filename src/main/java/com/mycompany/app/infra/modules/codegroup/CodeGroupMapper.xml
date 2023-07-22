@@ -80,7 +80,7 @@
         	seq = #{seq}
    </delete>
     
-      <insert id="insert">
+   <insert id="insert">
        INSERT INTO codeGroup(
        	name
        	,delNy
@@ -88,7 +88,7 @@
        	#{name}
        	,0
        )
-  		</insert>
+   </insert>
    		
 
 

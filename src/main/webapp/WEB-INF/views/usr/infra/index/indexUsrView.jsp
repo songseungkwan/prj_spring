@@ -54,7 +54,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-geo-alt"></i></div>								<!-- page name 작성  -->
-              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()">영상 등록하기</a></h4>
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin('register')">영상 등록하기</a></h4>
             </div>
           </div><!--End Icon Box -->
 
@@ -166,7 +166,7 @@
               <h3>1. 계정 생성</h3>
               <p>계정이 없으면 먼저 회원가입을 해주세요.
                 (일반인/선수 출신/현역 군인 중 현재 신분에 맡게 선택해주세요.)</p>
-              <a href="#" class="readmore stretched-link"></a>
+              <a href="#none" class="readmore stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -177,7 +177,7 @@
               </div>
               <h3>2.훈련</h3>
               <p>계정을 만드신 후 자신있는 종목을 열심히 연습해보세요.</p>
-              <a href="#" class="readmore stretched-link"></a>
+              <a href="#none" class="readmore stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -188,7 +188,7 @@
               </div>
               <h3>3. 영상 촬영</h3>
               <p>이제 폰으로 기록 영상을 남겨주세요. 촬영한 시간과 날짜가 정확히 나와야 해요.</p>
-              <a href="#" class="readmore stretched-link"></a>
+              <a href="#none" class="readmore stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -199,7 +199,7 @@
               </div>
               <h3>4. 영상 업로드</h3>
               <p>촬영본을 유튜브에 업로드 후 게시물에 링크를 걸어주거나, 바로 영상을 업로드해주세요. 기록도 입력해주세요.</p>
-              <a href="#" class="readmore stretched-link"></a>
+              <a href="#none" class="readmore stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -210,7 +210,7 @@
               </div>
               <h3>5. 참가비</h3>
               <p>0원부터 10,000원 안에서 금액을 설정해 참가비를 내고 높은 순위 기록하면 상금도 탈 수 있어요.(0원은 상금 수령 불가능)</p>
-              <a href="#" class="readmore stretched-link"></a>
+              <a href="#none" class="readmore stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 
@@ -222,7 +222,7 @@
               <h3>
                 6. 피드백</h3>
               <p>다른 형제들의 영상도 보며 댓글을 달며 소통해보세요.</p>
-              <a href="#" class="readmore stretched-link"></a>
+              <a href="#none" class="readmore stretched-link"></a>
             </div>
           </div><!-- End Service Item -->
 

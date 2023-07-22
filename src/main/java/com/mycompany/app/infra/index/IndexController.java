@@ -37,62 +37,79 @@ public class IndexController {
 		public String realTimeRecord() {
 			return "usr/infra/subpage/realTimeRecord";		
 		}
+		@RequestMapping(value="/register")
+		public String register() {
+			return "usr/infra/subpage/register";		
+		}				
 		
 		
 //		----------sub page
-		@RequestMapping(value="/pullups")
-		public String pullups() {
-			return "usr/infra/subpage/pullups";		
-		}
 
-		@RequestMapping(value="/pushups")
-		public String pushups() {
-			return "usr/infra/subpage/pushups";		
-		}
-		@RequestMapping(value="/situps")
-		public String situps() {
-			return "usr/infra/subpage/situps";		
-		}
 		
-		@RequestMapping(value="/planche")
-		public String planche() {
-			return "usr/infra/subpage/planche";		
-		}
 		
-		@RequestMapping(value="/burpee")
-		public String burpee() {
-			return "usr/infra/subpage/burpee";		
-		}
 		
-		@RequestMapping(value="/squat")
-		public String squat() {
-			return "usr/infra/subpage/squat";		
-		}
 		
-		@RequestMapping(value="/deadlift")
-		public String deadlift() {
-			return "usr/infra/subpage/deadlift";		
-		}
 		
-		@RequestMapping(value="/benchpress")
-		public String benchpress() {
-			return "usr/infra/subpage/benchpress";		
-		}
 		
-		@RequestMapping(value="/running")
-		public String running() {
-			return "usr/infra/subpage/running";		
-		}
 		
-		@RequestMapping(value="/bikes")
-		public String bikes() {
-			return "usr/infra/subpage/bikes";		
-		}
 		
-		@RequestMapping(value="/swimming")
-		public String swimming() {
-			return "usr/infra/subpage/swimming";		
-		}
+		
+		
+		
+		
+//		@RequestMapping(value="/pullups")
+//		public String pullups() {
+//			return "usr/infra/subpage/pullups";		
+//		}
+//
+//		@RequestMapping(value="/pushups")
+//		public String pushups() {
+//			return "usr/infra/subpage/pushups";		
+//		}
+//		@RequestMapping(value="/situps")
+//		public String situps() {
+//			return "usr/infra/subpage/situps";		
+//		}
+//		
+//		@RequestMapping(value="/planche")
+//		public String planche() {
+//			return "usr/infra/subpage/planche";		
+//		}
+//		
+//		@RequestMapping(value="/burpee")
+//		public String burpee() {
+//			return "usr/infra/subpage/burpee";		
+//		}
+//		
+//		@RequestMapping(value="/squat")
+//		public String squat() {
+//			return "usr/infra/subpage/squat";		
+//		}
+//		
+//		@RequestMapping(value="/deadlift")
+//		public String deadlift() {
+//			return "usr/infra/subpage/deadlift";		
+//		}
+//		
+//		@RequestMapping(value="/benchpress")
+//		public String benchpress() {
+//			return "usr/infra/subpage/benchpress";		
+//		}
+//		
+//		@RequestMapping(value="/running")
+//		public String running() {
+//			return "usr/infra/subpage/running";		
+//		}
+//		
+//		@RequestMapping(value="/bikes")
+//		public String bikes() {
+//			return "usr/infra/subpage/bikes";		
+//		}
+//		
+//		@RequestMapping(value="/swimming")
+//		public String swimming() {
+//			return "usr/infra/subpage/swimming";		
+//		}
 		
 		//----------usr login & register form
 		@RequestMapping(value="/usrRegisterForm")

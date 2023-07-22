@@ -10,7 +10,7 @@ public class CodeGroup {
 	
 	private String seq;					
 	private String name;
-	private Integer  delNy;
+	private Integer delNy;
 	
 	// -----
 	public String getSeq() {

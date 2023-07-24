@@ -221,12 +221,27 @@
               <hr class="dropdown-divider">
             </li>
 
+<!--             <li> -->
+<!--               <a class="dropdown-item d-flex align-items-center" href="#"> -->
+<!--                 <i class="bi bi-box-arrow-right"></i> -->
+<!--                 <span>Sign Out</span> -->
+<!--               </a> -->
+<!--             </li> -->
+            
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
+	            <c:choose>
+				  <c:when test="${not empty sessionId }">
+<%-- 				      <c:out value="${sessionId }"/> --%>
+				      <span type="button" class="btn btnLogout" id="btnLogout" style="color: #000;">Sign Out</span>
+				  </c:when>
+				  <c:otherwise>
+				      <!-- 로그인 링크만 남기고 나머지는 제거 -->
+<!-- 				      <a href="xdmLoginForm">로그인</a> -->
+				  </c:otherwise>
+				</c:choose>
             </li>
+            
+            
 
           </ul><!-- End Profile Dropdown Items -->
         </li><!-- End Profile Nav -->
@@ -235,4 +250,41 @@
     </nav><!-- End Icons Navigation -->
 
   </header><!-- End Header -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+
+	$("#btnLogout").on("click", function(){
+		
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/logoutProc"
+			/* ,data : $("#formLogin").serialize() */
+			,data : { }
+			,success: function(response) {
+					
+					location.href = "/xdmLoginForm";
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " +  jqXHR.errorThrown);
+			}
+		});
+	});
+	
+	
+
+
+
+validation = function() {
+	// if(!checkNull($("#ifmmId"), $.trim($("#ifmmId").val()), "아이디를 입력해 주세요!")) return false;
+	// if(!checkNull($("#ifmmPassword"), $.trim($("#ifmmPassword").val()), "비밀번호를 입력해 주세요!")) return false;
+}
+
+
+
+
+</script>
 

@@ -64,7 +64,7 @@
                    							<button class="btn btn-outline-secondary btnCancel w-50" type="button">뒤로</button>                    					
                     					</div>
                     					<div class="col-12">
-                      						<p class="small mb-0">아이디가 없으신가요? <a href="xdmRegister">회원가입</a></p>
+                      						<p class="small mb-0">아이디가 없으신가요? <a href="xdmRegisterForm">회원가입</a></p>
                     					</div>
                   					
                 				</div>

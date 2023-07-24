@@ -16,7 +16,7 @@ public class CheckXdmLoginSessionInterception extends HandlerInterceptorAdapter{
 		if (request.getSession().getAttribute("sessionId") != null) {
 			// by pass
 		} else {
-			response.sendRedirect("/indexXdmView");
+			response.sendRedirect("/xdmLoginForm");
             return false;
 		}
 		

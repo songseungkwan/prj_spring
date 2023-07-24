@@ -51,36 +51,67 @@ String id = (String) request.getSession().getAttribute("id");
 				<li><a href="#portfolio">Workouts</a></li>
 				<li><a href="#team">Recruit</a></li>
 				<li><a href="blog.html">Blog</a></li>
-				<li class="dropdown"><a href="#"><span>Drop Down</span> <i
-						class="bi bi-chevron-down dropdown-indicator"></i></a>
-					<ul>
-						<li><a href="#">Drop Down 1</a></li>
-						<li class="dropdown"><a href="#"><span>Deep Drop
-									Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-							<ul>
-								<li><a href="#">Deep Drop Down 1</a></li>
-								<li><a href="#">Deep Drop Down 2</a></li>
-								<li><a href="#">Deep Drop Down 3</a></li>
-								<li><a href="#">Deep Drop Down 4</a></li>
-								<li><a href="#">Deep Drop Down 5</a></li>
-							</ul></li>
-						<li><a href="#">Drop Down 2</a></li>
-						<li><a href="#">Drop Down 3</a></li>
-						<li><a href="#">Drop Down 4</a></li>	
-					</ul></li>
-					
-					<li id="LoginSessionId">
-
+<!-- 				<li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a> -->
+<!-- 					<ul> -->
+<!-- 						<li><a href="#">Drop Down 1</a></li> -->
+<!-- 						<li class="dropdown"><a href="#"><span>Deep Drop -->
+<!-- 									Down</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a> -->
+<!-- 							<ul> -->
+<!-- 								<li><a href="#">Deep Drop Down 1</a></li> -->
+<!-- 								<li><a href="#">Deep Drop Down 2</a></li> -->
+<!-- 								<li><a href="#">Deep Drop Down 3</a></li> -->
+<!-- 								<li><a href="#">Deep Drop Down 4</a></li> -->
+<!-- 								<li><a href="#">Deep Drop Down 5</a></li> -->
+<!-- 							</ul></li> -->
+<!-- 						<li><a href="#">Drop Down 2</a></li> -->
+<!-- 						<li><a href="#">Drop Down 3</a></li> -->
+<!-- 						<li><a href="#">Drop Down 4</a></li>	 -->
+						
 				<c:choose>
 					<c:when test="${not empty sessionId }">
-						 <c:out value="${sessionId }"/>
-						<button type="button" class="btn btnLogout" id="btnLogout" style="color: #fff;">로그아웃</button>
+						<li class="dropdown"><a href="#"><span>User</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>	
+							<ul>
+								<li><a href="#">ㅁㅁㅁ</a></li>
+								<li class="dropdown"><a href="#"><span>내 정보</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+									<ul>
+										<li><a href="#">나의 기록</a></li>
+										<li><a href="#">나의 ㅁㅁㅁ</a></li>
+										<li><a href="#">나의 ㅁㅁㅁ</a></li>
+										<li><a href="#">나의 ㅁㅁㅁ</a></li>
+										<li><a href="#">나의 ㅁㅁㅁ</a></li>
+									</ul>
+								</li>
+								<li><a href="#">ㅁㅁㅁ</a></li>
+								<li><a href="#">ㅁㅁㅁ</a></li>
+								<li><a href="#">ㅁㅁㅁ</a></li>	
+							</ul>
+						</li>
+	
 					</c:when>
 					<c:otherwise>
-						<a href="usrLoginForm">로그인</a>
-						<li class="nav-item"><a href="usrRegisterForm" class="nav-link">회원가입</a></li>
 					</c:otherwise>
 				</c:choose>
+						
+						
+						
+						
+						
+						
+						
+<!-- 					</ul> -->
+<!-- 				</li> -->
+					
+				<li id="LoginSessionId">
+					<c:choose>
+						<c:when test="${not empty sessionId }">
+							 <c:out value="${sessionId }"/>
+							<button type="button" class="btn btnLogout" id="btnLogout" style="color: #fff;">로그아웃</button>
+						</c:when>
+						<c:otherwise>
+							<a href="usrLoginForm">로그인</a>
+							<li class="nav-item"><a href="usrRegisterForm" class="nav-link">회원가입</a></li>
+						</c:otherwise>
+					</c:choose>
 				</li>
 <%-- 				
 				

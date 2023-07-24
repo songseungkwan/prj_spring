@@ -54,7 +54,7 @@
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-geo-alt"></i></div>								<!-- page name 작성  -->
-              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin('register')">영상 등록하기</a></h4>
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin('registerVideo')">영상 등록하기</a></h4>
             </div>
           </div><!--End Icon Box -->
 
@@ -424,7 +424,7 @@
             </div>
           </div><!-- End Pricing Item -->
 
-          <div class="col-lg-4">
+          <div class="col-lg-4">	
             <div class="pricing-item featured">
               <h3>Business Plan</h3>
               <div class="icon">

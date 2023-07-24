@@ -20,9 +20,9 @@ public class IndexController {
 //			return "xdm/infra/member/xdmLoginForm";		
 //		}
 		
-		@RequestMapping(value="/xdmRegister")
-		public String xdmRegister() {
-			return "xdm/infra/member/xdmRegister";		
+		@RequestMapping(value="/xdmRegisterForm")
+		public String xdmRegisterForm() {
+			return "xdm/infra/member/xdmRegisterForm";		
 		}
 		
 		@RequestMapping(value="/indexUsrView")
@@ -35,11 +35,12 @@ public class IndexController {
 		}
 		@RequestMapping(value="/realTimeRecord")
 		public String realTimeRecord() {
-			return "usr/infra/subpage/realTimeRecord";		
+			return "usr/infra/subpage/realTimeRecord";	 
+			
 		}
-		@RequestMapping(value="/register")
-		public String register() {
-			return "usr/infra/subpage/register";		
+		@RequestMapping(value="/registerVideo")
+		public String registerVideo() {
+			return "usr/infra/subpage/registerVideo";		
 		}				
 		
 		

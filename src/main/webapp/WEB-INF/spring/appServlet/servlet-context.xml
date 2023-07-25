@@ -22,7 +22,6 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.mycompany.app"/>
-	<!-- session interceptor s 2022.03.13 for logincheck -->
 	
 	<!-- session interceptor s 2023.07.18 for logincheck -->
 	<!-- CheckXdmLoginSessionInterception -->
@@ -43,8 +42,7 @@
 			<exclude-mapping path="/loginUsrProc" />
 			<exclude-mapping path="/logoutProc" />
 			<exclude-mapping path="/checkIdProc" />		
-			
-						<exclude-mapping path="/**Xdm**" />	
+			<exclude-mapping path="/**Xdm**" />	
 			<beans:bean id="checkUsrLoginSessionInterception" class="com.mycompany.app.common.interceptor.CheckUsrLoginSessionInterception"/>
 		</interceptor>
 		
@@ -67,8 +65,4 @@
 		</interceptor>
 	</interceptors>	
 	<!-- session interceptor e 2023.07.18 for logincheck -->
-	
-	
-	
-	
 </beans:beans>

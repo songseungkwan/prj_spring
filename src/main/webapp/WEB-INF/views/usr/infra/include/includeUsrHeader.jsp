@@ -69,7 +69,7 @@ String id = (String) request.getSession().getAttribute("id");
 						
 				<c:choose>
 					<c:when test="${not empty sessionId }">
-						<li class="dropdown"><a href="#"><span>User</span><i class="bi bi-chevron-down dropdown-indicator"></i></a>	
+						<li class="dropdown"><a href="#"><c:out value="${sessionId }"/><i class="bi bi-chevron-down dropdown-indicator"></i></a>	
 							<ul>
 								<li><a href="#">ㅁㅁㅁ</a></li>
 								<li class="dropdown"><a href="#"><span>내 정보</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
@@ -104,7 +104,7 @@ String id = (String) request.getSession().getAttribute("id");
 				<li id="LoginSessionId">
 					<c:choose>
 						<c:when test="${not empty sessionId }">
-							 <c:out value="${sessionId }"/>
+<%-- 							 <c:out value="${sessionId }"/> --%>
 							<button type="button" class="btn btnLogout" id="btnLogout" style="color: #fff;">로그아웃</button>
 						</c:when>
 						<c:otherwise>

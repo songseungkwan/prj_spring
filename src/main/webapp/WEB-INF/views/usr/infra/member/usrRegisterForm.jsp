@@ -105,6 +105,7 @@
 <!-- 								</form> -->
 
 				<form class="needs-validation" name="form" method="post" novalidate>
+				
 			  		<div class="form-group">
 			  			<label class="form-label" for="id"></label>
 		   				<div class="position-relative has-icon-right">
@@ -113,6 +114,7 @@
 			  				<div class="invalid-feedback"></div>
 		   				</div>
 		  			</div>
+		  			
 			  		<div class="form-group">
 			  			<label class="form-label" for="password"></label>
 			   			<div class="position-relative has-icon-right">
@@ -121,6 +123,7 @@
 					  		<div class="invalid-feedback"></div>
 			   			</div>
 			  		</div>
+			  		
 			  		<div class="form-group">
 			   			<label class="form-label" for="passwordVerify"></label>
 			   			<div class="position-relative has-icon-right">
@@ -129,6 +132,7 @@
 				  			<div class="invalid-feedback"></div>
 			   			</div>
 			  		</div>
+			  		
   			  		<div class="form-group">
 			   			<label class="form-label" for="name"></label>
 		   				<div class="position-relative has-icon-right">
@@ -137,6 +141,7 @@
 				  			<div class="invalid-feedback"></div>
 			   			</div>
 			  		</div>
+			  		
   			  		<div class="form-group">
 			   			<label class="form-label" for="nickname"></label>
 		   				<div class="position-relative has-icon-right">
@@ -145,6 +150,7 @@
 				  			<div class="invalid-feedback"></div>
 			   			</div>
 			  		</div>
+			  		
 		  			<div class="form-group">
 			   			<label class="form-label" for="email""></label>
 			   			<div class="position-relative has-icon-right">
@@ -153,6 +159,7 @@
 				  			<div class="invalid-feedback"></div>
 			   			</div>
 			  		</div>
+			  		
 			  		<div class="form-group">
 			   			<label class="form-label" for="address"></label>
 			   			<div class="position-relative has-icon-right">
@@ -161,6 +168,7 @@
 				  			<div class="invalid-feedback"></div>
 			   			</div>
 			  		</div>
+			  		
   			  		<div class="form-group">
 			   			<label class="form-label" for="phone"></label>
 		   				<div class="position-relative has-icon-right">
@@ -182,8 +190,6 @@
 			 		<div class="d-flex justify-content-center">
 						<button type="button" class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button>
 					</div>
-
-
 				</form>
 
 							</div>
@@ -201,28 +207,78 @@
     <script src="resources/logRegAssets/js/validation.js"></script>
 	<script>
 	
+// 	validationInst = function() {
+// 		if(validationUpdt() == false) return false;
+// 	}
+	
+// 	validationUpdt = function() {
+	
+// 			var objId = $("#id");
+// 			var objPassword = $("#password");
+// 			var objPasswordVerify = $("#passwordVerify");
+// 			var objName = $("#name");
+// 			var objNickname = $("#nickname");
+// 			var objEmail = $("#email");
+// 			var objAddress = $("#address");
+// 			var objPhone = $("#phone");
+		
+// 	    if (checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력해주세요.") === false) return false;
+// 	    if (checkPassword(objPassword, "비밀번호는 영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) return false;
+// 	    if (checkPasswordVerify(objPasswordVerify, "비밀번호가 일치하지 않습니다.") === false) return false;
+// 	    if (checkName(objName, "이름은 한글만 입력 가능합니다.") === false) return false;
+// 	    if (checkEmail(objEmail, "유효한 이메일 주소를 입력해주세요.") === false) return false;
+// 	    if (checkPhone(objPhone, "전화번호는 숫자만 입력해주세요.") === false) return false;
+// 	}
+	
+	var objId = $("#id");
+	var objPassword = $("#password");
+	var objPasswordVerify = $("#passwordVerify");
+	var objName = $("#name");
+	var objNickname = $("#nickname");
+	var objEmail = $("#email");
+	var objAddress = $("#address");
+	var objPhone = $("#phone");
+	
 	validationInst = function() {
 		if(validationUpdt() == false) return false;
 	}
 	
 	validationUpdt = function() {
-	
-			var objId = $("#id");
-			var objPassword = $("#password");
-			var objPasswordVerify = $("#passwordVerify");
-			var objName = $("#name");
-			var objNickname = $("#nickname");
-			var objEmail = $("#email");
-			var objAddress = $("#address");
-			var objPhone = $("#phone");
+/* 		// 실제 체킹하는 소스가 들어가는 부분
+		if($.trim($("#name").val()) ==  "" || $.trim($("#name").val()) == null) {
+			alert("데이터를 입력해주세용");
+			$("#name").focus();
+			return false;
+		} else {	
+			
+		} */
 		
+		// 정규표현식 선언
+		// 공백없는 숫자와 대소문자& _ - (한글 제외)
+/* 		myRe = /^[a-zA-Z0-9_-]{2,10}$/;
+		
+		
+		if( myRe.test( $.trim( $("#name").val())) == false) {
+			alert("공백없는 숫자와 대소문자만 (영문) 입력 가능합니다.")
+			$("#name").focus();
+			return false;
+		} else {
+// 			by pass 
+		} */
 	    if (checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력해주세요.") === false) return false;
 	    if (checkPassword(objPassword, "비밀번호는 영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) return false;
 	    if (checkPasswordVerify(objPasswordVerify, "비밀번호가 일치하지 않습니다.") === false) return false;
 	    if (checkName(objName, "이름은 한글만 입력 가능합니다.") === false) return false;
 	    if (checkEmail(objEmail, "유효한 이메일 주소를 입력해주세요.") === false) return false;
 	    if (checkPhone(objPhone, "전화번호는 숫자만 입력해주세요.") === false) return false;
+		
+	
 	}
+	
+	
+	
+	
+	
 	
 // 회원가입시 아이디 중복체크
 	$("#id").on("blur", function() {
@@ -261,7 +317,7 @@
 	$("#password").on("blur", function() {
 	    var obj = $(this);
 	    
-	    if (checkId(obj, "비밀번호는 영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) {
+	    if (checkPassword(obj, "비밀번호는 영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) {
 			return false;
 	    } else {
 		    // AJAX 요청 수행
@@ -270,7 +326,7 @@
 		        cache: false,
 		        type: "post",
 		        url: "/checkIdProc",
-		        data: { "id": obj.val().trim() },
+		        data: { "password": obj.val().trim() },
 		        success: function(response) {
 		            if (response.rt === "available") {
 			            obj.removeClass("is-invalid");

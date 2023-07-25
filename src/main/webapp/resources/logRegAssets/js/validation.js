@@ -29,7 +29,7 @@ $("#password").on("keydown", function(event) {
     }
 });
 
-	$("#name").on("keydown", function(event) {
+$("#name").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
         event.preventDefault();
     }
@@ -47,7 +47,7 @@ $("#email").on("keydown", function(event) {
     }
 });
 
-	$("#address").on("keydown", function(event) {
+$("#address").on("keydown", function(event) {
     if (event.keyCode === 32) { // 스페이스바의 keyCode는 32입니다
         event.preventDefault();
     }
@@ -76,7 +76,7 @@ $("#phone").on("keydown", function(event) {
 
 
 // password
-    checkPw = function(obj, message) {
+    checkPassword = function(obj, message) {
         var regExp = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#$%^&*]).{8,20}$/;
 
         if (regExp.test($.trim(obj.val())) == false) {
@@ -91,10 +91,10 @@ $("#phone").on("keydown", function(event) {
 
 // 비밀번호 확인
 	checkPasswordVerify = function(obj, message) {
-	    var objPassword = $("#password");
-	    var objPasswordVerify = objPassword.val().trim();
+	    var objPw = $("#password");
+	    var objPasswordVerify = objPw.val().trim();
 	
-	    if (obj.val().trim() === objPasswordVerify) {
+	    if (objPw.val().trim() === objPasswordVerify) {
 	        obj.removeClass("is-invalid");
 	        return true;
 	    } else {

@@ -48,7 +48,7 @@
 
 
     <div class="pagetitle">
-      <h1>Data Tables</h1>
+      <h1>Code</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="indexXdmView">Home</a></li>

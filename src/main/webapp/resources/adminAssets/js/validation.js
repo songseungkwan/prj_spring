@@ -20,10 +20,9 @@
 
 
 	check = function(obj) {
-	alert("dasdasdasdzcx");
-	alert("obj");					
+					
 		// 		공백없는 숫자와 대소문자
-		xyy = /^[a-z0-9_-]{2,10}$/;
+		xyy = /^[a-z0-9_-]{2,20}$/;
 /* 		myRe = /^[a-z0-9]{2,10}$/;
 		myRe = /^[a-z0-9]$/; */
 

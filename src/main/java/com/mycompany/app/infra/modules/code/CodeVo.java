@@ -8,6 +8,12 @@ public class CodeVo {
 	private String seq;
 	private String codeGroup_seq;
 	private Integer delNy;
+
+	
+
+
+
+
 	
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수

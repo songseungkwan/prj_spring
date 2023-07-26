@@ -17,12 +17,48 @@ public class Code {
 	private Integer delNy;
 	private Integer gender;
 	private Integer codeNum;
+	private Integer workout;
+	private Integer calisthenics;
+	private Integer freeweight;
+	private Integer aerobic;
+	
+	// workout
+	
+	public Integer getWorkout() {
+		return workout;
+	}
+	public void setWorkout(Integer workout) {
+		this.workout = workout;
+	}
+	public Integer getCalisthenics() {
+		return calisthenics;
+	}
+	public void setCalisthenics(Integer calisthenics) {
+		this.calisthenics = calisthenics;
+	}
+	public Integer getFreeweight() {
+		return freeweight;
+	}
+	public void setFreeweight(Integer freeweight) {
+		this.freeweight = freeweight;
+	}
+	public Integer getAerobic() {
+		return aerobic;
+	}
+	public void setAerobic(Integer aerobic) {
+		this.aerobic = aerobic;
+	}
+
+	
 // -----
 	
+
+
 	// for cache
 	public static List<Code> cachedCodeArrayList = new ArrayList<Code>();
 	
 	
+
 	public String getSeq() {
 		return seq;
 	}

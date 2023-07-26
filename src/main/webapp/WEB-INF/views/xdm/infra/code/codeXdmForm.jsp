@@ -91,7 +91,14 @@
                     <input type="text" class="form-control" id="delNy" name="delNy"  value="<c:out value="${item.delNy}"/>">
                   </div>
                 </div>
-				<div class="text-center">
+				
+                <div class="row mb-3 text-center">
+                  <label for="codeNum" class="col-sm-2 col-form-label">codeNum</label>
+                  <div class="col-sm-5">
+                    <input type="text" class="form-control" id="codeNum" name="codeNum"  value="<c:out value="${item.codeNum}"/>">
+                  </div>
+                </div>
+				<div class="text-center">				
 			        
 			        <c:choose>
 					    <c:when test="${empty item.seq}">

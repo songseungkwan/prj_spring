@@ -104,14 +104,15 @@
 	                    <th scope="col">Name</th>
 	                    <th scope="col">delNy</th>
 	                    <th scope="col">codeGroup_seq</th>
+	                    <th scope="col">codeNum</th>
 	                  </tr>
 	                </thead>
 	
 	                <tbody>
 		                <c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
-					<c:forEach items="${listCodeGender }" var="list" varStatus="status">
-						<c:out value="${list.name}"/>
-					</c:forEach>
+						<c:forEach items="${listCodeGender }" var="list" varStatus="status">
+							<c:out value="${list.name}"/>
+						</c:forEach>
 					
 					<%-- <c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">
 						<c:if test="${list.genderCd eq listGender.seq }"> <c:out value="${listGender.name}"/></c:if>
@@ -136,6 +137,7 @@
 	                          <td><a href="codeXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.name}" /></a></td>
 	                          <td><c:out value="${item.delNy}" /></td>
 	                          <td><c:out value="${item.codeGroup_seq}" /></td>
+	                          <td><c:out value="${item.codeNum}" /></td>
 	                        </tr>
 	                      </c:forEach>
 	                    </c:otherwise>

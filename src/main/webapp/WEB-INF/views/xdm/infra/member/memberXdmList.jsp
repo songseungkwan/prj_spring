@@ -118,17 +118,7 @@
 	
 	                <tbody>
 		                <c:set var="listCodeType" value="${CodeServiceImpl.selectListCachedCode('70')}"/>
-		                
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
+
 	
 	                  <c:choose>
 	                    <c:when test="${fn:length(list) eq 0}">
@@ -156,7 +146,8 @@
 	                          <!-- 0719 -->
 	                          <td><c:forEach items="${listCodeType }" var="listType" varStatus="statusType">
 									<c:if test="${item.type eq listType.codeNum }"> <c:out value="${listType.name}"/></c:if>
-								</c:forEach></td>
+								</c:forEach>
+							  </td>
 	                          <td><c:out value="${item.delNy}" /></td>
 	                        </tr>
 	                      </c:forEach>

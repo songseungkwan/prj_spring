@@ -11,7 +11,8 @@
   <%@include file = "../include/includeUsrHead.jsp"%>
 
 <body>
-		                <c:set var="listCodeType" value="${CodeServiceImpl.selectListCachedCode('71')}"/>
+
+
 
 
     <%@include file = "../include/includeUsrHeader.jsp"%>
@@ -42,39 +43,32 @@
 <!-- 				<a href="#none"><li class="uploadBtn">ㅁㅁㅁ</li></a> -->
 <!-- 				<a href="#none"><li class="uploadBtn">ㅁㅁㅁ</li></a> -->
 <!-- 			</ul> -->
+
+    <c:set var="listCodeWorkout" value="${CodeServiceImpl.selectListCachedCode('71')}"/>
+
 			<div id="uploadBot">
 				<div id=" uploadSelect">
 					<select class="form-select form-control" aria-label="Default select example" id="workoutType">
 					  <option selected>종목 대분류</option>
-					  <option value="1">
-					  	<c:forEach items="${listCodeType }" var="listType" varStatus="statusType">
-									<c:if test="${item.type eq listType.codeNum }"> <c:out value="${listType.name}"/></c:if>
+					  <option value="0">
+					  	<c:forEach items="${listWorkout }" var="list" varStatus="status">
+							<c:out value="${list.name}"/>
 						</c:forEach>
 					  </option>
-					  <option value="2">기구</option>
-					  <option value="3">유산소</option>
+					  <option value="1">
+						 <c:forEach items="${listWorkout }" var="list" varStatus="status">
+							<c:out value="${list.name}"/>
+						 </c:forEach>
+					  </option>
+					  <option value="2">
+						 <c:forEach items="${listWorkout }" var="list" varStatus="status">
+							<c:out value="${list.name}"/>
+						 </c:forEach>
+					  </option>
 					</select>
 					
-					<select class="form-select form-control" aria-label="Default select example" id="workouts01" ">
-					  <option selected>맨몸</option>
-					  <option value="1">풀업</option>
-					  <option value="2">푸쉬업</option>
-					  <option value="3">딥스</option>
-					</select>
-					
-					<select class="form-select form-control" aria-label="Default select example" id="workouts02" ">
-					  <option selected>기구</option>
-					  <option value="1">데드리프트</option>
-					  <option value="2">스쿼트</option>
-					  <option value="3">벤치프레스</option>
-					</select>
-					
-					<select class="form-select form-control" aria-label="Default select example" id="workouts03" ">
-					  <option selected>유산소</option>
-					  <option value="1">수영</option>
-					  <option value="2">사이클</option>
-					  <option value="3">러닝</option>
-					</select>
+
+
 					
 <!-- 					<select class="form-select" aria-label="Default select example" id="subCategory01"> -->
 <!-- 					  <option selected>맨몸</option> -->

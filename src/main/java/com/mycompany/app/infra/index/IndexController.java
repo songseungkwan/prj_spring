@@ -29,10 +29,7 @@ public class IndexController {
 		public String indexUsrView() {
 			return "usr/infra/index/indexUsrView";		
 		}
-		@RequestMapping(value="/workout")
-		public String workout() {
-			return "usr/infra/subpage/workout";		
-		}
+
 		@RequestMapping(value="/realTimeRecord")
 		public String realTimeRecord() {
 			return "usr/infra/subpage/realTimeRecord";	 
@@ -42,6 +39,10 @@ public class IndexController {
 		public String registerVideo() {
 			return "usr/infra/subpage/registerVideo";		
 		}				
+		@RequestMapping(value="/workoutType")
+		public String workoutType() {
+			return "usr/infra/subpage/workoutType";		
+		}			
 		
 		
 //		----------sub page

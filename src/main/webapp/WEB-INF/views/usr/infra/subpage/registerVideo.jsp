@@ -46,7 +46,11 @@
 				<div id=" uploadSelect">
 					<select class="form-select form-control" aria-label="Default select example" id="workoutType">
 					  <option selected>종목 대분류</option>
-					  <option value="1">맨몸</option>
+					  <option value="1">
+					  	<c:forEach items="${listCodeType }" var="listType" varStatus="statusType">
+									<c:if test="${item.type eq listType.codeNum }"> <c:out value="${listType.name}"/></c:if>
+						</c:forEach>
+					  </option>
 					  <option value="2">기구</option>
 					  <option value="3">유산소</option>
 					</select>

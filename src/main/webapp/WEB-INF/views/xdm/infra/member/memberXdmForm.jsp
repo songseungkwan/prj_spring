@@ -56,7 +56,7 @@
             <div class="card-body">
             <h5 class="card-title">member</h5>
             <!-- Horizontal Form -->
-              <form name="form" method="post">
+              <form name="form" method="post"  id="form" autocomplete="off" enctype="multipart/form-data">
                 <div class="row mb-3 text-center">
                   <label for="seq" class="col-sm-2 col-form-label">seq</label>
                   <div class="col-sm-5">

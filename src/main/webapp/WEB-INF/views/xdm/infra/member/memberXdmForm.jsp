@@ -29,6 +29,26 @@
   <%@include file = "../include/includeCss.jsp"%>
   <!-- Template Main CSS File -->
 
+<style type="text/css">
+
+	.addScroll{
+		overflow-y:auto;
+		height: 200px;
+		background-color:#E9ECEF;
+		padding-top:5px; 
+		padding-left:5px;
+	}
+ 	
+	.input-file-button{
+		padding: 4px 25px;
+		background-color:#FF6600;
+		border-radius: 4px;
+		color: white;
+		cursor: pointer;
+	}
+
+</style>
+
 </head>
 
 <body>
@@ -57,6 +77,50 @@
             <h5 class="card-title">member</h5>
             <!-- Horizontal Form -->
               <form name="form" method="post"  id="form" autocomplete="off" enctype="multipart/form-data">
+              
+              <div class="container-fluid px-0 px-sm-5 mt-2">
+			    <div class="row mt-sm-4 ">
+			        <div class="col-sm-12 text-center">
+        
+      		<c:set var="type" value="1"/>		<!-- #-> -->
+        	<c:set var="name" value="uploadImgProfile"/>		<!-- #-> -->
+			<c:choose>
+				<c:when test="${seq eq 0 }">
+					<img id="<c:out value="${name }"/>Preview" src="/resources/" class="rounded-circle mx-auto d-block" width="100" height="100">
+				</c:when>
+				<c:otherwise>
+					<c:choose>
+						<c:when test="${fn:length(listUploaded) eq 0 }">
+							<img id="<c:out value="${name }"/>Preview" src="/resources/" class="rounded-circle mx-auto d-block" width="100" height="100">
+						</c:when>
+						<c:otherwise>
+							<c:set var="GetNy" value="0"/>
+							<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+								<c:if test="${listUploaded.type eq type }">
+						        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq" value="<c:out value="${listUploaded.seq }"/>"/>
+						        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile" value="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>"/>  
+									<img id="<c:out value="${name }"/>Preview" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded-circle mx-auto d-block" width="100" height="100">
+									<c:set var="GetNy" value="1"/>		
+								</c:if>
+							</c:forEach>
+							<c:if test="${GetNy eq 0 }">
+								<img id="<c:out value="${name }"/>Preview" src="/resources/" class="rounded-circle mx-auto d-block" width="100" height="100">
+							</c:if>
+						</c:otherwise>
+					</c:choose>
+				</c:otherwise>
+			</c:choose>
+            
+			<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
+			<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
+			<label for="<c:out value="${name }"/>" class="form-label input-file-button"><b>+</b></label>
+ 			<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 1, 1, 0, 0, 3);">
+        </div>
+      </div>
+    </div>
+              
+              
+              
                 <div class="row mb-3 text-center">
                   <label for="seq" class="col-sm-2 col-form-label">seq</label>
                   <div class="col-sm-5">
@@ -128,46 +192,46 @@
 					  <div class="col-sm-5">
 					    <input type="text" class="form-control" id="phone" name="phone" value="${item.phone}" >
 					  </div>
-					</div>																								
-				        <!-- 이미지 첨부 -->
-			        <div class="col-12 text-center d-flex justify-content-around mb-3">
-			        	<div class="col-5">
+					</div>	
+        
+			        <!-- ### -->
+			        <div class="row mt-sm-4">
+				        <div class="col-sm-6 mt-3 mb-5 mt-sm-0">
 				        	<c:set var="type" value="2"/>		<!-- #-> -->
 				        	<c:set var="name" value="uploadImg"/>		<!-- #-> -->
-				        	<label for="uploadImg" class=" col-sm-6 col-form-label">이미지 첨부</label>
 				        	<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
 				        	<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
 				        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq"/>
 				        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile"/>
-				            
-				 			<input class="form-control form-control-sm col-sm-5" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" 
-				 			type="file" multiple="multiple" style="display: none;" 
-				 			onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 1, 0, 0, 1);">
-							<div id="<c:out value="${name }"/>Preview" class="addScroll" style="height: 15vh; background-color:#ccc; ">
+				            <label for="uploadImg" class="form-label input-file-button">이미지첨부</label>
+				 			<input class="form-control form-control-sm" 
+				 					id="<c:out value="${name }"/>" 
+				 					name="<c:out value="${name }"/>" 
+				 					type="file" 
+				 					multiple="multiple" 
+				 					style="display: none;" 
+				 					onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 1, 0, 0, 1);">
+							<div id="<c:out value="${name }"/>Preview" class="addScroll">
 								<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 									<c:if test="${listUploaded.type eq type }">
 										<div id="imgDiv_<c:out value="${type }"/>_<c:out value="${listUploaded.sort }"/>" style="display: inline-block; height: 95px;">
-											<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded" width= "85px" height="85px" style="cursor:pointer;" 
-											onClick="openViewer(<c:out value="${listUploaded.type }"/>, <c:out value="${listUploaded. sort }"/>);">
-											<div style="position: relative; top:-85px; left:5px"><span style="color: red; cursor:pointer;" onClick="delImgDiv('<c:out value="${name }"/>', <c:out value="${type }"/>,<c:out value="${listUploaded.sort }"/>, 
-											<c:out value="${listUploaded.seq }"/>, '<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>')">X</span></div>
+											<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded" width= "85px" height="85px" style="cursor:pointer;" onClick="openViewer(<c:out value="${listUploaded.type }"/>, <c:out value="${listUploaded. sort }"/>);">
+											<div style="position: relative; top:-85px; left:5px"><span style="color: red; cursor:pointer;" onClick="delImgDiv('<c:out value="${name }"/>', <c:out value="${type }"/>,<c:out value="${listUploaded.sort }"/>, <c:out value="${listUploaded.seq }"/>, '<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>')">X</span></div>
 										</div>
 									</c:if>
 								</c:forEach>
 							</div>
-			        	</div>
-						<div class="col-5">
-				        	        <!-- 파일 첨부 -->
+				        </div>
+				        <div class="col-sm-6 mt-3 mt-sm-0">
 				        	<c:set var="type" value="3"/>		<!-- #-> -->
 				        	<c:set var="name" value="uploadFile"/>		<!-- #-> -->
 				        	<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
 				        	<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
 				        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq"/>
 				        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile"/>   	
-							<label for="uploadFile" class="col-sm-6 col-form-label">파일 첨부</label>
-							<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" 
-							onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 2, 0, 0, 2);" >
-							<div class="addScroll" style="height: 15vh; background-color:#ccc; ">
+							<label for="uploadFile" class="form-label input-file-button">파일첨부</label>
+							<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 2, 0, 0, 2);" >
+							<div class="addScroll">
 								<ul id="<c:out value="${name }"/>Preview" class="list-group">
 									<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 										<c:if test="${listUploaded.type eq type }">
@@ -179,8 +243,10 @@
 									</c:forEach>				
 								</ul>
 							</div>
-						</div>
-			        </div>
+				        </div>
+				    </div>
+			        
+			        
 				        
 				        <c:choose>
 						    <c:when test="${empty item.seq}">
@@ -248,7 +314,7 @@
 	
 	}
 	
-	
+// 	CRUD
 	$("#btnUpdt").on("click", function(){
 		
 		$("form[name=form]").attr("action","/memberUpdt").submit();
@@ -294,9 +360,18 @@
 			var tagIds = document.querySelectorAll("#" + objName + "Preview > div");
 			
 			for(var i=0; i<tagIds.length; i++){
+				alert(i);
 				var tagId = tagIds[i].getAttribute("id").split("_");
 				numbering.push(tagId[2]);
 			}
+			
+			alert(numbering.length);
+			
+			for(let i=0; i < numbering.length; i++){
+// 				alert(i);
+			}
+			
+			
 			
 			if(uploadedFilesCount > 0){
 				numbering.sort();

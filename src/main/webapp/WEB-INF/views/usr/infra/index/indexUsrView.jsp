@@ -39,29 +39,29 @@
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-easel"></i></div>
+              <div class="icon"><i class="bi bi-display-fill"></i></div>
               <h4 class="title"><a href="javascript:void(0);" class="stretched-link " onclick="checkLogin('realTimeRecord')">실시간 기록 & 영상</a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-gem"></i></div>									<!-- page name 작성  -->
+              <div class="icon"><i class="bi bi-award-fill"></i></div>									<!-- page name 작성  -->
               <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()">역대 기록</a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-geo-alt"></i></div>								<!-- page name 작성  -->
+              <div class="icon"><i class="bi bi-youtube"></i></div>								<!-- page name 작성  -->
               <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin('registerVideo')">영상 등록하기</a></h4>
             </div>
           </div><!--End Icon Box -->
 
           <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
-              <div class="icon"><i class="bi bi-command"></i></div>								<!-- page name 작성  -->
-              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()"></a></h4>
+              <div class="icon"><i class="bi bi-coin"></i></div>								<!-- page name 작성  -->
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()">상금 순위</a></h4>
             </div>
           </div><!--End Icon Box -->
 

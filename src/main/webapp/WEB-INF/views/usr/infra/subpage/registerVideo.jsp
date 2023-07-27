@@ -5,6 +5,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 
+<jsp:useBean id="CodeServiceImpl" class="com.mycompany.app.infra.modules.code.CodeServiceImpl"/>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -49,22 +51,16 @@
 			<div id="uploadBot">
 				<div id=" uploadSelect">
 					<select class="form-select form-control" aria-label="Default select example" id="workoutType">
-					  <option selected>종목 대분류</option>
-					  <option value="0">
-					  	<c:forEach items="${listWorkout }" var="list" varStatus="status">
-							<c:out value="${list.name}"/>
+					  <option value="">분류</option>
+					  	<c:forEach items="${listCodeWorkout }" var="list" varStatus="status">
+					  		<option value="<c:out value="${list.seq }"/>"><c:out value="${list.name}"/></option>
 						</c:forEach>
-					  </option>
-					  <option value="1">
-						 <c:forEach items="${listWorkout }" var="list" varStatus="status">
-							<c:out value="${list.name}"/>
-						 </c:forEach>
-					  </option>
-					  <option value="2">
-						 <c:forEach items="${listWorkout }" var="list" varStatus="status">
-							<c:out value="${list.name}"/>
-						 </c:forEach>
-					  </option>
+					</select>
+					<select class="form-select form-control" aria-label="Default select example" id="workoutDetailType">
+						<option value="">상세 종목</option>
+					  	<c:forEach items="${listCodeWorkout }" var="list" varStatus="status">
+					  		<option value="<c:out value="${list.seq }"/>"><c:out value="${list.name}"/></option>
+						</c:forEach>
 					</select>
 					
 
@@ -152,6 +148,43 @@
   
 <script>
 
+$("#workoutType").on("change", function() {
+	// workoutDetailType 에 옵션을 만들어서 append 시킨다
+	var selectedName = $("#workoutType option:selected").text();  // 선택된 옵션의 name 값을 가져옴
+	
+	var option = '<option value="">' + selectedName + '</option>';
+	
+	
+	
+	
+
+	// workoutDetailType 하위 엘리먼트를 지운다	
+	
+	$("#workoutDetailType").empty();
+
+    // 선택된 옵션에 따라 workoutDetailType에 동적으로 옵션을 추가한다
+    if (selectedName === "calisthenics") {
+        $("#workoutDetailType").append('<option value="option1">턱걸이</option>');
+        $("#workoutDetailType").append('<option value="option2">푸쉬업</option>');
+        $("#workoutDetailType").append('<option value="option3">딥스</option>');
+    } else if (selectedName === "freeweight") {
+        // 다른 선택지에 따른 옵션들 추가
+        $("#workoutDetailType").append('<option value="option4">데드리프트</option>');
+        $("#workoutDetailType").append('<option value="option5">스쿼트</option>');
+        $("#workoutDetailType").append('<option value="option6">벤치프레스</option>');
+    } else if (selectedName === "aerobic") {
+        $("#workoutDetailType").append('<option value="option7">수영</option>');
+        $("#workoutDetailType").append('<option value="option8">사이클</option>');
+        $("#workoutDetailType").append('<option value="option9">달리기</option>');
+    }
+    // 그 외의 선택지에 따른 옵션들을 추가하고 싶다면 추가적으로 else if 문을 작성하면 됩니다.
+	
+	
+	
+	
+ });
+ 
+ 
 </script>
 
 </body>

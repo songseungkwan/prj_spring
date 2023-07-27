@@ -1,6 +1,10 @@
 package com.mycompany.app.infra.modules.member;
 
-public class Member {
+import org.springframework.web.multipart.MultipartFile;
+
+import com.mycompany.app.common.base.Base;
+
+public class Member extends Base {
 	// DTO 작성법. (컬럼명과 동일해야한다.)
 	
 	// db 컬럼명 첫글자는 소문자. 
@@ -20,6 +24,59 @@ public class Member {
 	private String phone;
 	private String type;
 
+	private MultipartFile[] uploadImg;
+	private Integer uploadImgType;	
+	private Integer uploadImgMaxNumber;
+	private String[] uploadImgDeleteSeq;
+	
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public MultipartFile[] getUploadImg() {
+		return uploadImg;
+	}
+	public void setUploadImg(MultipartFile[] uploadImg) {
+		this.uploadImg = uploadImg;
+	}
+	public Integer getUploadImgType() {
+		return uploadImgType;
+	}
+	public void setUploadImgType(Integer uploadImgType) {
+		this.uploadImgType = uploadImgType;
+	}
+	public Integer getUploadImgMaxNumber() {
+		return uploadImgMaxNumber;
+	}
+	public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
+		this.uploadImgMaxNumber = uploadImgMaxNumber;
+	}
+	public String[] getUploadImgDeleteSeq() {
+		return uploadImgDeleteSeq;
+	}
+	public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
+		this.uploadImgDeleteSeq = uploadImgDeleteSeq;
+	}
+	public String[] getUploadImgDeletePathFile() {
+		return uploadImgDeletePathFile;
+	}
+	public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
+		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
+	}
+	private String[] uploadImgDeletePathFile;	
+	
 
 	
 	

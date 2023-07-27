@@ -141,7 +141,8 @@
 				        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile"/>
 				            
 				 			<input class="form-control form-control-sm col-sm-5" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" 
-				 			type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 1, 0, 0, 1);">
+				 			type="file" multiple="multiple" style="display: none;" 
+				 			onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 1, 0, 0, 1);">
 							<div id="<c:out value="${name }"/>Preview" class="addScroll" style="height: 15vh; background-color:#ccc; ">
 								<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 									<c:if test="${listUploaded.type eq type }">
@@ -164,7 +165,8 @@
 				        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq"/>
 				        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile"/>   	
 							<label for="uploadFile" class="col-sm-6 col-form-label">파일 첨부</label>
-							<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 2, 0, 0, 2);" >
+							<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" 
+							onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 2, 0, 0, 2);" >
 							<div class="addScroll" style="height: 15vh; background-color:#ccc; ">
 								<ul id="<c:out value="${name }"/>Preview" class="list-group">
 									<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">

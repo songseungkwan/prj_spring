@@ -110,8 +110,8 @@
 	
 	                <tbody>
 		                <c:set var="listCodeGender" value="${CodeServiceImpl.selectListCachedCode('3')}"/>
-						<c:forEach items="${listCodeGender }" var="list" varStatus="status">
-							<c:out value="${list.name}"/>
+						<c:forEach items="${itemCodeGender }" var="item" varStatus="status">
+							<c:out value="${item.name}"/>
 						</c:forEach>
 					
 					<%-- <c:forEach items="${listCodeGender }" var="listGender" varStatus="statusGender">

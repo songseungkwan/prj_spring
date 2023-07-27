@@ -54,6 +54,8 @@ public class MemberDao {
 	public int selectOneCheckId(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOneCheckId", vo);}
 	
 	
+	// 파일업로드
+	public int insertUploaded(Member dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
 	
 	
 	

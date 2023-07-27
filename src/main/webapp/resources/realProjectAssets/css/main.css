@@ -2719,10 +2719,9 @@ section {
 }
 
 #workoutType , 
-#workouts {
-	width: 10vw;
+#workoutDetailType {
+	width: 15vw;
 	display: inline-block;
-	
 }
 
 /* input */

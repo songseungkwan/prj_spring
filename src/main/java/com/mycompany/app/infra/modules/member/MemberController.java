@@ -1,4 +1,4 @@
-package com.mycompany.app.infra.modules.member;
+ package com.mycompany.app.infra.modules.member;
 
 import java.util.HashMap;
 import java.util.List;

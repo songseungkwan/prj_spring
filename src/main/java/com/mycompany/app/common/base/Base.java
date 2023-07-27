@@ -8,7 +8,7 @@ public class Base {
 	private String tableName;
 	
 	private String seq;
-	private Integer type;
+	private String type;
 	private Integer defaultNy;
 	private Integer sort;
 	private String path;
@@ -46,10 +46,10 @@ public class Base {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-	public Integer getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(Integer type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public Integer getDefaultNy() {

@@ -28,23 +28,7 @@ public class Member extends Base {
 	private Integer uploadImgType;	
 	private Integer uploadImgMaxNumber;
 	private String[] uploadImgDeleteSeq;
-	
 
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public MultipartFile[] getUploadImg() {
 		return uploadImg;
 	}
@@ -76,9 +60,6 @@ public class Member extends Base {
 		this.uploadImgDeletePathFile = uploadImgDeletePathFile;
 	}
 	private String[] uploadImgDeletePathFile;	
-	
-
-	
 	
 	public String getSeq() {
 		return seq;

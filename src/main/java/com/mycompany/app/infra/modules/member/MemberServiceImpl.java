@@ -41,11 +41,8 @@ import com.mycompany.app.common.util.UtilDateTime;
 	public Member selectTwo(MemberVo vo) { return dao.selectTwo(vo); }
 
 	@Override
-	public int update(Member dto) {
+	public int update(Member dto) throws Exception {
 		
-		uploadFiles(dto.getUploadImgProfile(), dto, "MemberUploaded", dto.getUploadImgProfileType(), dto.getUploadImgProfileMaxNumber());
-		uploadFiles(dto.getUploadImg(), dto, "MemberUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
-		uploadFiles(dto.getUploadFile(), dto, "MemberUploaded", dto.getUploadFileType(), dto.getUploadFileMaxNumber());
 		return dao.update(dto);	
 	}
 	
@@ -55,8 +52,12 @@ import com.mycompany.app.common.util.UtilDateTime;
 	}
 	
 	@Override
-	public int insert(Member dto) {
-		return dao.insert(dto);	
+	public int insert(Member dto) throws Exception {
+		dao.insert(dto);
+		uploadFiles(dto.getUploadImgProfile(), dto, "memberUploaded", dto.getUploadImgProfileType(), dto.getUploadImgProfileMaxNumber());
+		uploadFiles(dto.getUploadImg(), dto, "memberUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
+		uploadFiles(dto.getUploadFile(), dto, "memberUploaded", dto.getUploadFileType(), dto.getUploadFileMaxNumber());
+		return 0;	
 	}
 	
 	@Override
@@ -133,6 +134,12 @@ public static String nowString() throws Exception {
 public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "F://Factory//prj_spring/src/main/webapp";
 public static final String UPLOAD_PATH_PREFIX = "F://Factory/prj_spring/src/main/webapp/resources/uploaded";
 public static final String UPLOAD_PATH_PREFIX_FOR_VIEW = "/resources/uploaded";
+
+@Override
+public List<Member> selectListUploaded(MemberVo vo) throws Exception {
+	// TODO Auto-generated method stub
+	return null;
+}
 
 
 

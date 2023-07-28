@@ -22,12 +22,94 @@ public class Member extends Base {
 	private String email;
 	private String address;
 	private String phone;
-	private String type;
+	private Integer type;
 
 	private MultipartFile[] uploadImg;
+	
 	private Integer uploadImgType;	
 	private Integer uploadImgMaxNumber;
 	private String[] uploadImgDeleteSeq;
+	
+	private MultipartFile[] uploadImgProfile;
+	
+	private Integer uploadImgProfileType;	
+	private Integer uploadImgProfileMaxNumber;
+	private String[] uploadImgProfileDeleteSeq;
+	private String[] uploadImgProfileDeletePathFile;
+	
+	private MultipartFile[] uploadFile;
+	
+	private Integer uploadFileType;
+	private Integer uploadFileMaxNumber;
+	private String[] uploadFileDeleteSeq;
+	private String[] uploadFileDeletePathFile;
+	
+
+	
+	public MultipartFile[] getUploadImgProfile() {
+		return uploadImgProfile;
+	}
+	public void setUploadImgProfile(MultipartFile[] uploadImgProfile) {
+		this.uploadImgProfile = uploadImgProfile;
+	}
+	public Integer getUploadImgProfileType() {
+		return uploadImgProfileType;
+	}
+	public void setUploadImgProfileType(Integer uploadImgProfileType) {
+		this.uploadImgProfileType = uploadImgProfileType;
+	}
+	public Integer getUploadImgProfileMaxNumber() {
+		return uploadImgProfileMaxNumber;
+	}
+	public void setUploadImgProfileMaxNumber(Integer uploadImgProfileMaxNumber) {
+		this.uploadImgProfileMaxNumber = uploadImgProfileMaxNumber;
+	}
+	public String[] getUploadImgProfileDeleteSeq() {
+		return uploadImgProfileDeleteSeq;
+	}
+	public void setUploadImgProfileDeleteSeq(String[] uploadImgProfileDeleteSeq) {
+		this.uploadImgProfileDeleteSeq = uploadImgProfileDeleteSeq;
+	}
+	public String[] getUploadImgProfileDeletePathFile() {
+		return uploadImgProfileDeletePathFile;
+	}
+	public void setUploadImgProfileDeletePathFile(String[] uploadImgProfileDeletePathFile) {
+		this.uploadImgProfileDeletePathFile = uploadImgProfileDeletePathFile;
+	}
+	public MultipartFile[] getUploadFile() {
+		return uploadFile;
+	}
+	public void setUploadFile(MultipartFile[] uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+	public Integer getUploadFileType() {
+		return uploadFileType;
+	}
+	public void setUploadFileType(Integer uploadFileType) {
+		this.uploadFileType = uploadFileType;
+	}
+	public Integer getUploadFileMaxNumber() {
+		return uploadFileMaxNumber;
+	}
+	public void setUploadFileMaxNumber(Integer uploadFileMaxNumber) {
+		this.uploadFileMaxNumber = uploadFileMaxNumber;
+	}
+	public String[] getUploadFileDeleteSeq() {
+		return uploadFileDeleteSeq;
+	}
+	public void setUploadFileDeleteSeq(String[] uploadFileDeleteSeq) {
+		this.uploadFileDeleteSeq = uploadFileDeleteSeq;
+	}
+	public String[] getUploadFileDeletePathFile() {
+		return uploadFileDeletePathFile;
+	}
+	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
+		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
+	}
+
+	
+	
+	
 
 	public MultipartFile[] getUploadImg() {
 		return uploadImg;
@@ -115,10 +197,10 @@ public class Member extends Base {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getType() {
+	public Integer getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(int type) {
 		this.type = type;
 	}
 

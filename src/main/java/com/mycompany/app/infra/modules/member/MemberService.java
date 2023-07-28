@@ -2,7 +2,7 @@ package com.mycompany.app.infra.modules.member;
 
 import java.util.List;
 
-import com.mycompany.app.infra.modules.member.MemberVo;
+import org.springframework.web.multipart.MultipartFile;
 
 public interface MemberService {
 
@@ -15,14 +15,14 @@ public interface MemberService {
 	
 	public Member selectTwo(MemberVo vo);
 	
-	public int update(Member dto);
+	public int update(Member dto) throws Exception;
 	public int delete(Member dto);
-	public int insert(Member dto);	
+	public int insert(Member dto) throws Exception;	
 	public int uelete(Member dto);
 
 
-
-
+	List<Member> selectListUploaded(MemberVo vo) throws Exception; 
+	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception;
 
 
 	

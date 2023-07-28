@@ -69,17 +69,13 @@
     <select id="selectOne" resultMap="resultMapObj">
         SELECT 
 			<include refid="abc" />
-        	
         FROM
         	member
         WHERE 1=1
-        	 <if test="seq != null and !seq.equals('')">AND seq = #{seq} </if>        
+        	 AND seq = #{seq}  
         	 <if test="id != null and !id.equals('')">AND id = #{id} </if>
         	 <if test="password != null and !password.equals('')">AND password = #{password}</if>
         	 <if test="type != null and !type.equals('')">AND type = 0 </if>
-
-
-        	
     </select>
     
     <select id="selectTwo" resultMap="resultMapObj">
@@ -89,10 +85,13 @@
         	, name
         FROM
         	member
-        WHERE 1=1
-        	AND id = #{id}
-        	AND password = #{password}
-        	AND type = 1
+        	
+        WHERE 1=1 
+       		 <if test="seq != null and !seq.equals('')">AND seq = #{seq} </if>        
+        	 <if test="id != null and !id.equals('')">AND id = #{id} </if>
+        	 <if test="password != null and !password.equals('')">AND password = #{password}</if>
+        	 <if test="type != null and !type.equals('')">AND type = 1 </if>
+
     </select>
     
     
@@ -180,8 +179,8 @@
 			,ext
 			,size
 			,delNy
-			<include refid="Base.insertRegColumn" />
 			,pseq
+			
 		) values (
 			#{type}
 			,#{defaultNy}
@@ -192,8 +191,7 @@
 			,#{ext}
 			,#{size}
 			,0
-			<include refid="Base.insertRegValue" />
-			,#{pseq}
+			,#{seq}
 		)
 	</insert>
     

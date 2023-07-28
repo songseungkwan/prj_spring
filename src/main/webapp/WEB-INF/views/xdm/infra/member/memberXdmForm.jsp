@@ -82,16 +82,17 @@
 			    <div class="row mt-sm-4 ">
 			        <div class="col-sm-12 text-center">
         
+        <!-- profile image -->
       		<c:set var="type" value="1"/>		<!-- #-> -->
         	<c:set var="name" value="uploadImgProfile"/>		<!-- #-> -->
 			<c:choose>
 				<c:when test="${seq eq 0 }">
-					<img id="<c:out value="${name }"/>Preview" src="/resources/" class="rounded-circle mx-auto d-block" width="100" height="100">
+					<img id="<c:out value="${name }"/>Preview" src="/resources/adminAssets/img/news-5.jpg" class="rounded-circle mx-auto d-block" width="100" height="100">
 				</c:when>
 				<c:otherwise>
 					<c:choose>
 						<c:when test="${fn:length(listUploaded) eq 0 }">
-							<img id="<c:out value="${name }"/>Preview" src="/resources/" class="rounded-circle mx-auto d-block" width="100" height="100">
+							<img id="<c:out value="${name }"/>Preview" src="/resources/adminAssets/img/news-5.jpg" class="rounded-circle mx-auto d-block" width="100" height="100">
 						</c:when>
 						<c:otherwise>
 							<c:set var="GetNy" value="0"/>
@@ -118,9 +119,7 @@
         </div>
       </div>
     </div>
-              
-              
-              
+
                 <div class="row mb-3 text-center">
                   <label for="seq" class="col-sm-2 col-form-label">seq</label>
                   <div class="col-sm-5">
@@ -168,7 +167,7 @@
 	                <div class="row mb-3 text-center">
 					  <label for="password" class="col-sm-2 col-form-label">password</label>
 					  <div class="col-sm-5">
-					    <input type="text" class="form-control" id="password" name="password" value="${item.password}" >
+					    <input type="password" class="form-control" id="password" name="password" value="${item.password}" >
 					  </div>
 					</div>
 					
@@ -194,7 +193,7 @@
 					  </div>
 					</div>	
         
-			        <!-- ### -->
+			        <!-- image upload-->
 			        <div class="row mt-sm-4">
 				        <div class="col-sm-6 mt-3 mb-5 mt-sm-0">
 				        	<c:set var="type" value="2"/>		<!-- #-> -->
@@ -222,6 +221,7 @@
 								</c:forEach>
 							</div>
 				        </div>
+				        <!-- file upload -->
 				        <div class="col-sm-6 mt-3 mt-sm-0">
 				        	<c:set var="type" value="3"/>		<!-- #-> -->
 				        	<c:set var="name" value="uploadFile"/>		<!-- #-> -->
@@ -360,15 +360,15 @@
 			var tagIds = document.querySelectorAll("#" + objName + "Preview > div");
 			
 			for(var i=0; i<tagIds.length; i++){
-				alert(i);
+// 				alert(i);
 				var tagId = tagIds[i].getAttribute("id").split("_");
 				numbering.push(tagId[2]);
 			}
 			
-			alert(numbering.length);
+//			alert(numbering.length);
 			
 			for(let i=0; i < numbering.length; i++){
-// 				alert(i);
+//  				alert(i);
 			}
 			
 			
@@ -396,7 +396,7 @@
 		
 		$("#" + objName + "MaxNumber").val(maxNumber);
 
-		var totalFileSize = 0;
+		var totalFileSize = 5;
 		var filesCount = files.length;
 		var filesArray = [];
 		
@@ -520,15 +520,6 @@
 		$("#modalImgViewer").append(str);
 		$("#modalImgViewer").modal("show");
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	</script>

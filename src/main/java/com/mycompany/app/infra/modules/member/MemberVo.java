@@ -13,7 +13,11 @@ public class MemberVo {
 	private String address;
 	private String phone;
 	private String type;
+	private Integer delNy;
 	
+
+
+
 	// paging
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
@@ -170,6 +174,13 @@ public class MemberVo {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
 	}
 
 	

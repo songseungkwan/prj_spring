@@ -26,7 +26,7 @@ public class Constants {
 	
 	public static final long PASSWOPRD_CHANGE_INTERVAL = 90;
 	
-	public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "F://Factory/prj_spring/src//main/webapp";
+	public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "F://Factory/prj_spring/src/main/webapp";
 	public static final String UPLOAD_PATH_PREFIX = "F://Factory/prj_spring/src/main/webapp/resources/uploaded";
 	public static final String UPLOAD_PATH_PREFIX_FOR_VIEW = "/resources/uploaded";
 	

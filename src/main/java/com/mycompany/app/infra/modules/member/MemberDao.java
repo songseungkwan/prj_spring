@@ -26,11 +26,8 @@ public class MemberDao {
 		// selectList : 반환값 list, vo=가변 가능성 현저히 낮음.
 		}
 	
-	public Member selectOne(MemberVo vo) { 
-		Member member = sqlSession.selectOne(namespace + ".selectOne", vo); 
-		return member;
-		// selectOne -> 반환값 : 해당 dto, dto= 가변 가능성 높음.
-	}
+	
+	public Member selectOne(MemberVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
 	
 	public Member selectTwo(MemberVo vo) { 
 		Member member = sqlSession.selectOne(namespace + ".selectTwo", vo); 

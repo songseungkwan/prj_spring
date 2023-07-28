@@ -68,7 +68,7 @@ public class MemberController {
 	
 	
 	@RequestMapping("/memberUpdt")
-	public String memberUpdt(Member dto) {
+	public String memberUpdt(Member dto) throws Exception {
 		
 		// service 호출
 		service.update(dto);
@@ -86,7 +86,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/memberAdd")
-	public String memberAdd(Member dto) {
+	public String memberAdd(Member dto) throws Exception {
 
 		// service 호출
 		service.insert(dto);

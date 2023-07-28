@@ -13,4 +13,3 @@ function kbToMb(bytes) {
     if(e == "-Infinity") return 0;
     else return (bytes/Math.pow(1024, Math.floor(e))).toFixed(2).slice(0, -3);
 }
-	

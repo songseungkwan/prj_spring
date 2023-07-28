@@ -117,7 +117,7 @@ public class MemberController {
 	public Map<String, Object> loginXdmProc(MemberVo vo , HttpSession session) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
-		Member rtMember = service.selectOne(vo);
+		Member rtMember = service.selectXdm(vo);
 		
 		if(rtMember != null) {
 			
@@ -138,7 +138,7 @@ public class MemberController {
 	public Map<String, Object> loginUsrProc(MemberVo vo , HttpSession session) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		
-		Member rtMember = service.selectTwo(vo);
+		Member rtMember = service.selectUsr(vo);
 		
 		if(rtMember != null) {
 			

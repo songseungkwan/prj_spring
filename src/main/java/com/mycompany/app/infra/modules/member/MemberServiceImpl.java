@@ -38,7 +38,10 @@ import com.mycompany.app.common.util.UtilDateTime;
 	public Member selectOne(MemberVo vo) { return dao.selectOne(vo); }
 	
 	@Override
-	public Member selectTwo(MemberVo vo) { return dao.selectTwo(vo); }
+	public Member selectXdm(MemberVo vo) { return dao.selectXdm(vo); }
+	
+	@Override
+	public Member selectUsr(MemberVo vo) { return dao.selectUsr(vo); }
 
 	@Override
 	public int update(Member dto) throws Exception {

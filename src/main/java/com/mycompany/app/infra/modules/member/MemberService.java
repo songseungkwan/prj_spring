@@ -13,7 +13,8 @@ public interface MemberService {
 	
 	public Member selectOne(MemberVo vo);
 	
-	public Member selectTwo(MemberVo vo);
+	public Member selectXdm(MemberVo vo);
+	public Member selectUsr(MemberVo vo);
 	
 	public int update(Member dto) throws Exception;
 	public int delete(Member dto);

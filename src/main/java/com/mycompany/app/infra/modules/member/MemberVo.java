@@ -12,7 +12,7 @@ public class MemberVo {
 	private String email;
 	private String address;
 	private String phone;
-	private String type;
+	private String type;	
 	private Integer delNy;
 	
 

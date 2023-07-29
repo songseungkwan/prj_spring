@@ -111,7 +111,7 @@
 3.dasdasd. "></textarea>
 				</div>
 				
-				<button type="button" class="btn btn-primary btn-lg">영상 등록하기</button>
+				<button type="button" class="btn btn-primary btn-lg btn_regVideo">영상 등록하기</button>
 				<button type="button" class="btn btn-secondary btn-lg">임시 저장하기</button>
 				
 				
@@ -181,6 +181,16 @@ $("#workoutType").on("change", function() {
 	
 	
 	
+    $(".btn_regVideo").on(click.function() {
+    	
+    	
+    	
+    	
+    	.submit();
+    });
+    
+    
+    
 	
  });
  

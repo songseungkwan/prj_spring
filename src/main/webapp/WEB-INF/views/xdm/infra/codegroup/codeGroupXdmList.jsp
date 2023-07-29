@@ -17,8 +17,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="/resources/adminAssets/img/favicon.png" rel="icon">
-  <link href="/resources/adminAssets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="/resources/assets/img/favicon.png" rel="icon">
+  <link href="/resources/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">

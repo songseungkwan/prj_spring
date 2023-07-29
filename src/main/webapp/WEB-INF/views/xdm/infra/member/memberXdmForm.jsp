@@ -143,12 +143,12 @@
 					  </div>
 					</div>
 					
-					<div class="row mb-3 text-center">
-					  <label for="type" class="col-sm-2 col-form-label">type</label>
-					  <div class="col-sm-5">
-					    <input type="text" class="form-control" id="type" name="type" value="${item.type}" >
-					  </div>
-					</div>
+<!-- 					<div class="row mb-3 text-center"> -->
+<!-- 					  <label for="type" class="col-sm-2 col-form-label">type</label> -->
+<!-- 					  <div class="col-sm-5"> -->
+<%-- 					    <input type="text" class="form-control" id="type" name="type" value="${item.type}" > --%>
+<!-- 					  </div> -->
+<!-- 					</div> -->
 					
 	                <div class="row mb-3 text-center">
 					  <label for="id" class="col-sm-2 col-form-label">id</label>

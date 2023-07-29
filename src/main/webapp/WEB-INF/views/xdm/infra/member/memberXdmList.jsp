@@ -86,7 +86,9 @@
 	                </div>
 	                <div class="col-4">
 	                  <button class="btn btn-dark" type="submit" id="btnSearch">검색</button>
-	                  <a href="/memberXdmForm"><button class="btn btn-danger addBtn" type="button">추가</button></a>
+	                  
+	                  <!-- 관리자단에서 멤버 추가기능 삭제 -->
+<!-- 	                  <a href="/memberXdmForm"><button class="btn btn-danger addBtn" type="button">추가</button></a> -->
 	                  
 	                  <a href="/memberXdmList"><button class="btn btn-warning btnInit " type="button">Init</button></a>
 	                </div>

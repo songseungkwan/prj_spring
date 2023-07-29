@@ -84,6 +84,7 @@
         	seq
         	, id
         	, name
+        	, type
         FROM
         	member
         	
@@ -100,6 +101,7 @@
         	seq
         	, id
         	, name
+        	, type
         FROM
         	member
         WHERE 1=1

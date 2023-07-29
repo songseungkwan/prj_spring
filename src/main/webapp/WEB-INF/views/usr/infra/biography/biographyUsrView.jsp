@@ -96,7 +96,7 @@
         <div class="section-title">
           <span>Portfolio</span>
           <h2>Portfolio</h2>
-          <p>저의 작업물 어쩌고 저쩌고...를 작성해야한다.</p>
+          <p></p>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center">

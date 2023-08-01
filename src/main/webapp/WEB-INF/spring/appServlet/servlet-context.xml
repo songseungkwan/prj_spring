@@ -40,7 +40,7 @@
 			<mapping path="/**"/>
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/" />
-			
+			<exclude-mapping path="/publicCorona1List" />	
 			<exclude-mapping path="/indexXdmView" />										
 			<exclude-mapping path="/xdmLoginForm" />	
 			<exclude-mapping path="/xdmRegisterForm" />									
@@ -62,6 +62,7 @@
 			<exclude-mapping path="/resources/**" />
 			<exclude-mapping path="/" />
 			<exclude-mapping path="/xdmLoginForm" />	
+			<exclude-mapping path="/publicCorona1List" />	
 			<exclude-mapping path="/xdmRegisterForm" />					
 			<exclude-mapping path="/loginXdmProc" />				
 			<exclude-mapping path="/biographyUsrView" />

@@ -57,7 +57,7 @@
 						</c:forEach>
 					</select>
 					<select class="form-select form-control" aria-label="Default select example" id="workoutDetailType">
-						<option value="">상세 종목</option>
+<!-- 						<option value="">상세 종목</option> -->
 					  	<c:forEach items="${listCodeWorkout }" var="list" varStatus="status">
 					  		<option value="<c:out value="${list.seq }"/>"><c:out value="${list.name}"/></option>
 						</c:forEach>
@@ -186,7 +186,6 @@ $("#workoutType").on("change", function() {
     	
     	
     	
-    	.submit();
     });
     
     

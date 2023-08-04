@@ -37,7 +37,7 @@ public class MemberRestController extends BaseController {
 
 	@RequestMapping(value = "", method = RequestMethod.POST)
 //	@PostMapping("")
-	public String insert(@RequestBody Member dto) throws Exception {
+	public String insert( Member dto) throws Exception {
 		service.insert(dto);
 		return dto.getSeq();
 	}

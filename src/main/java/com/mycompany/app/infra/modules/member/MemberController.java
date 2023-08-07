@@ -62,6 +62,13 @@ public class MemberController {
 		Member member = service.selectOne(vo);
 
 		model.addAttribute("item", member);
+		
+		List<Member> selectUploadedList = service.selectUploaded(vo);
+		model.addAttribute("listUploaded", selectUploadedList);
+		
+		
+		
+		
 
 		return "xdm/infra/member/memberXdmForm";
 	}

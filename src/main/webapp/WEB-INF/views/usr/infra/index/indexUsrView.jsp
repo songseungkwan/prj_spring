@@ -58,10 +58,10 @@
             </div>
           </div><!--End Icon Box -->
 
-          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="col-xl-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="bi bi-coin"></i></div>								<!-- page name 작성  -->
-              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin()">상금 순위</a></h4>
+              <h4 class="title"><a href="javascript:void(0);" class="stretched-link" onclick="checkLogin('prizeRanking')">상금 순위</a></h4>
             </div>
           </div><!--End Icon Box -->
 
@@ -105,7 +105,7 @@
               </p>
 
               <div class="position-relative mt-4">
-                <img src="resources/realProjectAssets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
+                <img src="resources/realProjectAssets/img/homeImage.jpg" class="img-fluid rounded-4" alt="">
                 <a href="https://youtu.be/DQrsQiqphkg" class="glightbox play-btn"></a>
               </div>
             </div>

@@ -121,6 +121,12 @@
         	AND id = #{id}
     </select>
     
+    <select id="selectUploaded" resultMap="resultMapObj">
+		SELECT *
+		FROM  memberUploaded
+		
+	</select>
+    
     
     
 

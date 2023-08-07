@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-
 import com.mycompany.app.common.constants.Constants;
 import com.mycompany.app.common.util.UtilDateTime;
 
@@ -138,10 +137,11 @@ public static final String UPLOAD_PATH_PREFIX_EXTERNAL = "F://Factory//prj_sprin
 public static final String UPLOAD_PATH_PREFIX = "F://Factory/prj_spring/src/main/webapp/resources/uploaded";
 public static final String UPLOAD_PATH_PREFIX_FOR_VIEW = "/resources/uploaded";
 
+
 @Override
-public List<Member> selectListUploaded(MemberVo vo) throws Exception {
+public List<Member> selectUploaded(MemberVo vo) {
 	// TODO Auto-generated method stub
-	return null;
+	return dao.selectUploaded(vo);
 }
 
 

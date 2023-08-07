@@ -2741,4 +2741,38 @@ section {
 	height: 50px;
 }
 
+/* ranking image */
+
+
+#gold {
+	width: 100%;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-image: url(../img/ranking/gold.png);
+	background-size: contain;
+	background-color: rgba(0,0,0,.1);
+	
+	
+}
+
+#silver{
+	width: 100%;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-image: url(../img/ranking/silver.png);
+	background-size: contain;
+		background-color: rgba(0,0,0,.2);
+}
+
+#bronze {
+	width: 100%;
+	height: 200px;
+	background-repeat: no-repeat;
+	background-image: url(../img/ranking/bronze.png);
+	background-size: contain;
+		background-color: rgba(0,0,0,.3);
+}
+
+
+
 

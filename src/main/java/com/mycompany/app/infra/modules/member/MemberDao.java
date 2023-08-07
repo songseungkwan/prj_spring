@@ -23,7 +23,7 @@ public class MemberDao {
 	
 	public List<Member> selectList(MemberVo vo) {
 		return sqlSession.selectList(namespace + ".selectList", vo ); 
-		// selectList : 반환값 list, vo=가변 가능성 현저히 낮음.
+
 		}
 	
 	
@@ -60,6 +60,6 @@ public class MemberDao {
 	// 파일업로드
 	public int insertUploaded(Member dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
 	
-	
+	public List<Member> selectUploaded(MemberVo vo) { return sqlSession.selectList(namespace + ".selectUploaded", vo ); }
 	
 }

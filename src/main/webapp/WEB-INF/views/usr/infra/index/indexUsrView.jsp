@@ -106,7 +106,7 @@
 
               <div class="position-relative mt-4">
                 <img src="resources/realProjectAssets/img/homeImage.jpg" class="img-fluid rounded-4" alt="">
-                <a href="https://youtu.be/DQrsQiqphkg" class="glightbox play-btn"></a>
+                <a href="https://youtu.be/7Melm8LEFqY" class="glightbox play-btn"></a>
               </div>
             </div>
           </div>

@@ -26,5 +26,4 @@ public interface MemberService {
 //	public void uploadFiles(MultipartFile[] multipartFiles, Member dto, String tableName, int type, int maxNumber) throws Exception;
 	
 	public List<Member> selectUploaded(MemberVo vo);
-	
 }

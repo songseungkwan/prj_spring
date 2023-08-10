@@ -60,13 +60,13 @@
 				</div>
 				
 				<div class="mb-3 uploadTxt">
-				  <label for="txtTitle" class="form-label">제목</label>
-				  <input type="text" class="form-control" id="txtTitle"  placeholder="제목을 적어주세요."></input>
+				  <label for="videoTitle" class="form-label">제목</label>
+				  <input type="text" class="form-control" id="videoTitle"  placeholder="제목을 적어주세요."></input>
 				</div>
 				
 				<div class="mb-3 uploadTxt">
-				  <label for="txt" class="form-label">내용</label>
-				  <textarea class="form-control" id="txt" rows="3" placeholder="짧은 소개와 설명글을 적어주세요."></textarea>
+				  <label for="description" class="form-label">내용</label>
+				  <textarea class="form-control" id="description" rows="3" placeholder="짧은 소개와 설명글을 적어주세요.(80자 이내)"></textarea>
 				</div>
 				
 

@@ -2725,7 +2725,7 @@ section {
 }
 
 /* input */
-#txt {
+#description {
 	width: 70vw;
 	height: 20vh;
 	font-size: 25px;

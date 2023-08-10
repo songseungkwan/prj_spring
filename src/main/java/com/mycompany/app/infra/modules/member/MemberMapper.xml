@@ -29,7 +29,6 @@
     <sql id ="selectCommon">
    		FROM    
 	    	member
-
 		WHERE 1=1
 			<if test="shKeyword != null and !shKeyword.equals('')">AND id LIKE CONCAT('%',#{shKeyword},'%')
 																   OR name LIKE CONCAT('%', #{shKeyword}, '%')

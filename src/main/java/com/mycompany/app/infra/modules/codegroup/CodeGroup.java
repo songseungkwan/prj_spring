@@ -8,7 +8,7 @@ public class CodeGroup {
 	// seq는 편의상 디비에는 int지만 자바에서는 String으로 쓴다.
 	// 주로 테이블의 컬럼명과 일치
 	
-	private String seq;					
+	private String seq;
 	private String name;
 	private Integer delNy;
 	

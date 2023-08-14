@@ -55,7 +55,8 @@ $("#notificationAccept").on("keydown", function(event) {
     }
 
         checkYtb = function(obj, message) {
-        var regExp = /^(((http(s?))\:\/\/)?)([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/
+//        var regExp = /^(((http(s?))\:\/\/)?)([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/
+        var regExp = /^https:\/\/youtu\.be\/[0-9a-zA-Z]+$/;
 
         if (regExp.test($.trim(obj.val())) == false) {
             obj.addClass("is-invalid");

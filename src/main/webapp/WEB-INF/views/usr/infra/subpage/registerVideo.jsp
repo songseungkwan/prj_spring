@@ -45,7 +45,7 @@
 			<div id="uploadBot">
 				<div id="uploadSelect" class="mb-3">
 					<select class="form-select form-control" aria-label="Default select example" id="workoutType">
-					  <option value="">분류</option>
+					  <option value="">종목</option>
 					  	<c:forEach items="${listCodeWorkout }" var="list" varStatus="status">
 					  		<option value="<c:out value="${list.seq }"/>"><c:out value="${list.name}"/></option>
 						</c:forEach>

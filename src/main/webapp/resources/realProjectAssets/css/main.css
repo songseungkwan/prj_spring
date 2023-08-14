@@ -2679,8 +2679,8 @@ section {
 
 /* 업로드 섹션  */
 #uploadVideo {
-	width:100vw;
-	height: 80vh;	
+	width:99vw;
+	height: 90vh;	
 }
 
 #uploadWrap {

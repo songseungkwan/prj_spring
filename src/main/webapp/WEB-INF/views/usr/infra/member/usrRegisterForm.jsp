@@ -42,67 +42,6 @@
 							<div class="card-body p-5">
 								<h2 class="text-uppercase text-center mb-5">계정 만들기</h2>
 
-<!-- 								<form name="form" method="post"> -->
-
-<!-- 									<div class="form-outline mb-4"> -->
-<%-- 									    <input type="text" class="form-control" id="id" name="id" value="<c:out value="${item.id}"/>" > --%>
-<!-- 										<label class="form-label" for="id">아이디</label> -->
-<!-- 									</div> -->
-<!-- 					                 <div class="valid-feedback"> -->
-<!-- 					                    사용 가능한 아이디입니다. -->
-<!-- 					                  </div> -->
-<!-- 					                 <div class="invalid-feedback"> -->
-<!-- 					                    사용할 수 없는 아이디입니다. -->
-<!-- 					                </div> -->
-									
-<!-- 									<div class="form-outline mb-4"> -->
-<%-- 										<input type="password" class="form-control" id="password" name="password" value="<c:out value="${item.password}"/>" >  --%>
-<!-- 										<label class="form-label" for="password">비밀번호</label> -->
-<!-- 									</div>				 -->
-									
-<!-- 									<div class="form-outline mb-4"> -->
-<!-- 										<input type="password" class="form-control" id="rePassword" name="rePassword" >  -->
-<!-- 										<label class="form-label" for="rePassword">비밀번호 확인</label>										 -->
-<!-- 									</div>							 -->
-<!-- 									<div class="alert alert-success" id="alert-success">비밀번호가 일치합니다.</div> -->
-<!-- 									<div class="alert alert-danger" id="alert-danger">비밀번호가 일치하지 않습니다.</div> -->
-
-<!-- 									<div class="form-outline mb-4"> -->
-<%-- 										<input type="text" class="form-control" id="name" name="name" value="<c:out value="${item.name}"/>" >  --%>
-<!-- 										<label class="form-label" for="name">이름</label> -->
-<!-- 									</div> -->
-									
-<!-- 									<div class="form-outline mb-4"> -->
-<%-- 										<input type="text" class="form-control" id="nickname" name="nickname" value="<c:out value="${item.nickname}"/>" > --%>
-<!-- 										<label class="form-label" for="nickname">닉네임</label> -->
-<!-- 									</div> -->
-									
-<!-- 									<div class="form-outline mb-4"> -->
-<%-- 										<input type="text" class="form-control" id="email" name="email" value="<c:out value="${item.email}"/>" >  --%>
-<!-- 										<label class="form-label" for="email">이메일</label> -->
-<!-- 									</div> -->
-									
-<!-- 									<div class="form-outline mb-4"> -->
-<%-- 										<input type="text" class="form-control" id="address" name="address" value="<c:out value="${item.address}"/>" >  --%>
-<!-- 										<label class="form-label" for="address">주소</label> -->
-<!-- 									</div> -->
-									
-<!-- 									<div class="form-outline mb-4"> -->
-<%-- 										<input type="text" class="form-control" id="phone" name="phone" value="<c:out value="${item.phone}"/>" >  --%>
-<!-- 										<label class="form-label" for="phone">연락처</label> -->
-<!-- 									</div> -->
-
-<!-- 									<div class="d-flex justify-content-center"> -->
-<!-- 										<button type="button" -->
-<!-- 											class="btn btnAdd btn-success btn-block btn-lg gradient-custom-4 text-body">회원가입</button> -->
-<!-- 									</div> -->
-
-<!-- 									<p class="text-center text-muted mt-5 mb-0"> -->
-<!-- 										이미 가입하셨나요? <a href="usrLoginForm" -->
-<!-- 											class="fw-bold text-body">Login here</a> -->
-<!-- 									</p> -->
-
-<!-- 								</form> -->
 
 				<form class="needs-validation" name="form" method="post" novalidate>
 				

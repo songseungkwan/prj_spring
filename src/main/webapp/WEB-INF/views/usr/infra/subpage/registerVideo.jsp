@@ -33,14 +33,14 @@
 
 
 
-<form name="form" method="post"  id="form">
+<form name="form" method="post"  id="form" class="needs-validation" novalidate>
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="uploadVideo" class="uplodeVideo ">
       <div class="container" data-aos="fade-up">
 		<h3> 게시물 작성</h3>
 
-
     <c:set var="listCodeWorkout" value="${CodeServiceImpl.selectListCachedCode('71')}"/>
+
 
 			<div id="uploadBot">
 				<div id="uploadSelect" class="mb-3">
@@ -61,28 +61,31 @@
 				
 				<div class="mb-3 uploadTxt">
 				  <label for="videoTitle" class="form-label">제목</label>
-				  <input type="text" class="form-control" id="videoTitle"  placeholder="제목을 적어주세요."></input>
+				  <input type="text" id="videoTitle" class="form-control input-shadow"   placeholder="제목을 적어주세요."></input>
+				  <div class="invalid-feedback"></div>
 				</div>
 				
 				<div class="mb-3 uploadTxt">
 				  <label for="description" class="form-label">내용</label>
-				  <textarea class="form-control" id="description" rows="3" placeholder="짧은 소개와 설명글을 적어주세요.(80자 이내)"></textarea>
+				  <textarea id="description" class="form-control input-shadow"  rows="3" placeholder="짧은 소개와 설명글을 적어주세요.(80자 이내)"></textarea>
+				  <div class="invalid-feedback"></div>
 				</div>
 				
 
 				<div id="ytbLink">
 				  <label for="ytb" class="form-label">유튜브 링크</label>
-				  <input type="text" class="form-control" id="ytb" placeholder="유튜브 링크를 붙여넣어 주세요.">
+				  <input type="text" id="ytb" class="form-control input-shadow"  placeholder="유튜브 링크를 붙여넣어 주세요.">
+				  <div class="invalid-feedback"></div>
 				</div>
 				
-
 				
 				<div class="mb-3 notificationAccept">
 				  <label for="notificationAccept" class="form-label"></label>
-				  <textarea class="form-control" id="notificationAccept" rows="3" placeholder="해당 내용을 읽고 동의하시면 '동의합니다' 입력 후 등록해주세요. 
+				  <textarea class="form-control input-shadow" id="notificationAccept" rows="3" placeholder="해당 내용을 읽고 동의하시면 '동의합니다' 입력 후 등록해주세요. 
 1. 해당 영상에서 기록 조작 정황이 포착될 시 검토 후 즉시 회원탈퇴 됩니다.
 2. 종목을 잘못 선택 후 등록하시면 검토 후 삭제처리 되고 재등록 안내문자 발송 예정입니다. 
 3.dasdasd. "></textarea>
+				  <div class="invalid-feedback"></div>
 				</div>
 				
 				<button type="button" class="btn btn-primary btn-lg btn_regVideo">영상 등록하기</button>
@@ -119,19 +122,16 @@
   <div id="preloader"></div>
 
   <%@include file = "../include/includeUsrJs.jsp"%>
-  
+      <script src="resources/realProjectAssets/js/validation.js"></script>
 <script>
 
+/* 종목 select */
 $("#workoutType").on("change", function() {
 	// workoutDetailType 에 옵션을 만들어서 append 시킨다
 	var selectedName = $("#workoutType option:selected").text();  // 선택된 옵션의 name 값을 가져옴
 	
 	var option = '<option value="">' + selectedName + '</option>';
 	
-	
-	
-	
-
 	// workoutDetailType 하위 엘리먼트를 지운다	
 	
 	$("#workoutDetailType").empty();
@@ -152,20 +152,43 @@ $("#workoutType").on("change", function() {
         $("#workoutDetailType").append('<option value="45">달리기</option>');
     }
     // 그 외의 선택지에 따른 옵션들을 추가하고 싶다면 추가적으로 else if 문을 작성하면 됩니다.
+
+});
+
+
+
+ 
+ 
+ /* 입력부분 validation */
+	var objVideoTitle  = $("#videoTitle ");
+	var objDescription  = $("#description ");
+	var objYtb = $("#ytb");
+	var objNotificationAccept  = $("#notificationAccept ");
+
+	validationInst = function() {
+		if(validationUpdt() == false) return false;
+	}
+	
+	validationUpdt = function() {
+
+	    if (checkVideoTitle(objVideoTitle, "제목을 입력해주세요.") === false) return false;
+	    if (checkDescription(objDescription, "영상에 대한 간단한 설명을 해주세요.") === false) return false;
+	    if (checkYtb(objYtb, "youtube 링크가 올바르지 않습니다.") === false) return false;
+	    if (checkNotificationAccept(objNotificationAccept, "'동의합니다'만 입력해주세요.") === false) return false;
+
+	}
 	
 	
 	
-    $(".btn_regVideo").on(click.function() {
-    	
-    	
-    	
-    	
+	/* 영상 등록 */
+
+
+	// 회원가입 버튼 클릭 이벤트
+    $(".btn_regVideo").on("click", function(){
+    	if(validationInst() === false) return false;	
+    		$("form[name=form]").attr("action","/boardAdd").submit();
+
     });
-    
-    
-    
-	
- });
  
  
 </script>

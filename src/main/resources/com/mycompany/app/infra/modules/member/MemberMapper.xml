@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<!-- 	 전체 매퍼중에서 유일한 값을 사용하여야 한다.
+     해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
+     그리고 dao에서 namespace와 일치하여야 한다. -->
+	<mapper namespace="com.mycompany.app.infra.modules.member.MemberMapper">		
+							
+										<!-- 	select 결과를 받을 객체 -->
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.modules.member.Member"></resultMap>
+
+    <sql id="abc">
+
+    	seq
+    	, id
+    	, password
+    	, name
+    	, nickname
+    	, email
+    	, address 	
+    	, phone
+    	, type
+    	, delNy
+
+    </sql>
+    
+    <sql id ="selectCommon">
+   		FROM    
+	    	member
+		WHERE 1=1
+			<if test="shKeyword != null and !shKeyword.equals('')">AND id LIKE CONCAT('%',#{shKeyword},'%')
+																   OR name LIKE CONCAT('%', #{shKeyword}, '%')
+																   OR nickname LIKE CONCAT('%', #{shKeyword}, '%')
+																   OR password LIKE CONCAT('%', #{shKeyword}, '%')
+			           											   OR email LIKE CONCAT('%', #{shKeyword}, '%')
+			           											   OR address LIKE CONCAT('%', #{shKeyword}, '%')
+            													   OR phone LIKE CONCAT('%', #{shKeyword}, '%')	
+            													   OR type LIKE CONCAT('%', #{shKeyword}, '%')								   
+			</if>
+    </sql>
+
+   	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
+	
+   	<select id="selectList" resultMap="resultMapObj">
+		SELECT bb.* FROM (   	
+	   		SELECT
+				<include refid="abc" />
+	   			<include refid="selectCommon" />
+		) bb
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
+   	</select>
+
+    <!-- <select id="selectList" resultMap="resultMapObj">
+        SELECT
+        	<include refid="abc" />
+        FROM
+        	member
+        WHERE 1=1
+        <if test="shKeyword != null and !shKeyword.equals('')">AND NAME LIKE CONCAT('%',#{shKeyword},'%')</if>
+    </select> -->
+
+
+    <select id="selectOne" resultMap="resultMapObj">
+        SELECT 
+			<include refid="abc" />
+        FROM
+        	member
+        WHERE 1=1
+        	 AND seq = #{seq}  
+        	 <if test="id != null and !id.equals('')">AND id = #{id} </if>
+        	 <if test="password != null and !password.equals('')">AND password = #{password}</if>
+
+    </select>
+    
+    
+    <select id="selectXdm" resultMap="resultMapObj">
+        SELECT
+        	seq
+        	, id
+        	, name
+        	, type
+        FROM
+        	member
+        	
+        WHERE 1=1 
+       		 <if test="seq != null and !seq.equals('')">AND seq = #{seq} </if>        
+        	 <if test="id != null and !id.equals('')">AND id = #{id} </if>
+        	 <if test="password != null and !password.equals('')">AND password = #{password}</if>
+        	 <if test="type != null and !type.equals('')">AND type = 0 </if>
+
+    </select>
+    
+        <select id="selectUsr" resultMap="resultMapObj">
+        SELECT
+        	seq
+        	, id
+        	, name
+        	, type
+        FROM
+        	member
+        WHERE 1=1
+        	 <if test="seq != null and !seq.equals('')">AND seq = #{seq} </if>
+        	 <if test="id != null and !id.equals('')">AND id = #{id} </if>
+        	 <if test="password != null and !password.equals('')">AND password = #{password}</if>
+        	 <if test="type != null and !type.equals('')">AND type = 1 </if>
+    </select>
+    
+    
+     <select id="selectOneCheckId" resultType="Integer">
+        SELECT
+			COUNT(seq)
+        FROM
+        	member
+        WHERE 1=1
+        	AND id = #{id}
+    </select>
+    
+    <select id="selectUploaded" resultMap="resultMapObj">
+		SELECT *
+		FROM  memberUploaded
+		
+	</select>
+    
+    
+    
+
+<!-- =============================================================== -->
+<!-- 수정 -->
+    <update id="update">
+        UPDATE
+        	member
+        SET
+        	  id = #{id}
+	    	, password = #{password}        	  
+			, name = #{name}
+	    	, nickname = #{nickname}
+	    	, email = #{email}
+	    	, address =	#{address}
+	    	, phone = #{phone}
+	    	, type = #{type}
+
+
+        WHERE
+        	seq = #{seq}
+    </update>
+
+<!-- 삭제 -->
+    <delete id="delete">
+        DELETE
+        FROM
+        	member
+        WHERE 
+        	seq = #{seq}
+    </delete>
+
+<!-- 추가 -->
+    <insert id="insert">
+        INSERT INTO member (
+			  id
+	    	, name
+	    	, password
+	    	, nickname
+	    	, email
+	    	, address
+	    	, phone
+   	    	, delNy
+   	    	, type
+	    	
+        ) VALUES (
+        	#{id}
+        	,#{name}        	
+        	,#{password}  
+        	,#{nickname} 
+        	,#{email} 
+        	,#{address} 
+        	,#{phone}      	
+        	, 0
+        	, 0
+
+        )
+       		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+		 	</selectKey>
+    </insert>
+    
+    <!-- 0727 파일업로드 -->
+    	<!-- uploaded s -->
+	<insert id="insertUploaded">
+		INSERT INTO ${tableName} (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
+			
+		) values (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{seq}
+		)
+	</insert>
+    
+    
+    
+    
+
+<!-- 삭제(delete + update) -->
+    <update id="uelete">
+	    UPDATE
+	    	member	
+	    SET
+	    	delNy = "1"
+	    WHERE 1=1
+	    AND 
+	    	seq = #{seq}
+    </update>
+
+</mapper>    

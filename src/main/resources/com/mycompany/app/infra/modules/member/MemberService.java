@@ -2,6 +2,8 @@ package com.mycompany.app.infra.modules.member;
 
 import java.util.List;
 
+import org.springframework.web.multipart.MultipartFile;
+
 public interface MemberService {
 
 //	paging

@@ -1,27 +1,30 @@
-package com.mycompany.app.infra.modules.code;
+package com.mycompany.app.infra.modules.member;
 
-public class CodeVo {
+public class MemberVo {
 	
-	private String code;
 	private Integer shOption;
 	private String shKeyword;
-	private String seq;
-	private String codeGroup_seq;
+	private String seq;				
+	private String name;
+	private String id;
+	private String nickname;
+	private String password;
+	private String email;
+	private String address;
+	private String phone;
+	private String type;	
 	private Integer delNy;
-
 	
 
 
 
-
-	
+	// paging
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //	private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수
 	
 	private int rowNumToShow = 10;								// 화면에 보여줄 데이터 줄 갯수
 	private int pageNumToShow = 5;								// 화면에 보여줄 페이징 번호 갯수
-	
 	private int totalRows;										// 전체 데이터 갯수
 	private int totalPages;										// 전체 페이지 번호
 	private int startPage;										// 시작 페이지 번호
@@ -32,9 +35,9 @@ public class CodeVo {
 	private Integer RNUM;
 
 	private int startRnumForMysql = 0;							// 쿼리 시작 row
-
-
-//	---------------------------- 
+	
+	
+	
 	public int getThisPage() {
 		return thisPage;
 	}
@@ -101,62 +104,87 @@ public class CodeVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
+	// =================================================
 	
 	
 	
-	//	shOption
+	
 	public Integer getShOption() {
 		return shOption;
 	}
 	public void setShOption(Integer shOption) {
 		this.shOption = shOption;
 	}
-	
-	//	shKeyword	
 	public String getShKeyword() {
 		return shKeyword;
 	}
 	public void setShKeyword(String shKeyword) {
 		this.shKeyword = shKeyword;
 	}
-	
-	//	seq
 	public String getSeq() {
 		return seq;
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-
-	//	codeGroup_seq
-	public String getCodeGroup_seq() {
-		return codeGroup_seq; 
-	} 
-	
-	public void setCodeGroup_seq(String codeGroup_seq) {
-		this.codeGroup_seq = codeGroup_seq;
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
 	}
 	
-	//	delNy
 	public Integer getDelNy() {
 		return delNy;
 	}
-	
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
+
 	
-	//	code
-	public String getCode() {
-		return code;
-	}
-	
-	public void setCode(String code) {
-		this.code = code;
-	}
-	
-	
-	public void setParamsPaging(int totalRows) {
+public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);
 
@@ -205,5 +233,10 @@ public class CodeVo {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+
 	
+
+
+	
+
 }

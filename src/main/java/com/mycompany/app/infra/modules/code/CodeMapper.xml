@@ -2,119 +2,116 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-    
-<!--     전체 매퍼중에서 유일한 값을 사용하여야 한다.
-     해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
-     그리고 dao에서 namespace와 일치하여야 한다. -->
-    
-<mapper namespace="com.mycompany.app.infra.modules.code.CodeMapper">		
 
 
-								<!-- select 결과를 받을 객체 -->
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.modules.code.Code"></resultMap>
-    
-    <sql id="abc">
-    	seq
-    	, name
-    	, delNy
-    	, codeGroup_seq
-    </sql>
-    
-    <sql id ="selectCommon">
-   		FROM    
-	    	code
+<!-- 전체 매퍼중에서 유일한 값을 사용하여야 한다. 해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외) 그리고 dao에서 
+	namespace와 일치하여야 한다. -->
+
+<mapper
+	namespace="com.mycompany.app.infra.modules.code.CodeMapper">
+
+
+	<!-- select 결과를 받을 객체 -->
+	<resultMap id="resultMapObj"
+		type="com.mycompany.app.infra.modules.code.Code"></resultMap>
+
+	<sql id="abc">
+		seq
+		, name
+		, delNy
+		, codeGroup_seq
+	</sql>
+
+	<sql id="selectCommon">
+		FROM
+		code
 		WHERE 1=1
-			<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
-    </sql>
-    
-   	<select id="selectOneCount" resultType="Integer">
+		<if test="shKeyword != null and !shKeyword.equals('')">AND name LIKE CONCAT('%',#{shKeyword},'%')</if>
+	</sql>
+
+	<select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
 		<include refid="selectCommon" />
 	</select>
-    
-  	<select id="selectList" resultMap="resultMapObj">
-		SELECT aa.* FROM (   	
-	   		SELECT
-				<include refid="abc" />
-	   			<include refid="selectCommon" />
+
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT aa.* FROM (
+		SELECT
+		<include refid="abc" />
+		<include refid="selectCommon" />
 		) aa
-		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
-   	</select>
-    
-   	<select id="selectOne" resultMap="resultMapObj">
-   		SELECT 
-   			<include refid="abc" />
-   		FROM
-   			code
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+	</select>
+
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+		<include refid="abc" />
+		FROM
+		code
 		WHERE 1=1
-			AND seq = #{seq}	
-   	</select>   
-   	
-   	
-   	 <select id="selectListCachedCodeArrayList" resultMap="resultMapObj">
-   		SELECT 
-   			seq
-   			, name
-   			, codeNum
-   			, codeGroup_seq
-   		FROM
-   			code
+		AND seq = #{seq}
+	</select>
+
+
+	<select id="selectListCachedCodeArrayList"
+		resultMap="resultMapObj">
+		SELECT
+		seq
+		, name
+		, codeNum
+		, codeGroup_seq
+		FROM
+		code
 		WHERE 1=1
-			AND delNy = 0
-<!-- 			AND useNy = 1 -->
-   	</select>   
-   	
-   	
-   	
-<!--     <select id="selectList" resultMap="resultMapObj">
-        SELECT
-        	<include refid="abc" />
-        FROM
-        	code
-        WHERE 1=1
-        <if test="shKeyword != null and !shKeyword.equals('')">AND NAME LIKE CONCAT('%',#{shKeyword},'%')</if>
-    </select> -->
+		AND delNy = 0
+		<!-- AND useNy = 1 -->
+	</select>
 
-    <!-- ======================================== -->
 
-    <update id="update">
-        UPDATE
-        	code
-        SET
-        	name = #{name}
-        WHERE
-        	seq = #{seq}
-    </update>
 
-    <delete id="delete">
-        DELETE
-        FROM
-        	code
-        WHERE 
-        	seq = #{seq}
-    </delete>
+	<!-- <select id="selectList" resultMap="resultMapObj"> SELECT <include refid="abc" 
+		/> FROM code WHERE 1=1 <if test="shKeyword != null and !shKeyword.equals('')">AND 
+		NAME LIKE CONCAT('%',#{shKeyword},'%')</if> </select> -->
 
-    <insert id="insert">
-        INSERT INTO code (
-        	name
-        	,codeGroup_seq
-        	,delNy
-        ) VALUES (
-        	#{name}
-        	,#{codeGroup_seq}        	
-        	,0
-        )
-    </insert>
- 
-    <update id="uelete">
-    UPDATE
-    	code	
-    SET
-    	delNy = 1
-    WHERE 1=1
-    AND 
-    	seq = #{seq}
-    </update>
+	<!-- ======================================== -->
+
+	<update id="update">
+		UPDATE
+		code
+		SET
+		name = #{name}
+		WHERE
+		seq = #{seq}
+	</update>
+
+	<delete id="delete">
+		DELETE
+		FROM
+		code
+		WHERE
+		seq = #{seq}
+	</delete>
+
+	<insert id="insert">
+		INSERT INTO code (
+		name
+		,codeGroup_seq
+		,delNy
+		) VALUES (
+		#{name}
+		,#{codeGroup_seq}
+		,0
+		)
+	</insert>
+
+	<update id="uelete">
+		UPDATE
+		code
+		SET
+		delNy = 1
+		WHERE 1=1
+		AND
+		seq = #{seq}
+	</update>
 
 </mapper>    

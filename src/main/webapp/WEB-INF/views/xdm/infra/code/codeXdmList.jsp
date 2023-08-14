@@ -65,11 +65,8 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-              
-
               <!-- Table with stripped rows -->
 	            <form action="" method="post" name="formList">
-	            
    	            	<input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 					<input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 	            

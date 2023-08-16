@@ -14,8 +14,6 @@ public class Member extends Base {
 
 	private String seq;				
 	private String name;
-	private Integer delNy;
-
 	private String id;
 	private String nickname;
 	private String password;
@@ -23,6 +21,7 @@ public class Member extends Base {
 	private String address;
 	private String phone;
 	private Integer type;
+	private Integer delNy;
 
 //	uploaded
 	private String tableName;
@@ -178,11 +177,6 @@ public class Member extends Base {
 	public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
 		this.uploadFileDeletePathFile = uploadFileDeletePathFile;
 	}
-
-	
-	
-	
-
 	public MultipartFile[] getUploadImg() {
 		return uploadImg;
 	}
@@ -215,6 +209,9 @@ public class Member extends Base {
 	}
 	private String[] uploadImgDeletePathFile;	
 	
+	
+	
+//	===============================================================
 	public String getSeq() {
 		return seq;
 	}

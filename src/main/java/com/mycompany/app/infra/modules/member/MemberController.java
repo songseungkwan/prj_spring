@@ -20,6 +20,7 @@ public class MemberController {
 	MemberServiceImpl service;
 	private HttpSession httpSession;
 
+	
 	@RequestMapping("/memberXdmList")
 	public String memberXdmList( @ModelAttribute("vo") MemberVo vo, Model model) {
 

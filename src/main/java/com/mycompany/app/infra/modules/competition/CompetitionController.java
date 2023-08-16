@@ -24,6 +24,8 @@ public class CompetitionController {
 	@RequestMapping ("/competitionXdmList")
 	public String competitionXdmList(@ModelAttribute("vo") CompetitionVo vo, Model model) {
 		
+		vo.setShKeyword(vo.getShKeyword() == null ? "" : vo.getShKeyword());
+		
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		if(vo.getTotalRows() > 0) {
@@ -47,7 +49,7 @@ public class CompetitionController {
 	
 
 
-	
+	 
 	@RequestMapping(value="/realTimeRecord")
 	public String realTimeRecord() {
 		return "usr/infra/subpage/realTimeRecord";	 

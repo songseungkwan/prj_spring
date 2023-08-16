@@ -121,7 +121,7 @@
 	                          </td>
 	                          <td><c:out value="${list.seq}" /></td>
 	                          <td><c:out value="${list.type}" /></td>
-	                          <td><a href="comepetitionXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${list.title}" /></a></td>
+	                          <td><a href="competitionXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${list.title}" /></a></td>
 	                          <td><c:out value="${list.descr}" /></td>
 	                          <td><c:out value="${list.ytbLink}" /></td>
 	                          <td><c:out value="${list.contents}" /></td>

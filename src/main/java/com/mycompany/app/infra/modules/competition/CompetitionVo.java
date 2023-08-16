@@ -2,6 +2,9 @@ package com.mycompany.app.infra.modules.competition;
 
 public class CompetitionVo {
 
+	
+	private Integer shOption;
+	private String shKeyword;
 	private String seq;				
 	private String type;
 	private String title;				
@@ -10,9 +13,34 @@ public class CompetitionVo {
 	private String regDatetime;
 	private String contents;
 	private Integer delNy;
+	private String name;	
 
 	
-	// paging
+	
+	
+	
+	public Integer getShOption() {
+		return shOption;
+	}
+	public void setShOption(Integer shOption) {
+		this.shOption = shOption;
+	}
+	public String getShKeyword() {
+		return shKeyword;
+	}
+	public void setShKeyword(String shKeyword) {
+		this.shKeyword = shKeyword;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+		// paging
 		private int thisPage = 1;									// 현재 페이지
 //		private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //		private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수

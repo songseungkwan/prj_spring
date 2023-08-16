@@ -14,8 +14,6 @@
         <sql id ="selectCommon">
 	   		FROM    
 		    	competition a
-
-		    	LEFT JOIN count c on c.competition_seq = a.seq
 	
 			WHERE 1=1 
 			<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
@@ -23,7 +21,7 @@
 	    </sql>
     
      <sql id="selectCompetition">
-    	seq
+    	a.seq
     	, a.type
     	, a.title
     	, a.descr
@@ -31,10 +29,6 @@
     	, a.regDatetime
     	, a.contents
     	, a.delNy
-
-    	, c.regSeq
-    	, c.regIp
-    	, c.regDatetime
     </sql>
     
     	<select id="selectOne" resultMap="resultMapObj">

@@ -59,27 +59,27 @@
 					
 				</div>
 				
-				<div class="mb-3 uploadTxt">
+				<div class="mb-3 uploadTxt form-group">
 				  <label for="videoTitle" class="form-label">제목</label>
 				  <input type="text" id="videoTitle" class="form-control input-shadow"   placeholder="제목을 적어주세요."></input>
 				  <div class="invalid-feedback"></div>
 				</div>
 				
-				<div class="mb-3 uploadTxt">
+				<div class="mb-3 uploadTxt form-group">
 				  <label for="description" class="form-label">내용</label>
 				  <textarea id="description" class="form-control input-shadow"  rows="3" placeholder="짧은 소개와 설명글을 적어주세요.(80자 이내)"></textarea>
 				  <div class="invalid-feedback"></div>
 				</div>
 				
 
-				<div id="ytbLink">
+				<div id="ytbLink form-group">
 				  <label for="ytb" class="form-label">유튜브 링크</label>
 				  <input type="text" id="ytb" class="form-control input-shadow"  placeholder="유튜브 링크를 붙여넣어 주세요.">
 				  <div class="invalid-feedback"></div>
 				</div>
 				
 				
-				<div class="mb-3 notificationAccept">
+				<div class="mb-3 notificationAccept form-group">
 				  <label for="notificationAccept" class="form-label"></label>
 				  <textarea class="form-control input-shadow" id="notificationAccept" rows="3" placeholder="해당 내용을 읽고 동의하시면 '동의합니다' 입력 후 등록해주세요. 
 1. 해당 영상에서 기록 조작 정황이 포착될 시 검토 후 즉시 회원탈퇴 됩니다.
@@ -88,8 +88,8 @@
 				  <div class="invalid-feedback"></div>
 				</div>
 				
-				<button type="button" class="btn btn-primary btn-lg btn_regVideo">영상 등록하기</button>
-				<button type="button" class="btn btn-secondary btn-lg">임시 저장하기</button>
+				<button type="button" class="btn btn-primary btn-lg btnInst">영상 등록하기</button>
+
 				
 				
 				
@@ -191,9 +191,9 @@ $("#workoutType").on("change", function() {
 
 
 	// 회원가입 버튼 클릭 이벤트
-    $(".btn_regVideo").on("click", function(){
+    $(".btnInst").on("click", function(){
     	if(validationInst() === false) return false;	
-    		$("form[name=form]").attr("action","/videoInst").submit();
+    		$("form[name=form]").attr("action","/competitionInst").submit();
 
     });
  

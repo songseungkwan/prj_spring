@@ -5,10 +5,12 @@ public class CompetitionVo {
 	private String seq;				
 	private String type;
 	private String title;				
-	private String desc;
+	private String descr;
 	private String ytbLink;				
 	private String regDatetime;
 	private String contents;
+	private Integer delNy;
+
 	
 	// paging
 		private int thisPage = 1;									// 현재 페이지
@@ -117,11 +119,11 @@ public class CompetitionVo {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDesc() {
-		return desc;
+	public String getDescr() {
+		return descr;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescr(String descr) {
+		this.descr = descr;
 	}
 	public String getYtbLink() {
 		return ytbLink;
@@ -141,7 +143,19 @@ public class CompetitionVo {
 	public void setContents(String contents) {
 		this.contents = contents;
 	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
+
 	
+	
+//	===========================================================
+	
+	
+
 public void setParamsPaging(int totalRows) {
 		
 //		setThisPage(3);

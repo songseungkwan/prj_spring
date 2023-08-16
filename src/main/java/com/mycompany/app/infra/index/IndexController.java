@@ -38,23 +38,7 @@ public class IndexController {
 		public String indexUsrView() {
 			return "usr/infra/index/indexUsrView";		
 		}
-		@RequestMapping(value="/realTimeRecord")
-		public String realTimeRecord() {
-			return "usr/infra/subpage/realTimeRecord";	 
-		}
-		@RequestMapping(value="/registerVideo")
-		public String registerVideo() {
-			return "usr/infra/subpage/registerVideo";		
-		}				
-		@RequestMapping(value="/workoutType")
-		public String workoutType() {
-			return "usr/infra/subpage/workoutType";		
-		}			
-		@RequestMapping(value="/prizeRanking")
-		public String prizeRanking() {
-			return "usr/infra/subpage/prizeRanking";		
-		}		
-		
+
 		
 //		----------sub page
 

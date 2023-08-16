@@ -25,7 +25,7 @@ $("#notificationAccept").on("keydown", function(event) {
 
 
     checkVideoTitle = function(obj, message) {
-        var regExp = /^[가-힣a-zA-Z]{1,30}$/;
+        var regExp = /^[a-zA-Zㄱ-ㅎ가-힣a-zA-Z0-9]{1,30}$/;
 
         if (regExp.test($.trim(obj.val())) == false) {
             obj.addClass("is-invalid");
@@ -40,7 +40,7 @@ $("#notificationAccept").on("keydown", function(event) {
     }
     
         checkDescription = function(obj, message) {
-        var regExp = /^[가-힣a-zA-Z]{1,85}$/;
+        var regExp = /^[가-힣a-zA-Z0-9]{1,85}$/;
 
         if (regExp.test($.trim(obj.val())) == false) {
             obj.addClass("is-invalid");

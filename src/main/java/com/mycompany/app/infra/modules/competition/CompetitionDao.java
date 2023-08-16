@@ -6,10 +6,12 @@ import javax.annotation.Resource;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
 
 import com.mycompany.app.infra.modules.member.Member;
 import com.mycompany.app.infra.modules.member.MemberVo;
 
+@Repository
 public class CompetitionDao {
 
 	
@@ -22,12 +24,11 @@ public class CompetitionDao {
 //	paging
 	public int selectOneCount(CompetitionVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
 	
-	public List<Member> selectList(CompetitionVo vo) {
+	public List<Competition> selectList(CompetitionVo vo) {
 		return sqlSession.selectList(namespace + ".selectList", vo ); 
-
 		}
 	
-	public Member selectOne(CompetitionVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
+	public Competition selectOne(CompetitionVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
 	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(Competition dto) { return sqlSession.update(namespace + ".update", dto); }

@@ -9,6 +9,120 @@
 	<mapper namespace="com.mycompany.app.infra.modules.competition.CompetitionMapper">		
 							
 										<!-- 	select 결과를 받을 객체 -->
-    <resultMap id="resultMapObj" type="com.mycompany.app.infra.modules.competition.Competition"></resultMap>\
+    <resultMap id="resultMapObj" type="com.mycompany.app.infra.modules.competition.Competition"></resultMap>
+    
+        <sql id ="selectCommon">
+	   		FROM    
+		    	competition a
+
+		    	LEFT JOIN count c on c.competition_seq = a.seq
+	
+			WHERE 1=1 
+			<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
+	
+	    </sql>
+    
+     <sql id="selectCompetition">
+    	seq
+    	, a.type
+    	, a.title
+    	, a.descr
+    	, a.ytbLink
+    	, a.regDatetime
+    	, a.contents
+    	, a.delNy
+
+    	, c.regSeq
+    	, c.regIp
+    	, c.regDatetime
+    </sql>
+    
+    	<select id="selectOne" resultMap="resultMapObj">
+	
+			SELECT
+				<include refid="selectCompetition" />
+		    	<include refid="selectCommon" />
+		    AND a.seq = #{seq}
+		    
+		</select>
+	
+	   	<select id="selectOneCount" resultType="Integer">
+	   	
+			SELECT count(*)
+			<include refid="selectCommon" />
+			
+		</select>
+    
+		<select id="selectList" resultMap="resultMapObj">
+		
+			SELECT
+				<include refid="selectCompetition" />
+		    	<include refid="selectCommon" />
+		    
+		</select>
+	
+		<insert id="insert">
+		
+		    insert into `competition` (
+	    	 type
+	    	 , title
+	    	 , descr
+	    	 , ytbLink
+	    	 , contents
+	    	 , delNy
+	
+			) values (
+				#{type}
+				,#{title}
+				,#{descr}
+				,#{ytbLink}
+				,#{contents}
+				,0
+			)
+			<selectKey resultType="String" keyProperty="seq" order="AFTER">
+				SELECT last_insert_id()
+			 </selectKey>
+			 
+	    </insert>
+    
+	    <update id="update">
+	    
+	        UPDATE 
+	        	competition
+	        SET 
+	        	type = #{type},
+	        	title = #{title},
+		    	descr= #{descr},
+		    	ytbLink= #{ytbLink},
+		    	contents= #{contents},
+		    	delNy= #{delNy}
+	
+	        WHERE 
+	        	seq = #{seq}
+	        	
+		</update>
+	
+		<delete id="delete">
+		
+	        	DELETE FROM 
+	    		competition
+			WHERE
+				seq = #{seq}
+				
+		</delete>
+	    
+	    <update id="uelete">
+	    
+	   		UPDATE 
+	    		competition
+			SET 
+				delNy = 1
+			WHERE 
+				seq = #{seq}
+				
+	    </update>
+    
+    
     
     </mapper>
+    

@@ -2,6 +2,7 @@ package com.mycompany.app.infra.modules.member;
 
 
 import java.io.File;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -17,8 +18,8 @@ import com.mycompany.app.common.util.UtilDateTime;
 
 
 
-	@Service
-	public class MemberServiceImpl implements MemberService {
+@Service
+public class MemberServiceImpl implements MemberService {
 	
 	@Autowired
 	MemberDao dao;

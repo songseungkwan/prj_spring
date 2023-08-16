@@ -125,6 +125,13 @@
       <script src="resources/realProjectAssets/js/validation.js"></script>
 <script>
 
+
+
+
+
+
+
+
 /* 종목 select */
 $("#workoutType").on("change", function() {
 	// workoutDetailType 에 옵션을 만들어서 append 시킨다
@@ -186,7 +193,7 @@ $("#workoutType").on("change", function() {
 	// 회원가입 버튼 클릭 이벤트
     $(".btn_regVideo").on("click", function(){
     	if(validationInst() === false) return false;	
-    		$("form[name=form]").attr("action","/boardAdd").submit();
+    		$("form[name=form]").attr("action","/videoInst").submit();
 
     });
  

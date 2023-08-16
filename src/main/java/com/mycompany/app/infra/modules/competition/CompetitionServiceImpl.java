@@ -2,13 +2,12 @@ package com.mycompany.app.infra.modules.competition;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.mycompany.app.infra.modules.member.Member;
-
 @Service
-public class CompetitionServiceImpl {
+public class CompetitionServiceImpl implements CompetitionService {
 
 	
 	@Autowired
@@ -21,10 +20,10 @@ public class CompetitionServiceImpl {
 		return dao.selectOneCount(vo);
 	}
 	
-	public List<Member> selectList(CompetitionVo vo) { return dao.selectList(vo); }
+	public List<Competition> selectList(CompetitionVo vo) { return dao.selectList(vo); }
 	
 	@Override
-	public Member selectOne(CompetitionVo vo) { return dao.selectOne(vo); }
+	public Competition selectOne(CompetitionVo vo) { return dao.selectOne(vo); }
 	
 	@Override
 	public int update(Competition dto) throws Exception {
@@ -39,6 +38,12 @@ public class CompetitionServiceImpl {
 	@Override
 	public int uelete(Competition dto) {
 		return dao.uelete(dto);	
+	}
+
+	@Override
+	public int insert(Competition dto) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.insert(dto);	
 	}
 	
 	

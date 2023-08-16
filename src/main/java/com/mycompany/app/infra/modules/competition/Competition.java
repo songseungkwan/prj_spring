@@ -5,11 +5,12 @@ public class Competition {
 	private String seq;				
 	private String type;
 	private String title;				
-	private String desc;
+	private String descr;
 	private String ytbLink;				
 	private String regDatetime;
 	private String contents;
-	
+	private Integer delNy;
+
 	
 	public String getSeq() {
 		return seq;
@@ -29,11 +30,11 @@ public class Competition {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDesc() {
-		return desc;
+	public String getDescr() {
+		return descr;
 	}
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDescr(String descr) {
+		this.descr = descr;
 	}
 	public String getYtbLink() {
 		return ytbLink;
@@ -52,7 +53,14 @@ public class Competition {
 	}
 	public void setContents(String contents) {
 		this.contents = contents;
-	}	
+	}
+	public Integer getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
+
 	
 		
 }

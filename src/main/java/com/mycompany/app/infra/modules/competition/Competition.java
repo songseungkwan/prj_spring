@@ -3,7 +3,7 @@ package com.mycompany.app.infra.modules.competition;
 public class Competition {
 
 	private String seq;				
-	private String type;
+	private Integer type;
 	private String title;				
 	private String descr;
 	private String ytbLink;				
@@ -18,10 +18,10 @@ public class Competition {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-	public String getType() {
+	public Integer getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 	public String getTitle() {

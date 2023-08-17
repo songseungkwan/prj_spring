@@ -67,6 +67,10 @@ public class CompetitionController {
 		return "usr/infra/subpage/prizeRanking";		
 	}		
 	
+	@RequestMapping(value="/viewUsrVideo")
+	public String viewUsrVideo() {
+		return "usr/infra/subpage/viewUsrVideo";		
+	}		
 
 
 	
@@ -74,7 +78,7 @@ public class CompetitionController {
 	
 	@RequestMapping("/competitionInst")
 	public String competitionInst(Competition dto) throws Exception {
-
+		System.out.println(dto.getType());
 		// service 호출
 		service.insert(dto);
 		
@@ -108,7 +112,5 @@ public class CompetitionController {
 		
 		return "redirect: /indexUsrView";
 	}
-	
-	
 	
 }

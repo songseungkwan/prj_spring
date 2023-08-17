@@ -114,24 +114,28 @@
 	                      </tr>
 	                    </c:when>
 	                    <c:otherwise>
-	                      <c:forEach items="${list}" var="list">
-	                        <tr>
-	                          <td scope="col">
-	                            <input type="checkbox" name="checked" value="">
-	                          </td>
-	                          <td><c:out value="${list.seq}" /></td>
-	                          <td><c:out value="${list.type}" /></td>
-	                          <td><a href="competitionXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${list.title}" /></a></td>
-	                          <td><c:out value="${list.descr}" /></td>
-	                          <td><c:out value="${list.ytbLink}" /></td>
-	                          <td><c:out value="${list.contents}" /></td>
-							  <td><c:out value="${list.delNy}" /></td>
-	                        </tr>
-	                      </c:forEach>
+						<c:forEach items="${list}" var="item">
+						    <tr>
+						        <td scope="col">
+						            <input type="checkbox" name="checked" value="">
+						        </td>
+						        <td><c:out value="${item.seq}" /></td>
+						        <td><c:out value="${item.type}" /></td>
+						        <td><a href="competitionXdmForm?seq=<c:out value="${item.seq}" />"><c:out value="${item.title}" /></a></td>
+						        <td><c:out value="${item.descr}" /></td>
+						        <td><c:out value="${item.ytbLink}" /></td>
+						        <td><c:out value="${item.contents}" /></td>
+						        <td><c:out value="${item.delNy}" /></td>
+						    </tr>
+						</c:forEach>
+	                      
+	                      
 	                    </c:otherwise>
 	                  </c:choose>
 	                </tbody>
 	              </table>
+	              <!--  -->
+	              
 		              	<div class="container-fluid px-0 mt-2">
 						    <div class="row">
 						        <div class="col">

@@ -3,6 +3,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
+    
     <!-- 	 전체 매퍼중에서 유일한 값을 사용하여야 한다.
      해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
      그리고 dao에서 namespace와 일치하여야 한다. -->
@@ -14,6 +15,10 @@
         <sql id ="selectCommon">
 	   		FROM    
 		    	competition a
+		    	
+		    	LEFT JOIN view b on b.competition_seq = a.seq
+		    	LEFT JOIN comment c on c.competition_seq = a.seq
+		    	
 	
 			WHERE 1=1 
 			<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
@@ -29,6 +34,14 @@
     	, a.regDatetime
     	, a.contents
     	, a.delNy
+    	, b.regSeqView
+    	, b.regIpView
+    	, b.regDatetimeView
+    	, c.comments
+    	, c.regSeqComment
+    	
+    	
+    	
     </sql>
     
     	<select id="selectOne" resultMap="resultMapObj">
@@ -62,7 +75,6 @@
 	    	 , title
 	    	 , descr
 	    	 , ytbLink
-	    	 , contents
 	    	 , delNy
 	
 			) values (
@@ -70,7 +82,6 @@
 				,#{title}
 				,#{descr}
 				,#{ytbLink}
-				,#{contents}
 				,0
 			)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">
@@ -78,6 +89,10 @@
 			 </selectKey>
 			 
 	    </insert>
+	    
+	    
+	    
+	    
     
 	    <update id="update">
 	    
@@ -88,7 +103,6 @@
 	        	title = #{title},
 		    	descr= #{descr},
 		    	ytbLink= #{ytbLink},
-		    	contents= #{contents},
 		    	delNy= #{delNy}
 	
 	        WHERE 

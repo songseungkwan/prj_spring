@@ -44,37 +44,36 @@
 
 			<div id="uploadBot">
 				<div id="uploadSelect" class="mb-3">
-					<select class="form-select form-control" aria-label="Default select example" id="workoutType">
+					<select class="form-select form-control" aria-label="Default select example" id="workoutType" name="workoutType">
 					  <option value="">종목</option>
 					  	<c:forEach items="${listCodeWorkout }" var="list" varStatus="status">
 					  		<option value="<c:out value="${list.seq }"/>"><c:out value="${list.name}"/></option>
 						</c:forEach>
 					</select>
-					<select class="form-select form-control" aria-label="Default select example" id="workoutDetailType">
+					<select class="form-select form-control" aria-label="Default select example" id="type" name="type">
 <!-- 						<option value="">상세 종목</option> -->
 					  	<c:forEach items="${listCodeWorkout }" var="list" varStatus="status">
 					  		<option value="<c:out value="${list.seq }"/>"><c:out value="${list.name}"/></option>
 						</c:forEach>
 					</select>
-					
 				</div>
 				
 				<div class="mb-3 uploadTxt form-group">
-				  <label for="videoTitle" class="form-label">제목</label>
-				  <input type="text" id="videoTitle" class="form-control input-shadow"   placeholder="제목을 적어주세요."></input>
+				  <label for="title" class="form-label">제목</label>
+				  <input type="text" id="title" name="title" class="form-control input-shadow"   placeholder="제목을 적어주세요."></input>
 				  <div class="invalid-feedback"></div>
 				</div>
 				
 				<div class="mb-3 uploadTxt form-group">
-				  <label for="description" class="form-label">내용</label>
-				  <textarea id="description" class="form-control input-shadow"  rows="3" placeholder="짧은 소개와 설명글을 적어주세요.(80자 이내)"></textarea>
+				  <label for="descr" class="form-label">내용</label>
+				  <textarea id="descr" name="descr" class="form-control input-shadow"  rows="3" placeholder="짧은 소개와 설명글을 적어주세요.(80자 이내)"></textarea>
 				  <div class="invalid-feedback"></div>
 				</div>
 				
 
-				<div id="ytbLink form-group">
-				  <label for="ytb" class="form-label">유튜브 링크</label>
-				  <input type="text" id="ytb" class="form-control input-shadow"  placeholder="유튜브 링크를 붙여넣어 주세요.">
+				<div id="uploadTxt form-group">
+				  <label for="ytbLink" class="form-label">유튜브 링크</label>
+				  <input type="text" name="ytbLink" id="ytbLink" class="form-control input-shadow"  placeholder="유튜브 링크를 붙여넣어 주세요.">
 				  <div class="invalid-feedback"></div>
 				</div>
 				
@@ -141,22 +140,22 @@ $("#workoutType").on("change", function() {
 	
 	// workoutDetailType 하위 엘리먼트를 지운다	
 	
-	$("#workoutDetailType").empty();
+	$("#type").empty();
 
     // 선택된 옵션에 따라 workoutDetailType에 동적으로 옵션을 추가한다
     if (selectedName === "calisthenics") {
-        $("#workoutDetailType").append('<option value="37">턱걸이</option>');
-        $("#workoutDetailType").append('<option value="38">푸쉬업</option>');
-        $("#workoutDetailType").append('<option value="39">딥스</option>');
+        $("#type").append('<option value="37">턱걸이</option>');
+        $("#type").append('<option value="38">푸쉬업</option>');
+        $("#type").append('<option value="39">딥스</option>');
     } else if (selectedName === "freeweight") {
         // 다른 선택지에 따른 옵션들 추가
-        $("#workoutDetailType").append('<option value="40">데드리프트</option>');
-        $("#workoutDetailType").append('<option value="41">스쿼트</option>');
-        $("#workoutDetailType").append('<option value="42">벤치프레스</option>');
+        $("#type").append('<option value="40">데드리프트</option>');
+        $("#type").append('<option value="41">스쿼트</option>');
+        $("#type").append('<option value="42">벤치프레스</option>');
     } else if (selectedName === "aerobic") {
-        $("#workoutDetailType").append('<option value="43">수영</option>');
-        $("#workoutDetailType").append('<option value="44">사이클</option>');
-        $("#workoutDetailType").append('<option value="45">달리기</option>');
+        $("#type").append('<option value="43">수영</option>');
+        $("#type").append('<option value="44">사이클</option>');
+        $("#type").append('<option value="45">달리기</option>');
     }
     // 그 외의 선택지에 따른 옵션들을 추가하고 싶다면 추가적으로 else if 문을 작성하면 됩니다.
 
@@ -167,10 +166,10 @@ $("#workoutType").on("change", function() {
  
  
  /* 입력부분 validation */
-	var objVideoTitle  = $("#videoTitle ");
-	var objDescription  = $("#description ");
-	var objYtb = $("#ytb");
-	var objNotificationAccept  = $("#notificationAccept ");
+	var objTitle  = $("#title");
+	var objDescr  = $("#descr");
+	var objYtbLink = $("#ytbLink");
+	var objNotificationAccept  = $("#notificationAccept");
 
 	validationInst = function() {
 		if(validationUpdt() == false) return false;
@@ -178,9 +177,9 @@ $("#workoutType").on("change", function() {
 	
 	validationUpdt = function() {
 
-	    if (checkVideoTitle(objVideoTitle, "제목을 입력해주세요.") === false) return false;
-	    if (checkDescription(objDescription, "영상에 대한 간단한 설명을 해주세요.") === false) return false;
-	    if (checkYtb(objYtb, "youtube 링크가 올바르지 않습니다.") === false) return false;
+	    if (checkTitle(objTitle, "제목을 입력해주세요.") === false) return false;
+	    if (checkDescr(objDescr, "영상에 대한 간단한 설명을 해주세요.") === false) return false;
+	    if (checkYtbLink(objYtbLink, "youtube 링크가 올바르지 않습니다.") === false) return false;
 	    if (checkNotificationAccept(objNotificationAccept, "'동의합니다'만 입력해주세요.") === false) return false;
 
 	}
@@ -192,6 +191,7 @@ $("#workoutType").on("change", function() {
 
 	// 회원가입 버튼 클릭 이벤트
     $(".btnInst").on("click", function(){
+    	alert()
     	if(validationInst() === false) return false;	
     		$("form[name=form]").attr("action","/competitionInst").submit();
 

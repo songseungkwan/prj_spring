@@ -14,11 +14,18 @@ public class CompetitionVo {
 	private String contents;
 	private Integer delNy;
 	private String name;	
-
+	private String writer;
 	
 	
 	
 	
+	
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
 	public Integer getShOption() {
 		return shOption;
 	}
@@ -177,12 +184,20 @@ public class CompetitionVo {
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
 	}
+	
 
+	
+	
+	
+	
+	
 	
 	
 //	===========================================================
 	
 	
+
+
 
 public void setParamsPaging(int totalRows) {
 		
@@ -233,6 +248,7 @@ public void setParamsPaging(int totalRows) {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+
 
 	
 }

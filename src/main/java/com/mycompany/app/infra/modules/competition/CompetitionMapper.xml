@@ -16,8 +16,9 @@
 	   		FROM    
 		    	competition a
 		    	
-		    	LEFT JOIN view b on b.competition_seq = a.seq
-		    	LEFT JOIN comment c on c.competition_seq = a.seq
+<!-- 		    	LEFT JOIN view b on b.competition_seq = a.seq -->
+<!-- 		    	LEFT JOIN comment c on c.competition_seq = a.seq -->
+
 		    	
 	
 			WHERE 1=1 
@@ -34,11 +35,13 @@
     	, a.regDatetime
     	, a.contents
     	, a.delNy
-    	, b.regSeqView
-    	, b.regIpView
-    	, b.regDatetimeView
-    	, c.comments
-    	, c.regSeqComment
+    	, a.writer
+    	, a.member_seq
+<!--     	, b.regSeqView -->
+<!--     	, b.regIpView -->
+<!--     	, b.regDatetimeView -->
+<!--     	, c.comments -->
+<!--     	, c.regSeqComment -->
     	
     	
     	
@@ -67,7 +70,7 @@
 		    	<include refid="selectCommon" />
 		    
 		</select>
-	
+		
 		<insert id="insert">
 		
 		    insert into `competition` (
@@ -76,6 +79,7 @@
 	    	 , descr
 	    	 , ytbLink
 	    	 , delNy
+
 	
 			) values (
 				#{type}
@@ -83,16 +87,14 @@
 				,#{descr}
 				,#{ytbLink}
 				,0
+
 			)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">
 				SELECT last_insert_id()
 			 </selectKey>
 			 
 	    </insert>
-	    
-	    
-	    
-	    
+
     
 	    <update id="update">
 	    

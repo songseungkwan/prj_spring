@@ -10,9 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.app.spot.Spot;
-import com.mycompany.app.spot.SpotVo;
-
 @Controller
 public class CompetitionController {
 	
@@ -51,7 +48,18 @@ public class CompetitionController {
 
 	 
 	@RequestMapping(value="/realTimeRecord")
-	public String realTimeRecord() {
+	public String realTimeRecord(@ModelAttribute("vo") CompetitionVo vo, Model model) {
+		vo.setShKeyword(vo.getShKeyword() == null ? "" : vo.getShKeyword());
+		
+		vo.setParamsPaging(service.selectOneCount(vo));
+		
+		if(vo.getTotalRows() > 0) {
+		List<Competition> list = service.selectList(vo);
+			model.addAttribute("list", list);
+//			model.addAttribute("vo", vo);
+		} else {
+//			by pass
+		}
 		return "usr/infra/subpage/realTimeRecord";	 
 	}
 	@RequestMapping(value="/registerVideo")
@@ -84,6 +92,50 @@ public class CompetitionController {
 		
 		return "redirect: /indexUsrView";
 	}
+	
+//	@RequestMapping("/competitionInst")
+//	public String competitionInst(@ModelAttribute Competition vo , HttpSession session) throws Exception {
+//		String nickname = (String) session.getAttribute("nickname");
+//		
+//		service.insert(vo);
+//		
+//		
+//		return "redirect: /indexUsrView";
+//	}
+	
+//	@RequestMapping("/competitionInst")
+//	public String competitionInst(Competition dto, HttpSession session) throws Exception {
+//	    System.out.println(dto.getType());
+//	    
+//	    // 세션에서 닉네임 정보 가져오기
+//	    String sessionNickname = (String) session.getAttribute("sessionNickname");
+//	    
+//	    // 작성자 정보 설정
+//	    dto.setWriter(sessionNickname);
+//	    
+//	    // service 호출
+//	    service.insert(dto);
+//	    
+//	    return "redirect:/indexUsrView"; // 경로 앞의 공백 제거
+//	}
+	
+//	@RequestMapping("/competitionInst")
+//	public String competitionInst(Competition vo, HttpSession session) throws Exception {
+//	    System.out.println(vo.getType());
+//	    
+//	    // 세션에서 닉네임 정보 가져오기
+//	    String sessionNickname = (String) session.getAttribute("sessionNickname");
+//	    
+//	    // 작성자 정보 설정
+//	    vo.setWriter(sessionNickname);
+//	    
+//	    // service 호출
+//	    service.insert(vo);
+//	    
+//	    return "redirect:/indexUsrView"; // 경로 앞의 공백 제거
+//	}
+
+
 	
 	@RequestMapping("/competitionUpdt")
 	public String competitionUpdt(Competition dto) throws Exception {

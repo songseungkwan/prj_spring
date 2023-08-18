@@ -10,6 +10,10 @@ public class Competition {
 	private String regDatetime;
 	private String contents;
 	private Integer delNy;
+	private String nickname;
+	private String comments;
+	private String views;
+	private String writer;
 
 	
 	public String getSeq() {
@@ -59,6 +63,30 @@ public class Competition {
 	}
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
+	}
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getComments() {
+		return comments;
+	}
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+	public String getViews() {
+		return views;
+	}
+	public void setViews(String views) {
+		this.views = views;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
 	}
 
 	

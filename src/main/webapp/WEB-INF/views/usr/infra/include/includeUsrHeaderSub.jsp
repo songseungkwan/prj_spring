@@ -69,7 +69,8 @@ String id = (String) request.getSession().getAttribute("id");
 						
 				<c:choose>
 					<c:when test="${not empty sessionId }">
-						<li class="dropdown"><a href="#"><c:out value="${sessionId }"/><i class="bi bi-chevron-down dropdown-indicator"></i></a>	
+<%-- 						<li class="dropdown"><a href="#"><c:out value="${sessionId }"/><i class="bi bi-chevron-down dropdown-indicator"></i></a>	 --%>
+						<li class="dropdown"><a href="#"><c:out value="${sessionNickname }"/><i class="bi bi-chevron-down dropdown-indicator"></i></a>
 							<ul>
 								<li><a href="#">ㅁㅁㅁ</a></li>
 								<li class="dropdown"><a href="#"><span>내 정보</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>

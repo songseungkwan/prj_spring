@@ -99,6 +99,7 @@
         SELECT
         	seq
         	, id
+        	, nickname
         	, name
         	, type
         FROM
@@ -106,6 +107,7 @@
         WHERE 1=1
         	 <if test="seq != null and !seq.equals('')">AND seq = #{seq} </if>
         	 <if test="id != null and !id.equals('')">AND id = #{id} </if>
+         	 <if test="nickname != null and !nickname.equals('')">AND nickname = #{nickname} </if>
         	 <if test="password != null and !password.equals('')">AND password = #{password}</if>
         	 <if test="type != null and !type.equals('')">AND type = 1 </if>
     </select>
@@ -175,7 +177,7 @@
         	#{id}
         	,#{name}        	
         	,#{password}  
-        	,#{nickname} 
+        	,#{sessionNickname} 
         	,#{email} 
         	,#{address} 
         	,#{phone}      	

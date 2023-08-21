@@ -15,5 +15,7 @@ public interface CompetitionService {
 	public int delete(Competition dto);
 	public int insert(Competition dto) throws Exception;	
 	public int uelete(Competition dto);
+
+
 	
 }

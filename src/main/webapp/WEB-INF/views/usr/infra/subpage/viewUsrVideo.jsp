@@ -41,15 +41,16 @@
 			<iframe class="position-absolute top-50 start-50 translate-middle" width="800" height="500" src="https://www.youtube.com/embed/hTddMlQKup8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		</div>
 		
-			<!-- SNS버튼 시작 --> 
-			<div style="width: 100%; text-align: center; margin-bottom: 64px;">
-			  <!-- 페이스북 공유 버튼 --> <a href="" onclick="window.open(url_combine_fb, '', 'scrollbars=no, width=600, height=600'); return false;"><img src="https://storage.googleapis.com/storage.chris-chris.ai/images/facebook.gif" title="페이스북으로 공유하기" class="sharebtn_custom" style="width: 32px;"></a> 
-			  <!-- 트위터 공유 버튼 --> <a href="" onclick="window.open(url_combine_tw, '', 'scrollbars=no, width=600, height=600'); return false;"><img src="https://storage.googleapis.com/storage.chris-chris.ai/images/twitter.gif" title="트위터로 공유하기" class="sharebtn_custom" style="width: 32px;"></a> 
-			  <!-- 카카오 스토리 공유 버튼 --> <a href="" onclick="window.open(url_combine_ks, '', 'scrollbars=no, width=600, height=600'); return false;"><img src="https://storage.googleapis.com/storage.chris-chris.ai/images/story.gif" title="카카오스토리로 공유하기" class="sharebtn_custom" style="width: 32px;"></a> 
-			  <!-- 네이버 공유 버튼 --> <a href="" onclick="window.open(url_combine_naver, '', 'scrollbars=no, width=600, height=600'); return false;"><img src="https://storage.googleapis.com/storage.chris-chris.ai/images/naver.gif" title="네이버로 공유하기" class="sharebtn_custom" style="width: 32px;"></a> 
-			  <!-- 밴드 공유 버튼 --> <a href="" onclick="window.open(url_combine_band, '', 'scrollbars=no, width=584, height=635'); return false;"><img src="https://storage.googleapis.com/storage.chris-chris.ai/images/band.gif" title="밴드로 공유하기" class="sharebtn_custom" style="width: 32px;"></a> 
-			</div> 
-<!-- SNS버튼 끝 -->
+		<div id="sectionDescr">
+		
+			<div>
+				
+			</div>
+			
+			
+		</div>
+		
+
 
 
 

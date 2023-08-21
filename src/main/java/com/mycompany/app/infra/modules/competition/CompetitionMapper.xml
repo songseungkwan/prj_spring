@@ -71,7 +71,7 @@
 		    
 		</select>
 		
-		<insert id="insert">
+		<insert id="insertCompetition">
 		
 		    insert into `competition` (
 	    	 type
@@ -80,6 +80,7 @@
 	    	 , ytbLink
 	    	 , delNy
 
+
 	
 			) values (
 				#{type}
@@ -87,6 +88,8 @@
 				,#{descr}
 				,#{ytbLink}
 				,0
+
+				
 
 			)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">

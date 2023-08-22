@@ -65,13 +65,16 @@
     
 		<select id="selectList" resultMap="resultMapObj">
 		
-			SELECT
+			SELECT  aa.* FROM (   	
+	   		SELECT
 				<include refid="selectCompetition" />
 		    	<include refid="selectCommon" />
-		    
+		    	) aa
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	 
+		  		
 		</select>
 		
-		<insert id="insertCompetition">
+		<insert id="insertVideo">
 		
 		    insert into `competition` (
 	    	 type
@@ -79,8 +82,7 @@
 	    	 , descr
 	    	 , ytbLink
 	    	 , delNy
-
-
+	    	 , member_seq
 	
 			) values (
 				#{type}
@@ -88,9 +90,7 @@
 				,#{descr}
 				,#{ytbLink}
 				,0
-
-				
-
+				,#{member_seq}
 			)
 			<selectKey resultType="String" keyProperty="seq" order="AFTER">
 				SELECT last_insert_id()

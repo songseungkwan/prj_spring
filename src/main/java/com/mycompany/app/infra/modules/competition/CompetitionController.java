@@ -88,8 +88,13 @@ public class CompetitionController {
 
 	
 	@RequestMapping("/competitionInst")
-	public String competitionInst(Competition dto) throws Exception {
+	public String competitionInst(Competition dto, HttpSession httpSession) throws Exception {
 		System.out.println(dto.getType());
+		String aaa = (String) httpSession.getAttribute("sessionSeq");
+		
+		System.out.println("aaa: " + aaa);
+		dto.setMember_seq(aaa);
+		
 		// service 호출
 		service.insert(dto);
 		

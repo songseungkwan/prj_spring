@@ -11,10 +11,17 @@ public interface CompetitionService {
 	
 	public Competition selectOne(CompetitionVo vo);
 	
-	public int update(Competition dto) throws Exception;
+	public int insert(Competition dto) throws Exception;
+	
+	public int update(Competition dto);
+	
 	public int delete(Competition dto);
-	public int insert(Competition dto) throws Exception;	
+	
 	public int uelete(Competition dto);
+	
+
+
+
 
 
 	

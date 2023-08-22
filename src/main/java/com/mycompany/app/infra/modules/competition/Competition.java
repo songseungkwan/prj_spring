@@ -14,7 +14,7 @@ public class Competition {
 	private String comments;
 	private String views;
 	private String writer;
-
+	private String member_seq;
 	
 	public String getSeq() {
 		return seq;
@@ -87,6 +87,12 @@ public class Competition {
 	}
 	public void setWriter(String writer) {
 		this.writer = writer;
+	}
+	public String getMember_seq() {
+		return member_seq;
+	}
+	public void setMember_seq(String member_seq) {
+		this.member_seq = member_seq;
 	}
 
 	

@@ -32,12 +32,16 @@ public class CompetitionDao {
 	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(Competition dto) { return sqlSession.update(namespace + ".update", dto); }
+	public int updateVideo(Competition dto) { return sqlSession.insert(namespace + ".update", dto); }
 	
 	public int delete(Competition dto) { return sqlSession.delete(namespace + ".delete", dto); }
+	public int deleteVideo(Competition dto) { return sqlSession.insert(namespace + ".delete", dto); }
 
 	public int insert(Competition dto) { return sqlSession.insert(namespace + ".insert", dto); }
+	public int insertVideo(Competition dto) { return sqlSession.insert(namespace + ".insert", dto); }
 
 	public int uelete(Competition dto) { return sqlSession.update(namespace + ".uelete", dto); }
+	public int ueleteVideo(Competition dto) { return sqlSession.insert(namespace + ".uelete", dto); }
 	
 	
 	

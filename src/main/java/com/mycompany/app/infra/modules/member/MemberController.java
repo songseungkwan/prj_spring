@@ -153,6 +153,7 @@ public class MemberController {
 		if(rtMember != null) {
 			
 			 // 로그인 성공 시 세션에 사용자 정보 저장
+			session.setAttribute("sessionSeq", rtMember.getSeq());
 	        session.setAttribute("sessionId", vo.getId());
 	        session.setAttribute("sessionNickname", rtMember.getNickname());
 	        //  로그인 성공 시에만 실제 회원 정보에서 가져온 닉네임을 세션에 저장

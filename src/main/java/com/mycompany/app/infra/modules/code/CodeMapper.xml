@@ -36,34 +36,34 @@
 
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT aa.* FROM (
-		SELECT
-		<include refid="abc" />
-		<include refid="selectCommon" />
+			SELECT
+			<include refid="abc" />
+			<include refid="selectCommon" />
 		) aa
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
 
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-		<include refid="abc" />
+			<include refid="abc" />
 		FROM
-		code
+			code
 		WHERE 1=1
-		AND seq = #{seq}
+			AND seq = #{seq}
 	</select>
 
 
 	<select id="selectListCachedCodeArrayList"
 		resultMap="resultMapObj">
 		SELECT
-		seq
-		, name
-		, codeNum
-		, codeGroup_seq
+			seq
+			, name
+			, codeNum
+			, codeGroup_seq
 		FROM
-		code
+			code
 		WHERE 1=1
-		AND delNy = 0
+			AND delNy = 0
 		<!-- AND useNy = 1 -->
 	</select>
 
@@ -77,41 +77,41 @@
 
 	<update id="update">
 		UPDATE
-		code
+			code
 		SET
-		name = #{name}
+			name = #{name}
 		WHERE
-		seq = #{seq}
+			seq = #{seq}
 	</update>
 
 	<delete id="delete">
 		DELETE
 		FROM
-		code
+			code
 		WHERE
-		seq = #{seq}
+			seq = #{seq}
 	</delete>
 
 	<insert id="insert">
 		INSERT INTO code (
-		name
-		,codeGroup_seq
-		,delNy
+			name
+			,codeGroup_seq
+			,delNy
 		) VALUES (
-		#{name}
-		,#{codeGroup_seq}
-		,0
+			#{name}
+			,#{codeGroup_seq}
+			,0
 		)
 	</insert>
 
 	<update id="uelete">
 		UPDATE
-		code
+			code
 		SET
-		delNy = 1
+			delNy = 1
 		WHERE 1=1
-		AND
-		seq = #{seq}
+			AND
+			seq = #{seq}
 	</update>
 
 </mapper>    

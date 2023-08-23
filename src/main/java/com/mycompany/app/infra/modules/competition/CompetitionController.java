@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.mycompany.app.hotel.Hotel;
+
 @Controller
 public class CompetitionController {
 	
@@ -95,53 +97,27 @@ public class CompetitionController {
 		System.out.println("aaa: " + aaa);
 		dto.setMember_seq(aaa);
 		
-		// service 호출
-		service.insert(dto);
-		
-		return "redirect: /indexUsrView";
-	}
-	
-//	@RequestMapping("/competitionInst")
-//	public String competitionInst(@ModelAttribute Competition vo , HttpSession session) throws Exception {
-//		String nickname = (String) session.getAttribute("nickname");
-//		
-//		service.insert(vo);
-//		
+//		// service 호출
+//
+//		service.insertCompetition(dto);
 //		
 //		return "redirect: /indexUsrView";
-//	}
+		
+		// service 호출
+	    int result = service.insertCompetition(dto);
+
+	    if (result > 0) {
+	        // 데이터 삽입 성공
+	        return "redirect:/indexUsrView";
+	    } else {
+	        // 데이터 삽입 실패
+	        
+	    }
+	    return "redirect:/indexUsrView"; // 또는 다른 적절한 처리
+	}
 	
-//	@RequestMapping("/competitionInst")
-//	public String competitionInst(Competition dto, HttpSession session) throws Exception {
-//	    System.out.println(dto.getType());
-//	    
-//	    // 세션에서 닉네임 정보 가져오기
-//	    String sessionNickname = (String) session.getAttribute("sessionNickname");
-//	    
-//	    // 작성자 정보 설정
-//	    dto.setWriter(sessionNickname);
-//	    
-//	    // service 호출
-//	    service.insert(dto);
-//	    
-//	    return "redirect:/indexUsrView"; // 경로 앞의 공백 제거
-//	}
-	
-//	@RequestMapping("/competitionInst")
-//	public String competitionInst(Competition vo, HttpSession session) throws Exception {
-//	    System.out.println(vo.getType());
-//	    
-//	    // 세션에서 닉네임 정보 가져오기
-//	    String sessionNickname = (String) session.getAttribute("sessionNickname");
-//	    
-//	    // 작성자 정보 설정
-//	    vo.setWriter(sessionNickname);
-//	    
-//	    // service 호출
-//	    service.insert(vo);
-//	    
-//	    return "redirect:/indexUsrView"; // 경로 앞의 공백 제거
-//	}
+
+
 
 
 	

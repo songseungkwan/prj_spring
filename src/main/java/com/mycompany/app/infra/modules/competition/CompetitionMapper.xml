@@ -35,7 +35,6 @@
     	, a.regDatetime
     	, a.contents
     	, a.delNy
-    	, a.writer
     	, a.member_seq
 <!--     	, b.regSeqView -->
 <!--     	, b.regIpView -->
@@ -74,7 +73,9 @@
 		  		
 		</select>
 		
-		<insert id="insertVideo">
+		
+		
+		<insert id="insertCompetition">
 		
 		    insert into `competition` (
 	    	 type

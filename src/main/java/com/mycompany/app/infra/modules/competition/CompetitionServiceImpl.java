@@ -22,32 +22,30 @@ public class CompetitionServiceImpl implements CompetitionService {
 	public Competition selectOne(CompetitionVo vo) { return dao.selectOne(vo); }
 	
 	@Override
-	public int update(Competition dto) throws Exception { 
-		 dao.update(dto);
-		return 0; }
-	
-	@Override
-	public int delete(Competition dto) { 
-		dao.delete(dto);
-		return 0; }
-	@Override
-	public int uelete(Competition dto) { 
-		dao.uelete(dto);
-		return 0; }
-
-	@Override
 	public int insert(Competition dto) throws Exception { 
-		
-		dao.insert(dto);
-		dao.insertVideo(dto);
-		
+		dao.insert(dto);	
+
 		return 0; }
+	@Override
+	public int insertCompetition(Competition dto) {
 
-
-
-
+		dao.insertCompetition(dto);	
+		return 0;
+	}
+	
 
 	
+	@Override
+	public int update(Competition dto){	 dao.update(dto);	return 0; }
+	
+	@Override
+	public int delete(Competition dto) { dao.delete(dto);	return 0; }
+	@Override
+	public int uelete(Competition dto) { dao.uelete(dto);	return 0; }
+
+
+
+
 	
 	
 }

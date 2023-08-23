@@ -98,9 +98,7 @@ public class CompetitionController {
 		dto.setMember_seq(aaa);
 		
 //		// service 호출
-//
 //		service.insertCompetition(dto);
-//		
 //		return "redirect: /indexUsrView";
 		
 		// service 호출
@@ -110,17 +108,17 @@ public class CompetitionController {
 	        // 데이터 삽입 성공
 	        return "redirect:/indexUsrView";
 	    } else {
-	        // 데이터 삽입 실패
-	        
+//	        // 데이터 삽입 실패
+//	    	// 데이터 삽입 실패 시 에러 메시지를 세션에 저장하고 리다이렉트
+//	        httpSession.setAttribute("errorMsg", "등록 실패");
 	    }
+	    
 	    return "redirect:/indexUsrView"; // 또는 다른 적절한 처리
 	}
 	
 
 
 
-
-	
 	@RequestMapping("/competitionUpdt")
 	public String competitionUpdt(Competition dto) throws Exception {
 

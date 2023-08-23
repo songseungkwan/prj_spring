@@ -91,7 +91,7 @@
 			  		</div>
 			  		
 		  			<div class="form-group">
-			   			<label class="form-label" for="email""></label>
+			   			<label class="form-label" for="email"></label>
 			   			<div class="position-relative has-icon-right">
 				  			<input type="text" id="email" name="email" class="form-control input-shadow" placeholder="이메일" required>
 				  			<div class="form-control-position"><i class="icon-envelope-open"></i></div>
@@ -117,13 +117,13 @@
 			   			</div>
 			  		</div>
 			  		
-  			  		<div class="form-group">
-			   			<label class="form-label" for="phone"></label>
-		   				<div class="position-relative has-icon-right">
-				  			<input type="text" id="type" name="type" class="form-control input-shadow" placeholder="" disabled>
-				  			<div class="form-control-position"><i class="icon-phone"></i></div>
-			   			</div>
-			  		</div>
+<!--   			  		<div class="form-group"> -->
+<!-- 			   			<label class="form-label" for="phone"></label> -->
+<!-- 		   				<div class="position-relative has-icon-right"> -->
+<!-- 				  			<input type="text" id="type" name="type" class="form-control input-shadow" placeholder="" disabled> -->
+<!-- 				  			<div class="form-control-position"><i class="icon-phone"></i></div> -->
+<!-- 			   			</div> -->
+<!-- 			  		</div> -->
 <br><br>
 
 			 		<div class="d-flex justify-content-center">
@@ -171,7 +171,7 @@
 	
 	var objId = $("#id");
 	var objPassword = $("#password");
-	var objPasswordVerify = $("#passwordVerify");
+// 	var objPasswordVerify = $("#passwordVerify");
 	var objName = $("#name");
 	var objNickname = $("#nickname");
 	var objEmail = $("#email");
@@ -206,7 +206,7 @@
 		} */
 	    if (checkId(objId, "아이디는 영대소문자, 숫자, 특수문자(-_.)를 포함한 4~15자리만 입력해주세요.") === false) return false;
 	    if (checkPassword(objPassword, "비밀번호는 영대소문자,숫자,특수문자(!@#$%^&*),8~16자리 조합만 입력 가능합니다.") === false) return false;
-	    if (checkPasswordVerify(objPasswordVerify, "비밀번호가 일치하지 않습니다.") === false) return false;
+// 	    if (checkPasswordVerify(objPasswordVerify, "비밀번호가 일치하지 않습니다.") === false) return false;
 	    if (checkName(objName, "이름은 한글만 입력 가능합니다.") === false) return false;
 	    if (checkEmail(objEmail, "유효한 이메일 주소를 입력해주세요.") === false) return false;
 	    if (checkPhone(objPhone, "전화번호는 숫자만 입력해주세요.") === false) return false;

@@ -33,7 +33,7 @@ public class MemberController {
 		if(vo.getTotalRows() > 0) {
 			List<Member> list = service.selectList(vo);
 			model.addAttribute("list", list);
-//			model.addAttribute("vo", vo);
+			model.addAttribute("vo", vo);
 		} else {
 //			by pass
 		}

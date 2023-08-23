@@ -44,15 +44,10 @@ public class MemberServiceImpl implements MemberService {
 	public Member selectUsr(MemberVo vo) { return dao.selectUsr(vo); }
 
 	@Override
-	public int update(Member dto) throws Exception {
-		
-		return dao.update(dto);	
-	}
+	public int update(Member dto) throws Exception { return dao.update(dto); }
 	
 	@Override
-	public int delete(Member dto) {
-		return dao.delete(dto);	
-	}
+	public int delete(Member dto) { return dao.delete(dto);	}
 	
 	@Override
 	public int insert(Member dto) throws Exception {
@@ -69,7 +64,6 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	public int selectOneCheckId(MemberVo vo) {
-
 		return dao.selectOneCheckId(vo);
 	}
 	

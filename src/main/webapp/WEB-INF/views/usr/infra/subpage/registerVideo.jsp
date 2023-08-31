@@ -24,7 +24,7 @@
     <div class="container position-relative">
       <div class="row gy-5" data-aos="fade-in">
         <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center text-center text-lg-start">
-            <h2> <c:out value="${sessionSeq}"/> <c:out value="${ sessionId}"/>영상 등록하기</h2> <c:out value="()sessionSeq)"/> <c:out value="$(sessionId)"/>
+            <h2>  영상 등록하기</h2>
             
         </div>
       </div>

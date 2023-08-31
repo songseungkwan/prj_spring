@@ -124,6 +124,20 @@
 	                  </c:choose>
 	                </tbody>
 	              </table>
+	              
+	              <div class="container-fluid px-0 mt-2">
+					    <div class="row">
+					        <div class="col-6 text-start">
+					            <button type="button" class="btn btn-danger btn-sm" name="" id="btnDelete"><i class="fa-solid fa-x"></i></button>
+					            <button type="button" class="btn btn-danger btn-sm" name="" id="btnUelete"><i class="far fa-trash-alt"></i></button>
+					        </div>
+					        <div class="col-6 text-end">
+					            <button type="button" class="btn btn-success btn-sm" name="" id="btnExcel"><i class="bi bi-file-earmark-spreadsheet"></i></button>
+					            <button type="button" class="btn btn-primary btn-sm" name="" id="btnForm"><i class="bi bi-file-plus-fill"></i></button>
+					        </div>
+					    </div>
+					</div>
+	              
 		              	<div class="container-fluid px-0 mt-2">
 						    <div class="row">
 						        <div class="col">
@@ -175,14 +189,22 @@
 		 $("#btnSearch").on("click", function() {
 		 	$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
 		 });
-		 /* 추가버튼 */
-	  /* $(".btnAdd").on("click", function() {
-		    $("form[name=form]").attr("action", "/codeGroupForm").submit();
-		 });		  */
-		 goList = function(thisPage) {
-				$("input:hidden[name=thisPage]").val(thisPage);
-				$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
-			}
+  		
+  		/* 엑셀 다운 버튼 */
+		 $("#btnExcel").click(function() {
+				
+				$("form[name=formList]").attr("action", "/excelDownloadCodeGroup").submit();
+//			 	form.attr("action", excelUri).submit();
+			});		
+  		
+	     /* 추가버튼 */
+	     /* $(".btnAdd").on("click", function() {
+			    $("form[name=form]").attr("action", "/codeGroupForm").submit();
+			 });		  */
+			 goList = function(thisPage) {
+					$("input:hidden[name=thisPage]").val(thisPage);
+					$("form[name=formList]").attr("action", "/codeGroupXdmList").submit();
+				}
  		</script>
 	</body>
 </html>

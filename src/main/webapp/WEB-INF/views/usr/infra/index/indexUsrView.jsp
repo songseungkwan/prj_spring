@@ -132,14 +132,14 @@
     
 
     <!-- ======= Call To Action Section ======= -->
-    <section id="call-to-action" class="call-to-action">
-      <div class="container text-center" data-aos="zoom-out">
-        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a>
-        <h3>Call To Action</h3>
-        <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <a class="cta-btn" href="#">Call To Action</a>
-      </div>
-    </section><!-- End Call To Action Section -->
+<!--     <section id="call-to-action" class="call-to-action"> -->
+<!--       <div class="container text-center" data-aos="zoom-out"> -->
+<!--         <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox play-btn"></a> -->
+<!--         <h3>Call To Action</h3> -->
+<!--         <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+<!--         <a class="cta-btn" href="#">Call To Action</a> -->
+<!--       </div> -->
+<!--     </section>End Call To Action Section -->
 
     <!-- ======= Our Services Section ======= -->
     <section id="services" class="services sections-bg">
@@ -239,7 +239,8 @@
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
 
           <div>
-            <ul class="portfolio-flters">
+            <ul 
+>
               <li data-filter="*" class="filter-active">All</li>
               <li data-filter=".filter-BodyweightExercise">맨몸 운동</li>
               <li data-filter=".filter-FreeweightExercise">기구 운동</li>
@@ -354,111 +355,111 @@
     </section><!-- End Portfolio Section -->
 
     <!-- ======= Our Team Section ======= -->
-    <section id="team" class="team">
-      <div class="container" data-aos="fade-up">
+<!--     <section id="team" class="team"> -->
+<!--       <div class="container" data-aos="fade-up"> -->
 
-        <div class="section-header">
-          <h2>Man</h2>
-          <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt quis dolorem dolore earum</p>
-        </div>
+<!--         <div class="section-header"> -->
+<!--           <h2>Man</h2> -->
+<!--           <p></p> -->
+<!--         </div> -->
 
-        <div class="row gy-4 ">
+<!--         <div class="row gy-4 "> -->
 
-          <div class="col-xl-3 col-md-6 d-flex text-center" data-aos="fade-up" data-aos-delay="100">
-            <div class="member">
-              <img src="resources/realProjectAssets/img/송승관.jpg" class="img-fluid" alt="">
-              <h4>Seungkwan Song</h4>
-              <span>Web Development</span>
-              <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          
+<!--           <div class="col-xl-3 col-md-6 d-flex text-center" data-aos="fade-up" data-aos-delay="100"> -->
+<!--             <div class="member"> -->
+<!--               <img src="resources/realProjectAssets/img/송승관.jpg" class="img-fluid" alt=""> -->
+<!--               <h4>Seungkwan Song</h4> -->
+<!--               <span>Web Development</span> -->
+<!--               <div class="social"> -->
+<!--                 <a href=""><i class="bi bi-twitter"></i></a> -->
+<!--                 <a href=""><i class="bi bi-facebook"></i></a> -->
+<!--                 <a href=""><i class="bi bi-instagram"></i></a> -->
+<!--                 <a href=""><i class="bi bi-linkedin"></i></a> -->
+<!--               </div> -->
+<!--             </div> -->
+<!--           </div>End Team Member -->
 
           
 
           
 
-        </div>
+          
 
-      </div>
-    </section><!-- End Our Team Section -->
+<!--         </div> -->
+
+<!--       </div> -->
+<!--     </section>End Our Team Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing sections-bg">
-      <div class="container" data-aos="fade-up">
+<!--     <section id="pricing" class="pricing sections-bg"> -->
+<!--       <div class="container" data-aos="fade-up"> -->
 
-        <div class="section-header">
-          <h2>Pricing</h2>
-          <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p>
-        </div>
+<!--         <div class="section-header"> -->
+<!--           <h2>Pricing</h2> -->
+<!--           <p>Aperiam dolorum et et wuia molestias qui eveniet numquam nihil porro incidunt dolores placeat sunt id nobis omnis tiledo stran delop</p> -->
+<!--         </div> -->
 
-        <div class="row g-4 py-lg-5" data-aos="zoom-out" data-aos-delay="100">
+<!--         <div class="row g-4 py-lg-5" data-aos="zoom-out" data-aos-delay="100"> -->
 
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Free Plan</h3>
-              <div class="icon">
-                <i class="bi bi-box"></i>
-              </div>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item -->
+<!--           <div class="col-lg-4"> -->
+<!--             <div class="pricing-item"> -->
+<!--               <h3>Free Plan</h3> -->
+<!--               <div class="icon"> -->
+<!--                 <i class="bi bi-box"></i> -->
+<!--               </div> -->
+<!--               <h4><sup>$</sup>0<span> / month</span></h4> -->
+<!--               <ul> -->
+<!--                 <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li> -->
+<!--                 <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li> -->
+<!--                 <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li> -->
+<!--                 <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li> -->
+<!--                 <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li> -->
+<!--               </ul> -->
+<!--               <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+<!--             </div> -->
+<!--           </div>End Pricing Item -->
 
-          <div class="col-lg-4">	
-            <div class="pricing-item featured">
-              <h3>Business Plan</h3>
-              <div class="icon">
-                <i class="bi bi-airplane"></i>
-              </div>
+<!--           <div class="col-lg-4">	 -->
+<!--             <div class="pricing-item featured"> -->
+<!--               <h3>Business Plan</h3> -->
+<!--               <div class="icon"> -->
+<!--                 <i class="bi bi-airplane"></i> -->
+<!--               </div> -->
 
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item -->
+<!--               <h4><sup>$</sup>29<span> / month</span></h4> -->
+<!--               <ul> -->
+<!--                 <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li> -->
+<!--                 <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li> -->
+<!--                 <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li> -->
+<!--                 <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li> -->
+<!--                 <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li> -->
+<!--               </ul> -->
+<!--               <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+<!--             </div> -->
+<!--           </div>End Pricing Item -->
 
-          <div class="col-lg-4">
-            <div class="pricing-item">
-              <h3>Developer Plan</h3>
-              <div class="icon">
-                <i class="bi bi-send"></i>
-              </div>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <ul>
-                <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div>
-            </div>
-          </div><!-- End Pricing Item -->
+<!--           <div class="col-lg-4"> -->
+<!--             <div class="pricing-item"> -->
+<!--               <h3>Developer Plan</h3> -->
+<!--               <div class="icon"> -->
+<!--                 <i class="bi bi-send"></i> -->
+<!--               </div> -->
+<!--               <h4><sup>$</sup>49<span> / month</span></h4> -->
+<!--               <ul> -->
+<!--                 <li><i class="bi bi-check"></i> Quam adipiscing vitae proin</li> -->
+<!--                 <li><i class="bi bi-check"></i> Nec feugiat nisl pretium</li> -->
+<!--                 <li><i class="bi bi-check"></i> Nulla at volutpat diam uteera</li> -->
+<!--                 <li><i class="bi bi-check"></i> Pharetra massa massa ultricies</li> -->
+<!--                 <li><i class="bi bi-check"></i> Massa ultricies mi quis hendrerit</li> -->
+<!--               </ul> -->
+<!--               <div class="text-center"><a href="#" class="buy-btn">Buy Now</a></div> -->
+<!--             </div> -->
+<!--           </div>End Pricing Item -->
 
-        </div>
+<!--         </div> -->
 
-      </div>
-    </section><!-- End Pricing Section -->
+<!--       </div> -->
+<!--     </section>End Pricing Section -->
 
     <!-- ======= Frequently Asked Questions Section ======= -->
     <section id="faq" class="faq">
@@ -557,98 +558,98 @@
     </section><!-- End Frequently Asked Questions Section -->
 
     <!-- ======= Recent Blog Posts Section ======= -->
-    <section id="recent-posts" class="recent-posts sections-bg">
-      <div class="container" data-aos="fade-up">
+<!--     <section id="recent-posts" class="recent-posts sections-bg"> -->
+<!--       <div class="container" data-aos="fade-up"> -->
 
-        <div class="section-header">
-          <h2>Recent Blog Posts</h2>
-          <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel architecto accusamus fugit aut qui distinctio</p>
-        </div>
+<!--         <div class="section-header"> -->
+<!--           <h2>Recent Blog Posts</h2> -->
+<!--           <p>Consequatur libero assumenda est voluptatem est quidem illum et officia imilique qui vel architecto accusamus fugit aut qui distinctio</p> -->
+<!--         </div> -->
 
-        <div class="row gy-4">
+<!--         <div class="row gy-4"> -->
 
-          <div class="col-xl-4 col-md-6">
-            <article>
+<!--           <div class="col-xl-4 col-md-6"> -->
+<!--             <article> -->
 
-              <div class="post-img">
-                <img src="resources/realProjectAssets/img/blog/blog-1.jpg" alt="" class="img-fluid">
-              </div>
+<!--               <div class="post-img"> -->
+<!--                 <img src="resources/realProjectAssets/img/blog/blog-1.jpg" alt="" class="img-fluid"> -->
+<!--               </div> -->
 
-              <p class="post-category">Politics</p>
+<!--               <p class="post-category">Politics</p> -->
 
-              <h2 class="title">
-                <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a>
-              </h2>
+<!--               <h2 class="title"> -->
+<!--                 <a href="blog-details.html">Dolorum optio tempore voluptas dignissimos</a> -->
+<!--               </h2> -->
 
-              <div class="d-flex align-items-center">
-                <img src="resources/realProjectAssets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Maria Doe</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jan 1, 2022</time>
-                  </p>
-                </div>
-              </div>
+<!--               <div class="d-flex align-items-center"> -->
+<!--                 <img src="resources/realProjectAssets/img/blog/blog-author.jpg" alt="" class="img-fluid post-author-img flex-shrink-0"> -->
+<!--                 <div class="post-meta"> -->
+<!--                   <p class="post-author">Maria Doe</p> -->
+<!--                   <p class="post-date"> -->
+<!--                     <time datetime="2022-01-01">Jan 1, 2022</time> -->
+<!--                   </p> -->
+<!--                 </div> -->
+<!--               </div> -->
 
-            </article>
-          </div><!-- End post list item -->
+<!--             </article> -->
+<!--           </div>End post list item -->
 
-          <div class="col-xl-4 col-md-6">
-            <article>
+<!--           <div class="col-xl-4 col-md-6"> -->
+<!--             <article> -->
 
-              <div class="post-img">
-                <img src="resources/realProjectAssets/img/blog/blog-2.jpg" alt="" class="img-fluid">
-              </div>
+<!--               <div class="post-img"> -->
+<!--                 <img src="resources/realProjectAssets/img/blog/blog-2.jpg" alt="" class="img-fluid"> -->
+<!--               </div> -->
 
-              <p class="post-category">Sports</p>
+<!--               <p class="post-category">Sports</p> -->
 
-              <h2 class="title">
-                <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a>
-              </h2>
+<!--               <h2 class="title"> -->
+<!--                 <a href="blog-details.html">Nisi magni odit consequatur autem nulla dolorem</a> -->
+<!--               </h2> -->
 
-              <div class="d-flex align-items-center">
-                <img src="resources/realProjectAssets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Allisa Mayer</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 5, 2022</time>
-                  </p>
-                </div>
-              </div>
+<!--               <div class="d-flex align-items-center"> -->
+<!--                 <img src="resources/realProjectAssets/img/blog/blog-author-2.jpg" alt="" class="img-fluid post-author-img flex-shrink-0"> -->
+<!--                 <div class="post-meta"> -->
+<!--                   <p class="post-author">Allisa Mayer</p> -->
+<!--                   <p class="post-date"> -->
+<!--                     <time datetime="2022-01-01">Jun 5, 2022</time> -->
+<!--                   </p> -->
+<!--                 </div> -->
+<!--               </div> -->
 
-            </article>
-          </div><!-- End post list item -->
+<!--             </article> -->
+<!--           </div>End post list item -->
 
-          <div class="col-xl-4 col-md-6">
-            <article>
+<!--           <div class="col-xl-4 col-md-6"> -->
+<!--             <article> -->
 
-              <div class="post-img">
-                <img src="resources/realProjectAssets/img/blog/blog-3.jpg" alt="" class="img-fluid">
-              </div>
+<!--               <div class="post-img"> -->
+<!--                 <img src="resources/realProjectAssets/img/blog/blog-3.jpg" alt="" class="img-fluid"> -->
+<!--               </div> -->
 
-              <p class="post-category">Entertainment</p>
+<!--               <p class="post-category">Entertainment</p> -->
 
-              <h2 class="title">
-                <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a>
-              </h2>
+<!--               <h2 class="title"> -->
+<!--                 <a href="blog-details.html">Possimus soluta ut id suscipit ea ut in quo quia et soluta</a> -->
+<!--               </h2> -->
 
-              <div class="d-flex align-items-center">
-                <img src="resources/realProjectAssets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0">
-                <div class="post-meta">
-                  <p class="post-author">Mark Dower</p>
-                  <p class="post-date">
-                    <time datetime="2022-01-01">Jun 22, 2022</time>
-                  </p>
-                </div>
-              </div>
+<!--               <div class="d-flex align-items-center"> -->
+<!--                 <img src="resources/realProjectAssets/img/blog/blog-author-3.jpg" alt="" class="img-fluid post-author-img flex-shrink-0"> -->
+<!--                 <div class="post-meta"> -->
+<!--                   <p class="post-author">Mark Dower</p> -->
+<!--                   <p class="post-date"> -->
+<!--                     <time datetime="2022-01-01">Jun 22, 2022</time> -->
+<!--                   </p> -->
+<!--                 </div> -->
+<!--               </div> -->
 
-            </article>
-          </div><!-- End post list item -->
+<!--             </article> -->
+<!--           </div>End post list item -->
 
-        </div><!-- End recent posts list -->
+<!--         </div>End recent posts list -->
 
-      </div>
-    </section><!-- End Recent Blog Posts Section -->
+<!--       </div> -->
+<!--     </section>End Recent Blog Posts Section -->
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">

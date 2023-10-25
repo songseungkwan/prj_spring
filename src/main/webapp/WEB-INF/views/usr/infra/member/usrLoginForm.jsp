@@ -46,12 +46,12 @@
 								<form name="form" method="post">
 
 									<div class="form-outline mb-4">
-										<input type="text" class="form-control" id="id" name="id" value="test01" >
+										<input type="text" class="form-control" id="id" name="id" value="managerSong" >
 										<label class="form-label" for="id">Your Id</label>
 									</div>
 									
 									<div class="form-outline mb-4">
-										<input type="password" class="form-control" id="password" name="password" value="test01" > 
+										<input type="password" class="form-control" id="password" name="password" value="managerSong" > 
 										<label class="form-label" for="password">Password</label>
 									</div>
 
@@ -264,11 +264,9 @@ function naverLogout() {
 				"password" : $("#password").val()}
 			,success: function(response) {
 				if(response.rt == "success") {
-					
-
 					location.href = "/indexUsrView";
 				} else {
-					alert("그런 회원 없습니다.");
+					alert("존재하지 않는 회원입니다.");
 					$("#password").val("");
 					$("#password").focus();
 					
